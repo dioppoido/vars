@@ -1,0 +1,24 @@
+{
+  "name": "vars-web",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "comma-separated-values": "^3.6.4",
+    "connect-mongo": "^1.3.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "dialog": "^0.1.8",
+    "ejs": "^2.5.2",
+    "express": "~4.13.1",
+    "express-session": "^1.14.1",
+    "jade": "~1.11.0",
+    "mongoose": "^4.6.0",
+    "morgan": "~1.6.1",
+    "multer": "^1.2.0",
+    "serve-favicon": "~2.3.0"
+  }
+}
