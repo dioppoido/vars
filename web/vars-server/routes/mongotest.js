@@ -5,10 +5,13 @@
 
 var express = require('express');
 var router = express.Router();
+const model = require('../app/js/test/getSamsusers');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    res.send('mongotest');
+    model.getUser().then(function(userdata){
+       res.send(userdata); 
+    });
 });
 
 module.exports = router;
