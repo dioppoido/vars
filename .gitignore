@@ -4,6 +4,7 @@ Thumbs.db
 
 # WebStorm
 .idea
+.idea/
 
 # Node
 node_modules
