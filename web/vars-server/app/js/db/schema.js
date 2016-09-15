@@ -5,7 +5,7 @@
 
 const mongoose = require('mongoose');
 
-/** -- sams ---------- */
+/** -- vars ---------- */
 
 /**
  * users
