@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title-->
+    <title>Login Vars</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../public/css/login.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/earlyaccess/notosansjapanese.css' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<!-- ログイン画面 -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+
+                <div class="text-center"><h1>ログイン画面(login.ejs)</h1></div>
+
+                <!-- Login Form -->
+                <form method="POST" action="/login">
+                    <!-- ユーザーID -->
+                    <div class="form-group">
+                        <label>ユーザーID : </label>
+                        <input type="text" name="userid" class="form-control input-lg">
+                    </div>
+
+                    <!-- パスワード -->
+                    <div class="form-group">
+                        <label>パスワード : </label>
+                        <input type="password" name="password" class="form-control input-lg" maxlength="100">
+                    </div>
+
+                    <!-- ログインボタン -->
+                    <div class="text-center"><button type="submit" class="btn btn-primary"> ログイン</button></div>
+
+                </form>
+
+
+            </div><!-- colmd-10 -->
+
+
+
+        </div><!-- row -->
+    </div><!-- container -->
+</section>
+
+<!-- jQuery -->
+<script src="../public/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../public/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

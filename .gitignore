@@ -1,0 +1,20 @@
+# MacOS
+.DS_Store
+Thumbs.db
+
+# WebStorm
+.idea
+.idea/
+
+# Node
+node_modules
+npm-debug.log
+
+# Vagrant
+.vagrant
+
+# Images
+images/
+
+# Backup
+mongo/autobackup
