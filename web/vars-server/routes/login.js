@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var getAccount = require('../app/js/users/getAccount');
+var sanitize = require('validator').sanitize;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -12,13 +13,18 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res) {
-    
+
     const userid = req.body.userid;
     const password = req.body.password;
+
     getAccount.getAccount(userid,password).then(function (docs) {
         console.log("DB側ID : " + docs[0].Userid);
         console.log("DB側PASS : " + docs[0].Passwd);
     });
+
+
+    console.log("UserID : " + userid);
+    console.log("PassWord : " + password);
     req.session.user = userid;
     req.session.pass = password;
     res.redirect('/');
