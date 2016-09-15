@@ -36,8 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // セッション設定
 app.use(session({
   secret: 'secret sams',         //Cookie暗号化キー
-  saveUninitialized: false,
-  resave: false,
+  saveUninitialized: true,
+  resave: true,
   store: new mongoStore({
     mongooseConnection: mongoose.connection,      //mongoDB接続
     db: 'vars', // データベース名
@@ -51,18 +51,18 @@ app.use(session({
   }
 }));
 
-
+// htmlからフォルダを参照
+app.use('/app', express.static(__dirname + '/app'));
+app.use('/public', express.static(__dirname + '/public'));
+app.use('/views', express.static(__dirname + '/views'));
 
 //ここからルート設定
-
-//初期設定1
-app.use('/', routes);
-//初期設定2
-app.use('/users', users);
-//テストルート
-app.use('/test', require('./routes/test'));
-//mongoテスト
-app.use('/mongotest', require('./routes/mongotest'));
+//トップ画面
+app.use('/', require('./routes/index'));
+//ログイン画面
+app.use('/login', require('./routes/login'));
+//ログアウト
+app.use('/logout', require('./routes/logout'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -78,7 +78,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+    res.render('error.ejs', {
       message: err.message,
       error: err
     });
@@ -89,7 +89,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
-  res.render('error', {
+  res.render('error.ejs', {
     message: err.message,
     error: {}
   });
