@@ -1,0 +1,32 @@
+/**
+ * アカウント照合クラス
+ * @author 土田
+ * @param userid : ユーザーID
+ * @param passwd : パスワード
+ * @returns {Promise}
+ */
+
+exports.getAccount = function(userid, passwd){
+    return new Promise(function (resolve, reject) {
+        const mongoose = require('mongoose');
+        const db = mongoose.createConnection('mongodb://mongo/vars');
+        const schema = require('../db/schema');
+        const Account = db.model('users', schema.users);
+
+        //ログイン照合
+        Account.find({Userid:userid, Passwd:passwd}, {'_id':0 },function(err, docs) {
+            if (!err) {
+                if (docs.length === 1) {
+                    console.log("getAccount:"+docs);
+                    resolve(docs);
+                } else {
+                    console.log("getAccount:"+"データがありません");
+                    reject("DATA NOT FOUND");
+                }
+            } else {
+                console.log("getAccount:"+"DB Error.");
+            }
+        });
+        
+    });
+};
