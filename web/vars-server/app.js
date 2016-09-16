@@ -60,6 +60,8 @@ app.use('/', require('./routes/index'));
 app.use('/login', require('./routes/login'));
 //ログアウト
 app.use('/logout', require('./routes/logout'));
+//アカウント設定
+app.use('/account',require('./routes/account'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
