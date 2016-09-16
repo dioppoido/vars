@@ -1,34 +1,34 @@
 var express = require('express');
 var router = express.Router();
 var getAccount = require('../app/js/users/getAccount');
-var sanitize = require('validator').sanitize;
+var validator = require('validator'); //validatorモジュール宣言
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     if(req.session.user){
         res.redirect('/');
     }else{
-        res.render('login.ejs');
+        res.render('login.ejs' , {error:''});
     }
 });
 
 router.post('/', function(req, res) {
 
-    const userid = req.body.userid;
-    const password = req.body.password;
+    var userid = req.body.userid;
+    var password = req.body.password;
 
-    getAccount.getAccount(userid,password).then(function (docs) {
-        console.log("DB側ID : " + docs[0].Userid);
-        console.log("DB側PASS : " + docs[0].Passwd);
+    userid = validator.escape(userid); //エスケープ処理
+    password = validator.escape(password); //エスケープ処理
+    
+    getAccount.getAccount(userid,password).then(function(docs){
+        if(docs.length === 0){
+            res.render('login.ejs', {error: "ユーザーIDまたはパスワードが違います"});
+        }else{
+            req.session.user = userid;
+            res.redirect('/');
+        }
     });
-
-
-    console.log("UserID : " + userid);
-    console.log("PassWord : " + password);
-    req.session.user = userid;
-    req.session.pass = password;
-    res.redirect('/');
-
+    
 });
 
 module.exports = router;
