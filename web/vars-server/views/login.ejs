@@ -27,31 +27,42 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 .col-lg-10 col-lg-offset-1">
 
-                <div class="text-center"><h1>ログイン画面(login.ejs)</h1></div>
+                <div class="text-center"><%= error %></div>
 
-                <!-- Login Form -->
-                <form method="POST" action="/login">
-                    <!-- ユーザーID -->
-                    <div class="form-group">
-                        <label>ユーザーID : </label>
-                        <input type="text" name="userid" class="form-control input-lg">
-                    </div>
+                <div class="login">
+                    <div class="text-center">Login Form</div>
+                    <div class="login-form">
+                        <div class="login-topcolor"></div>
+                        <div class="login-title">V A R S  - <span class="login-subtitle">バース</span> - </div>
+                        <div class="login-contents">
+                            <!-- Login Form -->
+                            <form method="POST" action="/login">
 
-                    <!-- パスワード -->
-                    <div class="form-group">
-                        <label>パスワード : </label>
-                        <input type="password" name="password" class="form-control input-lg" maxlength="100">
-                    </div>
+                                <!-- ユーザーID -->
+                                <div class="form-group">
+                                    <label>ユーザーID : </label>
+                                    <input type="text" name="userid" class="form-control input-lg">
+                                </div>
 
-                    <!-- ログインボタン -->
-                    <div class="text-center"><button type="submit" class="btn btn-primary"> ログイン</button></div>
+                                <!-- パスワード -->
+                                <div class="form-group">
+                                    <label>パスワード : </label>
+                                    <input type="password" name="password" class="form-control input-lg" maxlength="100">
+                                </div>
 
-                </form>
+                                <!-- ログインボタン -->
+                                <div class="text-center"><button type="submit" class="btn btn-primary"> ログイン</button></div>
+
+                            </form>
+                        </div><!-- login contents -->
+                    </div><!-- login form -->
+                </div><!-- login -->
 
 
-            </div><!-- colmd-10 -->
+
+            </div><!-- col -->
 
 
 

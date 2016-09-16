@@ -11,10 +11,10 @@ const mongoose = require('mongoose');
  * users
  */
 exports.users = new mongoose.Schema({
-  UserId      :String,          //ユーザID
+  Userid      :String,          //ユーザID
   Passwd      :String,          //パスワード
-  admin_flag  :Boolean,         //管理者フラグ
-  address     :String,          //E-Mailアドレス
+  Admin_flag  :Boolean,         //管理者フラグ
+  Address     :String,          //E-Mailアドレス
   Pass_flag   :Boolean,         //パスワード変更フラグ
   Username    :String           //名前
 });
