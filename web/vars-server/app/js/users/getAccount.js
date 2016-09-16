@@ -21,10 +21,11 @@ exports.getAccount = function(userid, passwd){
                     resolve(docs);
                 } else {
                     console.log("getAccount:"+"データがありません");
-                    reject("DATA NOT FOUND");
+                    resolve("");
                 }
             } else {
                 console.log("getAccount:"+"DB Error.");
+                resolve("");
             }
         });
         
