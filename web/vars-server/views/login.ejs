@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title-->
-    <title>Login Vars</title>
+    <title>Login - Vars -</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
@@ -29,10 +29,9 @@
         <div class="row">
             <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 .col-lg-10 col-lg-offset-1">
 
-                <div class="text-center"><%= error %></div>
 
                 <div class="login">
-                    <div class="text-center">Login Form</div>
+                    <div class="text-center visible-xs visible-sm">Login Form</div>
                     <div class="login-form">
                         <div class="login-topcolor"></div>
                         <div class="login-title">V A R S  - <span class="login-subtitle">バース</span> - </div>
@@ -42,23 +41,42 @@
 
                                 <!-- ユーザーID -->
                                 <div class="form-group">
-                                    <label>ユーザーID : </label>
-                                    <input type="text" name="userid" class="form-control input-lg">
+                                    <div class="login-inline">
+                                    <label><i class="fa fa-user fa-2x" aria-hidden="true"></i></label>
+                                    <input type="text" name="userid" class="form-control input-lg login-input" placeholder="Username">
+                                    </div>
                                 </div>
 
                                 <!-- パスワード -->
                                 <div class="form-group">
-                                    <label>パスワード : </label>
-                                    <input type="password" name="password" class="form-control input-lg" maxlength="100">
+                                    <div class="login-inline">
+                                        <label><i class="fa fa-lock fa-2x" aria-hidden="true"></i></label>
+                                        <input type="password" name="password" class="form-control input-lg login-input" maxlength="100" placeholder="Password">
+                                    </div>
                                 </div>
 
                                 <!-- ログインボタン -->
-                                <div class="text-center"><button type="submit" class="btn btn-primary"> ログイン</button></div>
-
+                                <div class="text-right">
+                                    <button type="submit" class="btn btn-primary login-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                                </div>
                             </form>
+
+                            <div class="text-center login-error">
+                                <%= error %>
+                            </div>
+
                         </div><!-- login contents -->
                     </div><!-- login form -->
                 </div><!-- login -->
+
+                <div class="other">
+                    <div class="other-form">
+                        <div class="other-contents">
+                            <a href="#">パスワードを忘れた方はこちら</a>
+                            <div class="">Copyright (C) 2016 AEC.Inc All Rights Reserved.</div>
+                        </div>
+                    </div>
+                </div>
 
 
 

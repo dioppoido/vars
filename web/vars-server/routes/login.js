@@ -22,7 +22,7 @@ router.post('/', function(req, res) {
     
     getAccount.getAccount(userid,password).then(function(docs){
         if(docs.length === 0){
-            res.render('login.ejs', {error: "ユーザーIDまたはパスワードが違います"});
+            res.render('login.ejs', {error: "ユーザーIDまたはパスワードが違います。"});
         }else{
             req.session.user = userid;
             res.redirect('/');
