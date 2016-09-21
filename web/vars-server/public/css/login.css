@@ -103,7 +103,7 @@ input.login-input{
     color:red;
     font-size: 14px;
 }
-@media(max-width:768px){
+@media(max-width:992px){
     .login .login-form{
         width: 90%;
         font-size: 18px;
