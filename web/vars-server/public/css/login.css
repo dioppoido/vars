@@ -101,6 +101,7 @@ input.login-input{
 .login-error{
     margin-top: 20px;
     color:red;
+    font-size: 14px;
 }
 @media(max-width:768px){
     .login .login-form{
