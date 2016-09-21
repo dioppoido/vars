@@ -40,16 +40,16 @@
     <div class="panel panel-primary">
     <div class="panel-heading">アカウント確認画面</div>
 
-    <div class="panel-body">パスワード変更</div>
+    <div class="panel-body">パスワード変更ページ</div>
 
     <form method="POST" action="/account">
         <div class="form-group">
             <label for="passwd">現在のパスワード</label>
-            <input type="password" class="form-control" id="passwd">
+            <input type="password" class="form-control" id="passwd" maxlength='12'>
         </div>
         <div class="form-group">
             <label for="new-passwd">新しいパスワード</label>
-            <input type="password" class="form-control" id="new-passwd">
+            <input type="password" class="form-control" id="new-passwd" maxlength='12'>
         </div>
             <input type="submit" value="送信">
         </div>
