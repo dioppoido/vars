@@ -88,7 +88,7 @@ input.login-input{
     border-right: 2px solid gray;
     border-bottom: 2px solid gray;
     border-radius: 0 10px 10px 0;
-    width: 89%;
+    width: 80%;
 }
 .login-btn{
     padding-top: 0px;
@@ -154,7 +154,7 @@ input.login-input{
 .other-contents{
     padding: 5px 5px 5px 5px;
 }
-@media(max-width:1000px){
+@media(max-width:992px){
     .other .other-form{
         text-align: center;
         width: 90%;

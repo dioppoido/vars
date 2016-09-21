@@ -1,0 +1,26 @@
+/* footer.css */
+
+/* Footer */
+.copy{
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 3px 5px 5px 5px;
+    height: 30px;
+    background: white;
+    border-top: 2px solid gray;
+}
+@media(max-width:1000px){
+    .copy{
+        color: #333;
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 7px 5px 5px 5px;
+        height: 30px;
+        background: white;
+        border-top: 2px solid gray;
+    }
+}
+/* !Footer */
