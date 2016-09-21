@@ -19,7 +19,7 @@ router.post('/', function(req, res) {
 
     userid = validator.escape(userid); //エスケープ処理
     password = validator.escape(password); //エスケープ処理
-    
+
     getAccount.getAccount(userid,password).then(function(docs){
         if(docs.length === 0){
             res.render('login.ejs', {error: "ユーザーIDまたはパスワードが違います。"});
@@ -28,7 +28,7 @@ router.post('/', function(req, res) {
             res.redirect('/');
         }
     });
-    
+
 });
 
 module.exports = router;

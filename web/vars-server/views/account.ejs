@@ -14,7 +14,9 @@
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <!-- <link href="../public/css/index.css" rel="stylesheet"> -->
+    <link href="../public/css/account.css" rel="stylesheet">
+    <link href="../public/css/header.css" rel="stylesheet">
+    <link href="../public/css/footer.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -23,17 +25,47 @@
 </head>
 <body>
 
-<h1>アカウント設定画面です</h1>
-<form method="POST" action="/account">
-<input type="text" name="userid">
-<input type="submit" value="送信">
-</form>
+    <%- include('./header.ejs') %>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+
+                </div><!-- col -->
+
+            </div><!-- row -->
+        </div><!-- container -->
+    </section>
+
+    <div class="panel panel-primary">
+    <div class="panel-heading">アカウント確認画面</div>
+
+    <div class="panel-body">パスワード変更</div>
+
+    <form method="POST" action="/account">
+        <div class="form-group">
+            <label for="passwd">現在のパスワード</label>
+            <input type="password" class="form-control" id="passwd">
+        </div>
+        <div class="form-group">
+            <label for="new-passwd">新しいパスワード</label>
+            <input type="password" class="form-control" id="new-passwd">
+        </div>
+            <input type="submit" value="送信">
+        </div>
+     </form>
+
+     <%- include('./footer.ejs') %>
+
 
 <!-- jQuery -->
 <script src="../public/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
+
+<!-- Footer Fixed -->
+<script src="../public/js/footerFixed.js"></script>
 
 
 </body>
