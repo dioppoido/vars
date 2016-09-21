@@ -10,7 +10,7 @@ const loginCheck = function(req, res, next) {
   if(req.session.user){
     next();
   }else{
-    res.render('login.ejs' , {error:''});
+    res.render('login.ejs' , {error:'', user:''});
   }
 };
 
