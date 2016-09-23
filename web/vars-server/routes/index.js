@@ -15,7 +15,7 @@ const loginCheck = function(req, res, next) {
 };
 
 router.get('/', loginCheck, function(req, res) {
-  res.render('index.ejs');
+  res.render('index.ejs', {userid: req.session.user});
 });
 
 module.exports = router;
