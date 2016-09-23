@@ -14,7 +14,7 @@ exports.updatePassword = function(userid,newpass){
     //パスワード変更処理
     users.update({Userid:userid}, {Passwd:newpass},function(err) {
         if (!err) {
-            console.log("DB UPDATE完了");
+            
         } else {
             console.log("getPassword:" + "DB Error.");
         }

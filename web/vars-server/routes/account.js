@@ -32,18 +32,15 @@ router.post('/', function(req, res) {
 
 
         getPassword.getPassword(userid).then(function (docs) {    //現在のパスワードの取り出し
-            console.log("Passwordは" + docs[0].Passwd + "です");
             if (oldpassword === docs[0].Passwd) {
                 updatePassword.updatePassword(userid, newpassword);
                 msg = "パスワードを変更しました。";
-                console.log(msg);
                 res.render('confirmation.ejs', {msg: msg, url: url});
             } else {
                 msg = "現在のパスワードが間違っています";
                 res.render('confirmation.ejs', {msg: msg, url: url});
             }
         }).catch(function (err) {
-            console.log(err);
             msg = "DB ERROR."
             res.render('confirmation.ejs', {msg: msg, url: url});
         });

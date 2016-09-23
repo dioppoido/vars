@@ -15,7 +15,6 @@ exports.getPassword = function(userid){
       getPassword.find({Userid:userid}, {'_id':0,"Userid":0 },function(err, docs) {
           if (!err) {
               if (docs.length === 1) {
-                  console.log("getPassword:"+docs);
                   resolve(docs);
               } else {
                   console.log("getPassword:"+"データがありません");

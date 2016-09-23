@@ -17,7 +17,6 @@ exports.getAccount = function(userid, passwd){
         Account.find({Userid:userid, Passwd:passwd}, {'_id':0 },function(err, docs) {
             if (!err) {
                 if (docs.length === 1) {
-                    console.log("getAccount:"+docs);
                     resolve(docs);
                 } else {
                     console.log("getAccount:"+"データがありません");
