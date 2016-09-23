@@ -26,10 +26,46 @@
 <body>
 
     <%- include('./header.ejs') %>
+
     <section>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                    <div class="account">
+
+                        <div class="account-title"><i class="fa fa-key" aria-hidden="true"></i> アカウント設定</div>
+
+                        <div class="panel panel-custom">
+                            <div class="panel-heading">パスワード変更</div>
+
+                            <div class="panel-body">
+                                <form method="POST" action="/account">
+
+                                    <div class="form-group">
+                                        <label for="passwd">現在のパスワード : </label>
+                                        <input type="password" class="form-control input-lg" id="passwd" maxlength='12'>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="new-passwd">新しいパスワード : </label>
+                                        <input type="password" class="form-control input-lg" id="new-passwd" maxlength='12'>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="new-passwd2">新しいパスワード(再入力) : </label>
+                                        <input type="password" class="form-control input-lg" id="new-passwd2">
+                                    </div>
+
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-success submit-btn">送　信</button>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div><!-- panel -->
+
+                    </div><!-- accout -->
 
                 </div><!-- col -->
 
@@ -37,29 +73,7 @@
         </div><!-- container -->
     </section>
 
-    <div class="panel panel-primary">
-    <div class="panel-heading">アカウント確認画面</div>
-
-    <div class="panel-body">パスワード変更ページ</div>
-
-    <form method="POST" action="/account">
-        <div class="form-group">
-            <label for="passwd">現在のパスワード</label>
-            <input type="password" class="form-control" id="passwd" maxlength='12'>
-        </div>
-        <div class="form-group">
-            <label for="new-passwd">新しいパスワード</label>
-            <input type="password" class="form-control" id="new-passwd" maxlength='12'>
-        </div>
-        <div class="form-group">
-            <label for="new-passwd2">新しいパスワード(再入力)</label>
-            <input type="password" class="form-control" id="new-passwd2">
-        </div>
-            <input type="submit" value="送信">
-        </div>
-     </form>
-
-     <%- include('./footer.ejs') %>
+    <%- include('./footer.ejs') %>
 
 
 <!-- jQuery -->
