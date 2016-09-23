@@ -26,6 +26,65 @@ body{
 
 /* account */
 .account{
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight:bold;
+}
+.account-title{
 
+}
+.panel-custom{
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    border-color: #3b5998;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+.panel-heading{
+    font-size: 24px;
+}
+.panel-custom > .panel-heading {
+    color: #fff;
+    background-color: #3b5998;
+    border-color: #3b5998;
+}
+.panel-custom > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #3b5998;
+}
+.panel-custom > .panel-heading .badge {
+    color: #333;
+    background-color: #fff;
+}
+.panel-custom > .panel-footer + .panel-collapse > .panel-body {
+    border-bottom-color: #3b5998;
+}
+.submit-btn{
+    font-size: 24px;
+}
+@media(max-width:992px){
+    .account-title{
+        margin-left: 5%;
+        font-size: 24px;
+    }
+    .panel-custom{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        border-color: #3b5998;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+    .panel-heading{
+        font-size: 18px;
+    }
+    .submit-btn{
+        font-size: 14px;
+        font-weight:bold;
+    }
 }
 /* !account */

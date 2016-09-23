@@ -6,7 +6,12 @@ var validator = require('validator'); //validatorモジュール宣言
 //accountに遷移する処理のみ
 //特に送り付ける値はなし
 router.get('/', function(req, res) {
-  res.render('account.ejs');
+  if(req.session.user){
+      res.render('account.ejs');
+  } else{
+      res.render('login.ejs' , {error:'', user:''});
+  }
+
 });
 
 
