@@ -67,7 +67,7 @@ body{
 @media(max-width:992px){
     .account-title{
         margin-left: 5%;
-        font-size: 24px;
+        font-size: 20px;
     }
     .panel-custom{
         width: 80%;

@@ -56,8 +56,10 @@ app.use('/views', express.static(__dirname + '/views'));
 //ここからルート設定
 //トップ画面
 app.use('/', require('./routes/index'));
-//ログイン画面
+//ログイン
 app.use('/login', require('./routes/login'));
+//初回ログイン
+app.use('/firstlogin', require('./routes/firstlogin'));
 //ログアウト
 app.use('/logout', require('./routes/logout'));
 //アカウント設定
