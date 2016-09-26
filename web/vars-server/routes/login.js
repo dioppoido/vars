@@ -5,7 +5,7 @@ var validator = require('validator'); //validatorモジュール宣言
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    if(req.session.user){
+    if(req.session.user && req.session.passflag == false){
         res.redirect('/');
     }else{
         res.render('login.ejs' , {error:'', user:''});
@@ -25,7 +25,12 @@ router.post('/', function(req, res) {
             res.render('login.ejs', {error: "ユーザーIDまたはパスワードが違います。", user:userid});
         }else{
             req.session.user = userid;
-            res.redirect('/');
+            req.session.passflag = docs[0].Pass_flag;
+            if(req.session.passflag == true){
+                res.redirect('/firstlogin');
+            }else{
+                res.redirect('/');
+            }
         }
     });
 

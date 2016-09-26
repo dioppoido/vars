@@ -7,7 +7,7 @@ var router = express.Router();
  * req.session.user : session内ユーザーID情報
  */
 const loginCheck = function(req, res, next) {
-  if(req.session.user){
+  if(req.session.user && req.session.passflag == false){
     next();
   }else{
     res.render('login.ejs' , {error:'', user:''});
