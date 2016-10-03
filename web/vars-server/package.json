@@ -16,6 +16,7 @@
     "express": "~4.13.1",
     "express-session": "^1.14.1",
     "jade": "~1.11.0",
+    "moment": "^2.15.1",
     "mongoose": "^4.6.0",
     "morgan": "~1.6.1",
     "multer": "^1.2.0",
