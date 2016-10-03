@@ -38,6 +38,8 @@
 
                             <div class="contents-title">- 初回ログイン設定 -</div>
 
+                            <div class="text-center login-text">初期パスワードを変更してください。</div>
+
                             <!-- Login Form -->
                             <form method="POST" action="/firstlogin" name="changepass" onsubmit="return pass_confirm();">
 
@@ -45,23 +47,23 @@
                                 <div class="form-group">
                                     <div class="login-inline">
                                         <label><i class="fa fa-lock fa-2x" aria-hidden="true"></i></label>
-                                        <input type="password" name="oldpassword" class="form-control input-lg login-input" placeholder="OldPassword">
+                                        <input type="password" name="oldpassword" class="form-control input-lg login-input" placeholder="現在のパスワード">
                                     </div>
                                 </div>
 
                                 <!-- 新しいパスワード -->
                                 <div class="form-group">
                                     <div class="login-inline">
-                                        <label><i class="fa fa-lock fa-2x" aria-hidden="true"></i></label>
-                                        <input type="password" name="newpassword" class="form-control input-lg login-input" maxlength="12" placeholder="NewPassword">
+                                        <label><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></label>
+                                        <input type="password" name="newpassword" class="form-control input-lg login-input" maxlength="12" placeholder="新しいパスワード">
                                     </div>
                                 </div>
 
                                 <!-- 新しいパスワード(再入力) -->
                                 <div class="form-group">
                                     <div class="login-inline">
-                                        <label><i class="fa fa-lock fa-2x" aria-hidden="true"></i></label>
-                                        <input type="password" name="againpassword" class="form-control input-lg login-input" maxlength="12" placeholder="AgainPassword">
+                                        <label><i class="fa fa-repeat fa-2x" aria-hidden="true"></i></label>
+                                        <input type="password" name="againpassword" class="form-control input-lg login-input" maxlength="12" placeholder="パスワード再入力">
                                     </div>
                                 </div>
 
