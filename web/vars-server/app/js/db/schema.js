@@ -18,3 +18,44 @@ exports.users = new mongoose.Schema({
   Pass_flag   :Boolean,         //パスワード変更フラグ
   Username    :String           //名前
 });
+
+/**
+ * votes
+ */
+exports.votes = new mongoose.Schema({
+  Voteid      :Number,          //投票ID
+  Eventid      :Number,          //イベントID
+  Votename  :String          //投票カテゴリ
+});
+
+/**
+ * events
+ */
+exports.events = new mongoose.Schema({
+  Eventid         :Number,      //イベントID
+  Evnetname       :String,      
+  Overview        :String,
+  Createperiod:{
+    Createstart   :Date,
+    Createfinish  :Date
+  },
+  Voteperiod:{
+    Votestart     :Date,
+    Votefinish    :Date
+  }
+
+});
+
+exports.teams =new mongoose.Schema({
+  Teamid        :Number,
+  Eventid       :Number,
+  Teamname      :String,
+  Workname      :String
+});
+
+exports.aggregates =new mongoose.Schema({
+  Aggregateid    :Number,
+  Voteid          :Number,
+  Userid          :String,
+  Teamid          :Number
+});

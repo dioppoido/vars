@@ -1,0 +1,34 @@
+//noinspection JSAnnotator
+db = db.getSiblingDB("vars");
+db.teams.drop();
+db.createCollection("teams");
+db.teams.insert({
+    Teamid:1,
+    Eventid:1,
+    Teamname:"Aチーム",
+    Workname:"Aチームの作品"
+});
+db.teams.insert({
+    Teamid:2,
+    Eventid:1,
+    Teamname:"Bチーム",
+    Workname:"Bチームの作品"
+});
+db.teams.insert({
+    Teamid:3,
+    Eventid:1,
+    Teamname:"Cチーム",
+    Workname:"Cチームの作品"
+});
+db.teams.insert({
+    Teamid:4,
+    Eventid:2,
+    Teamname:"Dチーム",
+    Workname:"Dチームの作品"
+});
+db.teams.insert({
+    Teamid:5,
+    Eventid:3,
+    Teamname:"Eチーム",
+    Workname:"Eチームの作品"
+});
