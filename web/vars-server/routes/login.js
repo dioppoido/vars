@@ -5,6 +5,7 @@ var validator = require('validator'); //validatorモジュール宣言
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+    req.session.firstroute = "";
     if(req.session.user && req.session.passflag == false){
         res.redirect('/');
     }else{
@@ -26,7 +27,8 @@ router.post('/', function(req, res) {
         }else{
             req.session.user = userid;
             req.session.passflag = docs[0].Pass_flag;
-            if(req.session.passflag == true){
+            req.session.firstroute = "/login";
+            if(req.session.passflag === true){
                 res.redirect('/firstlogin');
             }else{
                 res.redirect('/');
