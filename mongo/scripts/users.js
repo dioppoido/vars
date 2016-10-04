@@ -1,3 +1,4 @@
+//noinspection JSAnnotator
 db = db.getSiblingDB("vars");
 db.users.drop();
 db.createCollection("users");
