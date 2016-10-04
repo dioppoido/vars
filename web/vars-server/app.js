@@ -66,7 +66,22 @@ app.use('/logout', require('./routes/logout'));
 app.use('/account',require('./routes/account'));
 //確認画面
 app.use('/confirmation',require('./routes/confirmation'));
-
+//イベント作成
+app.use('/eventcreate',require('./routes/eventcreate'));
+//イベントリスト
+app.use('/eventlist',require('./routes/eventlist'));
+//イベントトップ
+app.use('/eventtop',require('./routes/eventtop'));
+//チーム作成
+app.use('/teamcreate',require('./routes/teamcreate'));
+//チームリスト
+app.use('/teamlist',require('./routes/teamlist'));
+//イベント管理
+app.use('/eventadmin',require('./routes/eventadmin'));
+//投票
+app.use('/vote',require('./routes/vote'));
+//投票結果
+app.use('/voteresult',require('./routes/voteresult'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
