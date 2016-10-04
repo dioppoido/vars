@@ -8,7 +8,11 @@ router.get('/', function(req, res, next) {
     if(req.session.user && req.session.passflag == false){
         res.redirect('/');
     }else{
-        res.render('firstlogin.ejs' , {error:''});
+        if(req.session.firstroute == "/login"){
+            res.render('firstlogin.ejs' , {error:''});
+        }else{
+            res.redirect('/login');
+        }
     }
 });
 
