@@ -4,7 +4,7 @@ var validator = require('validator'); //validatorモジュール宣言
 //特に送り付ける値はなし
 router.get('/', function(req, res) {
     if(req.session.user && req.session.passflag == false){
-        res.render('vote.ejs');
+        res.render('vote.ejs', {teamnum: 5, categorynum: 3});
     } else{
         res.redirect('/');
     }

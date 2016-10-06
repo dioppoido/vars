@@ -115,7 +115,6 @@ body{
 @media screen and (max-width: 479px) {
     /* 479px以下用（スマートフォン用）の記述 */
     .account-title{
-        margin-left: 5%;
         font-size: 20px;
     }
     .panel-custom{

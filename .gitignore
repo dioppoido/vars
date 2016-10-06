@@ -13,8 +13,5 @@ npm-debug.log
 # Vagrant
 .vagrant
 
-# Images
-images/
-
 # Backup
 mongo/autobackup
