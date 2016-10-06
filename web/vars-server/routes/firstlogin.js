@@ -10,7 +10,12 @@ router.get('/', function(req, res, next) {
     if(req.session.user && req.session.passflag == false){
         res.redirect('/');
     }else{
-        res.render('firstlogin.ejs' , {error:''});
+        if( req.session.firstroute == "/login"){
+            res.render('firstlogin.ejs' , {error:''});
+        }else{
+            res.redirect('/login');
+        }
+
     }
 });
 
@@ -36,8 +41,6 @@ router.post('/', function(req, res) {
                             req.session.passflag = docs[0].Pass_flag;
                             req.session.userid = docs[0].Userid;
 
-                            console.log("session passflagDDD:"+req.session.passflag);
-                            console.log("session useridEEE:"+req.session.userid);
                             msg = "初回パスワード変更を完了しました。";
                             url ="/";
                             res.render('confirmation.ejs', {msg: msg, url: url});
