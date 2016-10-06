@@ -51,13 +51,14 @@
                                 <div class="tab-pane active" id="vote">
 
                                     <form method="POST" name="voteinsert" action="/vote">
-                                        <% for(var i = 1 ; i < categorynum + 1; i++){ %>
+                                        <% for(var i = 0 ; i < votedata.length; i++){ %>
                                             <div class="form-group">
-                                                <label for="category<%= i %>"><%= i %>部門 : </label>
+                                                <label for="category<%= i %>"><%= votedata[i].Votename %>部門 : </label>
                                                 <select class="form-control input-lg" id="category<%= i %>" name="category<%= i %>">
-                                                    <option value="1" selected="selected">チーム1</option>
-                                                    <option value="2" >チーム2</option>
-                                                    <option value="3">チーム3</option>
+                                                    <%for(var f=0;f<teamdata.length;f++){%>
+                                                        <option value=<%=teamdata[f].Teamid%>><%=teamdata[f].Teamname%>
+                                                    <%}%>
+                                                            <input type="hidden" name="voteid" value=<%=votedata[i].Voteid%>>
                                                 </select>
                                             </div>
                                         <% } %>
@@ -76,9 +77,9 @@
                                         ※メモは、投票ボタンを押すと消えてしまいますので予めご了承ください。
                                     </div>
 
-                                    <% for(var i = 1 ; i < teamnum + 1; i++){ %>
-                                        <% if(i == 1){ %>
-                                            <div class="switch active">チーム<%= i %></div>
+                                    <% for(var i = 0 ; i < teamdata.length; i++){ %>
+                                        <% if(i == 0){ %>
+                                            <div class="switch active"><%=teamdata[i].Teamname%></div>
                                             <div class="memo_active">
                                                 <form>
                                                     <div class="form-group">
@@ -90,7 +91,7 @@
                                             </div>
                                             <% continue; %>
                                         <% } %>
-                                        <div class="switch">チーム<%= i %></div>
+                                        <div class="switch"><%=teamdata[i].Teamname%></div>
                                         <div class="toggle_faq">
                                             <form>
                                                 <div class="form-group">
