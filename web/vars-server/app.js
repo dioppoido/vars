@@ -82,6 +82,9 @@ app.use('/eventadmin',require('./routes/eventadmin'));
 app.use('/vote',require('./routes/vote'));
 //投票結果
 app.use('/voteresult',require('./routes/voteresult'));
+//投票チームの抽出(test)
+app.use('/getTeam',require('./routes/getTeam'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
