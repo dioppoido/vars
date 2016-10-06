@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var getAccount = require('../app/js/users/getAccount');
 var getPassword = require('../app/js/users/getPassword');
-var firstloginUpdate = require('../app/js/users/firstloginUpdate');
+var updateFirstlogin = require('../app/js/users/updateFirstlogin');
 var validator = require('validator'); //validatorモジュール宣言
 
 /* GET home page. */
@@ -36,7 +36,7 @@ router.post('/', function(req, res) {
 
         getPassword.getPassword(userid).then(function (docs){    //現在のパスワードの取り出し
             if (oldpassword === docs[0].Passwd) {
-                firstloginUpdate.firstloginUpdate(userid, newpassword);
+                updateFirstlogin.updateFirstlogin(userid, newpassword);
                 getAccount.getAccount(userid,newpassword).then(function(docs){
                             req.session.passflag = docs[0].Pass_flag;
                             req.session.userid = docs[0].Userid;

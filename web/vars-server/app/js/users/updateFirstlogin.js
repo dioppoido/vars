@@ -4,7 +4,7 @@
  * @param userid : ユーザーID
  * @returns {Promise}
  */
-exports.firstloginUpdate = function(userid,newpass){
+exports.updateFirstlogin = function(userid,newpass){
     const mongoose = require('mongoose');
     const db = mongoose.createConnection('mongodb://mongo/vars');
     const schema = require('../db/schema');
