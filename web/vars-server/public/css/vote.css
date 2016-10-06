@@ -58,10 +58,10 @@ body{
     margin-bottom: 20px;
     font-size: 18px;
     cursor:pointer;
-    background:url(../images/down_arrow.png) 70px 3px  no-repeat;
+    background:url(../images/down_triangle.png) 70px 3px  no-repeat;
 }
 .switch.active{
-    background:url(../images/up_arrow.png) 70px 3px no-repeat;
+    background:url(../images/up_triangle.png) 70px 3px no-repeat;
 }
 .toggle_faq {
     overflow: hidden;
