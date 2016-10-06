@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var getTeam = require('../app/js/users/getTeam');
+var getTeam = require('../app/js/team/getTeam');
 var validator = require('validator'); //validatorモジュール宣言
 //
 router.get("/",function(req, res) {
