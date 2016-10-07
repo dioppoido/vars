@@ -4,7 +4,7 @@ db.events.drop();
 db.createCollection("events");
 db.events.insert({
     Eventid:1,
-    Evnetname:"イベントA",
+    Eventname:"イベントA",
     Overview:"イベントAの説明です",
     Createperiod:{
         Createstart:"2016/10/4",
@@ -17,7 +17,7 @@ db.events.insert({
 });
 db.events.insert({
     Eventid:2,
-    Evnetname:"イベントB",
+    Eventname:"イベントB",
     Overview:"イベントBの説明です",
     Createperiod:{
         Createstart:"2016/10/12",
@@ -30,7 +30,7 @@ db.events.insert({
 });
 db.events.insert({
     Eventid:3,
-    Evnetname:"イベントC",
+    Eventname:"イベントC",
     Overview:"イベントCの説明です",
     Createperiod:{
         Createstart:"2016/10/21",
