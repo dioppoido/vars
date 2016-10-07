@@ -1,15 +1,15 @@
-
-exports.insertVote = function(){
+/**
+ * voteInsertクラス
+ * @author 多田涼太
+ */
+exports.insertVote = function(AGGREGATES){
   const mongoose = require('mongoose');
   const db = mongoose.createConnection('mongodb://mongo/vars');
   const schema = require('../db/schema');
   const Aggregates = db.model('aggregates', schema.aggregates);
+ for(i=0; i<AGGREGATES.length; i++){
+  const Aggregates2 = new Aggregates({'Voteid':AGGREGATES[i].voteid,'Userid':AGGREGATES[i].userid,'Teamid':AGGREGATES[i].teamid});
+  Aggregates2.save();
+};
 
-Aggregates.insert({Aggregateid:1,Voteid:1,Userid:"aa",Teamid:1},function(err) {
-    if (!err) {
-      console.log("DB INSERT OK");ß
-    } else {
-        console.log("DB Error");
-    }
-});
 };
