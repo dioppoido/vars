@@ -54,7 +54,7 @@
                                         <% for(var i = 0 ; i < votedata.length; i++){ %>
                                             <div class="form-group">
                                                 <label for="category<%= i %>"><%= votedata[i].Votename %>部門 : </label>
-                                                <select class="form-control input-lg" id="category<%= i %>" name="category<%= i %>">
+                                                <select class="form-control input-lg" id="category<%= i %>" name="teamid">
                                                     <%for(var f=0;f<teamdata.length;f++){%>
                                                         <option value=<%=teamdata[f].Teamid%>><%=teamdata[f].Teamname%>
                                                     <%}%>
