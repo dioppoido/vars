@@ -32,8 +32,8 @@ exports.votes = new mongoose.Schema({
  * events
  */
 exports.events = new mongoose.Schema({
-  Eventid         :Number,      //イベントID
-  Evnetname       :String,      
+  Eventid         :String,      //イベントID
+  Eventname       :String,
   Overview        :String,
   Createperiod:{
     Createstart   :Date,
