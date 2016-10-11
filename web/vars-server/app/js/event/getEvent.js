@@ -18,11 +18,11 @@ exports.getEvent = function(eventid){
                     resolve(docs);
                 } else {
                     console.log("getEvent:"+"データがありません");
-                    resolve("");
+                    reject();
                 }
             } else {
                 console.log("getEvent:"+"DB Error.");
-                resolve("");
+                reject();
             }
         });
 
