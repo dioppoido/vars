@@ -75,7 +75,7 @@
 
                                 </div><!-- vote tab -->
 
-                                <div class="tab-pane" id="memo">
+                                <div class="tab-pane tab-memo" id="memo">
 
                                     <div class="text-left small">
                                         ※メモは、投票ボタンを押すと消えてしまいますので予めご了承ください。
@@ -83,7 +83,7 @@
 
                                     <% for(var i = 0 ; i < teamdata.length; i++){ %>
                                         <% if(i == 0){ %>
-                                            <div class="switch active"><%=teamdata[i].Teamname%></div>
+                                            <div id="teamname<%=i%>" onclick="switch_memo(<%= i %>);" class="switch"><%=teamdata[i].Teamname%> ▲</div>
                                             <div class="memo_active">
                                                 <form>
                                                     <div class="form-group">
@@ -95,16 +95,17 @@
                                             </div>
                                             <% continue; %>
                                         <% } %>
-                                        <div class="switch"><%=teamdata[i].Teamname%></div>
-                                        <div class="toggle_faq">
-                                            <form>
-                                                <div class="form-group">
-                                                    <textarea cols="45" placeholder="気になった点やメモしたいことを書いてください。" class="form-control memoarea" maxlength="500"></textarea>
-                                                    <!-- 注意書きは以下 -->
-                                                    <p class="help-block">※500文字以内で書いてください。</p>
-                                                </div>
-                                            </form>
-                                        </div>
+                                            <div id="teamname<%=i%>" onclick="switch_memo(<%= i %>);" class="switch"><%=teamdata[i].Teamname%> ▼</div>
+                                            <div class="toggle_faq">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <textarea cols="45" placeholder="気になった点やメモしたいことを書いてください。" class="form-control memoarea" maxlength="500"></textarea>
+                                                        <!-- 注意書きは以下 -->
+                                                        <p class="help-block">※500文字以内で書いてください。</p>
+                                                    </div>
+                                                </form>
+                                            </div>
+
                                     <% } %>
 
                                 </div><!-- memo tab -->
