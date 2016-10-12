@@ -58,10 +58,6 @@ body{
     margin-bottom: 20px;
     font-size: 18px;
     cursor:pointer;
-    background:url(../images/down_triangle.png) 70px 3px  no-repeat;
-}
-.switch.active{
-    background:url(../images/up_triangle.png) 70px 3px no-repeat;
 }
 .toggle_faq {
     overflow: hidden;
@@ -73,6 +69,9 @@ textarea.memoarea{
 }
 .submit-btn{
     font-size: 18px;
+}
+.tab-memo{
+    margin-bottom: 120px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 979px) {
@@ -139,6 +138,9 @@ textarea.memoarea{
     }
     textarea.memoarea{
         height: 100px;
+    }
+    .tab-memo{
+        margin-bottom: 150px;
     }
 }
 /* !vote */

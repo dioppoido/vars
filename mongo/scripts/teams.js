@@ -5,30 +5,24 @@ db.createCollection("teams");
 db.teams.insert({
     Teamid:1,
     Eventid:1,
-    Teamname:"Aチーム",
+    Teamname:"アナログ撲滅委員会",
     Workname:"Aチームの作品"
 });
 db.teams.insert({
     Teamid:2,
     Eventid:1,
-    Teamname:"Bチーム",
+    Teamname:"PriMus",
     Workname:"Bチームの作品"
 });
 db.teams.insert({
     Teamid:3,
     Eventid:1,
-    Teamname:"Cチーム",
+    Teamname:"秋月コーポレーション",
     Workname:"Cチームの作品"
 });
 db.teams.insert({
     Teamid:4,
     Eventid:2,
-    Teamname:"Dチーム",
+    Teamname:"PARM",
     Workname:"Dチームの作品"
-});
-db.teams.insert({
-    Teamid:5,
-    Eventid:3,
-    Teamname:"Eチーム",
-    Workname:"Eチームの作品"
 });
