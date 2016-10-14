@@ -4,7 +4,7 @@ var validator = require('validator');
 var getTeam = require('../app/js/team/getTeam');
 var getEvent = require('../app/js/event/getEvent');
 var getVote=require('../app/js/votes/getVote');
-var insertVote=require('../app/js/votes/insertVote')
+var insertVote=require('../app/js/votes/insertVote');
 
 router.get('/', function(req, res) {
     if(req.session.user && req.session.passflag == false ){
@@ -61,7 +61,7 @@ router.post('/', function(req, res) {
 
         };
         insertVote.insertVote(AGGREGATES);
-        res.render('voteresult.ejs');
+        res.redirect('/voteresult');
     }else{
         res.redirect('/');
     }
