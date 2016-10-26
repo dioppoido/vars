@@ -11,8 +11,36 @@ const mongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://mongo/vars');
 
+//Google認証用のモジュール読み込み
+var passport = require('passport');
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
+
+
+//Google認証用のコールバック先のURLを記述
+var callbackURL='http://localhost/google/return';
+var consumerKey='447132133653-k32oevssqauuaq7h3n1o9457h8b1b9ee.apps.googleusercontent.com';
+var consumerSecret='rYeblH3Z-MrIhzkJCkjB8bcR';
+
+passport.use(new GoogleStrategy({
+      clientID: consumerKey,
+      clientSecret: consumerSecret,
+      callbackURL: callbackURL
+    },
+    function(token, tokenSecret, profile, done) {
+      console.log(profile);
+      process.nextTick(function () {
+        console.log("aaa");
+        return done(null, profile);
+      });
+    }
+));
+
 
 var app = express();
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -47,6 +75,16 @@ app.use(session({
     maxAge: 60 * 60 * 1000 // クッキーの有効期限(msec)
   }
 }));
+
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
+  });
+});
 
 // htmlからフォルダを参照
 app.use('/app', express.static(__dirname + '/app'));
@@ -84,7 +122,8 @@ app.use('/vote',require('./routes/vote'));
 app.use('/voteresult',require('./routes/voteresult'));
 //投票チームの抽出(test)
 app.use('/getTeam',require('./routes/getTeam'));
-
+//Google認証のテスト
+app.use('/google',require('./routes/googleTest'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
