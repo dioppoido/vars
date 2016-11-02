@@ -3,21 +3,29 @@ var router = express.Router();
 var getPassword = require('../app/js/users/getPassword');
 var updatePassword = require('../app/js/users/updatePassword');
 var passport = require('passport');
+
+//ログインチェック
+const loginCheck = function(req, res, next) {
+    req.session.firstroute = "";
+    if(!(req.session.user) /*&& req.session.passflag == false*/){
+        next();
+    }else{
+        console.log('index='+req.session.user);
+        res.redirect('/');
+    }
+};
+
 //accountに遷移する処理のみ
 //特に送り付ける値はなし
-router.get('/', passport.authenticate('google',{ scope: ['openid email profile'] }), function (req, res, next) {
-    console.log(req, res, next);
+router.get('/', loginCheck, passport.authenticate('google',{ scope: ['openid email profile'] }), function (req, res, next) {
 });
 
 
-// /oauth/callbackにアクセスした時（Twitterログイン後）
+// /google/returnにアクセスした時（Googleログイン後）
 router.get('/return',passport.authenticate('google', {failureRedirect: '/login' }), function(req, res) {
-    console.log("req.user="+req.user.emails[0].value);
-    res.render('googleresult.ejs',{
-        username:req.user.displayName,
-        email:req.user.emails
-    
-    }); //indexへリダイレクトさせる
+    console.log("req.user="+req.user);
+    req.session.user=req.user;
+    res.redirect('/');//indexへリダイレクトさせる
 });
 
 module.exports = router;

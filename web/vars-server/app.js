@@ -28,9 +28,7 @@ passport.use(new GoogleStrategy({
       callbackURL: callbackURL
     },
     function(token, tokenSecret, profile, done) {
-      console.log(profile);
       process.nextTick(function () {
-        console.log("aaa");
         return done(null, profile);
       });
     }
