@@ -7,7 +7,7 @@ var getVote=require('../app/js/votes/getVote');
 var insertVote=require('../app/js/votes/insertVote');
 
 router.get('/', function(req, res) {
-    if(req.session.user && req.session.passflag == false ){
+    if(req.session.user ){
         if(req.query.eventid) {
             var eventid = req.query.eventid;
             getEvent.getEvent(eventid).then(function (eventdata) {

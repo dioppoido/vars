@@ -3,7 +3,7 @@ var router = express.Router();
 var validator = require('validator'); //validatorモジュール宣言
 //特に送り付ける値はなし
 router.get('/', function(req, res) {
-    if(req.session.user && req.session.passflag == false){
+    if(req.session.user){
         res.render('eventadmin.ejs');
     } else{
         res.redirect('/');
