@@ -6,8 +6,7 @@ var passport = require('passport');
 
 //ログインチェック
 const loginCheck = function(req, res, next) {
-    req.session.firstroute = "";
-    if(!(req.session.user) /*&& req.session.passflag == false*/){
+    if(!(req.session.user)){
         next();
     }else{
         console.log('index='+req.session.user);

@@ -35,47 +35,19 @@
                         <div class="login-topcolor"></div>
                         <div class="login-title">V A R S</div>
                         <div class="login-contents">
-                            <!-- Login Form -->
-                            <form method="POST" action="/login">
 
-                                <!-- ユーザーID -->
-                                <div class="form-group">
-                                    <div class="login-inline">
-                                    <label><i class="fa fa-user fa-2x" aria-hidden="true"></i></label>
-                                    <input type="text" name="userid" class="form-control input-lg login-input" placeholder="ユーザID" value="<%=user%>">
-                                    </div>
-                                </div>
-
-                                <!-- パスワード -->
-                                <div class="form-group">
-                                    <div class="login-inline">
-                                        <label><i class="fa fa-lock fa-2x" aria-hidden="true"></i></label>
-                                        <input type="password" name="password" class="form-control input-lg login-input" maxlength="12" placeholder="パスワード">
-                                    </div>
-                                </div>
-
-                                <!-- ログインボタン -->
-                                <div class="text-right">
-                                    <button type="submit" class="btn btn-primary login-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-                                </div>
-                            </form>
-
-                            <div class="text-center login-error">
-                                <%= error %>
+                            <div class="text-center">
+                                - Google Login -<br>
+                                <a href="/googlelogin" class="btn login-btn"><i class="fa fa-google" aria-hidden="true"></i> Login</a>
+                                <p class="small help-block">※ ログインにはKDアカウントが必要となります。</p>
+                                <p class="small">Copyright (C) 2016 AEC.Inc All Rights Reserved.</p>
                             </div>
 
                         </div><!-- login contents -->
                     </div><!-- login form -->
                 </div><!-- login -->
 
-                <div class="other">
-                    <div class="other-form">
-                        <div class="other-contents">
-                            <a href="#">パスワードを忘れた方はこちら</a>
-                            <div class="">Copyright (C) 2016 AEC.Inc All Rights Reserved.</div>
-                        </div>
-                    </div>
-                </div>
+
 
 
 

@@ -6,7 +6,7 @@ var randomByte = require("../app/js/db/randomByte");
 
 //特に送り付ける値はなし
 router.get('/', function(req, res) {
-    if(req.session.user && req.session.passflag == false){
+    if(req.session.user){
         res.render('eventcreate.ejs');
     } else{
         res.redirect('/');

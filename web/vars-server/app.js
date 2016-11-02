@@ -18,7 +18,7 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 
 //Google認証用のコールバック先のURLを記述
-var callbackURL='http://localhost/google/return';
+var callbackURL='http://localhost/googlelogin/return';
 var consumerKey='447132133653-k32oevssqauuaq7h3n1o9457h8b1b9ee.apps.googleusercontent.com';
 var consumerSecret='rYeblH3Z-MrIhzkJCkjB8bcR';
 
@@ -94,8 +94,8 @@ app.use('/views', express.static(__dirname + '/views'));
 app.use('/', require('./routes/index'));
 //ログイン
 app.use('/login', require('./routes/login'));
-//初回ログイン
-app.use('/firstlogin', require('./routes/firstlogin'));
+//Google認証
+app.use('/googlelogin',require('./routes/googlelogin'));
 //ログアウト
 app.use('/logout', require('./routes/logout'));
 //アカウント設定
@@ -120,8 +120,7 @@ app.use('/vote',require('./routes/vote'));
 app.use('/voteresult',require('./routes/voteresult'));
 //投票チームの抽出(test)
 app.use('/getTeam',require('./routes/getTeam'));
-//Google認証のテスト
-app.use('/google',require('./routes/googleTest'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

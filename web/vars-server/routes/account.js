@@ -6,7 +6,7 @@ var validator = require('validator'); //validatorモジュール宣言
 //accountに遷移する処理のみ
 //特に送り付ける値はなし
 router.get('/', function(req, res) {
-  if(req.session.user && req.session.passflag == false){
+  if(req.session.user){
       res.render('account.ejs');
   } else{
       res.redirect('/');

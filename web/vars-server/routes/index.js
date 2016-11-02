@@ -7,8 +7,7 @@ var router = express.Router();
  * req.session.user : session内ユーザーID情報
  */
 const loginCheck = function(req, res, next) {
-  req.session.firstroute = "";
-  if(req.session.user && req.session.passflag == false){
+  if(req.session.user){
     next();
   }else{
     res.redirect('/login');
@@ -16,7 +15,7 @@ const loginCheck = function(req, res, next) {
 };
 
 router.get('/', loginCheck, function(req, res) {
-  res.render('index.ejs', {userid: req.session.user});
+  res.render('index.ejs', {user: req.session.user});
 });
 
 module.exports = router;
