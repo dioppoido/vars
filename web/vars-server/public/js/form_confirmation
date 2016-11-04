@@ -1,0 +1,33 @@
+/* Form Confirmation */
+
+/* account.ejs */
+function pass_confirm() {
+
+    //Form上のパスワード取得
+    var oldpass = document.forms.changepass.oldpassword;
+    var newpass = document.forms.changepass.newpassword;
+    var againpass = document.forms.changepass.againpassword;
+
+    console.log(newpass.value.length);
+    console.log(againpass.value.length);
+
+    if( oldpass.value.length != 0){
+        if( newpass.value.length >= 4 && againpass.value.length >= 4){
+            if(newpass.value == againpass.value){
+                return true;
+            }else{
+                alert("同じパスワードを入力してください。");
+                return  false;
+            }
+
+        }else{
+            alert("4文字以上で入力してください。");
+            return  false;
+        }
+
+    }else{
+        alert("現在のパスワードが入力されていません。");
+        return  false;
+    }
+
+}

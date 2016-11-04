@@ -1,0 +1,138 @@
+/* account.css */
+
+/* All */
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background: #F5F5F5;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: 'Noto Sans Japanese', sans-serif;
+}
+
+.container {
+    width: auto;
+}
+.col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+/* !All */
+
+/* account */
+.account{
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight:bold;
+}
+.account-title{
+
+}
+.panel-custom{
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    border-color: #3b5998;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+.panel-heading{
+    font-size: 24px;
+}
+.panel-custom > .panel-heading {
+    color: #fff;
+    background-color: #3b5998;
+    border-color: #3b5998;
+}
+.panel-custom > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #3b5998;
+}
+.panel-custom > .panel-heading .badge {
+    color: #333;
+    background-color: #fff;
+}
+.panel-custom > .panel-footer + .panel-collapse > .panel-body {
+    border-bottom-color: #3b5998;
+}
+.submit-btn{
+    font-size: 24px;
+}
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    /* 768px - 979px用（タブレット用）の記述 */
+    .account-title{
+        margin-left: 5%;
+        font-size: 20px;
+    }
+    .panel-custom{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        border-color: #3b5998;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+    .panel-heading{
+        font-size: 18px;
+    }
+    .submit-btn{
+        font-size: 14px;
+        font-weight:bold;
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 767px)  {
+    /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .account-title{
+        margin-left: 5%;
+        font-size: 20px;
+    }
+    .panel-custom{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        border-color: #3b5998;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+    .panel-heading{
+        font-size: 18px;
+    }
+    .submit-btn{
+        font-size: 14px;
+        font-weight:bold;
+    }
+}
+@media screen and (max-width: 479px) {
+    /* 479px以下用（スマートフォン用）の記述 */
+    .account-title{
+        font-size: 20px;
+    }
+    .panel-custom{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        border-color: #3b5998;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+    .panel-heading{
+        font-size: 18px;
+    }
+    .submit-btn{
+        font-size: 14px;
+        font-weight:bold;
+    }
+}
+/* !account */

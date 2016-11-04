@@ -8,13 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title-->
-    <title>Error Vars</title>
+    <title>Error - VARS -</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <!-- <link href="../public/css/index.css" rel="stylesheet"> -->
+    <link href="../public/css/error.css" rel="stylesheet">
+
+    <link href="../public/css/footer.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -23,7 +25,45 @@
 </head>
 <body>
 
-<h1>Error!!</h1>
+<!-- header -->
+<section>
+    <div class="container">
+        <div class="row">
+
+            <!-- navbar -->
+            <nav class="navbar navbar-custom">
+                <div class="navbar-header">
+                    <!-- logo&title -->
+                    <a class="navbar-brand page-scroll" href="/">
+                        <div class="header-title">V A R S</div>
+                    </a>
+                </div>
+            </nav>
+            <div class="barbottom-color"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Error -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+
+                <!-- Erro log -->
+                <div class="error">
+                    <div class="error-title text-center"><%= status %> <%= message %> .</div>
+
+                    <div class="text-center"><a href="/" class="btn btn-success home-btn">HOME</a></div>
+
+                </div>
+
+            </div><!-- col -->
+        </div><!-- row -->
+    </div><!-- container -->
+</section>
+
+<%- include('./footer.ejs') %>
 
 <!-- jQuery -->
 <script src="../public/js/jquery.js"></script>
@@ -31,6 +71,8 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
 
+<!-- Footer Fixed -->
+<script src="../public/js/footerFixed.js"></script>
 
 </body>
 </html>

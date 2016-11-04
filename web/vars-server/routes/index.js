@@ -10,12 +10,12 @@ const loginCheck = function(req, res, next) {
   if(req.session.user){
     next();
   }else{
-    res.redirect('login');
+    res.redirect('/login');
   }
 };
 
 router.get('/', loginCheck, function(req, res) {
-  res.render('index.ejs');
+  res.render('index.ejs', {user: req.session.user});
 });
 
 module.exports = router;

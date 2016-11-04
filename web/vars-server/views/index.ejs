@@ -8,13 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title-->
-    <title>Index Vars</title>
+    <title>Index - VARS -</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- PNotify CSS -->
+    <link href="../public/css/pnotify.custom.min.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="../public/css/index.css" rel="stylesheet">
+    <link href="../public/css/header.css" rel="stylesheet">
+    <link href="../public/css/footer.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -23,23 +28,73 @@
 </head>
 <body>
 
-<!-- ログイン画面 -->
+<%- include('./header.ejs') %>
+
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
-                <div class="text-center"><h1>トップページ画面(index.ejs)</h1></div>
+                <div class="index">
+                    <div class="index-title"><i class="fa fa-home" aria-hidden="true"></i> <%= user.displayName %>さんのホーム</div>
 
-                <div class="text-center"><a href="/logout" class="btn btn-primary">ログアウト</a></div>
+                    <div class="panel panel-news">
+                        <div class="panel-heading">お知らせ</div>
 
-            </div><!-- colmd-10 -->
+                        <div class="panel-body">
+                            <a href="">2016/09/21 新規イベントが追加されました。</a><br>
+                            <a href="">2016/09/21 出水公平の誕生日です!!</a><br>
+                            <a href="">2016/09/20 警報により臨時休校</a>
+                        </div>
 
+                    </div><!-- panel -->
 
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="panel panel-events">
+                            <div class="panel-heading">参加イベント一覧</div>
+
+                            <div class="panel-body">
+                                <ul id="event-menu">
+                                    <li><a href="#">合評会</a>
+                                        <ul>
+                                            <li><a href="#">アナログ撲滅委員会</a></li>
+                                            <li><a href="#">参加グループ2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">テストイベント2</a>
+                                        <ul>
+                                            <li><a href="#">参加グループ</a></li>
+                                            <li><a href="#">参加グループ2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">テストイベント3</a>
+                                        <ul>
+                                            <li><a href="#">参加グループ</a></li>
+                                            <li><a href="#">参加グループ2</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div><!-- panel -->
+                    </div><!-- Team -->
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="twitter-contents">
+                            <a class="twitter-timeline" data-width="500" data-height="400" href="https://twitter.com/Aec_Vars">Tweets by Aec_Vars</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                    </div><!-- Twitter -->
+
+                    </div><!-- Index -->
+                </div>
+
+            </div><!-- col -->
 
         </div><!-- row -->
     </div><!-- container -->
 </section>
+
+<%- include('./footer.ejs') %>
 
 <!-- jQuery -->
 <script src="../public/js/jquery.js"></script>
@@ -47,6 +102,17 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
 
+<!-- PNotify JavaScript -->
+<script src="../public/js/pnotify.custom.min.js"></script>
+
+<!-- Pop up -->
+<script src="../public/js/popup.js"></script>
+
+<!-- Menu Open & Close -->
+<script src="../public/js/menu.js"></script>
+
+<!-- Footer Fixed -->
+<script src="../public/js/footerFixed.js"></script>
 
 </body>
 </html>

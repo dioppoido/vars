@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title-->
-    <title>Login Vars</title>
+    <title>Login - VARS -</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
@@ -22,36 +22,37 @@
 
 </head>
 <body>
-
 <!-- ログイン画面 -->
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
 
-                <div class="text-center"><h1>ログイン画面(login.ejs)</h1></div>
-
-                <!-- Login Form -->
-                <form method="POST" action="/login">
-                    <!-- ユーザーID -->
-                    <div class="form-group">
-                        <label>ユーザーID : </label>
-                        <input type="text" name="userid" class="form-control input-lg">
-                    </div>
-
-                    <!-- パスワード -->
-                    <div class="form-group">
-                        <label>パスワード : </label>
-                        <input type="password" name="password" class="form-control input-lg" maxlength="100">
-                    </div>
-
-                    <!-- ログインボタン -->
-                    <div class="text-center"><button type="submit" class="btn btn-primary"> ログイン</button></div>
-
-                </form>
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
 
-            </div><!-- colmd-10 -->
+                <div class="login">
+                    <div class="text-center visible-xs visible-sm">Login Form</div>
+                    <div class="login-form">
+                        <div class="login-topcolor"></div>
+                        <div class="login-title">V A R S</div>
+                        <div class="login-contents">
+
+                            <div class="text-center">
+                                - Google Login -<br>
+                                <a href="/googlelogin" class="btn login-btn"><i class="fa fa-google" aria-hidden="true"></i> Login</a>
+                                <p class="small help-block">※ ログインにはKDアカウントが必要となります。</p>
+                                <p class="small">Copyright (C) 2016 AEC.Inc All Rights Reserved.</p>
+                            </div>
+
+                        </div><!-- login contents -->
+                    </div><!-- login form -->
+                </div><!-- login -->
+
+
+
+
+
+            </div><!-- col -->
 
 
 
