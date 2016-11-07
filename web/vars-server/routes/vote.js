@@ -38,20 +38,19 @@ router.get('/', function(req, res) {
 
 
 router.post('/', function(req, res) {
-    if(req.session.user && req.session.passflag == false ) {
+    if(req.session.user ) {
         var AGGREGATES = [];
-        var userid = req.session.user;
         var voteid = req.body.voteid;
         var teamid = req.body.teamid;
         var teamidlength = teamid.length;
         for (i = 0; i < teamidlength; i++) {
             const WORK_JSON = {
                 'voteid': null,
-                'userid': null,
+                'address': null,
                 'teamid': null
             };
             WORK_JSON.voteid = req.body.voteid[i];
-            WORK_JSON.userid = req.session.user;
+            WORK_JSON.address = req.session.user.address;
             WORK_JSON.teamid = req.body.teamid[i];
 
             AGGREGATES.push(WORK_JSON);
