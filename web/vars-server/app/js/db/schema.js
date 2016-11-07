@@ -33,7 +33,9 @@ exports.events = new mongoose.Schema({
   Overview        :String,
   Address         :String,
   displayName     :String,
-  Department      :String,
+  Course          :String,
+  Venue            :String,
+  Date             :String,
   Createperiod:{
     Createstart   :Date,
     Createfinish  :Date
@@ -41,7 +43,8 @@ exports.events = new mongoose.Schema({
   Voteperiod:{
     Votestart     :Date,
     Votefinish    :Date
-  }
+  },
+  Image            :String
 
 });
 
