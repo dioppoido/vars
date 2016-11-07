@@ -1,0 +1,60 @@
+/* boot-temp.css */
+
+/* All */
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background: #F5F5F5;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: 'Noto Sans Japanese', sans-serif;
+}
+.title{
+    font-size:40px;
+    font-weight:bold;
+    text-align: center;
+    margin-top: 50px;
+}
+.temp{
+    margin-top: 40px;
+    font-size:30px;
+    font-weight:bold;
+}
+.temp-title{
+    margin-left: 30px;
+    font-size:30px;
+    font-weight:bold;
+}
+.temp-text{
+    font-size: 22px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-weight:bold;
+}
+.temp-contents{
+    font-size: 22px;
+    margin-top: 20px;
+    font-weight:bold;
+}
+.grid{
+    border: 2px solid ;
+}
+.grid-table{
+  background: white;
+  margin-top: 20px;
+  padding-right: 20px;
+}
+.pre-font{
+    text-align: left;
+    font-size: 20px;
+    font-weight:bold;
+}
+/* !ALL */
+
+
