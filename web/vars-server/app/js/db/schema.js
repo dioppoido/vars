@@ -11,12 +11,8 @@ const mongoose = require('mongoose');
  * users
  */
 exports.users = new mongoose.Schema({
-  UserId      :String,          //ユーザID
-  Passwd      :String,          //パスワード
-  admin_flag  :Boolean,         //管理者フラグ
-  address     :String,          //E-Mailアドレス
-  Pass_flag   :Boolean,         //パスワード変更フラグ
-  Username    :String           //名前
+  Address     :String,          //E-Mailアドレス
+  Admin_flag  :Boolean,         //管理者フラグ
 });
 
 /**
@@ -35,6 +31,11 @@ exports.events = new mongoose.Schema({
   Eventid         :Number,      //イベントID
   Eventname       :String,
   Overview        :String,
+  Address         :String,
+  displayName     :String,
+  Course          :String,
+  Venue            :String,
+  Date             :String,
   Createperiod:{
     Createstart   :Date,
     Createfinish  :Date
@@ -42,7 +43,8 @@ exports.events = new mongoose.Schema({
   Voteperiod:{
     Votestart     :Date,
     Votefinish    :Date
-  }
+  },
+  Image            :String
 
 });
 
@@ -56,6 +58,6 @@ exports.teams =new mongoose.Schema({
 exports.aggregates =new mongoose.Schema({
   Aggregateid    :Number,
   Voteid          :Number,
-  Userid          :String,
+  Address          :String,
   Teamid          :Number
 });

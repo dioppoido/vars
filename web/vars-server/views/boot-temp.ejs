@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+
+    <meta charset="utf-8">
+
+    <!-- レスポンシブデザインにするための記述 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- タイトル -->
+    <title>BootStrapTemplate</title>
+
+    <!-- Bootstrapに必要なCSS -->
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- デザインに必要なCSS -->
+    <link href="../public/css/boot-temp.css" rel="stylesheet">
+
+    <!-- アイコン用CSS-->
+    <link href="../public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- googleフォント -->
+    <link href='http://fonts.googleapis.com/earlyaccess/notosansjapanese.css' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<div class="title"> < Bootstrap Template > </div>
+
+<!-- Container -->
+<section class="temp"><!-- sectionタグ: 一つのまとまりとして認識させるもの -->
+
+    <div class="temp-title">1.Container(コンテナ)</div>
+
+     <div class="temp-text">
+         コンテナは、グリッドを入れ込む箱を作る。<br>
+         種類は、2種類あり固定幅（.container）と全幅（.container-fluid）の２種類用意されている。
+     </div>
+    <div class="temp-text">
+        <div class="panel panel-info">
+            <div class="panel-heading ">例</div>
+            <div class="panel-body">
+
+                <pre class="pre-font">
+                    &lt;div class="temp-contents"&gt;
+                        &lt;div class="container bg-info"&gt;
+                            ①　固定幅(.container)&lt;br&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </pre>
+
+                <div class="temp-contents">
+                    <div class="container bg-info">
+                        ①　固定幅(.container)<br>
+                    </div>
+                </div><br>
+
+                <pre class="pre-font">
+                    &lt;div class="temp-contents"&gt;
+                        &lt;div class="container bg-info"&gt;
+                            ②　全幅(.container-fluid)&lt;br&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </pre>
+
+                <div class="temp-contents">
+                    <div class="container-fluid bg-info">
+                        ②　全幅(.container-fluid)<br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Gridsystem -->
+<section class="temp">
+
+    <div class="temp-title">2.Grid System(グリッド・システム)</div>
+
+    <div class="temp-text">
+        コンテナを12個のグリッドに分割してレイアウトを制御する。<br>
+        グリッドを使用する場合、container・rowクラスは基本的にセットで記述する。<br><br>
+        <div class="panel panel-info">
+            <div class="panel-heading ">例</div>
+            <div class="panel-body">
+                <pre class="pre-font">
+                    &lt;div class="container"&gt;
+                        &lt;div class="row"&gt;
+                            &lt;div class="col-XX-X"&gt;
+                                Contents
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </pre>
+
+                <div class="temp-contents">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1 bg-info grid">.col-XX</div>
+                            <div class="col-md-1 bg-info grid">.col-XX</div>
+                            <div class="col-md-1 bg-info grid">.col-XX</div>
+                            <div class="col-md-1 bg-info grid">.col-XX</div>
+                            <div class="col-md-1 bg-info grid">.col-XX</div>
+                            <div class="col-md-1 bg-info grid">.col-XX</div>
+                            <div class="col-md-1 bg-info grid">.col-XX</div>
+                            <div class="col-md-1 bg-info grid">.col-XX</div>
+                            <div class="col-md-1 bg-info grid">.col-XX</div>
+                            <div class="col-md-1 bg-info grid">.col-XX</div>
+                            <div class="col-md-1 bg-info grid">.col-XX</div>
+                            <div class="col-md-1 bg-info grid">.col-XX</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="temp-text">
+        グリッドはレスポンシブに対応してるため、以下の設定となる。<br>
+        <table  class="table grid-table">
+
+            <thead>
+            <tr>
+                <th class="text-center col-md-3">画面サイズ</th>
+                <th class="text-center col-md-9">概　要</th>
+            </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th class="text-center">.col-xs-X(<768px)</th>
+                    <td class="text-center">スマートフォンサイズ以下の時に適用される。</td>
+                </tr>
+                <tr>
+                    <th class="text-center">.col-sm-X(≥768px)</th>
+                    <td class="text-center">タブレットサイズ以下の時に適用される。</td>
+                </tr>
+                <tr>
+                    <th class="text-center">.col-md-X(≥992px)</th>
+                    <td class="text-center">ノートPCやデスクトップサイズ以下の時に適用される。</td>
+                </tr>
+                <tr>
+                    <th class="text-center">.col-lg-X(≥1200px)</th>
+                    <td class="text-center">992px以上の大きいディスプレイサイズの時に適用される。</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="temp-text">
+       マルチデバイス用にするには以下の通りになる。<br>
+    </div>
+
+    <div class="temp-text">
+        <div class="panel panel-info">
+            <div class="panel-heading ">例</div>
+            <div class="panel-body">
+
+                <pre class="pre-font">
+                    &lt;div class="container"&gt;
+                    　&lt;div class="row"&gt;
+                    　　&lt;div class="col-xs-12 col-sm-6 col-md-3 bg-info grid">.col-xs-12 .col-sm-6 .col-md-3&lt;/div&gt;
+                    　　&lt;div class="col-xs-12 col-sm-6 col-md-3 bg-info grid"&gt;.col-xs-12 .col-sm-6 .col-md-3&lt;/div&gt;
+                    　　&lt;div class="col-xs-12 col-sm-6 col-md-3 bg-info grid"&gt;.col-xs-12 .col-sm-6 .col-md-3&lt;/div&gt;
+                    　　&lt;div class="col-xs-12 col-sm-6 col-md-3 bg-info grid"&gt;.col-xs-12 .col-sm-6 .col-md-3&lt;/div&gt;
+                    　&lt;/div&gt;
+                    &lt;/div&gt;
+                </pre>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-3 bg-info grid">.col-xs-12 .col-sm-6 .col-md-3</div>
+                        <div class="col-xs-12 col-sm-6 col-md-3 bg-info grid">.col-xs-12 .col-sm-6 .col-md-3</div>
+                        <div class="col-xs-12 col-sm-6 col-md-3 bg-info grid">.col-xs-12 .col-sm-6 .col-md-3</div>
+                        <div class="col-xs-12 col-sm-6 col-md-3 bg-info grid">.col-xs-12 .col-sm-6 .col-md-3</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="temp-text">
+        スマホサイズ(<768px)以下の場合は、カラムが1つずつ縦に並らぶ。<br>
+        タブレットサイズ(≥768px)以下の場合は、カラムが2つずつ縦に並らぶ。<br>
+        ウィンドウサイズ(≥992px)以下の場合は、カラムが4つずつ縦に並らぶ。<br>
+    </div>
+
+
+
+
+</section>
+
+<!-- 配置クラス -->
+<section class="temp">
+
+    <div class="temp-title">3.Alignment classes(配置クラス)</div>
+
+    <div class="temp-text">
+        文字の配置を決めるクラスである。<br>
+        CSSだとtext-alignに当たるものである。配置は以下の通りである。<br>
+
+        <table  class="table grid-table">
+
+            <thead>
+            <tr>
+                <th class="text-center col-md-3">クラス</th>
+                <th class="text-center col-md-9">概　要</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <th class="text-center">text-left</th>
+                <td class="text-center">左詰め。</td>
+            </tr>
+            <tr>
+                <th class="text-center">text-center</th>
+                <td class="text-center">中央寄せ。</td>
+            </tr>
+            <tr>
+                <th class="text-center">text-right</th>
+                <td class="text-center">右詰め。</td>
+            </tr>
+            <tr>
+                <th class="text-center">text-justify</th>
+                <td class="text-center">両端揃え。</td>
+            </tr>
+            <tr>
+                <th class="text-center">text-nowrap</th>
+                <td class="text-center">改行しない。</td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="temp-text">
+        <div class="panel panel-info">
+            <div class="panel-heading ">例</div>
+            <div class="panel-body">
+
+                <pre class="pre-font">
+                    &lt;p class="text-left"&gt;左詰め。&lt;/p&gt;
+                    &lt;p class="text-center"&gt;中央に配置。&lt;/p&gt;
+                    &lt;p class="text-right"&gt;右詰め。&lt;/p>
+                    &lt;p class="text-justify"&gt;両端揃え。&lt;/p&gt;
+                    &lt;p class="text-nowrap"&gt;改行しない。&lt;/p&gt;
+                </pre>
+
+                <p class="text-left">左詰め。</p>
+                <p class="text-center">中央に配置。</p>
+                <p class="text-right">右詰め。</p>
+                <p class="text-justify">両端揃え。</p>
+                <p class="text-nowrap">改行しない。</p>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- 配置クラス -->
+<section class="temp">
+
+    <div class="temp-title">4.List(リスト)</div>
+
+    <div class="temp-text">
+        リストは、ul,li,olタグを用いて作る。<br>
+        ここでは、順序リストとマーカー左マージン削除(list-unstyledクラス)とインライン(list-inlineクラス)の方法を表記する。
+    </div>
+
+    <div class="temp-text">
+        <div class="panel panel-info">
+            <div class="panel-heading ">例</div>
+            <div class="panel-body">
+
+                <pre class="pre-font">
+                    &lt;ol&gt;
+                        &lt;li&gt;リスト項目Ａ&lt;/li&gt;
+                        &lt;li&gt;
+                            リスト項目Ｂ
+                            &lt;ol&gt;
+                                &lt;li&gt;リスト項目Ｂ１&lt;/li&gt;
+                                &lt;li&gt;リスト項目Ｂ２&lt;/li&gt;
+                                &lt;li&gt;リスト項目Ｂ３&lt;/li&gt;
+                                &lt;/ol&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;リスト項目Ｃ&lt;/li&gt;
+                    &lt;/ol&gt;
+                </pre>
+
+                <ol>
+                    <li>リスト項目Ａ</li>
+                    <li>
+                        リスト項目Ｂ
+                        <ol>
+                            <li>リスト項目Ｂ１</li>
+                            <li>リスト項目Ｂ２</li>
+                            <li>リスト項目Ｂ３</li>
+                        </ol>
+                    </li>
+                    <li>リスト項目Ｃ</li>
+                </ol>
+
+                <pre class="pre-font">
+                    &lt;ul class="list-unstyled"&gt;
+                        &lt;li&gt;リスト項目Ａ&lt;/li&gt;
+                        &lt;li&gt;
+                            リスト項目Ｂ
+                            &lt;ul&gt;
+                                &lt;li&gt;リスト項目Ｂ１&lt;/li&gt;
+                                &lt;li&gt;リスト項目Ｂ２&lt;/li&gt;
+                                &lt;li&gt;リスト項目Ｂ３&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;リスト項目Ｃ&lt;/li&gt;
+                    &lt;/ul&gt;
+                </pre>
+
+
+
+                <ul class="list-unstyled">
+                    <li>リスト項目Ａ</li>
+                    <li>
+                        リスト項目Ｂ
+                        <ul>
+                            <li>リスト項目Ｂ１</li>
+                            <li>リスト項目Ｂ２</li>
+                            <li>リスト項目Ｂ３</li>
+                        </ul>
+                    </li>
+                    <li>リスト項目Ｃ</li>
+                </ul>
+
+                <pre class="pre-font">
+                    &lt;ul class="list-inline"&gt;
+                        &lt;li&gt;リスト項目Ａ&lt;/li&gt;
+                        &lt;li&gt;リスト項目Ｂ&lt;/li&gt;
+                        &lt;li&gt;リスト項目Ｃ&lt;/li&gt;
+                     &lt;/ul&gt;
+                </pre>
+
+                <ul class="list-inline">
+                    <li>リスト項目Ａ</li>
+                    <li>リスト項目Ｂ</li>
+                    <li>リスト項目Ｃ</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</section>
+
+<!-- 表 -->
+<section class="temp">
+
+    <div class="temp-title">5.Tables(表)</div>
+
+    <div class="temp-text">
+        テーブルは、基本のほかにストライプ柄や境界線付き等がある。
+    </div>
+
+    <div class="temp-text">
+        <div class="panel panel-info">
+            <div class="panel-heading ">例</div>
+            <div class="panel-body">
+
+                <pre class="pre-font">
+                    &lt;table class="table grid-table"&gt;
+                        &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th>1&lt;/th&gt;
+                            &lt;th>2&lt;/th&gt;
+                            &lt;th>3&lt;/th&gt;
+                        &lt;/tr&gt;
+                        &lt;/thead&gt;
+                        &lt;tbody&gt;
+                            &lt;td>X&lt;/td&gt;
+                            &lt;td>Y&lt;/td&gt;
+                            &lt;td>Z&lt;/td&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+                </pre>
+
+                <table class="table grid-table">
+                    <thead>
+                    <tr>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <td>X</td>
+                        <td>Y</td>
+                        <td>Z</td>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<!-- Font-Awesome -->
+<section class="temp">
+
+    <div class="temp-title">番外編　Font-Awesome(アイコンの使い方)</div>
+
+    <div class="temp-text">
+        Font-Awesomeは、アイコンを使用するときに便利なので、欲しいアイコンをサイトで調べて使う。<br>
+        <a href="http://fontawesome.io/icons/">Font-AwesomeアイコンURL</a><br>
+        <div class="panel panel-info">
+            <div class="panel-heading ">例</div>
+            <div class="panel-body">
+                <pre class="pre-font">
+                    &lt;i class="fa fa-google fa-2x" aria-hidden="true"&gt;&lt;/i&gt;
+                </pre>
+                <div class="text-center"><i class="fa fa-google fa-2x" aria-hidden="true"></i> ←　googleアイコン</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="temp-text">
+        アイコンの大きさは、直接CSSで編集する方法と拡大するクラスがあるので、それを用いる。<br>
+        拡大クラスは、fa-lg(33%),fa-2x, fa-3x, fa-4x,fa-5xがある。<br>
+    </div>
+    <div class="temp-text">
+
+    </div>
+
+
+</section>
+
+<!-- jQuery -->
+<script src="../public/js/jquery.js"></script>
+
+<!-- Bootstrapに必要なjs  -->
+<script src="../public/js/bootstrap.min.js"></script>
+
+</body>
+</html>
