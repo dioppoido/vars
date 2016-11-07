@@ -22,8 +22,10 @@ router.get('/', loginCheck, passport.authenticate('google',{ scope: ['openid ema
 
 // /google/returnにアクセスした時（Googleログイン後）
 router.get('/return',passport.authenticate('google', {failureRedirect: '/login' }), function(req, res) {
-    console.log("req.user="+req.user);
     req.session.user=req.user;
+    req.session.user.domain=(req.session.user.emails[0].value).substr((req.session.user.emails[0].value).lastIndexOf("@")+1);
+    req.session.user.address=req.session.user.emails[0].value;
+    console.log("domain:"+req.session.user.domain);
     res.redirect('/');//indexへリダイレクトさせる
 });
 

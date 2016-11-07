@@ -6,6 +6,9 @@ db.events.insert({
     Eventid:1,
     Eventname:"イベントA",
     Overview:"イベントAの説明です",
+    Address:"test@example.com",
+    displayName:"test",
+    Department:"soft1",
     Createperiod:{
         Createstart:"2016/10/4",
         Createfinish:"2016/10/11"
@@ -19,6 +22,9 @@ db.events.insert({
     Eventid:2,
     Eventname:"イベントB",
     Overview:"イベントBの説明です",
+    Address:"test@example.com",
+    displayName:"test",
+    Department:"soft2",
     Createperiod:{
         Createstart:"2016/10/12",
         Createfinish:"2016/10/20"
@@ -32,6 +38,9 @@ db.events.insert({
     Eventid:3,
     Eventname:"イベントC",
     Overview:"イベントCの説明です",
+    Address:"test@example.com",
+    displayName:"test",
+    Department:"game1",
     Createperiod:{
         Createstart:"2016/10/21",
         Createfinish:"2016/10/31"
