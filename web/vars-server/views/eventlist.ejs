@@ -36,21 +36,29 @@
 
                   <div class="text-center event-title"><i class="fa fa-info-circle" aria-hidden="true"></i> イベント一覧</div>
 
+                  <% for(var cnt=0; cnt<4; cnt++) { %>
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-form">
-                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                          aa
+                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                          <a href="/eventtop"><img src="../public/images/images.png" class="event-img"></a><br>
                       </div>
-                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                          bb
+                      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                        <div class="list-contents">
+                          イベント名 : <a href="/eventtop">2017年度IT分野Ⅳ年合評会</a><br>
+                          日時 : 2017/01/01 15:00 ~ <br>
+                          会場 : ソニックホール<br>
+                        </div>
                       </div>
                   </div>
+                <% } %>
 
               </div>
 
             </div><!-- col -->
 
         </div><!-- row -->
-    </div><!-- container -->
+    </div><!-- contai
+      to
+      -[]::ner -->
 </section>
 
 <%- include('./footer.ejs') %>

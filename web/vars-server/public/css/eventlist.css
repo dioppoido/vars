@@ -44,19 +44,185 @@ body{
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 .list-contents{
-  padding: 15px;
+  margin-top: 20px;
+  font-size: 24px;
+  line-height: 60px;
 }
+
+.event-img{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  background-size: cover;
+  -o-background-size:cover;
+  width: 200px;
+  height: 200px;
+  border: 2px solid gray;
+}
+
+
+
 
 @media screen and (min-width: 768px) and (max-width: 979px) {
     /* 768px - 979px用（タブレット用）の記述 */
+    .event-title{
+        font-size: 34px;
+    }
+
+    .list-form{
+        margin: 0 auto;
+        margin-top:20px;
+        margin-left:0px;
+        margin-bottom: 30px;
+        width: 100%;
+        font-size: 20px;
+        padding: 0px;
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .event-img{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 10px;
+      -webkit-background-size:cover;
+      -moz-background-size:cover;
+      background-size: cover;
+      -o-background-size:cover;
+      width: 100px;
+      height: 100px;
+      border: 2px solid gray;
+    }
+
+    .list-contents{
+      margin-top: 20px;
+      font-size: 20px;
+      line-height: 35px;
+    }
+
 }
 @media screen and (min-width: 480px) and (max-width: 767px)  {
     /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .event-title{
+        font-size: 34px;
+    }
+
+    .list-form{
+        margin: 0 auto;
+        margin-top:20px;
+        margin-left:0px;
+        margin-bottom: 30px;
+        width: 100%;
+        font-size: 20px;
+        padding: 0px;
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .event-img{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 10px;
+      -webkit-background-size:cover;
+      -moz-background-size:cover;
+      background-size: cover;
+      -o-background-size:cover;
+      width: 100px;
+      height: 100px;
+      border: 2px solid gray;
+    }
+
+    .list-contents{
+      margin-top: 20px;
+      font-size: 20px;
+      line-height: 35px;
+    }
+
+}
+@media screen and (min-width: 480px) and (max-width: 767px)  {
+    /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .event-title{
+        font-size: 34px;
+    }
+
+    .list-form{
+        margin: 0 auto;
+        margin-top:20px;
+        margin-left:15px;
+        margin-bottom: 30px;
+        width: 95%;
+        font-size: 20px;
+        padding: 0px;
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .event-img{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 10px;
+      -webkit-background-size:cover;
+      -moz-background-size:cover;
+      background-size: cover;
+      -o-background-size:cover;
+      width: 100px;
+      height: 100px;
+      border: 2px solid gray;
+    }
+
+    .list-contents{
+      margin-top: 20px;
+      font-size: 20px;
+      line-height: 35px;
+    }
+
 }
 @media screen and (max-width: 479px) {
     /* 479px以下用（スマートフォン用）の記述 */
     .event-title{
         font-size: 24px;
     }
+
+    .list-form{
+        margin: 0 auto;
+        margin-top:10px;
+        margin-left:10px;
+        margin-bottom: 30px;
+        width: 95%;
+        font-size: 20px;
+        padding: 0px;
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .event-img{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 10px;
+      -webkit-background-size:cover;
+      -moz-background-size:cover;
+      background-size: cover;
+      -o-background-size:cover;
+      width: 70px;
+      height: 70px;
+      border: 2px solid gray;
+    }
+
+    .list-contents{
+      margin-top: 15px;
+      font-size: 13px;
+      line-height: 26px;
+    }
+
 }
 /* !EventList */
