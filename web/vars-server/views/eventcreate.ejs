@@ -13,6 +13,9 @@
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Date Picker -->
+    <link href="../public/css/datepicker.min.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="../public/css/eventcreate.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
@@ -37,41 +40,42 @@
                     <div class="event-title text-center"><i class="fa fa-plus-circle" aria-hidden="true"></i> イベント作成</div>
 
                     <div class="create-form">
-                        <form method="post" action="eventcreate">
+                        <form method="post" action="eventcreate" enctype="multipart/form-data">
 
                             <div class="form-group">
                               <label>イベント名 : </label>
-                              <input type="text" class="form-control input-lg event-input" name="eventname" placeholder="例)2016年合評会">
+                              <input type="text" class="form-control input-lg event-input" name="eventname" placeholder="例)2016年合評会" required>
                             </div>
 
                             <div class="form-group">
-                              <label>開催日時 : </label>
+                                <label>開催日時 : </label>
+                                <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="dates" placeholder="例)20YY/MM/DD/" required />
                             </div>
 
                             <div class="form-group">
-                              <label>会場 : </label>
-                              <input type="text" class="form-control input-lg event-input" name="venue" placeholder="例）神戸電子専門学校 ソニックホール">
+                                <label>会場 : </label>
+                                <input type="text" class="form-control input-lg event-input" name="venue" placeholder="例）神戸電子専門学校 ソニックホール" required>
                             </div>
 
                             <div class="form-group">
                               <label>イベント概要 : </label>
-                              <textarea class="form-control input-lg event-input" name="overview" placeholder="例)合評会です."></textarea>
+                              <textarea class="form-control input-lg event-input" name="overview" placeholder="例)合評会です." required></textarea>
                             </div>
 
 
                             <div class="form-group">
                               <label>代表者名(作成者) : </label>
-                              <input type="text" class="form-control input-lg event-input" name="representativename" placeholder="例)神戸太郎">
+                              <input type="text" class="form-control input-lg event-input" name="representativename" placeholder="例)神戸太郎" required>
                             </div>
 
                             <div class="form-group">
                               <label>メールアドレス : </label>
-                              <input type="text" class="form-control input-lg event-input" name="representativemail" placeholder="例)kdxxxxxxxx@st.kobedenshi.ac.jp">
+                              <input type="text" class="form-control input-lg event-input" name="representativemail" placeholder="例)kdxxxxxxxx@st.kobedenshi.ac.jp" required>
                             </div>
 
                             <div class="form-group">
                               <label>コース : </label>
-                              <select class="form-control input-lg event-input" name="department">
+                              <select class="form-control input-lg event-input" name="department" required>
                                 <option value="1">ソフトⅠ</option>
                                 <option value="2">ソフトⅡ</option>
                                 <option value="3">ソフトⅢ</option>
@@ -79,24 +83,58 @@
                               </select>
                             </div>
 
-                            <div class="form-group">
-                              <label>参加チーム登録開始期限 : </label>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>参加チーム登録開始期限 : </label>
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="team-start" data-timepicker="true" placeholder="例)20YY/MM/DD/ HH:MM" required />
+                                </div>
                             </div>
 
-                            <div class="form-group">
-                              <label>参加チーム登録終了期限 : </label>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>参加チーム登録終了期限 : </label>
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="team-end" data-timepicker="true" placeholder="例)20YY/MM/DD/ HH:MM" required />
+                                </div>
                             </div>
 
-                            <div class="form-group">
-                              <label>投票開始日時 : </label>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>投票開始期限 : </label>
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="vote-start" data-timepicker="true" placeholder="例)20YY/MM/DD/ HH:MM" required/>
+                                </div>
                             </div>
 
-                            <div class="form-group">
-                              <label>投票終了日時 : </label>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>投票終了期限 : </label>
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="vote-end" data-timepicker="true" placeholder="例)20YY/MM/DD/ HH:MM" required/>
+                                </div>
                             </div>
 
-                            <div class="text-right">
-                                <button type="submit" class="btn btn-success submit-btn">送　信</button>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <label>サムネイル画像( .jpeg .png .gifのみ ) : </label>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+                                <div class="form-group">
+                                    <label class="btn btn-primary file-btn">
+                                        ファイルを選択
+                                        <input type='file' id="thumbnail_file" name="thumbnail" accept="image/jpeg, image/gif, image/png" onchange="showFilename();">
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                <body onload="showFilename();"></body>
+                                <div id="file_name" class="name"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-success submit-btn">イベント登録</button>
+                                    </div>
+                                </div>
                             </div>
 
                         </form>
@@ -118,6 +156,13 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
+
+<!-- Show File Name -->
+<script src="../public/js/show.js"></script>
+
+<!-- Date Picker -->
+<script src="../public/js/datepicker.min.js"></script>
+<script src="../public/js/datepicker.ja.js"></script>
 
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>
