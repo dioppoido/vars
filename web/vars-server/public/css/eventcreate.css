@@ -33,15 +33,48 @@ body{
 }
 .create-form{
     margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 200px;
     width: 70%;
-    font-size: 26px;
+    font-size: 20px;
     padding: 15px;
     background: white;
     border-radius: 10px;
     -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+input.event-input{
+  width:95%;
+  margin-bottom: 20px;
+}
+select.event-input{
+  width:95%;
+  margin-bottom: 20px;
+}
+textarea.event-input {
+    resize: none;
+    width:95%;
+    height:150px;
+    margin-bottom: 20px;
+}
+.submit-btn{
+    font-size:24px;
+    margin-bottom: 20px;
+}
+input[type=file]{
+    display: none;
+}
+.file-btn{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#file_name{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
 }
 @media screen and (min-width: 768px) and (max-width: 979px) {
     /* 768px - 979px用（タブレット用）の記述 */
@@ -86,13 +119,44 @@ body{
     .create-form{
         margin: 0 auto;
         margin-top: 50px;
-        margin-bottom: 30px;
+        margin-bottom: 200px;
         width: 90%;
-        font-size: 26px;
+        font-size: 15px;
         background: white;
         border-radius: 10px;
         -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+    input.event-input{
+        width:100%;
+        font-size:12px;
+        margin-bottom: 0px;
+    }
+    select.event-input{
+        width:100%;
+        font-size:12px;
+        margin-bottom: 0px;
+    }
+    textarea.event-input{
+        width:100%;
+        font-size:12px;
+        margin-bottom: 0px;
+    }
+    .submit-btn{
+        font-size:20px;
+    }
+    .file-btn{
+        margin-top: 20px;
+        margin-bottom: 0px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    #file_name{
+        margin-top: 0px;
+        margin-bottom: 40px;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
     }
 
 }
