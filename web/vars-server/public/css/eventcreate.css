@@ -79,13 +79,13 @@ input[type=file]{
 @media screen and (min-width: 768px) and (max-width: 979px) {
     /* 768px - 979px用（タブレット用）の記述 */
     .event-title{
-        font-size: 24px;
+        font-size: 34px;
     }
     .create-form{
         margin: 0 auto;
         margin-top: 50px;
         margin-bottom: 30px;
-        width: 70%;
+        width: 95%;
         font-size: 26px;
         background: white;
         border-radius: 10px;
@@ -96,13 +96,13 @@ input[type=file]{
 @media screen and (min-width: 480px) and (max-width: 767px)  {
     /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
     .event-title{
-        font-size: 24px;
+        font-size: 34px;
     }
     .create-form{
         margin: 0 auto;
         margin-top: 50px;
         margin-bottom: 30px;
-        width: 70%;
+        width: 95%;
         font-size: 26px;
         background: white;
         border-radius: 10px;
