@@ -84,6 +84,8 @@ app.use('/vote',require('./routes/vote'));
 app.use('/voteresult',require('./routes/voteresult'));
 //投票チームの抽出(test)
 app.use('/getTeam',require('./routes/getTeam'));
+//multerテスト
+app.use('/multer',require('./routes/multer'));
 
 
 // catch 404 and forward to error handler
