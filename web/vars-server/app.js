@@ -122,6 +122,8 @@ app.use('/voteresult',require('./routes/voteresult'));
 app.use('/getTeam',require('./routes/getTeam'));
 //bootstraptemplate
 app.use('/boot',require('./routes/boot'));
+//multerテスト
+app.use('/multer',require('./routes/multer'));
 
 
 // catch 404 and forward to error handler

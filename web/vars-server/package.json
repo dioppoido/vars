@@ -23,6 +23,7 @@
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",
     "serve-favicon": "~2.3.0",
-    "validator": "^5.7.0"
+    "validator": "^5.7.0",
+    "path": "~0.12.7"
   }
 }
