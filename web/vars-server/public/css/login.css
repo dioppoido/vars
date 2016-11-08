@@ -19,6 +19,9 @@ body{
 .container {
     width: auto;
 }
+<<<<<<< HEAD
+/* !All */
+=======
 /* !All */
 
 /* Login */
@@ -153,3 +156,4 @@ body{
         font-size: 12px;
     }
 }
+>>>>>>> develop

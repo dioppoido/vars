@@ -39,6 +39,22 @@
 
                     <div class="event-title text-center"><i class="fa fa-plus-circle" aria-hidden="true"></i> イベント作成</div>
 
+                    <form method="POST" name="eventinsert" action="/eventcreate">
+                        <input type="hidden" name="eventname" value="イベントです">
+                        <input type="hidden" name="overview" value="イベント概要です">
+                        <input type="hidden" name="address" value="kd@st.kobedenshi.ac.jp">
+                        <input type="hidden" name="displayname" value="多田君">
+                        <input type="hidden" name="course" value="コース">
+                        <input type="hidden" name="venue" value="学科">
+                        <input type="hidden" name="date" value="11/21">
+                        <input type="hidden" name="createstart" value="2016/11/08">
+                        <input type="hidden" name="createfinish" value="2016/12/01">
+                        <input type="hidden" name="votestart" value="2017/02/01">
+                        <input type="hidden" name="votefinish" value="2017/02/01">
+                        <input type="hidden" name="image" value="イベントです">
+                    <button type="submit">送信</button>
+
+                </form>
                     <div class="create-form">
                         <form method="post" action="eventcreate" enctype="multipart/form-data">
 
