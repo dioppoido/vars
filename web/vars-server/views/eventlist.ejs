@@ -14,7 +14,7 @@
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../public/css/index.css" rel="stylesheet">
+    <link href="../public/css/eventlist.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
     <link href="../public/css/footer.css" rel="stylesheet">
 
@@ -32,15 +32,23 @@
         <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
-                <div class="text-center">イベントリスト画面</div><br>
+              <div class="eventlist">
 
-                <div class="text-center">
-                    イベント一覧
-                    <ul>
-                        <li><a href="/eventtop">合評会について</a></li>
-                        <li><a href="/eventtop">学園祭について</a></li>
-                    </ul>
-                </div>
+                <div class="text-center event-title"><i class="fa fa-info-circle" aria-hidden="true"></i> イベント一覧</div>
+
+                <% for(var i = 0 ; i < 3 ; i++) { %>
+                        <div class="list-form">
+                          <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                            aaa
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            bbb
+                          </div>
+                        </div>
+                <% } %>
+
+              </div>
+
             </div><!-- col -->
 
         </div><!-- row -->
