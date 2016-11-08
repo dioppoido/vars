@@ -19,7 +19,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
     //DBに入れ込む処理を呼び出す
     if(req.session.user){
-        var EVENTS = [];
+        //var EVENTS = [];
         var eventid = 4/*req.body.eventid*/;//変更必要あり
         var eventname = req.body.eventname;
         var overview = req.body.overview;
@@ -28,29 +28,25 @@ router.post('/', function(req, res) {
         var course = req.body.course;
         var venue = req.body.venue;
         var date = req.body.date;
-        const WORK_JSON = {
-            'eventid':eventid,
-            'eventname':eventname,
-            'overview':overview,
-            'address':address,
+        const EVENTS = {
+            'Eventid':eventid,
+            'Eventname':eventname,
+            'Overview':overview,
+            'Address':address,
             'displayName':displayname,
-            'course':course,
-            'venue':venue,
-            'date':date
-        }
-        const CREATE_JSON = {
-            'createstart':req.body.createstart,
-            'createfinish':req.body.createfinish
-        }
-        const VOTE_JSON = {
-            'votestart':req.body.votestart,
-            'votefinish':req.body.votefinish
-        }
-        var image = req.body.image;
-
-        EVENTS.push(WORK_JSON);
-        EVENTS.push(CREATE_JSON);
-        EVENTS.push(VOTE_JSON);
+            'Course':course,
+            'Venue':venue,
+            'Date':date,
+            'Createperiod':{
+                'Createstart':req.body.createstart,
+                'Createfinish':req.body.createfinish
+            },
+            'Voteperiod':{
+                'Votestart':req.body.votestart,
+                'Votefinish':req.body.votefinish
+            },
+            'Image':req.body.image
+        };
 
         console.log(EVENTS);
 

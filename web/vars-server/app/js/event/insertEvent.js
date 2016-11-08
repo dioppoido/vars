@@ -12,7 +12,7 @@
    console.log("aaaaaaa");
 
    //insert処理
-   const insertevents = new Events({
+   /*const insertevents = new Events({
        'Eventid':EVENTS.eventid,
        'Eventname':EVENTS.eventname,
        'Overciew':EVENTS.overview,
@@ -22,17 +22,18 @@
        'Venue':EVENTS.venue,
        'Date':EVENTS.date,
        'Createperiod':{
-           'Createstart':EVENTS.createstart,
-           'Createfinish':EVENTS.createfinish
+           'Createstart':EVENTS.createperiod.createstart,
+           'Createfinish':EVENTS.createperiod.createfinish
        },
        'Voteperiod':{
-           'Votestart':EVENTS.votestart,
-           'Votefinish':EVENTS.votefinish
+           'Votestart':EVENTS.voteperiod.votestart,
+           'Votefinish':EVENTS.voteperiod.votefinish
        },
        'Image':EVENTS.image
 
 
-   });
+   });*/
+     const insertevents=new Events(EVENTS);
     console.log("bbbbb");
     insertevents.save();
     console.log("cccc");
