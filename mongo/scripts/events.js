@@ -12,12 +12,12 @@ db.events.insert({
     Venue:"南館1階B教室",
     Date:"2016/10/12",
     Createperiod:{
-        Createstart:"2016/10/4",
-        Createfinish:"2016/10/11"
+        Createstart:"2016/10/4 9:00",
+        Createfinish:"2016/10/11 15:00"
     },
     Voteperiod:{
-        Votestart:"2016/10/12",
-        Votefinish:"2016/10/20"
+        Votestart:"2016/10/12 9:00",
+        Votefinish:"2016/10/20 15:00"
     },
     Image:""
 });
@@ -31,12 +31,12 @@ db.events.insert({
     Venue:"ホワイエ",
     Date:"2016/10/21",
     Createperiod:{
-        Createstart:"2016/10/12",
-        Createfinish:"2016/10/20"
+        Createstart:"2016/10/12 9:00",
+        Createfinish:"2016/10/20 12:00"
     },
     Voteperiod:{
-        Votestart:"2016/10/21",
-        Votefinish:"2016/10/31"
+        Votestart:"2016/10/21 9:00",
+        Votefinish:"2016/10/31 12:00"
     },
     Image:""
 });
@@ -50,12 +50,12 @@ db.events.insert({
     Venue:"ソニックホール",
     Date:"2016/11/1",
     Createperiod:{
-        Createstart:"2016/10/21",
-        Createfinish:"2016/10/31"
+        Createstart:"2016/10/21 12:00",
+        Createfinish:"2016/10/31 15:00"
     },
     Voteperiod:{
-        Votestart:"2016/11/1",
-        Votefinish:"2016/11/10"
+        Votestart:"2016/11/1 12:00",
+        Votefinish:"2016/11/10 15:00"
     },
     Image:""
 });
