@@ -61,9 +61,25 @@ body{
   height: 200px;
   border: 2px solid gray;
 }
-
-
-
+#tag-btn{
+    font-size: 20px;
+}
+#tag-target{
+    display: none;
+    margin: 0 auto;
+    margin-top:30px;
+    margin-bottom: 30px;
+    font-size: 22px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+#tag-target a {
+    text-decoration: none;
+    margin-left: 30px;
+}
 
 @media screen and (min-width: 768px) and (max-width: 979px) {
     /* 768px - 979px用（タブレット用）の記述 */
@@ -222,6 +238,27 @@ body{
       margin-top: 15px;
       font-size: 13px;
       line-height: 26px;
+    }
+    #tag-btn{
+        margin-left: 10px;
+        font-size: 14px;
+    }
+    #tag-target{
+        display: none;
+        margin: 0 auto;
+        margin-top:30px;
+        margin-bottom: 30px;
+        font-size: 13px;
+        padding: 15px;
+        background: white;
+        border-radius: 10px;
+        width: 95%;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+    #tag-target a {
+        text-decoration: none;
+        margin-left: 5px;
     }
 
 }
