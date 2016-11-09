@@ -39,22 +39,6 @@
 
                     <div class="event-title text-center"><i class="fa fa-plus-circle" aria-hidden="true"></i> イベント作成</div>
 
-                    <form method="POST" name="eventinsert" action="/eventcreate">
-                        <input type="hidden" name="eventname" value="イベントです">
-                        <input type="hidden" name="overview" value="イベント概要です">
-                        <input type="hidden" name="address" value="kd@st.kobedenshi.ac.jp">
-                        <input type="hidden" name="displayname" value="多田君">
-                        <input type="hidden" name="course" value="コース">
-                        <input type="hidden" name="venue" value="学科">
-                        <input type="hidden" name="date" value="11/21">
-                        <input type="hidden" name="createstart" value="2016/11/08">
-                        <input type="hidden" name="createfinish" value="2016/12/01">
-                        <input type="hidden" name="votestart" value="2017/02/01">
-                        <input type="hidden" name="votefinish" value="2017/02/01">
-                        <input type="hidden" name="image" value="イベントです">
-                    <button type="submit">送信</button>
-
-                </form>
                     <div class="create-form">
                         <form method="post" action="eventcreate" enctype="multipart/form-data">
 
@@ -64,8 +48,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label>開催日時 : </label>
-                                <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="dates" placeholder="例)20YY/MM/DD" required />
+                                <label>開催日 : </label>
+                                <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="dates" placeholder="例)20YY/MM/DD" required readonly="readonly"/>
                             </div>
 
                             <div class="form-group">
@@ -102,28 +86,28 @@
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label>参加チーム登録開始期限 : </label>
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="team-start" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" required />
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="team-start" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" required readonly="readonly" />
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label>参加チーム登録終了期限 : </label>
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="team-end" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" required />
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="team-end" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" required readonly="readonly" />
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label>投票開始期限 : </label>
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="vote-start" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" required/>
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="vote-start" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" required readonly="readonly"/>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label>投票終了期限 : </label>
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="vote-end" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" required/>
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="vote-end" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" required readonly="readonly"/>
                                 </div>
                             </div>
 

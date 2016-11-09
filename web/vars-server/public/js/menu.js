@@ -31,3 +31,10 @@ jQuery(document).ready(function($) {
     // 	function(){ $(this).children('ul').slideUp() }
     // );
 });
+
+//eventlist menu
+$( '#tag-btn' ).click( function()
+{
+    $( '#tag-target' ).slideToggle() ;
+
+} ) ;
