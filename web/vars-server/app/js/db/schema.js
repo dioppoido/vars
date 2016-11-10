@@ -61,3 +61,12 @@ exports.aggregates =new mongoose.Schema({
   Address          :String,
   Teamid          :Number
 });
+
+/**
+ * field
+ */
+exports.fields =new mongoose.Schema({
+  Fieldid    :String,
+  Fieldname          :String
+});
+
