@@ -21,7 +21,7 @@ router.get('/', function(req, res) {
 });
 
 
-var upload = multer({ dest: 'images/' });
+var upload = multer({ dest: 'upfile/' });
 router.post('/', upload.single('thumbnail'), function (req, res) {
     //DBに入れ込む処理を呼び出す
     if(req.session.user){
@@ -43,9 +43,9 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
           var extension = req.file.originalname;   //拡張子を取得したいデータを入れる
           var imageExtension =rename.rename(extension);　//拡張子
           imagepath=req.file.path+rename.rename(extension); //データベースに格納用のpath
-          require('fs').rename(req.file.path, 'images/' + req.file.filename + imageExtension); //ここでファイル名を変更
+          require('fs').rename(req.file.path, 'upfile/' + req.file.filename + imageExtension); //ここでファイル名を変更
         }else{
-          imagepath=""  //NoImageのPathをここに格納
+          imagepath="public/images/noimage.png"  //NoImageのPathをここに格納
         }
 
         const EVENTS = {
@@ -80,7 +80,7 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
         console.log(createfinish);
         console.log(votestart);
         console.log(votefinish);
-        
+
 
 
 
