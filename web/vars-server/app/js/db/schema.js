@@ -33,7 +33,7 @@ exports.events = new mongoose.Schema({
   Overview        :String,
   Address         :String,
   displayName     :String,
-  Course          :String,
+  Fieldid          :String,
   Venue            :String,
   Date             :String,
   Createperiod:{

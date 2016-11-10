@@ -8,7 +8,7 @@ db.events.insert({
     Overview:"イベントAの説明です",
     Address:"test@example.com",
     displayName:"test",
-    Course:"soft1",
+    Fieldid:"soft",
     Venue:"南館1階B教室",
     Date:"2016/10/12",
     Createperiod:{
@@ -27,7 +27,7 @@ db.events.insert({
     Overview:"イベントBの説明です",
     Address:"test@example.com",
     displayName:"test",
-    Course:"soft2",
+    Fieldid:"hard",
     Venue:"ホワイエ",
     Date:"2016/10/21",
     Createperiod:{
@@ -46,7 +46,7 @@ db.events.insert({
     Overview:"イベントCの説明です",
     Address:"test@example.com",
     displayName:"test",
-    Course:"game1",
+    Fieldid:"game",
     Venue:"ソニックホール",
     Date:"2016/11/1",
     Createperiod:{

@@ -31,7 +31,7 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
         var overview = req.body.overview;
         var address = req.session.user.address;
         var displayname = req.session.user.displayName;
-        var course = req.body.course;
+        var field = req.body.field;
         var venue = req.body.venue;
         var date = req.body.dates;
         var createstart = req.body.createstart;
@@ -54,7 +54,7 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
             'Overview':overview,
             'Address':address,
             'displayName':displayname,
-            'Course':course,
+            'Fieldid':field,
             'Venue':venue,
             'Date':date,
             'Createperiod':{
@@ -74,7 +74,7 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
         console.log(overview);
         console.log(address);
         console.log(displayname);
-        console.log(course);
+        console.log(field);
         console.log(venue);
         console.log(createstart);
         console.log(createfinish);
