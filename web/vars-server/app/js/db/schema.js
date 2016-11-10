@@ -28,7 +28,7 @@ exports.votes = new mongoose.Schema({
  * events
  */
 exports.events = new mongoose.Schema({
-  Eventid         :Number,      //イベントID
+  Eventid         :String,      //イベントID
   Eventname       :String,
   Overview        :String,
   Address         :String,
