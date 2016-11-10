@@ -1,27 +1,25 @@
-//イベント一覧抽出テスト
 var express = require('express');
 var router = express.Router();
-var getEventList = require('../app/js/event/getEventList');
 var validator = require('validator'); //validatorモジュール宣言
-//
-router.get("/",function(req, res) {
-      //event抽出
-      getEventList.getEventList(req.body.tag).then(function (docs){
-        for(var cnt=0; cnt<docs.length ;cnt++){
-            var EVENTS=docs;
-          };
-          res.render('getEventList.ejs',{eventlist:EVENTS});
-      });
+var getField = require("../app/js/field/getField");
+var getEventList = require("../app/js/event/getEventList.js");
+//特に送り付ける値はなし
+router.get('/', function(req, res) {
+    if(req.session.user){
+        getField.getField().then(function (docs) {    //分野取得
+            getEventList.getEventList(req.query.fieldid).then(function (docs1){
+            res.render('getEventList.ejs',{field:docs,eventlist:docs1});
+          });
+        });
+    } else{
+        res.redirect('/');
+    }
+
 });
 
+
 router.post('/', function(req, res) {
-  //event抽出
-    getEventList.getEventList(req.body.tag).then(function (docs){
-      for(var cnt=0; cnt<docs.length ;cnt++){
-          var EVENTS=docs;
-        };
-        res.render('getEventList.ejs',{eventlist:EVENTS});
-    });
+
 });
 
 module.exports = router;

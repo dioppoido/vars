@@ -3,7 +3,7 @@
     <div id="tag-target">
         <ul class="list-inline">
             <% for(var i = 0 ; i < field.length; i++) { %>
-                <li><a href=""><%= field[i].Fieldname %></a></li>
+                <li><a href="/getEventList?fieldid=<%= field[i].Fieldid %>"><%= field[i].Fieldname %></a></li>
             <% } %>
         </ul>
 
