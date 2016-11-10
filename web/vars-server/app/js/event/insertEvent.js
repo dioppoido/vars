@@ -9,7 +9,6 @@
    const schema = require('../db/schema');
    const Events = db.model('events', schema.events);
 
-   console.log("aaaaaaa");
 
    //insert処理
    /*const insertevents = new Events({
@@ -34,7 +33,7 @@
 
    });*/
      const insertevents=new Events(EVENTS);
-    console.log("bbbbb");
+
     insertevents.save();
-    console.log("cccc");
+
  };
