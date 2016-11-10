@@ -1,0 +1,477 @@
+/* eventtop.css */
+
+/* All */
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background: #F5F5F5;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: 'Noto Sans Japanese', sans-serif;
+}
+.container {
+    width: auto;
+}
+.col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+/* !All */
+
+/* EventTop */
+.eventtop{
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight:bold;
+}
+.event-title{
+}
+.event-img{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-size: cover;
+    -o-background-size:cover;
+    width: 200px;
+    height: 200px;
+    border: 2px solid gray;
+}
+.admin-btn{
+    width: 200px;
+    font-size: 20px;
+}
+.event-form{
+    margin: 0 auto;
+    margin-top:30px;
+    margin-bottom: 30px;
+    width: 100%;
+    font-size: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+.event-title{
+    font-size: 30px;
+}
+.event-contents{
+    margin-left: 20px;
+    font-size: 21px;
+}
+.overview{
+    margin-left: 30px;
+}
+.icon{
+    width: 90%;
+    height: 90%;
+    text-decoration:none;
+    display:block;
+    margin-bottom: 30px;
+    background-image:-moz-linear-gradient(top, #eff7ff 0%, #d1e8ff);
+    background-image:-webkit-gradient(linear,left top,left bottom, from(#eff7ff), to(#d1e8ff));
+    border-radius:5px;
+    box-shadow:2px 3px 3px #555;
+    border-radius:10px;
+}
+.icon2{
+    width: 90%;
+    height: 90%;
+    text-decoration:none;
+    display:block;
+    margin-bottom: 30px;
+    background-image:-moz-linear-gradient(top, #fff4f4 0%, #ffe0e0);
+    background-image:-webkit-gradient(linear,left top,left bottom, from(#fff4f4), to(#ffe0e0));
+    border-radius:5px;
+    box-shadow:2px 3px 3px #555;
+    border-radius:10px;
+}
+.icon3{
+    width: 90%;
+    height: 90%;
+    text-decoration:none;
+    display:block;
+    margin-bottom: 30px;
+    background-image:-moz-linear-gradient(top, #fff4f4 0%, #ffe0e0);
+    background-image:-webkit-gradient(linear,left top,left bottom, from(#fff4f4), to(#ffe0e0));
+    border-radius:5px;
+    box-shadow:2px 3px 3px #555;
+    border-radius:10px;
+
+}
+.img-icon{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: 'Noto Sans Japanese', sans-serif;
+}
+.img-icon2{
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px 15px 10px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: 'Noto Sans Japanese', sans-serif;
+}
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    /* 768px - 979px用（タブレット用）の記述 */
+    .contents-title{
+        font-size:34px;
+    }
+    .event-form{
+        margin: 0 auto;
+        margin-top:30px;
+        margin-bottom: 30px;
+        width: 100%;
+        font-size: 20px;
+        padding: 15px;
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+    .contents-title{
+        font-size: 30px;
+    }
+    .event-contents{
+        margin-left: 20px;
+        font-size: 21px;
+    }
+    .overview{
+        margin-left: 30px;
+    }
+    .icon{
+        width: 70%;
+        height: 70%;
+        text-decoration:none;
+        display:block;
+        margin-bottom: 30px;
+        background-image:-moz-linear-gradient(top, #eff7ff 0%, #d1e8ff);
+        background-image:-webkit-gradient(linear,left top,left bottom, from(#eff7ff), to(#d1e8ff));
+        border-radius:5px;
+        box-shadow:2px 3px 3px #555;
+        border-radius:10px;
+    }
+    .icon2{
+        width: 70%;
+        height: 70%;
+        text-decoration:none;
+        display:block;
+        margin-bottom: 30px;
+        background-image:-moz-linear-gradient(top, #fff4f4 0%, #ffe0e0);
+        background-image:-webkit-gradient(linear,left top,left bottom, from(#fff4f4), to(#ffe0e0));
+        border-radius:5px;
+        box-shadow:2px 3px 3px #555;
+        border-radius:10px;
+    }
+    .icon3{
+        width: 70%;
+        height: 70%;
+        text-decoration:none;
+        display:block;
+        margin-bottom: 30px;
+        background-image:-moz-linear-gradient(top, #fff4f4 0%, #ffe0e0);
+        background-image:-webkit-gradient(linear,left top,left bottom, from(#fff4f4), to(#ffe0e0));
+        border-radius:5px;
+        box-shadow:2px 3px 3px #555;
+        border-radius:10px;
+
+    }
+    .img-icon{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        font-family: 'Noto Sans Japanese', sans-serif;
+    }
+    .img-icon2{
+        width: 100%;
+        height: 100%;
+        padding: 10px 15px 15px 10px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        font-family: 'Noto Sans Japanese', sans-serif;
+    }
+
+}
+@media screen and (min-width: 480px) and (max-width: 767px)  {
+    /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .contents-title{
+        font-size: 34px;
+    }
+    .event-form{
+        margin: 0 auto;
+        margin-top:30px;
+        margin-bottom: 30px;
+        width: 90%;
+        font-size: 20px;
+        padding: 15px;
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+    .event-title{
+        font-size: 30px;
+    }
+    .event-contents{
+        margin-left: 20px;
+        font-size: 21px;
+    }
+    .overview{
+        margin-left: 30px;
+    }
+    .icon{
+        width: 70%;
+        height: 70%;
+        text-decoration:none;
+        display:block;
+        margin-bottom: 30px;
+        background-image:-moz-linear-gradient(top, #eff7ff 0%, #d1e8ff);
+        background-image:-webkit-gradient(linear,left top,left bottom, from(#eff7ff), to(#d1e8ff));
+        border-radius:5px;
+        box-shadow:2px 3px 3px #555;
+        border-radius:10px;
+    }
+    .icon2{
+        width: 70%;
+        height: 70%;
+        text-decoration:none;
+        display:block;
+        margin-bottom: 30px;
+        background-image:-moz-linear-gradient(top, #fff4f4 0%, #ffe0e0);
+        background-image:-webkit-gradient(linear,left top,left bottom, from(#fff4f4), to(#ffe0e0));
+        border-radius:5px;
+        box-shadow:2px 3px 3px #555;
+        border-radius:10px;
+    }
+    .icon3{
+        width: 70%;
+        height: 70%;
+        text-decoration:none;
+        display:block;
+        margin-bottom: 30px;
+        background-image:-moz-linear-gradient(top, #fff4f4 0%, #ffe0e0);
+        background-image:-webkit-gradient(linear,left top,left bottom, from(#fff4f4), to(#ffe0e0));
+        border-radius:5px;
+        box-shadow:2px 3px 3px #555;
+        border-radius:10px;
+
+    }
+    .img-icon{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        font-family: 'Noto Sans Japanese', sans-serif;
+    }
+    .img-icon2{
+        width: 100%;
+        height: 100%;
+        padding: 10px 15px 15px 10px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        font-family: 'Noto Sans Japanese', sans-serif;
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 767px)  {
+    /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .contents-title{
+        margin-left: 5%;
+        font-size: 20px;
+    }
+    .event-form{
+        margin: 0 auto;
+        margin-top:30px;
+        margin-bottom: 30px;
+        width: 90%;
+        font-size: 20px;
+        padding: 15px;
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+    .event-title{
+        margin-left: 0px;
+        font-size: 20px;
+    }
+    .event-contents{
+        margin-left: 10px;
+        font-size: 15px;
+    }
+    .overview{
+        margin-left: 5px;
+        font-size: 11px;
+    }
+    .icon{
+        width: 90%;
+        height: 90%;
+        text-decoration:none;
+        display:block;
+        margin-left: 10px;
+        margin-bottom: 30px;
+        background-image:-moz-linear-gradient(top, #eff7ff 0%, #d1e8ff);
+        background-image:-webkit-gradient(linear,left top,left bottom, from(#eff7ff), to(#d1e8ff));
+        border-radius:5px;
+        box-shadow:2px 3px 3px #555;
+        border-radius:10px;
+    }
+    .icon2{
+        width: 90%;
+        height: 90%;
+        text-decoration:none;
+        display:block;
+        margin-bottom: 30px;
+        background-image:-moz-linear-gradient(top, #fff4f4 0%, #ffe0e0);
+        background-image:-webkit-gradient(linear,left top,left bottom, from(#fff4f4), to(#ffe0e0));
+        border-radius:5px;
+        box-shadow:2px 3px 3px #555;
+        border-radius:10px;
+    }
+    .icon3{
+        width: 90%;
+        height: 90%;
+        text-decoration:none;
+        display:block;
+        margin-bottom: 30px;
+        background-image:-moz-linear-gradient(top, #fff4f4 0%, #ffe0e0);
+        background-image:-webkit-gradient(linear,left top,left bottom, from(#fff4f4), to(#ffe0e0));
+        border-radius:5px;
+        box-shadow:2px 3px 3px #555;
+        border-radius:10px;
+
+    }
+    .img-icon{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        font-family: 'Noto Sans Japanese', sans-serif;
+    }
+    .img-icon2{
+        width: 100%;
+        height: 100%;
+        padding: 10px 15px 15px 10px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        font-family: 'Noto Sans Japanese', sans-serif;
+    }
+}
+@media screen and (max-width: 479px) {
+    /* 479px以下用（スマートフォン用）の記述 */
+    .contents-title{
+        margin-left: 5%;
+        font-size: 20px;
+    }
+    .event-form{
+        margin: 0 auto;
+        margin-top:30px;
+        margin-bottom: 30px;
+        width: 90%;
+        font-size: 20px;
+        padding: 15px;
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+    .event-title{
+        margin-left: 0px;
+        font-size: 20px;
+    }
+    .event-contents{
+        margin-left: 10px;
+        font-size: 15px;
+    }
+    .overview{
+        margin-left: 5px;
+        font-size: 11px;
+    }
+    .icon{
+        width: 90%;
+        height: 90%;
+        text-decoration:none;
+        display:block;
+        margin-left: 10px;
+        margin-bottom: 30px;
+        background-image:-moz-linear-gradient(top, #eff7ff 0%, #d1e8ff);
+        background-image:-webkit-gradient(linear,left top,left bottom, from(#eff7ff), to(#d1e8ff));
+        border-radius:5px;
+        box-shadow:2px 3px 3px #555;
+        border-radius:10px;
+    }
+    .icon2{
+        width: 90%;
+        height: 90%;
+        text-decoration:none;
+        display:block;
+        margin-bottom: 30px;
+        background-image:-moz-linear-gradient(top, #fff4f4 0%, #ffe0e0);
+        background-image:-webkit-gradient(linear,left top,left bottom, from(#fff4f4), to(#ffe0e0));
+        border-radius:5px;
+        box-shadow:2px 3px 3px #555;
+        border-radius:10px;
+    }
+    .icon3{
+        width: 90%;
+        height: 90%;
+        text-decoration:none;
+        display:block;
+        margin-bottom: 30px;
+        background-image:-moz-linear-gradient(top, #fff4f4 0%, #ffe0e0);
+        background-image:-webkit-gradient(linear,left top,left bottom, from(#fff4f4), to(#ffe0e0));
+        border-radius:5px;
+        box-shadow:2px 3px 3px #555;
+        border-radius:10px;
+
+    }
+    .img-icon{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        font-family: 'Noto Sans Japanese', sans-serif;
+    }
+    .img-icon2{
+        width: 100%;
+        height: 100%;
+        padding: 10px 15px 15px 10px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        font-family: 'Noto Sans Japanese', sans-serif;
+    }
+}
+/* !EventTop */
