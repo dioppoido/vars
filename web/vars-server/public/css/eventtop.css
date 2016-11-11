@@ -125,6 +125,9 @@ body{
     -o-background-size: cover;
     font-family: 'Noto Sans Japanese', sans-serif;
 }
+.event-menu{
+  margin-top: 50px;
+}
 @media screen and (min-width: 768px) and (max-width: 979px) {
     /* 768px - 979px用（タブレット用）の記述 */
     .contents-title{
