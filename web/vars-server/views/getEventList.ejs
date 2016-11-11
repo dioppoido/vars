@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<!-- test -->
 <html lang="ja">
 <head>
 
@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title-->
-    <title>TeamList - VARS -</title>
+    <title>EventList - VARS -</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../public/css/index.css" rel="stylesheet">
+    <link href="../public/css/eventlist.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
     <link href="../public/css/footer.css" rel="stylesheet">
 
@@ -26,31 +26,52 @@
 <body>
 
 <%- include('./header.ejs') %>
+
 <section>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
-                <div class="text-center">イベント一覧（テスト）</div><br>
-                  <form method="post" action="/getEventList">
-                    <input type="text" name="tag">
-                    <button type="submit">送信</button>
-                  </form>
-                  <%for(var cnt=0;cnt<eventlist.length;cnt++){%>
-                        <%=eventlist[cnt].Eventid%><br>
-                        <%=eventlist[cnt].Eventname%><br>
-                        <%=eventlist[cnt].Overview%><br>
-                        <%=eventlist[cnt].Address%><br>
-                        <%=eventlist[cnt].Displayname%><br>
-                        <%=eventlist[cnt].Course%><br>
-                        <%=eventlist[cnt].Venue%><br>
-                        <%=eventlist[cnt].Date%><br>
-                        <%console.log(eventlist)%>
-                  <%}%>
+              <div class="eventlist">
+
+                  <div class="text-center event-title"><i class="fa fa-info-circle" aria-hidden="true"></i> イベント一覧</div>
+
+                  <%- include('./field.ejs') %>
+                  <!-- イベントがある場合 -->
+                  <%if(eventlist!=null){%>
+                    <% for(var cnt=0; cnt<eventlist.length; cnt++) { %>
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-form">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <a href="/eventtop"><img src="../public/images/noimage.png" class="event-img"></a><br>
+                        </div>
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                          <div class="list-contents">
+                            イベント名 : <a href="/eventtop"><%= eventlist[cnt].Eventname %></a><br>
+                            日時 : <%= eventlist[cnt].Date %> ~ <br>
+                            会場 : <%= eventlist[cnt].Address %><br>
+                            <div class="visible-md visible-lg">
+                              概要 : <%= eventlist[cnt].Overview %><br>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <% } %>
+                  <!-- イベントがない場合 -->
+                  <% } else { %>
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-form">
+                      <div class="text-center">イベントはありません</div>
+                      </div>
+                  <% } %>
+
+
+              </div>
 
             </div><!-- col -->
+
         </div><!-- row -->
-    </div><!-- container -->
+    </div><!-- contai
+      to
+      -[]::ner -->
 </section>
 
 <%- include('./footer.ejs') %>
@@ -60,6 +81,9 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
+
+<!-- Menu Open & Close -->
+<script src="../public/js/menu.js"></script>
 
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>
