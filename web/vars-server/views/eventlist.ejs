@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<!-- test -->
 <html lang="ja">
 <head>
 
@@ -37,24 +37,32 @@
                   <div class="text-center event-title"><i class="fa fa-info-circle" aria-hidden="true"></i> イベント一覧</div>
 
                   <%- include('./field.ejs') %>
-
-                  <% for(var cnt=0; cnt<4; cnt++) { %>
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-form">
-                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                          <a href="/eventtop"><img src="../public/images/noimage.png" class="event-img"></a><br>
-                      </div>
-                      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                        <div class="list-contents">
-                          イベント名 : <a href="/eventtop">2017年度IT分野Ⅳ年合評会</a><br>
-                          日時 : 2017/01/01 15:00 ~ <br>
-                          会場 : ソニックホール<br>
-                          <div class="visible-md visible-lg">
-                            概要 : 合評会するんだよ<br>
+                  <!-- イベントがある場合 -->
+                  <%if(eventlist!=null){%>
+                    <% for(var cnt=0; cnt<eventlist.length; cnt++) { %>
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-form">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <a href="/eventtop"><img src="../public/images/noimage.png" class="event-img"></a><br>
+                        </div>
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                          <div class="list-contents">
+                            イベント名 : <a href="/eventtop"><%= eventlist[cnt].Eventname %></a><br>
+                            日時 : <%= eventlist[cnt].Date %> ~ <br>
+                            会場 : <%= eventlist[cnt].Address %><br>
+                            <div class="visible-md visible-lg">
+                              概要 : <%= eventlist[cnt].Overview %><br>
+                            </div>
                           </div>
                         </div>
                       </div>
-                  </div>
-                <% } %>
+                      <% } %>
+                  <!-- イベントがない場合 -->
+                  <% } else { %>
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noevent-form">
+                      <div class="text-left"> 現在、イベントはありません。</div>
+                      </div>
+                  <% } %>
+
 
               </div>
 
