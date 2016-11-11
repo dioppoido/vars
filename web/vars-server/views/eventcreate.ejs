@@ -40,7 +40,7 @@
                     <div class="event-title text-center"><i class="fa fa-plus-circle" aria-hidden="true"></i> イベント作成</div>
 
                     <div class="create-form">
-                        <form method="post" action="eventcreate" enctype="multipart/form-data">
+                        <form method="post" name="eventcreate" action="eventcreate" enctype="multipart/form-data" onsubmit="return date_confirm()">
 
                             <div class="form-group">
                               <label>イベント名 : </label>
@@ -49,7 +49,7 @@
 
                             <div class="form-group">
                                 <label>開催日 : </label>
-                                <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="dates" placeholder="例)20YY/MM/DD" required readonly="readonly"/>
+                                <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="dates" placeholder="例)20YY/MM/DD" readonly="readonly" required/>
                             </div>
 
                             <div class="form-group">
@@ -74,12 +74,11 @@
                             </div>
 
                             <div class="form-group">
-                              <label>コース : </label>
+                              <label>分野 : </label>
                               <select class="form-control input-lg event-input" name="course" required>
-                                <option value="1">ソフトⅠ</option>
-                                <option value="2">ソフトⅡ</option>
-                                <option value="3">ソフトⅢ</option>
-                                <option value="4">ソフトⅣ</option>
+                                  <% for(var i = 0 ; i < field.length; i++) { %>
+                                        <option value="<%=field[i].Fieldid%>"><%=field[i].Fieldname%></option>
+                                  <% } %>
                               </select>
                             </div>
 
@@ -87,7 +86,7 @@
                                 <div class="form-group">
                                     <label>参加チーム登録開始期限 : </label>
 
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="createstart" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" required />
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="createstart" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly"  required />
 
                                 </div>
                             </div>
@@ -96,7 +95,7 @@
                                 <div class="form-group">
                                     <label>参加チーム登録終了期限 : </label>
 
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="createfinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" required />
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="createfinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required />
 
                                 </div>
                             </div>
@@ -105,7 +104,7 @@
                                 <div class="form-group">
                                     <label>投票開始期限 : </label>
 
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="votestart" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" required/>
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="votestart" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required />
 
                                 </div>
                             </div>
@@ -114,7 +113,7 @@
                                 <div class="form-group">
                                     <label>投票終了期限 : </label>
 
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="votefinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" required/>
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="votefinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required />
 
                                 </div>
                             </div>
@@ -167,6 +166,9 @@
 
 <!-- Show File Name -->
 <script src="../public/js/show.js"></script>
+
+<!-- Form　confirmation -->
+<script src="../public/js/form_confirmation"></script>
 
 <!-- Date Picker -->
 <script src="../public/js/datepicker.min.js"></script>

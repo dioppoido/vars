@@ -31,3 +31,140 @@ function pass_confirm() {
     }
 
 }
+
+/* eventcreate.ejs */
+function date_confirm(){
+
+    //格納用
+    var teambox;
+    var votebox;
+    var holdbox;
+
+    //開催日
+    var holdday = document.forms.eventcreate.dates.value;
+
+    //参加チーム期限
+    var team_start = document.forms.eventcreate.createstart.value;
+    var team_end = document.forms.eventcreate.createfinish.value;
+    //参加チーム時間
+    var team_stime;
+    var team_etime;
+    //投票期限
+    var vote_start = document.forms.eventcreate.votestart.value;
+    var vote_end = document.forms.eventcreate.votefinish.value;
+    //投票時間
+    var vote_stime;
+    var vote_etime;
+
+    //開催日
+    if( holdday != ""){
+        holdbox = holdday.split("/");
+        holdday = holdbox[0] + holdbox[1] + holdbox[2];
+        console.log(holdday);
+    }else{
+        alert("開催日が入力されていません。");
+        return false;
+    }
+
+    //参加チーム
+    if( team_start != ""){
+        teambox = team_start.split(" ");
+        team_start = teambox[0];
+        team_start = team_start.split("/");
+        team_start = team_start[0] + team_start[1] + team_start[2];
+        console.log(team_start);
+        team_stime = teambox[1];
+        team_stime = team_stime.split(":");
+        team_stime = team_stime[0] + team_stime[1];
+        console.log(team_stime);
+    }else{
+        alert("参加チームの開始日が入力されていません。");
+        return false;
+    }
+
+    if(team_end != ""){
+        teambox = team_end.split(" ");
+        team_end = teambox[0];
+        team_end = team_end.split("/");
+        team_end = team_end[0] + team_end[1] + team_end[2];
+        console.log(team_end);
+        team_etime = teambox[1];
+        team_etime = team_etime.split(":");
+        team_etime = team_etime[0] + team_etime[1];
+        console.log(team_etime);
+    }else{
+        alert("参加チームの終了日が入力されていません。");
+        return false;
+    }
+
+    //投票
+    if(vote_start != ""){
+        votebox = vote_start.split(" ");
+        vote_start = votebox[0];
+        vote_start = vote_start.split("/");
+        vote_start = vote_start[0] + vote_start[1] + vote_start[2];
+        console.log(vote_start);
+        vote_stime = votebox[1];
+        vote_stime = vote_stime.split(":");
+        vote_stime = vote_stime[0] + vote_stime[1];
+        console.log(vote_stime);
+    }else{
+        alert("投票の開始日が入力されていません。");
+        return false;
+    }
+
+    if(vote_end != ""){
+        votebox = vote_end.split(" ");
+        vote_end = votebox[0];
+        vote_end = vote_end.split("/");
+        vote_end = vote_end[0] + vote_end[1] + vote_end[2];
+        console.log(vote_end);
+        vote_etime = votebox[1];
+        vote_etime = vote_etime.split(":");
+        vote_etime = vote_etime[0] + vote_etime[1];
+        console.log(vote_etime);
+    }else{
+        alert("投票の終了日が入力されていません。");
+        return false;
+    }
+
+    //参加チーム
+    if(team_start > team_end){
+        alert("参加チームの開始日が終了日より遅いです。");
+        return false;
+    }
+    if(team_start == team_end && team_stime == team_etime){
+        alert("参加チームの開始時間と終了時間が同じです。");
+        return false;
+    }
+    if(team_start == team_end && team_stime > team_etime){
+        alert("参加チームの開始時間が終了時間より遅いです。");
+        return false;
+    }
+
+    //投票
+    if(vote_start > vote_end){
+        alert("投票の開始日が終了日より遅いです。");
+        return false;
+    }
+    if( vote_start == vote_end && vote_stime == vote_etime){
+        alert("投票の開始時間と終了時間が同じです。");
+        return false;
+    }
+    if(vote_start == vote_end && vote_stime > vote_etime){
+        alert("投票の開始時間が終了時間より遅いです。");
+        return false;
+    }
+
+    //開催日
+    if(holdday > vote_start){
+        alert("投票の開始日が開催日より早いです。");
+        return false;
+    }
+    if(holdday > vote_end){
+        alert("投票の終了日が開催日より早いです。");
+        return false;
+    }
+
+    return false;
+}
