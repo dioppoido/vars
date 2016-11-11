@@ -127,8 +127,6 @@ app.use('/getTeam',require('./routes/getTeam'));
 app.use('/boot',require('./routes/boot'));
 //multerテスト
 app.use('/multer',require('./routes/multer'));
-//イベント一覧抽出テスト
-app.use('/getEventList',require('./routes/getEventList'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
