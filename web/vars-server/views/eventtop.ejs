@@ -43,18 +43,17 @@
 
                   <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                       <div class="event-form">
-                          <div class="event-title">ソフトⅣ合評会</div>
+                          <div class="event-title"><%=eventdata[0].Eventname%></div>
                           <div class="event-contents">
                               <ul class="list-unstyled">
-                                  <li>対象コース : ソフトⅣコース</li>
-                                  <li>日時 : 2017/XX/YY</li>
-                                  <li>場所 : 南館ソニックホール</li>
+                                  <li>対象コース : <%=eventdata[0].Fieldid%></li>
+                                  <li>日時 : <%=eventdata[0].Date%></li>
+                                  <li>場所 : <%=eventdata[0].Venue%></li>
                                   <li>
                                     概要 : <br>
                                     <ul class="list-unstyled overview">
-                                        <li>PBL3の合評会と個人発表を行います。</li>
-                                        <li>まじめに発表しましょう。</li>
-                                        <li>時間がギリギリなので、持ち時間を守ってください。</li>
+                                        <li><%=eventdata[0].Overview%></li>
+
                                     </ul>
                                   </li>
                               </ul>
@@ -68,8 +67,8 @@
                   <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                       <a href="#" class="icon2"><img class="img-icon2" src="images/teamlisticon.png"></a>
                   </div>
-                  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                      <a href="#" class="icon"><img class="img-icon" src="images/voteicon.png"></a>
+                  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">s
+                      <a href="/vote?eventid=<%=eventdata[0],eventid%>" class="icon"><img class="img-icon" src="images/voteicon.png"></a>
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                       <a href="#" class="icon3"><img class="img-icon" src="images/votingresultsicon.png"></a>

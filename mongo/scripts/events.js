@@ -3,7 +3,7 @@ db = db.getSiblingDB("vars");
 db.events.drop();
 db.createCollection("events");
 db.events.insert({
-    Eventid:1,
+    Eventid:"1",
     Eventname:"イベントA",
     Overview:"イベントAの説明です",
     Address:"test@example.com",
@@ -22,7 +22,7 @@ db.events.insert({
     Image:""
 });
 db.events.insert({
-    Eventid:2,
+    Eventid:"2",
     Eventname:"イベントB",
     Overview:"イベントBの説明です",
     Address:"test@example.com",
@@ -41,7 +41,7 @@ db.events.insert({
     Image:""
 });
 db.events.insert({
-    Eventid:3,
+    Eventid:"3",
     Eventname:"イベントC",
     Overview:"イベントCの説明です",
     Address:"test@example.com",
