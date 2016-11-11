@@ -46,9 +46,9 @@
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                           <div class="list-contents">
-                            イベント名 : <a href="/eventtop"><%= eventlist[cnt].Eventname %></a><br>
+                            イベント名 : <a href="/eventtop?eventid=<%=eventlist[cnt].Eventid%>"><%= eventlist[cnt].Eventname %></a><br>
                             日時 : <%= eventlist[cnt].Date %> ~ <br>
-                            会場 : <%= eventlist[cnt].Address %><br>
+                            会場 : <%= eventlist[cnt].Venue %><br>
                             <div class="visible-md visible-lg">
                               概要 : <%= eventlist[cnt].Overview %><br>
                             </div>
