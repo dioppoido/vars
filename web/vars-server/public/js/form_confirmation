@@ -166,5 +166,5 @@ function date_confirm(){
         return false;
     }
 
-    return false;
+    return true;
 }
