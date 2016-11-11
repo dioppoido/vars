@@ -7,13 +7,18 @@ var insertEvent = require("../app/js/event/insertEvent");
 var multer  = require('multer');
 var rename = require('../app/js/image/rename');
 var moment = require('../app/js/moment/moment');
+var getField = require("../app/js/field/getField");
 //特に送り付ける値はなし
 router.get('/', function(req, res) {
     if(req.session.user){
-        res.render('eventcreate.ejs',{
-            user: req.session.user.displayName,
-            adress:req.session.user.address
-          });
+        getField.getField().then(function (docs) {    //分野取得
+            res.render('eventcreate.ejs',{
+                user: req.session.user.displayName,
+                adress:req.session.user.address,
+                field: docs
+            });
+        });
+
     } else{
         res.redirect('/');
     }
