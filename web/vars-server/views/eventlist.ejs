@@ -62,8 +62,8 @@
                     <% } %>
 
                     <!-- 終了イベントの表示 -->
-                    <% for(var cnt=0; cnt<closedEventList.length; cnt++) { %>
-                          <%if(cnt==0){%>
+                    <% for(var cnt=closedEventList.length; cnt>0; cnt--) { %>
+                          <%if(cnt==closedEventList.length){%>
                               <div class=text-left>閉鎖済みイベント</div>
                           <%}%>
                           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-form">
@@ -72,11 +72,11 @@
                             </div>
                             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                               <div class="list-contents">
- 				                        イベント名 : <a href="/eventtop?eventid=<%=closedEventList[cnt].Eventid%>"><%= closedEventList[cnt].Eventname %></a><br>
-                                日時 : <%= closedEventList[cnt].Date %> ~ <br>
-                                会場 : <%= closedEventList[cnt].Venue %><br>
+ 				                        イベント名 : <a href="/eventtop?eventid=<%=closedEventList[cnt-1].Eventid%>"><%= closedEventList[cnt-1].Eventname %></a><br>
+                                日時 : <%= closedEventList[cnt-1].Date %> ~ <br>
+                                会場 : <%= closedEventList[cnt-1].Venue %><br>
                                 <div class="visible-md visible-lg">
-                                  概要 : <%= closedEventList[cnt].Overview %><br>
+                                  概要 : <%= closedEventList[cnt-1].Overview %><br>
                                 </div>
                               </div>
                             </div>
