@@ -13,8 +13,8 @@ router.get('/', function(req, res) {
             getEventList.getEventList(req.query.fieldid).then(function (docs1){
                 //一つでもイベントがある場合
                 if(docs1!=null){
-                    var inSessionEvent=inSessionEventList.inSessionEventList(todate.todate("YYYY/MM/D"),docs1);
-                    var closedEvent=closedEventList.closedEventList(todate.todate("YYYY/MM/D"),docs1);
+                    var inSessionEvent=inSessionEventList.inSessionEventList(todate.todate("YYYY/MM/D"),docs1,1);
+                    var closedEvent=closedEventList.closedEventList(todate.todate("YYYY/MM/D"),docs1,2);
                     res.render('eventlist.ejs',{field:docs,notFound:docs1,inSessionEventList:inSessionEvent,closedEventList:closedEvent});
                 //一つもイベントがない場合
                 }else{
