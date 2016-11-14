@@ -57,7 +57,7 @@ db.events.insert({
         Votestart:"2016/11/1 12:00",
         Votefinish:"2016/11/10 15:00"
     },
-    Image:"public/image/images.png"
+    Image:"public/images/images.png"
 });
 
 db.events.insert({
