@@ -31,6 +31,7 @@ exports.events = new mongoose.Schema({
   Eventid         :String,      //イベントID
   Eventname       :String,
   Overview        :String,
+  Password        :String,
   Address         :String,
   displayName     :String,
   Fieldid          :String,
