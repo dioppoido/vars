@@ -47,7 +47,12 @@
                           <div class="event-contents">
                               <ul class="list-unstyled">
                                   <li>対象コース : <%=eventdata[0].Fieldid%></li>
-                                  <li>日時 : <%=eventdata[0].Date%></li>
+                                  <%
+                                  var eventdate = new Date(eventdata[0].Date);
+                                  var weekDayList = [ "日", "月", "火", "水", "木", "金", "土" ] ;
+                                  var week = "(" + weekDayList[ eventdate.getDay() ] + ")";
+                                  %>
+                                  <li>日時 : <%=eventdata[0].Date%> <%=week%></li>
                                   <li>場所 : <%=eventdata[0].Venue%></li>
                                   <li>
                                     概要 : <br>
