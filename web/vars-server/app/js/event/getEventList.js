@@ -1,7 +1,7 @@
 /**
  * イベント抽出クラス
  * @author 山口
- * @param tag : コース名
+ * @param tag : 分野名
  */
 
 exports.getEventList = function(tag){
@@ -12,7 +12,7 @@ exports.getEventList = function(tag){
         const Events = db.model('events', schema.events);
         //イベントリストオール抽出　引数なし
         if(tag==null){
-          Events.find({}, {}, function(err, docs){
+          Events.find({}, {},{sort:{Date:1}},function(err, docs){
                 if (docs.length >= 1) {
                     resolve(docs);
                 } else {
@@ -20,9 +20,9 @@ exports.getEventList = function(tag){
               }
             });
         }
-        //コース別抽出 引数がある場合
+        //分野別抽出 引数がある場合
         if(tag!=null){
-          Events.find({Fieldid:tag}, {},function(err, docs){
+          Events.find({Fieldid:tag}, {},{sort:{Date:1}},function(err, docs){
                 if (docs.length >= 1) {
                     resolve(docs);
                 } else {
