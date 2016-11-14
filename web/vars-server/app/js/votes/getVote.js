@@ -24,11 +24,11 @@ exports.getVote = function(eventid){
                     resolve(docs);
                 } else {
                     console.log("getVote:"+"データがありません");
-                    resolve("");
+                    reject("投票部門が設定されていません。");
                 }
             } else {
                 console.log("getVote:"+"DB Error.");
-                reject("");
+                reject(err);
             }
         });
 

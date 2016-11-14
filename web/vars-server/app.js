@@ -91,6 +91,7 @@ passport.deserializeUser(function(id, done) {
 app.use('/app', express.static(__dirname + '/app'));
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/views', express.static(__dirname + '/views'));
+app.use('/upfile', express.static(__dirname + '/upfile'));
 
 //ここからルート設定
 //トップ画面

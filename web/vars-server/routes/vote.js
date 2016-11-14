@@ -10,17 +10,30 @@ router.get('/', function(req, res) {
     if(req.session.user ){
         if(req.query.eventid) {
             var eventid = req.query.eventid;
+            var msg="";
             getEvent.getEvent(eventid).then(function (eventdata) {
                 getTeam.getTeam(eventid).then(function (teamdata) {
                     getVote.getVote(eventid).then(function (votedata) {
-                        console.log("eventdata=" + eventdata[0]);
                         res.render('vote.ejs', {
                             eventdata: eventdata,
                             teamdata: teamdata,
                             votedata: votedata,
-                            teamnum: teamdata.length,
-                            categorynum: votedata.length
+                            msg:msg
                         });
+                    }).catch(function (msg) {
+                        res.render('vote.ejs',{
+                            eventdata: "",
+                            teamdata: "",
+                            votedata: "",
+                            msg:msg
+                        });
+                    });
+                }).catch(function(msg){
+                    res.render('vote.ejs',{
+                        eventdata: "",
+                        teamdata: "",
+                        votedata: "",
+                        msg:msg
                     });
                 });
             }).catch(function(){
