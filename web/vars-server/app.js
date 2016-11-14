@@ -127,6 +127,8 @@ app.use('/getTeam',require('./routes/getTeam'));
 app.use('/boot',require('./routes/boot'));
 //multerテスト
 app.use('/multer',require('./routes/multer'));
+//パスワードページ
+app.use('/password',require('./routes/password'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
