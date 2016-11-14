@@ -61,12 +61,31 @@ db.events.insert({
 });
 
 db.events.insert({
+    Eventid:"6",
+    Eventname:"bunkasai",
+    Overview:"itフェスです",
+    Address:"test@example.com",
+    displayName:"test",
+    Fieldid:"all",
+    Venue:"ちか",
+    Date:"2016/12/11",
+    Createperiod:{
+        Createstart:"2016/12/21 12:00",
+        Createfinish:"2016/12/31 15:00"
+    },
+    Voteperiod:{
+        Votestart:"2016/12/1 12:00",
+        Votefinish:"2016/12/10 15:00"
+    },
+    Image:"public/images/images.png"
+});
+db.events.insert({
     Eventid:"4",
     Eventname:"itfes",
     Overview:"itフェスです",
     Address:"test@example.com",
     displayName:"test",
-    Fieldid:"game",
+    Fieldid:"it",
     Venue:"ちか",
     Date:"2016/12/11",
     Createperiod:{
