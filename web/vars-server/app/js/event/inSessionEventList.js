@@ -18,6 +18,7 @@ exports.inSessionEventList = function(date,json,sort){
                   open[openNo].Date=json[cnt].Date;
                   open[openNo].Venue=json[cnt].Venue;
                   open[openNo].Image=json[cnt].Image;
+                  open[openNo].Overview=json[cnt].Overview;
                   openNo++;
               }
         }
