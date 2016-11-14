@@ -2,7 +2,6 @@
     <a id="tag-btn" class="btn btn-success">タグ検索</a>
     <div id="tag-target">
         <ul class="list-inline">
-            <li><a href="/eventlist">すべて</a></li>
             <% for(var i = 0 ; i < field.length; i++) { %>
                 <li><a href="/eventlist?fieldid=<%= field[i].Fieldid %>"><%= field[i].Fieldname %></a></li>
             <% } %>

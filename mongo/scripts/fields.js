@@ -3,6 +3,12 @@ db = db.getSiblingDB("vars");
 db.fields.drop();
 db.createCollection("fields");
 
+//すべて
+db.fields.insert({
+    Fieldid: "all",
+    Fieldname: "すべて"
+});
+
 //IT分野
 db.fields.insert({
     Fieldid: "it",
