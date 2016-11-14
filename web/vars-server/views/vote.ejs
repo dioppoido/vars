@@ -50,7 +50,7 @@
 
                                 <div class="tab-pane active" id="vote">
 
-                                    <%if(votedata){%>
+                                    <%if(!msg){%>
                                     <form method="POST" name="voteinsert" action="/vote">
                                         <% for(var i = 0 ; i < votedata.length; i++){ %>
                                             <div class="form-group">
@@ -70,7 +70,7 @@
 
                                     </form>
                                     <%}else{%>
-                                    このイベントの投票は現在行っておりません。
+                                        <%=msg%>
                                     <%}%>
 
                                 </div><!-- vote tab -->
