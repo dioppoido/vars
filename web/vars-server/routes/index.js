@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-
 /**
  * ログイン情報があるか確認する(session)
  * ログイン情報がなければlogin.jsへ遷移、あればindex.ejsへ遷移
