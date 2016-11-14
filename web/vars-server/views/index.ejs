@@ -45,20 +45,25 @@
                                     <div class="panel-heading">現在開催中のイベント</div>
 
                                         <ul class="list-group">
-                                           <% for(var i = 0 ; i < 4 ; i++) { %>
-                                                <li class="list-group-item">
-                                                    <div class="row">
-                                                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                                            <a href="/eventtop"><img src="../public/images/noimage.png" class="event-img"></a>
-                                                         </div>
-                                                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                                                            <div class="event-contents">
-                                                                イベント名
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            <% } %>
+                                           <!-- イベントがある場合 -->
+                                           <% if(notFound != null) { %>
+                                                <% for(var i = 0; i < inSessionEventList.length; i++){ %>
+
+                                                    <li class="list-group-item">
+                                                       <div class="row">
+                                                           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                               aa
+                                                           </div>
+                                                           <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                                               bb
+                                                           </div>
+                                                       </div>
+                                                    </li>
+
+                                                <% }%>
+                                           <% } else{ %>
+                                                <li>現在、イベントはありません。</li>
+                                           <% } %>
                                         </ul>
 
                                 </div><!-- panel -->
