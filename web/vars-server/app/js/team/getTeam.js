@@ -22,7 +22,7 @@
             resolve(docs);
           }else{
             console.log("getTeam:"+"データがありません");
-            reject("Date NotFound");
+            reject("チームが存在しません。");
           }
         } else {
           console.log("getTeam:"+"DB Error.");
