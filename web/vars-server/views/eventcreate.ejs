@@ -121,14 +121,14 @@
 
                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
-                                    <input type="button" id="passbutton" value="パスワード設定ON" onclick="change_pass();">
+                                    <button type="button" class="btn btn-primary" id="passbutton" onclick="change_pass();">パスワード設定ON</button>
                                 </div>
                             </div>
 
 
                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                                 <div class="form-group">
-                                    <input type='password' id="passarea" class='form-control input-lg event-input' name="password" disabled="disable" placeholder="4文字以上で入力してください"/>
+                                    <input type='password' id="passarea" class='form-control input-lg event-input' name="password" disabled="disabled" minlength="4" placeholder="4文字以上で入力してください"/>
 
                                 </div>
                             </div>
