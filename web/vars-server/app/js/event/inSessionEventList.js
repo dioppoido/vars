@@ -15,6 +15,7 @@ exports.inSessionEventList = function(date,json,sort){
               if(json[cnt].Date>=date){
                   open[openNo].Eventid=json[cnt].Eventid;
                   open[openNo].Eventname=json[cnt].Eventname;
+                  open[openNo].Fieldid=json[cnt].Fieldid;
                   open[openNo].Date=json[cnt].Date;
                   open[openNo].Venue=json[cnt].Venue;
                   open[openNo].Image=json[cnt].Image;

@@ -64,9 +64,9 @@ db.events.insert({
 });
 
 db.events.insert({
-    Eventid:"6",
-    Eventname:"bunkasai",
-    Overview:"itフェスです",
+    Eventid:"4",
+    Eventname:"Soft4合評会",
+    Overview:"SOft4合評会です。",
     Address:"test@example.com",
     displayName:"test",
     Fieldid:"all",
@@ -83,9 +83,9 @@ db.events.insert({
     Image:"public/images/images.png"
 });
 db.events.insert({
-    Eventid:"4",
-    Eventname:"itfes",
-    Overview:"itフェスです",
+    Eventid:"5",
+    Eventname:"2017デジタルワークス",
+    Overview:"2017年度のデジタルワークスです。",
     Address:"test@example.com",
     displayName:"test",
     Fieldid:"it",
@@ -101,3 +101,62 @@ db.events.insert({
     },
     Image:"upfile/5f609a5b5d23d5fec7865efa0bdc73bc.jpg"
 });
+db.events.insert({
+    Eventid:"6",
+    Eventname:"2018デジタルワークス",
+    Overview:"2018年度のデジタルワークスです。",
+    Address:"test@example.com",
+    displayName:"test",
+    Fieldid:"it",
+    Venue:"ちか",
+    Date:"2016/12/15",
+    Createperiod:{
+        Createstart:"2016/12/21 12:00",
+        Createfinish:"2016/12/31 15:00"
+    },
+    Voteperiod:{
+        Votestart:"2016/12/1 12:00",
+        Votefinish:"2016/12/10 15:00"
+    },
+    Image:"upfile/5f609a5b5d23d5fec7865efa0bdc73bc.jpg"
+});
+db.events.insert({
+    Eventid:"7",
+    Eventname:"2019デジタルワークス",
+    Overview:"2019年度のデジタルワークスです。",
+    Address:"test@example.com",
+    displayName:"test",
+    Fieldid:"it",
+    Venue:"ちか",
+    Date:"2016/12/16",
+    Createperiod:{
+        Createstart:"2016/12/21 12:00",
+        Createfinish:"2016/12/31 15:00"
+    },
+    Voteperiod:{
+        Votestart:"2016/12/1 12:00",
+        Votefinish:"2016/12/10 15:00"
+    },
+    Image:"upfile/5f609a5b5d23d5fec7865efa0bdc73bc.jpg"
+});
+db.events.insert({
+    Eventid:"8",
+    Eventname:"2020デジタルワークス",
+    Overview:"2020年度のデジタルワークスです。",
+    Address:"test@example.com",
+    displayName:"test",
+    Fieldid:"it",
+    Venue:"ちか",
+    Date:"2016/12/17",
+    Createperiod:{
+        Createstart:"2016/12/21 12:00",
+        Createfinish:"2016/12/31 15:00"
+    },
+    Voteperiod:{
+        Votestart:"2016/12/1 12:00",
+        Votefinish:"2016/12/10 15:00"
+    },
+    Image:"upfile/5f609a5b5d23d5fec7865efa0bdc73bc.jpg"
+});
+
+
