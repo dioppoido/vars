@@ -14,6 +14,7 @@
               if(json[cnt].Date<date){
                   close[closeNo].Eventid=json[cnt].Eventid;
                   close[closeNo].Eventname=json[cnt].Eventname;
+                  close[closeNo].Fieldid=json[cnt].Fieldid;
                   close[closeNo].Date=json[cnt].Date;
                   close[closeNo].Venue=json[cnt].Venue;
                   close[closeNo].Image=json[cnt].Image;

@@ -41,24 +41,37 @@
                         <!-- Event List -->
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <div class="event-list">
-                                <div class="panel panel-list">
+                                <div class="panel panel-list panel-primary">
                                     <div class="panel-heading">現在開催中のイベント</div>
 
                                         <ul class="list-group">
-                                           <% for(var i = 0 ; i < 4 ; i++) { %>
-                                                <li class="list-group-item">
-                                                    <div class="row">
-                                                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                                            <a href="/eventtop"><img src="../public/images/noimage.png" class="event-img"></a>
-                                                         </div>
-                                                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                                                            <div class="event-contents">
-                                                                イベント名
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            <% } %>
+                                           <!-- イベントがある場合 -->
+                                           <% if(notFound != null) { %>
+                                                <% for(var i = 0; i < inSessionEventList.length; i++){ %>
+
+                                                    <li class="list-group-item">
+                                                       <div class="row">
+                                                           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                               <%if(inSessionEventList[i].Image=="public/images/noimage.png"){%>
+                                                               <a href="/eventtop?eventid=<%=inSessionEventList[i].Eventid%>"><img src="../public/images/noimage.png" class="event-img"></a><br>
+                                                               <%}else{%>
+                                                               <%var images="../"+inSessionEventList[i].Image;%>
+                                                               <a href="/eventtop?eventid=<%=inSessionEventList[i].Eventid%>"><img src="<%=images%>" class="event-img"></a><br>
+                                                               <%}%>
+                                                           </div>
+                                                           <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                                               <div class="event-contents">
+                                                                   - イベント名 - <a href="/eventtop?eventid=<%=inSessionEventList[i].Eventid%>"><br><%=inSessionEventList[i].Eventname%></a><br>
+                                                                   - &nbsp;&nbsp;対象学科&nbsp;&nbsp; - <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=fieldlist[i]%>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                    </li>
+
+                                                <% }%>
+                                           <% } else{ %>
+                                                <li>現在、イベントはありません。</li>
+                                           <% } %>
                                         </ul>
 
                                 </div><!-- panel -->
@@ -68,7 +81,7 @@
                         <!-- Event & Twitter -->
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 
-                            <div class="panel panel-events">
+                            <div class="panel panel-events panel-primary">
                                 <div class="panel-heading">参加イベント一覧</div>
 
                                 <div class="panel-body">
@@ -121,9 +134,6 @@
 
 <!-- PNotify JavaScript -->
 <script src="../public/js/pnotify.custom.min.js"></script>
-
-<!-- Pop up -->
-<script src="../public/js/popup.js"></script>
 
 <!-- Menu Open & Close -->
 <script src="../public/js/menu.js"></script>
