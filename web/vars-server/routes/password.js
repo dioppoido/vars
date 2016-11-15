@@ -5,7 +5,14 @@ var getEvent = require('../app/js/event/getEvent');
 var validator = require('validator'); //validatorモジュール宣言
 
 
+router.get('/', function(req, res) {
+    if(req.session.user){
+        res.render('password.ejs',{msg:''});
+    } else{
+        res.redirect('/');
+    }
 
+});
 
 router.post('/', function(req, res) {
     if(req.session.user){
@@ -15,7 +22,7 @@ router.post('/', function(req, res) {
                req.session.user.success=req.session.user.eventid;
                res.redirect(req.session.user.get);
            }else{
-               res.render('password.ejs');
+               res.render('password.ejs',{msg:'パスワードが違います。'});
            }
         });
     }
