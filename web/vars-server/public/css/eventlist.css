@@ -61,7 +61,19 @@ body{
   font-size: 22px;
   line-height: 40px;
 }
-
+.held-situation{
+  margin-top: 35px;
+  margin-bottom: 35px;
+  font-size: 25px;
+}
+.clear{
+  clear: both;
+}
+.held-situation1{
+  margin-top:35px;
+  margin-bottom: 35px;
+  font-size: 25px;
+}
 .event-img{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -96,6 +108,19 @@ body{
 
 @media screen and (min-width: 768px) and (max-width: 979px) {
     /* 768px - 979px用（タブレット用）の記述 */
+    .held-situation{
+      margin-top: 25px;
+      margin-bottom: 25px;
+      font-size: 24px;
+    }
+    .clear{
+      clear: both;
+    }
+    .held-situation1{
+      margin-top:15px;
+      margin-bottom: 25px;
+      font-size: 24px;
+    }
     .event-title{
         font-size: 34px;
     }
@@ -165,6 +190,20 @@ body{
 }
 @media screen and (min-width: 480px) and (max-width: 767px)  {
     /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .held-situation{
+      margin-top: 25px;
+      margin-bottom: 25px;
+      font-size: 24px;
+    }
+    .clear{
+      clear: both;
+    }
+    .held-situation1{
+      margin-top:15px;
+      margin-bottom: 25px;
+      font-size: 24px;
+    }
+
     .event-title{
         font-size: 34px;
     }
@@ -235,6 +274,20 @@ body{
 }
 @media screen and (min-width: 480px) and (max-width: 767px)  {
     /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .held-situation{
+      margin-top: 25px;
+      margin-bottom: 25px;
+      font-size: 20px;
+    }
+    .clear{
+      clear: both;
+    }
+    .held-situation1{
+      margin-top:5px;
+      margin-bottom: 25px;
+      font-size: 20px;
+    }
+
     .event-title{
         font-size: 34px;
     }
@@ -309,6 +362,20 @@ body{
 }
 @media screen and (max-width: 479px) {
     /* 479px以下用（スマートフォン用）の記述 */
+    .held-situation{
+      margin-top: 25px;
+      margin-bottom: 25px;
+      font-size: 18px;
+    }
+    .clear{
+      clear: both;
+    }
+    .held-situation1{
+      margin-top:5px;
+      margin-bottom: 25px;
+      font-size: 18px;
+    }
+
     .event-title{
         font-size: 24px;
     }
