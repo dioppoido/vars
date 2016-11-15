@@ -82,6 +82,7 @@
                               </select>
                             </div>
 
+
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label>参加チーム登録開始期限 : </label>
@@ -114,6 +115,20 @@
                                     <label>投票終了期限 : </label>
 
                                     <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="votefinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required />
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-primary" id="passbutton" onclick="change_pass();">パスワード設定ON</button>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                <div class="form-group">
+                                    <input type='password' id="passarea" class='form-control input-lg event-input' name="password" disabled="disabled" minlength="4" placeholder="4文字以上で入力してください"/>
 
                                 </div>
                             </div>
@@ -176,6 +191,9 @@
 
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>
+
+<!-- onChange -->
+<script src="../public/js/change.js"></script>
 
 </body>
 </html>
