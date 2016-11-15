@@ -45,7 +45,6 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
         var votestart = req.body.votestart;
         var votefinish = req.body.votefinish;
         var imagepath="";
-
         if(req.file){
           var extension = req.file.originalname;   //拡張子を取得したいデータを入れる
           var imageExtension =rename.rename(extension);　//拡張子
