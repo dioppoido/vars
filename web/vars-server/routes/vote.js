@@ -18,7 +18,7 @@ const PasswordCheck = function(req, res, next) {
                     console.log(req.headers);
                     req.session.user.get='vote'+req.url;
                     req.session.user.eventid=req.query.eventid;
-                    res.render('password.ejs');
+                    res.render('password.ejs',{msg:''});
                 }
             });
         }else{
