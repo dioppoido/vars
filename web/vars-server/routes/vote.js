@@ -6,7 +6,30 @@ var getEvent = require('../app/js/event/getEvent');
 var getVote=require('../app/js/votes/getVote');
 var insertVote=require('../app/js/votes/insertVote');
 
-router.get('/', function(req, res) {
+const PasswordCheck = function(req, res, next) {
+    if(req.session.user){
+        if(req.query.eventid){
+            getEvent.getEvent(req.query.eventid).then(function (eventdata) {
+                if(!(eventdata[0].Password)||(req.session.user.success===req.query.eventid)){
+                    next();
+                }else{
+                    req.session.user.success="";
+                    req.session.user.header=req.headers.referer;
+                    console.log(req.headers);
+                    req.session.user.get='vote'+req.url;
+                    req.session.user.eventid=req.query.eventid;
+                    res.render('password.ejs');
+                }
+            });
+        }else{
+            res.redirect('/eventlist');
+        }
+    }else{
+        res.redirect('/');
+    }
+};
+
+router.get('/',PasswordCheck, function(req, res) {
     if(req.session.user ){
         if(req.query.eventid) {
             var eventid = req.query.eventid;

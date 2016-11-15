@@ -1,21 +1,26 @@
 var express = require('express');
 var router = express.Router();
 var getPassword = require('../app/js/users/getPassword');
+var getEvent = require('../app/js/event/getEvent');
 var validator = require('validator'); //validatorモジュール宣言
 
 
-router.get('/', function(req, res) {
-  if(req.session.user){
-      res.render('password.ejs');
-  } else{
-      res.redirect('/');
-  }
-
-});
 
 
 router.post('/', function(req, res) {
-
+    if(req.session.user){
+        var inputPassword=req.body.inputpassword;
+        getEvent.getEvent(req.session.user.eventid).then(function (eventdata) {
+           if(eventdata[0].Password===inputPassword){
+               req.session.user.success=req.session.user.eventid;
+               res.redirect(req.session.user.get);
+           }else{
+               res.render('password.ejs');
+           }
+        });
+    }
+    //旧パスワード変更処理
+    /*
     if(req.session.user) {
 
         var msg = "";     //メッセージ
@@ -45,7 +50,7 @@ router.post('/', function(req, res) {
         });
     } else{
         res.redirect('/');
-    }
+    }*/
 });
 
 module.exports = router;
