@@ -160,7 +160,6 @@ body{
         height: 70%;
         text-decoration:none;
         display:block;
-        margin-left: 40px;
         margin-bottom: 30px;
         background-image:-moz-linear-gradient(top, #eff7ff 0%, #d1e8ff);
         background-image:-webkit-gradient(linear,left top,left bottom, from(#eff7ff), to(#d1e8ff));
@@ -173,7 +172,6 @@ body{
         height: 70%;
         text-decoration:none;
         display:block;
-        margin-left: 40px;
         margin-bottom: 30px;
         background-image:-moz-linear-gradient(top, #fff4f4 0%, #ffe0e0);
         background-image:-webkit-gradient(linear,left top,left bottom, from(#fff4f4), to(#ffe0e0));
@@ -186,7 +184,6 @@ body{
         height: 70%;
         text-decoration:none;
         display:block;
-        margin-left: 40px;
         margin-bottom: 30px;
         background-image:-moz-linear-gradient(top, #fff4f4 0%, #ffe0e0);
         background-image:-webkit-gradient(linear,left top,left bottom, from(#fff4f4), to(#ffe0e0));
@@ -411,7 +408,7 @@ body{
     }
     .event-title{
         margin-left: 0px;
-        font-size: 18px;
+        font-size: 20px;
     }
     .event-contents{
         margin-left: 10px;
