@@ -70,6 +70,13 @@ input[type=file]{
     font-size: 20px;
     font-weight: bold;
 }
+.pass-btn{
+    margin-top: 6px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    width : 160px;
+    font-weight: bold;
+}
 #file_name{
     margin-top: 20px;
     margin-bottom: 30px;
