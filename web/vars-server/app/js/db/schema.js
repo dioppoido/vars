@@ -19,8 +19,8 @@ exports.users = new mongoose.Schema({
  * votes
  */
 exports.votes = new mongoose.Schema({
-  Voteid      :Number,          //投票ID
-  Eventid      :Number,          //イベントID
+  Voteid      :String,          //投票ID
+  Eventid      :String,          //イベントID
   Votename  :String          //投票カテゴリ
 });
 
@@ -50,17 +50,17 @@ exports.events = new mongoose.Schema({
 });
 
 exports.teams =new mongoose.Schema({
-  Teamid        :Number,
-  Eventid       :Number,
+  Teamid        :String,
+  Eventid       :String,
   Teamname      :String,
   Workname      :String
 });
 
 exports.aggregates =new mongoose.Schema({
-  Aggregateid    :Number,
-  Voteid          :Number,
+  Aggregateid    :String,
+  Voteid          :String,
   Address          :String,
-  Teamid          :Number
+  Teamid          :String
 });
 
 /**
