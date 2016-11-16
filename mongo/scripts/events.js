@@ -9,7 +9,7 @@ db.events.insert({
     Password:"",
     Address:"test@example.com",
     displayName:"test",
-    Fieldid:"soft",
+    Fieldid:"it",
     Venue:"南館1階B教室",
     Date:"2016/10/12",
     Createperiod:{
@@ -22,6 +22,7 @@ db.events.insert({
     },
     Image:"public/images/noimage.png"
 });
+
 db.events.insert({
     Eventid:"2",
     Eventname:"イベントB",
@@ -40,8 +41,8 @@ db.events.insert({
         Votestart:"2016/10/21 9:00",
         Votefinish:"2016/10/31 12:00"
     },
-    Image:"public/images/noimage.png"
-});
+    Image:"public/images/goripic/drinkgori.png"
+  });
 db.events.insert({
     Eventid:"3",
     Eventname:"イベントC",
@@ -60,8 +61,8 @@ db.events.insert({
         Votestart:"2016/11/1 12:00",
         Votefinish:"2016/11/10 15:00"
     },
-    Image:"public/images/images.png"
-});
+    Image:"public/images/goripic/fightgori.png"
+  });
 
 db.events.insert({
     Eventid:"4",
@@ -70,7 +71,7 @@ db.events.insert({
     Address:"test@example.com",
     Password:"password",
     displayName:"test",
-    Fieldid:"all",
+    Fieldid:"it",
     Venue:"ちか",
     Date:"2016/12/11",
     Createperiod:{
@@ -81,8 +82,8 @@ db.events.insert({
         Votestart:"2016/12/1 12:00",
         Votefinish:"2016/12/10 15:00"
     },
-    Image:"public/images/images.png"
-});
+    Image:"public/images/goripic/gori.png"
+  });
 db.events.insert({
     Eventid:"5",
     Eventname:"2017デジタルワークス",
@@ -92,17 +93,17 @@ db.events.insert({
     displayName:"test",
     Fieldid:"it",
     Venue:"ちか",
-    Date:"2016/12/11",
+    Date:"2017/12/11",
     Createperiod:{
-        Createstart:"2016/12/21 12:00",
-        Createfinish:"2016/12/31 15:00"
+        Createstart:"2017/12/21 12:00",
+        Createfinish:"2017/12/31 15:00"
     },
     Voteperiod:{
-        Votestart:"2016/12/1 12:00",
-        Votefinish:"2016/12/10 15:00"
+        Votestart:"2017/12/1 12:00",
+        Votefinish:"2017/12/10 15:00"
     },
-    Image:"upfile/5f609a5b5d23d5fec7865efa0bdc73bc.jpg"
-});
+    Image:"public/images/goripic/gori2.png"
+  });
 db.events.insert({
     Eventid:"6",
     Eventname:"2018デジタルワークス",
@@ -111,17 +112,17 @@ db.events.insert({
     displayName:"test",
     Fieldid:"it",
     Venue:"ちか",
-    Date:"2016/12/15",
+    Date:"2018/12/15",
     Createperiod:{
-        Createstart:"2016/12/21 12:00",
-        Createfinish:"2016/12/31 15:00"
+        Createstart:"2018/12/21 12:00",
+        Createfinish:"2018/12/31 15:00"
     },
     Voteperiod:{
-        Votestart:"2016/12/1 12:00",
-        Votefinish:"2016/12/10 15:00"
+        Votestart:"2018/12/1 12:00",
+        Votefinish:"2018/12/10 15:00"
     },
-    Image:"upfile/5f609a5b5d23d5fec7865efa0bdc73bc.jpg"
-});
+    Image:"public/images/goripic/heartgori.png"
+  });
 db.events.insert({
     Eventid:"7",
     Eventname:"2019デジタルワークス",
@@ -130,17 +131,17 @@ db.events.insert({
     displayName:"test",
     Fieldid:"it",
     Venue:"ちか",
-    Date:"2016/12/16",
+    Date:"2019/12/16",
     Createperiod:{
-        Createstart:"2016/12/21 12:00",
-        Createfinish:"2016/12/31 15:00"
+        Createstart:"2019/12/21 12:00",
+        Createfinish:"2019/12/31 15:00"
     },
     Voteperiod:{
-        Votestart:"2016/12/1 12:00",
-        Votefinish:"2016/12/10 15:00"
+        Votestart:"2019/12/1 12:00",
+        Votefinish:"2019/12/10 15:00"
     },
-    Image:"upfile/5f609a5b5d23d5fec7865efa0bdc73bc.jpg"
-});
+    Image:"public/images/goripic/nakugori.png"});
+
 db.events.insert({
     Eventid:"8",
     Eventname:"2020デジタルワークス",
@@ -149,16 +150,99 @@ db.events.insert({
     displayName:"test",
     Fieldid:"it",
     Venue:"ちか",
-    Date:"2016/12/17",
+    Date:"2020/12/17",
     Createperiod:{
-        Createstart:"2016/12/21 12:00",
-        Createfinish:"2016/12/31 15:00"
+        Createstart:"2020/12/21 12:00",
+        Createfinish:"2020/12/31 15:00"
     },
     Voteperiod:{
-        Votestart:"2016/12/1 12:00",
-        Votefinish:"2016/12/10 15:00"
+        Votestart:"2020/12/1 12:00",
+        Votefinish:"2020/12/10 15:00"
     },
-    Image:"upfile/5f609a5b5d23d5fec7865efa0bdc73bc.jpg"
+    Image:"public/images/goripic/nicegori.png"
+  });
+
+db.events.insert({
+  Password:"",
+Eventid:"10",
+Eventname:"文化祭",
+Overview:"文化祭のガラオケ募集",
+Address:"test@example.com",
+displayName:"test",
+Fieldid:"all",
+Venue:"本館地下１F",
+Date:"2016/10/30",
+Createperiod:{
+    Createstart:"2016/10/4 9:00",
+    Createfinish:"2016/10/11 15:00"
+},
+Voteperiod:{
+    Votestart:"2016/10/30 9:00",
+    Votefinish:"2016/10/31 15:00"
+},
+    Image:"public/images/goripic/yeahgori.png"
+  });
+
+db.events.insert({
+Eventid:"16",
+Eventname:"クリスマス",
+Overview:"クリぼっち募集",
+Password:"",
+Address:"test@example.com",
+displayName:"test",
+Fieldid:"all",
+Venue:"本館地下10F",
+Date:"2016/12/25",
+Createperiod:{
+    Createstart:"2016/10/4 9:00",
+    Createfinish:"2016/10/11 15:00"
+},
+Voteperiod:{
+    Votestart:"2016/12/25 9:00",
+    Votefinish:"2016/12/25 15:00"
+},
+    Image:"public/images/goripic/tameikigori.png"
+  });
+
+
+db.events.insert({
+Eventid:"12",
+Eventname:"2016ゲーム分野１年合評会",
+Overview:"2016ゲーム分野１年合評会をしますの",
+Password:"1111",
+Address:"test@example.com",
+displayName:"test",
+Fieldid:"game",
+Venue:"本館地下0F",
+Date:"2016/12/25",
+Createperiod:{
+    Createstart:"2016/10/4 9:00",
+    Createfinish:"2016/10/11 15:00"
+},
+Voteperiod:{
+    Votestart:"2016/12/25 9:00",
+    Votefinish:"2016/12/25 15:00"
+},
+Image:"public/images/noimage.png"
 });
 
-
+db.events.insert({
+Eventid:"13",
+Eventname:"2016グラフィック分野１年合評会",
+Overview:"2016グラフィック分野１年合評会をしますの",
+Password:"",
+Address:"test@example.com",
+displayName:"test",
+Fieldid:"graphic",
+Venue:"本館地下0F",
+Date:"2016/1/25",
+Createperiod:{
+    Createstart:"2016/1/4 9:00",
+    Createfinish:"2016/1/11 15:00"
+},
+Voteperiod:{
+    Votestart:"2016/1/25 9:00",
+    Votefinish:"2016/1/25 15:00"
+},
+    Image:"public/images/goripic/heart.png"
+  });
