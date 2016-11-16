@@ -20,8 +20,8 @@ exports.getAdmin = function(Address){
                 if (docs.length === 1) {
                     resolve(docs);
                 } else {
-                    console.log("getAccount:"+"データがありません");
-                    reject("getAdmin:"+"DATA NOT FOUND");
+                    console.log("getAdmin:"+"データがありません");
+                    resolve(docs);
                 }
             } else {
                 console.log("getAccount:"+"DB Error.");
