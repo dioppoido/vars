@@ -10,6 +10,11 @@ var moment = require('../app/js/moment/moment');
 var getField = require("../app/js/field/getField");
 //特に送り付ける値はなし
 router.get('/', function(req, res) {
+    if(req.session.user.admin === false){
+        msg="一般ユーザはこの機能を利用できません。"
+        url="/";
+        res.render('confirmation.ejs',{msg:msg,url:url});
+    }
     if(req.session.user){
         getField.getField().then(function (docs) {    //分野取得
             res.render('eventcreate.ejs',{
