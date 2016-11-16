@@ -3,7 +3,8 @@ db = db.getSiblingDB("vars");
 db.users.drop();
 db.createCollection("users");
 
-db.users.insert({Address:"kd1166317@st.kobedenshi.ac.jp",Admin_flag:true});
+db.users.insert({Address:"kd1166317@st.kobedenshi.ac.jp",Admin_flag:true}); //土居君のkdアカウント
+db.users.insert({Address:"kd1176004@st.kobedenshi.ac.jp",Admin_flag:true}); //長谷川遼のkdアカウント
 
 /*過去データ
 db.users.insert({ Userid:"0k01001" , Passwd:"0k01001" , Admin_flag:false , Address:"0k01001@test.com" ,Pass_flag:true , Username:"おそ松" });
