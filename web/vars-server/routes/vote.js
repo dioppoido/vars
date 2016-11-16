@@ -5,6 +5,7 @@ var getTeam = require('../app/js/team/getTeam');
 var getEvent = require('../app/js/event/getEvent');
 var getVote=require('../app/js/votes/getVote');
 var insertVote=require('../app/js/votes/insertVote');
+var todate = require("../app/js/moment/moment.js");
 
 const PasswordCheck = function(req, res, next) {
     if(req.session.user){
@@ -35,15 +36,38 @@ router.get('/',PasswordCheck, function(req, res) {
             var eventid = req.query.eventid;
             var msg="";
             getEvent.getEvent(eventid).then(function (eventdata) {
-                getTeam.getTeam(eventid).then(function (teamdata) {
-                    getVote.getVote(eventid).then(function (votedata) {
-                        res.render('vote.ejs', {
-                            eventdata: eventdata,
-                            teamdata: teamdata,
-                            votedata: votedata,
-                            msg:msg
+                //日付処理
+                //当日
+                var today = todate.todate("YYYY-MM-D HH:mm:ss");
+                var votestart = todate.parsedate(eventdata[0].Voteperiod.Votestart,"YYYY-MM-D HH:mm:ss");
+                var votefinish = todate.parsedate(eventdata[0].Voteperiod.Votefinish, "YYYY-MM-D HH:mm:ss");
+                var vote_flag = todate.comparison(today,votestart,votefinish);
+
+                if( vote_flag === false){
+                    res.render('vote.ejs',{
+                        eventdata: "",
+                        teamdata: "",
+                        votedata: "",
+                        msg:"このイベントの投票は投票期間外です。"
+                    });
+                }else if(vote_flag === true){
+                    getTeam.getTeam(eventid).then(function (teamdata) {
+                        getVote.getVote(eventid).then(function (votedata) {
+                            res.render('vote.ejs', {
+                                eventdata: eventdata,
+                                teamdata: teamdata,
+                                votedata: votedata,
+                                msg:msg
+                            });
+                        }).catch(function (msg) {
+                            res.render('vote.ejs',{
+                                eventdata: "",
+                                teamdata: "",
+                                votedata: "",
+                                msg:msg
+                            });
                         });
-                    }).catch(function (msg) {
+                    }).catch(function(msg){
                         res.render('vote.ejs',{
                             eventdata: "",
                             teamdata: "",
@@ -51,14 +75,7 @@ router.get('/',PasswordCheck, function(req, res) {
                             msg:msg
                         });
                     });
-                }).catch(function(msg){
-                    res.render('vote.ejs',{
-                        eventdata: "",
-                        teamdata: "",
-                        votedata: "",
-                        msg:msg
-                    });
-                });
+                }
             }).catch(function(){
                 res.render('confirmation.ejs',{msg:'イベントIDが存在しません',url:'/eventlist'});
             });

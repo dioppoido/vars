@@ -160,5 +160,24 @@ db.events.insert({
     },
     Image:"upfile/5f609a5b5d23d5fec7865efa0bdc73bc.jpg"
 });
+db.events.insert({
+    Eventid:"8",
+    Eventname:"2020デジタルワークス",
+    Overview:"2020年度のデジタルワークスです。",
+    Address:"test@example.com",
+    displayName:"test",
+    Fieldid:"it",
+    Venue:"ちか",
+    Date:"2016/12/17",
+    Createperiod:{
+        Createstart:"2016/12/21 12:00",
+        Createfinish:"2016/12/31 15:00"
+    },
+    Voteperiod:{
+        Votestart:"2016/12/1 12:00",
+        Votefinish:"2016/12/10 15:00"
+    },
+    Image:"upfile/5f609a5b5d23d5fec7865efa0bdc73bc.jpg"
+});
 
 

@@ -73,7 +73,11 @@ body{
     -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
-
+.list-group{
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
 #event-menu {
     padding-left: 0;
     list-style: none;
@@ -184,6 +188,11 @@ body{
         margin: 0 auto;
         margin-top: 20px;
         margin-bottom: 20px;
+    }
+    .list-group{
+        height: 480px;
+        overflow-x: hidden;
+        overflow-y: scroll;
     }
 
 }

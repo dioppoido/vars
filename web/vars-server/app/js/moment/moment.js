@@ -19,3 +19,17 @@ exports.parsedate = function(date){
 exports.parsedate = function(date,format){
  return moment(date,'YYYY-MM-D HH:mm:ss').format(format);
 };
+
+/* 投票の日付比較関数 */
+exports.comparison = function(today,votestart,votefinish){
+
+  var vote_flag;
+  console.log("当日" + today);
+  console.log("投票開始" + votestart);
+  console.log("投票終了" + votefinish);
+  //日付比較
+  vote_flag = moment(today).isBetween(votestart, votefinish);
+  console.log("投票フラグ" + vote_flag);
+
+  return  vote_flag;
+};
