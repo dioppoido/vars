@@ -8,8 +8,8 @@ function pass_confirm() {
     var newpass = document.forms.changepass.newpassword;
     var againpass = document.forms.changepass.againpassword;
 
-    console.log(newpass.value.length);
-    console.log(againpass.value.length);
+  //  console.log(newpass.value.length);
+  //  console.log(againpass.value.length);
 
     if( oldpass.value.length != 0){
         if( newpass.value.length >= 4 && againpass.value.length >= 4){
@@ -40,6 +40,11 @@ function date_confirm(){
     var votebox;
     var holdbox;
 
+    //パスワード入力制限
+    var pass = document.forms.eventcreate.passarea.value;
+    //  console.log(pass);
+    //  console.log(pass.length);
+
     //開催日
     var holdday = document.forms.eventcreate.dates.value;
 
@@ -60,7 +65,7 @@ function date_confirm(){
     if( holdday != ""){
         holdbox = holdday.split("/");
         holdday = holdbox[0] + holdbox[1] + holdbox[2];
-        console.log(holdday);
+        //    console.log(holdday);
     }else{
         alert("開催日が入力されていません。");
         return false;
@@ -72,11 +77,11 @@ function date_confirm(){
         team_start = teambox[0];
         team_start = team_start.split("/");
         team_start = team_start[0] + team_start[1] + team_start[2];
-        console.log(team_start);
+        //    console.log(team_start);
         team_stime = teambox[1];
         team_stime = team_stime.split(":");
         team_stime = team_stime[0] + team_stime[1];
-        console.log(team_stime);
+        //  console.log(team_stime);
     }else{
         alert("参加チームの開始日が入力されていません。");
         return false;
@@ -87,11 +92,11 @@ function date_confirm(){
         team_end = teambox[0];
         team_end = team_end.split("/");
         team_end = team_end[0] + team_end[1] + team_end[2];
-        console.log(team_end);
+        //  console.log(team_end);
         team_etime = teambox[1];
         team_etime = team_etime.split(":");
         team_etime = team_etime[0] + team_etime[1];
-        console.log(team_etime);
+        //    console.log(team_etime);
     }else{
         alert("参加チームの終了日が入力されていません。");
         return false;
@@ -103,11 +108,11 @@ function date_confirm(){
         vote_start = votebox[0];
         vote_start = vote_start.split("/");
         vote_start = vote_start[0] + vote_start[1] + vote_start[2];
-        console.log(vote_start);
+        //    console.log(vote_start);
         vote_stime = votebox[1];
         vote_stime = vote_stime.split(":");
         vote_stime = vote_stime[0] + vote_stime[1];
-        console.log(vote_stime);
+        //    console.log(vote_stime);
     }else{
         alert("投票の開始日が入力されていません。");
         return false;
@@ -118,11 +123,11 @@ function date_confirm(){
         vote_end = votebox[0];
         vote_end = vote_end.split("/");
         vote_end = vote_end[0] + vote_end[1] + vote_end[2];
-        console.log(vote_end);
+        //      console.log(vote_end);
         vote_etime = votebox[1];
         vote_etime = vote_etime.split(":");
         vote_etime = vote_etime[0] + vote_etime[1];
-        console.log(vote_etime);
+        //      console.log(vote_etime);
     }else{
         alert("投票の終了日が入力されていません。");
         return false;
@@ -163,6 +168,12 @@ function date_confirm(){
     }
     if(holdday > vote_end){
         alert("投票の終了日が開催日より早いです。");
+        return false;
+    }
+
+    //パスワード入力制限
+    if(pass.length<4 || pass.length>12){
+        alert("パスワードは4文字以上12文字以上で入力してください");
         return false;
     }
 

@@ -34,7 +34,7 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
         var eventid = randomByte.randomByte();//変更必要あり
         var eventname = req.body.eventname;
         var overview = req.body.overview;
-        var password = "";
+        var password = req.body.password;
         var address = req.session.user.address;
         var displayname = req.session.user.displayName;
         var field = req.body.field;
