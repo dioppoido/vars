@@ -58,6 +58,7 @@ exports.teams =new mongoose.Schema({
 
 exports.aggregates =new mongoose.Schema({
   Aggregateid    :String,
+  Eventid         :String,
   Voteid          :String,
   Address          :String,
   Teamid          :String

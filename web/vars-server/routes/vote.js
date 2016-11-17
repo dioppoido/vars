@@ -3,6 +3,8 @@ var router = express.Router();
 var validator = require('validator');
 var getTeam = require('../app/js/team/getTeam');
 var getEvent = require('../app/js/event/getEvent');
+var getAggregate = require('../app/js/aggregate/getAggregate');
+var randomByte = require("../app/js/db/randomByte");
 var getVote=require('../app/js/votes/getVote');
 var insertVote=require('../app/js/votes/insertVote');
 var todate = require("../app/js/moment/moment.js");
@@ -51,13 +53,37 @@ router.get('/',PasswordCheck, function(req, res) {
                         msg:"このイベントの投票は投票期間外です。"
                     });
                 }else if(vote_flag === true){
+
                     getTeam.getTeam(eventid).then(function (teamdata) {
                         getVote.getVote(eventid).then(function (votedata) {
-                            res.render('vote.ejs', {
-                                eventdata: eventdata,
-                                teamdata: teamdata,
-                                votedata: votedata,
-                                msg:msg
+                            var Aggregate_JSON={
+                                Eventid:eventid,
+                                Address:req.session.user.address
+                            }
+                            getAggregate.getAggregate(Aggregate_JSON).then(function (aggregatedata) {
+                                if(aggregatedata.length>0){
+                                    msg="既に投票済みです。";
+                                    res.render('vote.ejs',{
+                                        eventdata: "",
+                                        teamdata: "",
+                                        votedata: "",
+                                        msg:msg
+                                    });
+                                }else{
+                                    res.render('vote.ejs', {
+                                        eventdata: eventdata,
+                                        teamdata: teamdata,
+                                        votedata: votedata,
+                                        msg: msg
+                                    });
+                                }
+                            }).catch(function (msg) {
+                                res.render('vote.ejs',{
+                                    eventdata: "",
+                                    teamdata: "",
+                                    votedata: "",
+                                    msg:msg
+                                });
                             });
                         }).catch(function (msg) {
                             res.render('vote.ejs',{
@@ -98,11 +124,15 @@ router.post('/', function(req, res) {
         var teamidlength = teamid.length;
         for (i = 0; i < teamidlength; i++) {
             const WORK_JSON = {
+                'aggregateid': null,
                 'voteid': null,
+                'eventid': null,
                 'address': null,
                 'teamid': null
             };
+            WORK_JSON.aggregateid=randomByte.randomByte();
             WORK_JSON.voteid = req.body.voteid[i];
+            WORK_JSON.eventid = req.body.eventid[i];
             WORK_JSON.address = req.session.user.address;
             WORK_JSON.teamid = req.body.teamid[i];
 
