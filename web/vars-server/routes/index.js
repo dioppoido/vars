@@ -25,7 +25,7 @@ router.get('/', loginCheck, function(req, res) {
     if(docs!=null){
       var fieldlist = [];
       var inSessionEvent=inSessionEventList.inSessionEventList(todate.todate("YYYY/MM/D"),docs,1);
-      async.each(inSessionEvent,function(data,next){
+      async.eachSeries(inSessionEvent,function(data,next){
         getField.getSingleField(data.Fieldid).then(function (docs) {
             fieldlist.push(docs[0].Fieldname);
             next();
