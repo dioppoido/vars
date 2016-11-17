@@ -27,10 +27,34 @@ router.get('/return',passport.authenticate('google', {failureRedirect: '/login' 
     req.session.user.domain=(req.session.user.emails[0].value).substr((req.session.user.emails[0].value).lastIndexOf("@")+1);
     req.session.user.address=req.session.user.emails[0].value;
     var address = req.session.user.address;
-    console.log("domain:"+req.session.user.domain);
-    console.log("address:"+req.session.user.address);
+    req.session.user.admin=false;
+    var success=false;
     //ドメインがst.kobedenshi.ac.jpか確認
-    if ( req.session.user.domain =="st.kobedenshi.ac.jp"){ //if文　ユーザテーブル検索 req.session.user.adomin
+    getAdmin.getAdmin(address).then(function (docs){
+        if(docs.length>0&&docs[0].Admin_flag){              //データーベースから取得できているかつその行のDB内のAdmin_flagがTrueになっている時に限る
+            console.log("管理者ユーザーログイン成功")
+            req.session.user.admin=true;
+            success=true;
+        }else if(req.session.user.domain ==="st.kobedenshi.ac.jp"){
+            console.log("一般ユーザーログイン成功");
+            success=true;
+        }else{
+            console.log("ログイン処理失敗");
+        }
+        
+        if(success){
+            res.redirect('/');
+        }else{
+            req.session.destroy();
+            res.render('confirmation.ejs' , {msg:'学校から配布されたメールアドレスを使用してください。', url:''});
+        }
+        
+    }).catch(function (msg) {   //エラー処理
+        console.log(msg);
+        req.session.destroy();
+        res.render('confirmation.ejs' , {msg:msg, url:''});
+    });
+    /*if ( req.session.user.domain =="st.kobedenshi.ac.jp"){ //if文　ユーザテーブル検索 req.session.user.adomin
         console.log(address);
         getAdmin.getAdmin(address).then(function (docs){
             if(address === docs[0].Address){
@@ -50,7 +74,7 @@ router.get('/return',passport.authenticate('google', {failureRedirect: '/login' 
         req.session.destroy();
         console.log('deleted session:kd以外でログインしたので強制ログアウト');
         res.redirect('/');
-    }
+    }*/
 
     //res.redirect('/');//indexへリダイレクトさせる
 });
