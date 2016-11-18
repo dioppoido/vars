@@ -96,7 +96,7 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
 
 
         insertEvent.insertEvent(EVENTS);
-        var msg = "イベントを作成しました。";
+        var msg = "イベントを作成しました。";   //作成時メッセージ
         res.render('confirmation.ejs' , {msg:msg, url:''});
     }else{
         res.redirect('/');
