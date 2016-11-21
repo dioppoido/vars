@@ -65,7 +65,7 @@ function date_confirm(){
     var vote_stime;
     var vote_etime;
 
-    //開催日
+    //開催日開始
     if( hold_start != ""){
         holdbox = hold_start.split(" ");
         hold_start = holdbox[0];
@@ -80,7 +80,7 @@ function date_confirm(){
         alert("開催日が入力されていません。");
         return false;
     }
-    //開催日
+    //開催日終了
     if( hold_end != ""){
         holdbox = hold_end.split(" ");
         hold_end = holdbox[0];
@@ -96,7 +96,7 @@ function date_confirm(){
         return false;
     }
 
-    //参加チーム
+    //参加チーム開始
     if( team_start != ""){
         teambox = team_start.split(" ");
         team_start = teambox[0];
@@ -112,6 +112,7 @@ function date_confirm(){
         return false;
     }
 
+    //参加チーム終了
     if(team_end != ""){
         teambox = team_end.split(" ");
         team_end = teambox[0];
@@ -127,7 +128,7 @@ function date_confirm(){
         return false;
     }
 
-    //投票
+    //投票開始
     if(vote_start != ""){
         votebox = vote_start.split(" ");
         vote_start = votebox[0];
@@ -143,6 +144,7 @@ function date_confirm(){
         return false;
     }
 
+    //投票終了
     if(vote_end != ""){
         votebox = vote_end.split(" ");
         vote_end = votebox[0];
