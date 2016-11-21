@@ -6,7 +6,7 @@ db.createCollection("fields");
 //すべて
 db.fields.insert({
     Fieldid: "all",
-    Fieldname: "すべて"
+    Fieldname: "全分野"
 });
 
 //IT分野
@@ -50,5 +50,3 @@ db.fields.insert({
     Fieldid: "cad",
     Fieldname: "CAD分野"
 });
-
-
