@@ -76,6 +76,11 @@ input[type=file]{
     font-size: 15px;
     width : 160px;
     font-weight: bold;
+    background: blue;
+    color:white;
+}
+.pass-btn:hover{
+    color: white;
 }
 #file_name{
     margin-top: 20px;

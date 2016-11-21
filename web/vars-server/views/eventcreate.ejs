@@ -47,9 +47,19 @@
                               <input type="text" class="form-control input-lg event-input" name="eventname" placeholder="例)2016年合評会" required>
                             </div>
 
-                            <div class="form-group">
-                                <label>開催日 : </label>
-                                <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="dates" placeholder="例)20YY/MM/DD" readonly="readonly" required/>
+
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>開催日時 : </label>
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="datesstart" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required/>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>開催終了日時 : </label>
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="datesfinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required/>
+                                </div>
                             </div>
 
                             <div class="form-group">
@@ -85,7 +95,7 @@
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
-                                    <label>参加チーム登録開始期限 : </label>
+                                    <label>参加チーム登録受付日時 : </label>
 
                                     <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="createstart" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly"  required />
 
@@ -94,7 +104,7 @@
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
-                                    <label>参加チーム登録終了期限 : </label>
+                                    <label>参加チーム受付終了日時 : </label>
 
                                     <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="createfinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required />
 
@@ -103,7 +113,7 @@
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
-                                    <label>投票開始期限 : </label>
+                                    <label>投票開始日時 : </label>
 
                                     <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="votestart" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required />
 
@@ -112,7 +122,7 @@
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
-                                    <label>投票終了期限 : </label>
+                                    <label>投票終了日時 : </label>
 
                                     <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="votefinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required />
 
@@ -121,7 +131,7 @@
 
                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-primary  pass-btn" id="passbutton" onclick="change_pass();">パスワード設定ON</button>
+                                    <button type="button" class="btn pass-btn" id="passbutton" onclick="change_pass();">パスワード設定ON</button>
                                 </div>
                             </div>
 
