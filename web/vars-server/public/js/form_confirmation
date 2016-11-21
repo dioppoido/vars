@@ -77,7 +77,7 @@ function date_confirm(){
         console.log("開催開始日" + hold_start);
         console.log("開催開始時間" + hold_stime);
     }else{
-        alert("開催日が入力されていません。");
+        alert("開催日エラー : 開催日が入力されていません。");
         return false;
     }
     //開催日終了
@@ -92,7 +92,7 @@ function date_confirm(){
         console.log("開催終了日" + hold_end);
         console.log("開催終了時間" + hold_etime);
     }else{
-        alert("開催日が入力されていません。");
+        alert("開催日エラー : 開催終了日が入力されていません。");
         return false;
     }
 
@@ -108,7 +108,7 @@ function date_confirm(){
         team_stime = team_stime[0] + team_stime[1];
         //  console.log(team_stime);
     }else{
-        alert("参加チームの開始日が入力されていません。");
+        alert("参加チーム開始日エラー : 参加チームの開始日が入力されていません。");
         return false;
     }
 
@@ -124,7 +124,7 @@ function date_confirm(){
         team_etime = team_etime[0] + team_etime[1];
         //    console.log(team_etime);
     }else{
-        alert("参加チームの終了日が入力されていません。");
+        alert("参加チーム期限エラー : 参加チーム受付終了日が入力されていません。");
         return false;
     }
 
@@ -140,7 +140,7 @@ function date_confirm(){
         vote_stime = vote_stime[0] + vote_stime[1];
         //    console.log(vote_stime);
     }else{
-        alert("投票の開始日が入力されていません。");
+        alert("投票日エラー : 投票の開始日が入力されていません。");
         return false;
     }
 
@@ -156,45 +156,59 @@ function date_confirm(){
         vote_etime = vote_etime[0] + vote_etime[1];
         //      console.log(vote_etime);
     }else{
-        alert("投票の終了日が入力されていません。");
+        alert("投票日エラー : 投票の終了日が入力されていません。");
+        return false;
+    }
+
+    //開始日・終了日
+    if(hold_start > hold_end){
+        alert("開催日エラー : 開催終了日時が早いです。");
+        return false;
+    }
+    if(hold_start == hold_end && hold_stime == hold_etime){
+        alert("開催時間エラー : 開催開始、終了時間が同じです");
+        return false;
+    }
+    if(hold_start == hold_end && hold_stime > hold_etime){
+        alert("開催日エラー : 開催終了時間のほうが早いです。");
         return false;
     }
 
     //参加チーム
     if(team_start > team_end){
-        alert("参加チームの開始日が終了日より遅いです。");
+        alert("参加チーム受付エラー : 参加チーム終了日時のほうが早いです。");
         return false;
     }
     if(team_start == team_end && team_stime == team_etime){
-        alert("参加チームの開始時間と終了時間が同じです。");
+        alert("参加チーム受付時間エラー : 参加チーム受付開始、受付終了時間が同じです。");
         return false;
     }
     if(team_start == team_end && team_stime > team_etime){
-        alert("参加チームの開始時間が終了時間より遅いです。");
+        alert("参加チーム受付エラー : 受付終了日時のほうが早いです。");
         return false;
     }
 
     //投票
     if(vote_start > vote_end){
-        alert("投票の開始日が終了日より遅いです。");
+        alert("投票開始日エラー : 投票終了日時のほうが早いです。");
         return false;
     }
     if( vote_start == vote_end && vote_stime == vote_etime){
-        alert("投票の開始時間と終了時間が同じです。");
+        alert("投票時間エラー : 投票の開始時間、終了時間が同じです。");
         return false;
     }
     if(vote_start == vote_end && vote_stime > vote_etime){
-        alert("投票の開始時間が終了時間より遅いです。");
+        alert("投票日エラー : 投票終了日時のほうが早いです。");
         return false;
     }
 
-    //開催日
+    //開催日 - 投票
     if(holdday > vote_start){
-        alert("投票の開始日が開催日より早いです。");
+        alert("開催日エラー : イベント開催前に投票が出来てます。");
         return false;
     }
     if(holdday > vote_end){
-        alert("投票の終了日が開催日より早いです。");
+        alert("開催日エラー : イベント前に投票期限が終了しています。");
         return false;
     }
 
