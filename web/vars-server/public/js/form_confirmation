@@ -46,7 +46,11 @@ function date_confirm(){
     //  console.log(pass.length);
 
     //開催日
-    var holdday = document.forms.eventcreate.dates.value;
+    var hold_start = document.forms.eventcreate.datesstart.value;
+    var hold_end = document.forms.eventcreate.datesfinish.value;
+    //開催日時間
+    var hold_stime;
+    var hold_etime;
 
     //参加チーム期限
     var team_start = document.forms.eventcreate.createstart.value;
@@ -62,10 +66,31 @@ function date_confirm(){
     var vote_etime;
 
     //開催日
-    if( holdday != ""){
-        holdbox = holdday.split("/");
-        holdday = holdbox[0] + holdbox[1] + holdbox[2];
-        //    console.log(holdday);
+    if( hold_start != ""){
+        holdbox = hold_start.split(" ");
+        hold_start = holdbox[0];
+        hold_start = hold_start.split("/");
+        hold_start = hold_start[0] + hold_start[1] + hold_start[2];
+        hold_stime = holdbox[1];
+        hold_stime = hold_stime.split(":");
+        hold_stime = hold_stime[0] + hold_stime[1];
+        console.log("開催開始日" + hold_start);
+        console.log("開催開始時間" + hold_stime);
+    }else{
+        alert("開催日が入力されていません。");
+        return false;
+    }
+    //開催日
+    if( hold_end != ""){
+        holdbox = hold_end.split(" ");
+        hold_end = holdbox[0];
+        hold_end = hold_end.split("/");
+        hold_end = hold_end[0] + hold_end[1] + hold_end[2];
+        hold_etime = holdbox[1];
+        hold_etime = hold_etime.split(":");
+        hold_etime = hold_etime[0] + hold_etime[1];
+        console.log("開催終了日" + hold_end);
+        console.log("開催終了時間" + hold_etime);
     }else{
         alert("開催日が入力されていません。");
         return false;
@@ -180,5 +205,5 @@ function date_confirm(){
       }
     }
 
-    return true;
+    return false;
 }
