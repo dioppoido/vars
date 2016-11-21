@@ -445,7 +445,7 @@ body{
         margin-top:30px;
         margin-bottom: 30px;
         font-size: 13px;
-        padding: 15px;
+        padding: 10px;
         background: white;
         border-radius: 10px;
         width: 95%;
@@ -458,7 +458,7 @@ body{
     }
 
     tr{
-      font-size: 10px;
+      font-size: 11px;
     }
 
 }

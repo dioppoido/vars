@@ -4,9 +4,10 @@
           <div class="clear"></div>
           <table class="alt-table-responsive">
             <tr>
-                <th class="col-xs-2 col-xs-offset-1 col-ms-2 col-ms-offset-1 col-md-2 col-md-offset-1 col-lg-2 col-lg-offset-1 text-center"><a href="/eventlist">すべて</a></th>
+                <th class="col-xs-4  col-ms-2 col-ms-offset-1 col-md-2 col-md-offset-1 col-lg-2 col-lg-offset-1 text-center"><a href="/eventlist">すべて</a></th>
             <%for(var i=0; i < field.length; i++){%>
-                <th class="col-xs-2 col-xs-offset-1 col-ms-2 col-ms-offset-1 col-md-2 col-md-offset-1 col-lg-2 col-lg-offset-1 text-center"><a href="/eventlist?fieldid=<%= field[i].Fieldid %>"><%= field[i].Fieldname %></a></th>
+                <% if(i !== 0)field[i].Fieldname =  field[i].Fieldname.replace(/分野/g,"");%>
+                <th class="col-xs-4  col-ms-2 col-ms-offset-1 col-md-2 col-md-offset-1 col-lg-2 col-lg-offset-1 text-center"><a href="/eventlist?fieldid=<%= field[i].Fieldid %>"><%= field[i].Fieldname %></a></th>
                 <%if(i === 1 || i === 4){%>
             </tr>
             <tr>
