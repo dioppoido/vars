@@ -35,8 +35,8 @@
               <div class="eventlist">
 
                   <div class="text-center event-title"><i class="fa fa-info-circle" aria-hidden="true"></i>イベント一覧</div>
-
                   <%- include('./field.ejs') %>
+
                   <!-- イベントがある場合 -->
                   <%if(notFound!=null){ %>
                     <!-- 開催中イベントの表示 -->
@@ -57,12 +57,14 @@
                             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                               <div class="list-contents">
                                 イベント名 : <a href="/eventtop?eventid=<%=inSessionEventList[cnt].Eventid%>"><%= inSessionEventList[cnt].Eventname %></a><br>
+                                対象分野 : <%=inSessionfieldlist[cnt]%><br>
+                                <%console.log(inSessionfieldlist[cnt]);%>
                                 <%
                                     var eventdate = new Date( inSessionEventList[cnt].Date);
                                     var weekDayList = [ "日", "月", "火", "水", "木", "金", "土" ] ;
                                     var week = "(" + weekDayList[ eventdate.getDay() ] + ")";
                                 %>
-                                日時 : <%= inSessionEventList[cnt].Date %> <%=week%> ~ <br>
+                                開始日時 : <%= inSessionEventList[cnt].Date %> <%=week%> ~ <br>
                                 会場 : <%= inSessionEventList[cnt].Venue %><br>
                                 <div class="visible-md visible-lg">
                                   概要 : <%= inSessionEventList[cnt].Overview %><br>
@@ -76,7 +78,7 @@
                     <% for(var cnt=0; cnt<closedEventList.length; cnt++) { %>
                           <%if(cnt==0){%>
                             <div class="clear"> </div>
-                            <div class="text-center held-situation1">- 終了済みイベント -</div>
+                            <div class="text-center held-situation1">- 終了イベント -</div>
                           <%}%>
                           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-form">
                             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -90,6 +92,7 @@
                             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                               <div class="list-contents">
  				                        イベント名 : <a href="/eventtop?eventid=<%=closedEventList[cnt].Eventid%>"><%= closedEventList[cnt].Eventname %></a><br>
+                                対象分野 : <%=closedfieldlist[cnt]%><br>
                                 <%
                                 var eventdate = new Date( closedEventList[cnt].Date);
                                 var weekDayList = [ "日", "月", "火", "水", "木", "金", "土" ] ;
