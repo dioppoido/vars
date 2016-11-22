@@ -162,7 +162,7 @@ function date_confirm(){
 
     //開始日・終了日
     if(hold_start > hold_end){
-        alert("開催日エラー : 開催終了日時が早いです。");
+        alert("開催日エラー : 開催終了日時が開催日時より早いです。");
         return false;
     }
     if(hold_start == hold_end && hold_stime == hold_etime){
@@ -170,21 +170,21 @@ function date_confirm(){
         return false;
     }
     if(hold_start == hold_end && hold_stime > hold_etime){
-        alert("開催日エラー : 開催終了時間のほうが早いです。");
+        alert("開催時間エラー : 開催終了時間が早いです。");
         return false;
     }
 
     //参加チーム
     if(team_start > team_end){
-        alert("参加チーム受付エラー : 参加チーム終了日時のほうが早いです。");
+        alert("参加チーム登録受付日時エラー : 参加チーム終了受付日時のほうが早いです。");
         return false;
     }
     if(team_start == team_end && team_stime == team_etime){
-        alert("参加チーム受付時間エラー : 参加チーム受付開始、受付終了時間が同じです。");
+        alert("参加チーム登録受付時間エラー : 参加チーム受付開始、受付終了時間が同じです。");
         return false;
     }
     if(team_start == team_end && team_stime > team_etime){
-        alert("参加チーム受付エラー : 受付終了日時のほうが早いです。");
+        alert("参加チーム登録受付時間エラー : 参加チーム登録受付時間より受付終了時間のほうが早いです。");
         return false;
     }
 
@@ -202,13 +202,41 @@ function date_confirm(){
         return false;
     }
 
-    //開催日 - 投票
-    if(holdday > vote_start){
-        alert("開催日エラー : イベント開催前に投票が出来てます。");
+    //開催日 - 投票日
+    //if(hold_start < vote_start){
+    //    alert("投票開始日時エラー : イベント開催前に投票が出来る状態です。");
+    //    return false;
+    //}
+    if(hold_start > vote_end){
+        alert("開催日エラー : イベント前に投票期間が終了しています");
         return false;
     }
-    if(holdday > vote_end){
-        alert("開催日エラー : イベント前に投票期限が終了しています。");
+
+    //開催日 - チーム作成期間
+    if(hold_start < team_start){
+        alert("参加チーム登録受付エラー : 開催前にチーム作成が出来ません。");
+        return false;
+    }
+    if(hold_start < team_end){
+        alert("チーム受付終了エラー : イベント開催前にチーム作成期間を終了してください");
+        return false;
+    }
+    if(hold_finish < team_start){
+        alert("チーム受付終了エラー : イベント終了前にチーム作成期間を終了してください");
+        return false;
+    }
+
+    //チーム受付期間 - 投票日
+    if(team_start > vote_start){
+        alert("投票開始日時エラー : チーム作成前に投票が可能です。");
+        return false;
+    }
+    if(team_start > vote_finish){
+        alert("投票終了日時エラー : チーム作成前に投票期限が終了しています");
+        return false;
+    }
+    if(team_finish > vote_start){
+        alert("投票開始日時エラー : 投票期間中はチーム受付を終了してください。");
         return false;
     }
 
