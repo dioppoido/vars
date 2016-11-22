@@ -10,7 +10,7 @@ exports.getAggregate = function(Aggregate_JSON){
             if(!err){
                 if(docs.length>=1){
                     console.log("getAggregate:"+"データがあります");
-                    console.log("Eventid" + docs[0].Voteid + "は" + docs.length+"件見つかりました");
+                    console.log("Eventid" + docs[0].Eventid + "は" + docs.length+"件見つかりました");
                     for(var i=0; i<docs.length;i++){
                         console.log(docs[i]);
                     }
