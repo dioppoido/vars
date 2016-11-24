@@ -1,0 +1,193 @@
+zz
+/* eventcreate.css */
+
+/* All */
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background: #F5F5F5;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: 'Noto Sans Japanese', sans-serif;
+}
+.container {
+    width: auto;
+}
+.col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+/* !All */
+
+/* Eventcreate */
+.eventcreate{
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight:bold;
+}
+.event-title{
+}
+.create-form{
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 200px;
+    width: 70%;
+    font-size: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+input.event-input{
+  width:95%;
+  margin-bottom: 20px;
+}
+select.event-input{
+  width:95%;
+  margin-bottom: 20px;
+}
+textarea.event-input {
+    resize: none;
+    width:95%;
+    height:150px;
+    margin-bottom: 20px;
+}
+.submit-btn{
+    font-size:24px;
+    margin-bottom: 20px;
+}
+input[type=file]{
+    display: none;
+}
+.file-btn{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.pass-btn{
+    margin-top: 6px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    width : 160px;
+    font-weight: bold;
+    background: blue;
+    color:white;
+}
+.pass-btn:hover{
+    color: white;
+}
+#file_name{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    /* 768px - 979px用（タブレット用）の記述 */
+    .event-title{
+        font-size: 34px;
+    }
+    .create-form{
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        width: 95%;
+        font-size: 26px;
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .pass-place-size{
+      font-size:14px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px)  {
+    /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .event-title{
+        font-size: 34px;
+    }
+    .create-form{
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        width: 95%;
+        font-size: 26px;
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .pass-place-size{
+      font-size:14px;
+    }
+
+}
+@media screen and (max-width: 479px) {
+    /* 479px以下用（スマートフォン用）の記述 */
+    .event-title{
+        font-size: 24px;
+    }
+    .create-form{
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 200px;
+        width: 90%;
+        font-size: 15px;
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+    input.event-input{
+        width:100%;
+        font-size:12px;
+        margin-bottom: 0px;
+    }
+    select.event-input{
+        width:100%;
+        font-size:12px;
+        margin-bottom: 0px;
+    }
+    textarea.event-input{
+        width:100%;
+        font-size:12px;
+        margin-bottom: 0px;
+    }
+    .submit-btn{
+        font-size:20px;
+    }
+    .file-btn{
+        margin-top: 20px;
+        margin-bottom: 0px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    #file_name{
+        margin-top: 0px;
+        margin-bottom: 40px;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .pass-btn{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 15px;
+        width : 160px;
+        font-weight: bold;
+    }
+
+}
+/* !Eventcreate */
