@@ -72,3 +72,13 @@ exports.fields =new mongoose.Schema({
   Fieldname          :String
 });
 
+exports.teamcreates =new mongose.Schema({
+  Teamname    :String,
+  Teamid      :String,
+  Eventid     :String,
+  Systemname  :String,
+  Overview    :String,
+  displayName :String,
+  Address     :String,
+  Image       :String
+});
