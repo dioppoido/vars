@@ -9,14 +9,14 @@ exports.getAggregate = function(Aggregate_JSON){
         Aggregates.find(Aggregate_JSON,{},function(err,docs){
             if(!err){
                 if(docs.length>=1){
-                    console.log("getAggregate:"+"データがあります");
-                    console.log("Eventid" + docs[0].Eventid + "は" + docs.length+"件見つかりました");
-                    for(var i=0; i<docs.length;i++){
+                    //console.log("getAggregate:"+"データがあります");
+                    //console.log("Eventid" + docs[0].Eventid + "は" + docs.length+"件見つかりました");
+                    /*for(var i=0; i<docs.length;i++){
                         console.log(docs[i]);
-                    }
+                    }*/
                     resolve(docs);
                 }else{
-                    console.log("getAggregate:"+"データがありません");
+                    //console.log("getAggregate:"+"データがありません");
                     resolve(docs);
                 }
             } else {
