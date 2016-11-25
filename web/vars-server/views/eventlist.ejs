@@ -60,11 +60,11 @@
                                 対象分野 : <%=inSessionfieldlist[cnt]%><br>
                                 <%console.log(inSessionfieldlist[cnt]);%>
                                 <%
-                                    var eventdate = new Date( inSessionEventList[cnt].Date);
+                                    var eventdate = new Date( inSessionEventList[cnt].Holdstart);
                                     var weekDayList = [ "日", "月", "火", "水", "木", "金", "土" ] ;
                                     var week = "(" + weekDayList[ eventdate.getDay() ] + ")";
                                 %>
-                                開始日時 : <%= inSessionEventList[cnt].Date %> <%=week%> ~ <br>
+                                開始日時 : <%= inSessionEventList[cnt].Holdperiod.Holdstart %> <%=week%> ~ <%= inSessionEventList[cnt].Holdperiod.Holdfinish %><br>
                                 会場 : <%= inSessionEventList[cnt].Venue %><br>
                                 <div class="visible-md visible-lg">
                                   概要 : <%= inSessionEventList[cnt].Overview %><br>

@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
                 if(docs1!=null){
                     var insessionfieldlist = [];
                     //開催日のイベント一覧
-                    var inSessionEvent=inSessionEventList.inSessionEventList(todate.todate("YYYY/MM/D"),docs1,1);
+                    var inSessionEvent=inSessionEventList.inSessionEventList(todate.todate(),docs1,1);
                     async.eachSeries(inSessionEvent,function(data,next){
                       getField.getSingleField(data.Fieldid).then(function (docs) {
                           insessionfieldlist.push(docs[0].Fieldname);

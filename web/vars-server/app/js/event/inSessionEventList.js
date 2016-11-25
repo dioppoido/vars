@@ -12,16 +12,20 @@ exports.inSessionEventList = function(date,json,sort){
         var length=json.length;
         for(var cnt=0;cnt<json.length;cnt++){
               //開催中
-              if(json[cnt].Date>=date){
+              if(json[cnt].Holdperiod.Holdstart>=date){
                   open[openNo].Eventid=json[cnt].Eventid;
                   open[openNo].Eventname=json[cnt].Eventname;
                   open[openNo].Fieldid=json[cnt].Fieldid;
-                  open[openNo].Date=json[cnt].Date;
+                  open[openNo].Holdperiod.Holdstart=json[cnt].Holdperiod.Holdstart;
+                  open[openNo].Holdperiod.Holdfinish=json[cnt].Holdperiod.Holdfinish;
                   open[openNo].Venue=json[cnt].Venue;
                   open[openNo].Image=json[cnt].Image;
                   open[openNo].Overview=json[cnt].Overview;
                   openNo++;
               }
+              console.log("date:" + date);
+              console.log(json[cnt].Holdperiod.Holdstart);
+              console.log(openNo);
         }
         // 開催中イベント以外を削除
         for(var cnt=0;cnt<length-openNo;cnt++){
