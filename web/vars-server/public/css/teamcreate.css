@@ -1,5 +1,5 @@
 zz
-/* eventcreate.css */
+/* teamcreate.css */
 
 /* All */
 html,body {
@@ -25,12 +25,12 @@ body{
 /* !All */
 
 /* Eventcreate */
-.eventcreate{
+.teamcreate{
     margin-top: 30px;
     font-size: 30px;
     font-weight:bold;
 }
-.event-title{
+.team-title{
 }
 .create-form{
     margin: 0 auto;
@@ -44,15 +44,15 @@ body{
     -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
-input.event-input{
+input.team-input{
   width:95%;
   margin-bottom: 20px;
 }
-select.event-input{
+select.team-input{
   width:95%;
   margin-bottom: 20px;
 }
-textarea.event-input {
+textarea.team-input {
     resize: none;
     width:95%;
     height:150px;
@@ -91,7 +91,7 @@ input[type=file]{
 }
 @media screen and (min-width: 768px) and (max-width: 979px) {
     /* 768px - 979px用（タブレット用）の記述 */
-    .event-title{
+    .team-title{
         font-size: 34px;
     }
     .create-form{
@@ -113,7 +113,7 @@ input[type=file]{
 
 @media screen and (min-width: 480px) and (max-width: 767px)  {
     /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
-    .event-title{
+    .team-title{
         font-size: 34px;
     }
     .create-form{
@@ -135,7 +135,7 @@ input[type=file]{
 }
 @media screen and (max-width: 479px) {
     /* 479px以下用（スマートフォン用）の記述 */
-    .event-title{
+    .team-title{
         font-size: 24px;
     }
     .create-form{
@@ -149,17 +149,17 @@ input[type=file]{
         -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     }
-    input.event-input{
+    input.team-input{
         width:100%;
         font-size:12px;
         margin-bottom: 0px;
     }
-    select.event-input{
+    select.team-input{
         width:100%;
         font-size:12px;
         margin-bottom: 0px;
     }
-    textarea.event-input{
+    textarea.team-input{
         width:100%;
         font-size:12px;
         margin-bottom: 0px;

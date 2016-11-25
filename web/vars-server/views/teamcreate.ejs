@@ -17,7 +17,7 @@
     <link href="../public/css/datepicker.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../public/css/eventcreate.css" rel="stylesheet">
+    <link href="../public/css/teamcreate.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
     <link href="../public/css/footer.css" rel="stylesheet">
 
@@ -35,36 +35,36 @@
         <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
-                <div class="eventcreate">
+                <div class="teamcreate">
 
-                    <div class="event-title text-center"><i class="fa fa-plus-circle" aria-hidden="true"></i> チーム作成</div>
+                    <div class="team-title text-center"><i class="fa fa-plus-circle" aria-hidden="true"></i> チーム作成</div>
 
                     <div class="create-form">
                         <form method="post" name="teamcreate" action="teamcreate" enctype="multipart/form-data" onsubmit="return date_confirm()">
 
                             <div class="form-group">
                               <label>チーム名 : </label>
-                              <input type="text" class="form-control input-lg event-input" name="teamname" placeholder="例)2016年合評会" required>
+                              <input type="text" class="form-control input-lg team-input" name="teamname" placeholder="" required>
                             </div>
                             <div class="form-group">
                               <input type="hidden" name="eventid" value="<%= eventid %>">
                             </div>
                             <div class="form-group">
                               <label>システム名 : </label>
-                              <input type="text" class="form-control input-lg event-input" name="systemname" placeholder="例)2016年合評会">
+                              <input type="text" class="form-control input-lg team-input" name="systemname" placeholder="">
                             </div>
                             <div class="form-group">
                               <label>概要 : </label>
-                              <input type="text" class="form-control input-lg event-input" name="overview" placeholder="例)2016年合評会">
+                              <textarea class="form-control input-lg team-input" name="overview" placeholder="例)メンバー名、チーム紹介"></textarea>
                             </div>
                             <div class="form-group">
                               <label>代表者名(作成者) : </label>
-                              <input type="text" class="form-control input-lg event-input" name="displayname" value="<%= displayName %>" disabled="disabled" required>
+                              <input type="text" class="form-control input-lg team-input" name="displayname" value="<%= displayName %>" disabled="disabled" required>
                             </div>
 
                             <div class="form-group">
                               <label>メールアドレス : </label>
-                              <input type="text" class="form-control input-lg event-input" name="address" value="<%= address %>" disabled="disabled" required>
+                              <input type="text" class="form-control input-lg team-input" name="address" value="<%= address %>" disabled="disabled" required>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <label>サムネイル画像( .jpg .png .gifのみ ) : </label>
