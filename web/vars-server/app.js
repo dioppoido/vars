@@ -128,6 +128,8 @@ app.use('/getTeam',require('./routes/getTeam'));
 app.use('/boot',require('./routes/boot'));
 //multerテスト
 app.use('/multer',require('./routes/multer'));
+//Aggregateテスト
+app.use('/aggregate',require('./routes/aggregate'));
 //パスワードページ
 app.use('/password',require('./routes/password'));
 
