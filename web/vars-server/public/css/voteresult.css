@@ -35,7 +35,7 @@ body{
 }
 
 .vote-contents{
-    margin-top: 50px
+    margin-top: 50px;
     margin-left: 20px;
     margin-bottom: 20px;
     font-size: 40px;
@@ -220,6 +220,48 @@ body{
       font-size: 14px;
       font-weight:bold;
   }
+    /* tab */
+    .myWrapper {
+        float: left;
+    }
+    #tabs{
+        background: white;
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 15px;
+        position: relative;
+        float:left;
+        margin-left: 20px;
+        margin-bottom: 100px;
+        width: 90%;
+    }
+    .allTabs {
+        display: none;
+        position:absolute;
+        background: #e6e6e6;
+        right: 13px;
+        border: 1px solid lightgrey;
+    }
+    #tabs li{
+        padding-top: 5px;
+        padding-left: 5px;
+    }
+    li.seeMore{
+        width: 25%;
+        height: 40px;
+    }
+    .allTabs a {
+        font-family: 'Noto Sans Japanese', sans-serif;
+        display: block;
+        padding: 10px;
+        font-size: 15px;
+        text-decoration: none;
+    }
+    .allTabs a:hover {
+        background: #ffffff;
+    }
+    .allTabs .highlight {
+        font-weight: bold;
+    }
   /*ランキングテーブルマージン*/
   .table-size{
     margin: 0 auto;
@@ -262,17 +304,60 @@ body{
       margin: 0 auto;
       margin-bottom: 50px;
     }
-
     /*とっぷ文字*/
     .voteresult-title{
         font-size: 24px;
     }
     /*結果発表文字*/
     .voteresult{
+        margin-left: 0px;
         margin-bottom: 12px;
         font-size: 14px;
         font-weight:bold;
     }
+    /* tab */
+    .myWrapper {
+        float: left;
+    }
+    #tabs{
+        background: white;
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 15px;
+        position: relative;
+        float:left;
+        margin-left: 20px;
+        margin-bottom: 100px;
+        width: 90%;
+    }
+    .allTabs {
+        display: none;
+        position:absolute;
+        background: #e6e6e6;
+        right: 13px;
+        border: 1px solid lightgrey;
+    }
+    #tabs li{
+        padding-top: 5px;
+        padding-left: 5px;
+    }
+    li.seeMore{
+        width: 25%;
+        height: 40px;
+    }
+    .allTabs a {
+        font-family: 'Noto Sans Japanese', sans-serif;
+        display: block;
+        padding: 10px;
+        font-size: 15px;
+        text-decoration: none;
+    }
+    .allTabs a:hover {
+        background: #ffffff;
+    }
+    .allTabs .highlight {
+        font-weight: bold;
+    }
+
     /*ランキングテーブルマージン*/
     .table-size{
       margin: 0 auto;

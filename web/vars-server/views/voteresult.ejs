@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 
@@ -12,7 +11,8 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- JQuery Ui -->
+    <link rel="stylesheet" type="text/css" href="../public/css/jquery-ui.css">
 
     <!-- Custom CSS -->
     <link href="../public/css/header.css" rel="stylesheet">
@@ -22,183 +22,141 @@
     <!-- Custom Fonts -->
     <link href="../public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/earlyaccess/notosansjapanese.css' rel='stylesheet' type='text/css'>
+
+
 </head>
+
 <body>
 <%- include('./header.ejs') %>
-
 <section>
     <div class="container">
         <div class="row">
-          <div class="voteresults">
-            <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+            <div class="voteresults">
+                <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
-              <div class="voteresult-title text-center">
-                <img class="voteresult-img" src="../public/images/voteranking/votingresultsicon.png">投票結果画面
+                    <div class="voteresult-title text-center">
+                        <img class="voteresult-img" src="../public/images/voteranking/votingresultsicon.png">投票結果画面
+                    </div>
+
+                    <div class="voteresult text-center">- ソフト４コース合評会結果発表 -</div>
+
+                    <!-- PC用画面 -->
+                    <div class="vote-list visible-md visible-lg">
+                        <!-- 総合部門 -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="panel panel-list panel-primary">
+                                <div class="panel-heading text-center ">総合</div>
+                                <ul class="list-group">
+                                    <div class="row">
+                                        <!--  -->
+                                        <table class="alt-table-responsive table-size">
+                                            <div>
+                                                <% for(var i=1; i<=3;i++){ %>
+                                                <tr>
+                                                    <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                                        <img class="ranking-img" src="../public/images/voteranking/rank0<%=i%>.png">
+                                                    </th>
+                                                    <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ranking-contents">
+                                                        <%=i%>チーム <!-- 総合のチーム名-->
+                                                    </th>
+                                                </tr>
+                                                <% } %>
+                                            </div>
+                                        </table>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- その他の部門 -->
+                        <%var category=["デザイン部門","システム部門","利便部門","使ってみたい部門"];%> <!-- 部門のテストデータ-->
+                        <%for(var i=0;i<category.length;i++){%>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 visible-md visible-lg">
+                            <div class="panel panel-list panel-primary">
+                                <div class="panel-heading text-center"><%=category[i]%></div>
+                                <ul class="another-list-group">
+                                    <div class="row">
+                                        <table class="alt-table-responsive another-table-size">
+                                            <tr>
+                                                <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                                    <img class="another-ranking-img" src="../public/images/voteranking/rank01.png">
+                                                </th>
+                                                <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10 another-ranking-contents">
+                                                    <%=i%>チーム  <!-- そのた部門チーム名 -->
+                                                </th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <%}%>
+                    </div><!-- votelist -->
                 </div>
 
-                <div class="voteresult text-left">- ソフト４コース合評会結果発表 -</div>
-
-<!-- PC用画面 -->
-                <div class="vote-list visible-md visible-lg">
-                  <!-- 総合部門 -->
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="panel panel-list panel-primary">
-                      <div class="panel-heading text-center ">総合</div>
-                        <ul class="list-group">
-                          <div class="row">
-                            <!--  -->
-                            <table class="alt-table-responsive table-size">
-                              <div>
-                              <% for(var i=1; i<=3;i++){ %>
-                                <tr>
-                                  <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                        <img class="ranking-img" src="../public/images/voteranking/rank0<%=i%>.png">
-                                  </th>
-                                  <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ranking-contents">
-                                    <%=i%>チーム <!-- 総合のチーム名-->
-                                  </th>
-                                </tr>
-                              <% } %>
-                            </div>
-                            </table>
-                        </ul>
-                    </div>
-                  </div>
-
-                  <!-- その他の部門 -->
-                  <%var category=["デザイン部門","システム部門","利便部門","使ってみたい部門"];%> <!-- 部門のテストデータ-->
-                  <%for(var i=0;i<category.length;i++){%>
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 visible-md visible-lg">
-                      <div class="panel panel-list panel-primary">
-                        <div class="panel-heading text-center"><%=category[i]%></div>
-                        <ul class="another-list-group">
-                          <div class="row">
-                              <table class="alt-table-responsive another-table-size">
-                                <tr>
-                                  <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                    <img class="another-ranking-img" src="../public/images/voteranking/rank01.png">
-                                  </th>
-                                  <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10 another-ranking-contents">
-                                      <%=i%>チーム  <!-- そのた部門チーム名 -->
-                                  </th>
-                                </tr>
-                              </table>
-                          </div>
-                        </ul>
-                      </div>
-                    </div>
-                  <%}%>
-                </div><!-- votelist -->
-
-
-<!-- スマフォ画面 -->
+                <!-- スマフォ画面 -->
                 <div class="col-xs-12 col-sm-12 visible-xs visible-sm">
-              <ul class="nav nav-pills bg-white">
-                  <li class="active"><a href="#総合"  data-toggle="tab">総合</a></li>
-                  <li><a href="#デザイン" data-toggle="tab">デザイン</a></li>
-                  <li><a href="#システム" data-toggle="tab">システム</a></li>
-                  <li><a href="#利便" data-toggle="tab">利便</a></li>
-                  <li><a href="#使ってみたい" data-toggle="tab">使ってみたい</a></li>
-              </ul>
-              </div>
-              <!-- tab contents -->
-              <div class="ranking-contents">
-                  <div class="tab-content">
-
-                      <div class="tab-pane active" id="総合">
-                        <table class="alt-table-responsive table-size">
-                          <%for(var i=0;i<14;i++){%>
-                            <tr>
-                              <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                <img class="ranking-img" src="../public/images/voteranking/rank01.png">
-                              </th>
-                              <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                                A撲滅委員会
-                              </th>
-                            </tr>
-                          <%}%>
-                        </table>
-                      </div>
-
-                    <div class="tab-pane tab-memo" id="デザイン">
-                      <table class="alt-table-responsive table-size">
-                        <%for(var i=0;i<4;i++){%>
-                          <tr>
-                            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                              <img class="ranking-img" src="../public/images/voteranking/rank01.png">
-                            </th>
-                            <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                              B撲滅委員会
-                            </th>
-                          </tr>
-                        <%}%>
-                      </table>
+                    <div id="tabs" class="plusTabs ui-tabs ui-widget ui-widget-content ui-corner-all">
+                        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                            <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-1" aria-selected="true" >
+                                <a href="#tabs-1" class="ui-tabs-anchor"  tabindex="-1" id="ui-id-1">総合部門</a>
+                            </li>
+                            <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-2" aria-labelledby="ui-id-2" aria-selected="false">
+                                <a href="#tabs-2" class="ui-tabs-anchor" tabindex="-1" id="ui-id-2">デザイン部門</a>
+                            </li>
+                            <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-3" aria-selected="false">
+                                <a href="#tabs-3" class="ui-tabs-anchor" tabindex="-1" id="ui-id-3">システム部門</a>
+                            </li>
+                            <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-4" aria-labelledby="ui-id-4" aria-selected="false">
+                                <a href="#tabs-4" class="ui-tabs-anchor" tabindex="-1" id="ui-id-4">利便部門</a>
+                            </li>
+                            <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-5" aria-labelledby="ui-id-5" aria-selected="false">
+                                <a href="#tabs-5" class="ui-tabs-anchor" tabindex="-1" id="ui-id-5">使ってみたい部門</a>
+                            </li>
+                        </ul>
+                        <div id="tabs-1" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-expanded="true" aria-hidden="false" style="display: block;">
+                            <p>総合部門</p>
+                        </div>
+                        <div id="tabs-2" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="display: none;" aria-expanded="false" aria-hidden="true">
+                            <p>デザイン部門</p>
+                        </div>
+                        <div id="tabs-3" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="display: none;" aria-expanded="false" aria-hidden="true">
+                            <p>システム部門</p>
+                        </div>
+                        <div id="tabs-4" aria-labelledby="ui-id-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="display: none;" aria-expanded="false" aria-hidden="true">
+                            <p>利便部門</p>
+                        </div>
+                        <div id="tabs-5" aria-labelledby="ui-id-5" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="display: none;" aria-expanded="false" aria-hidden="true">
+                            <p>使ってみたい部門</p>
+                        </div>
+                        <div class="allTabs" style="top: 47px; width: 66%; display: none;">
+                            <a href="#tabs-1" class="ui-tabs-anchor highlight" tabindex="-1" id="ui-id-1">総合部門</a>
+                            <a href="#tabs-2" class="ui-tabs-anchor" tabindex="-1" id="ui-id-2">デザイン部門</a>
+                            <a href="#tabs-3" class="ui-tabs-anchor" tabindex="-1" id="ui-id-3">システム部門</a>
+                            <a href="#tabs-4" class="ui-tabs-anchor" tabindex="-1" id="ui-id-4">利便部門</a>
+                            <a href="#tabs-5" class="ui-tabs-anchor" tabindex="-1" id="ui-id-5">使ってみたい部門</a>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="tab-pane tab-memo" id="システム">
-                      <table class="alt-table-responsive table-size">
-                        <%for(var i=0;i<4;i++){%>
-                          <tr>
-                            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                              <img class="ranking-img" src="../public/images/voteranking/rank01.png">
-                            </th>
-                            <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                              C撲滅委員会
-                            </th>
-                          </tr>
-                        <%}%>
-                      </table>
-                    </div>
-
-                    <div class="tab-pane tab-memo" id="利便">
-                      <table class="alt-table-responsive table-size">
-                        <%for(var i=0;i<4;i++){%>
-                          <tr>
-                            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                              <img class="ranking-img" src="../public/images/voteranking/rank01.png">
-                            </th>
-                            <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                              D撲滅委員会
-                            </th>
-                          </tr>
-                        <%}%>
-                      </table>
-                    </div>
-
-                    <div class="tab-pane tab-memo" id="使ってみたい">
-                      <table class="alt-table-responsive table-size">
-                        <%for(var i=0;i<4;i++){%>
-                          <tr>
-                            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                              <img class="ranking-img" src="../public/images/voteranking/rank01.png">
-                            </th>
-                            <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                              E撲滅委員会
-                            </th>
-                          </tr>
-                        <%}%>
-                      </table>
-                    </div>
-
-                  </div>
-              </div>
-                </div><!-- col -->
-            </div><!-- voteresult -->
-        </div><!-- row -->
-    </div><!-- container -->
-  </div>
+                </div><!-- voteresult -->
+            </div><!-- row -->
+        </div><!-- container -->
+    </div>
 </section>
+
 
 <%- include('./footer.ejs') %>
 
 <!-- jQuery -->
-<script src="../public/js/jquery.js"></script>
-
+<script type="text/javascript" src="../public/js/jquery.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
-
-<!-- Footer Fixed -->
-<script src="../public/js/footerFixed.js"></script>
+<!-- JQuery Ui -->
+<script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<!-- plusTabs -->
+<script src="../public/js/plusTabs.js"></script>
 
 </body>
+
 </html>
