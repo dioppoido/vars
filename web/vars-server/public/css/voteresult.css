@@ -167,6 +167,52 @@ body{
       font-size: 14px;
       font-weight:bold;
   }
+  /* tab */
+  .myWrapper {
+      float: left;
+  }
+  #tabs{
+      background: white;
+      font-family: 'Noto Sans Japanese', sans-serif;
+      font-size: 15px;
+      position: relative;
+      float:left;
+      margin-left: 20px;
+      margin-bottom: 210px;
+      width: 90%;
+  }
+  .active-tab{
+      width: 70%;
+  }
+  .allTabs {
+      display: none;
+      position:absolute;
+      background: #e6e6e6;
+      right: 13px;
+      border: 1px solid lightgrey;
+  }
+  #tabs li{
+      padding-top: 5px;
+      padding-left: 5px;
+  }
+  li.seeMore{
+      width: 30%;
+      height: 40px;
+  }
+  .allTabs a {
+      font-family: 'Noto Sans Japanese', sans-serif;
+      display: block;
+      padding: 10px;
+      font-size: 15px;
+      text-decoration: none;
+  }
+  .allTabs a:hover {
+      background: #ffffff;
+  }
+  .allTabs .highlight {
+      font-weight: bold;
+  }
+
   /*ランキングテーブルマージン*/
   .table-size{
     margin: 0 auto;
@@ -174,6 +220,7 @@ body{
     margin-left:0px;
     margin-right: 0px;
   }
+
   /*ランキングIMG*/
   .ranking-img{
     margin-bottom: 4px;
@@ -194,11 +241,11 @@ body{
   .ranking-contents{
       margin: 0 auto;
       background: white;
-      font-size: 12px;
+      font-size: 24px;
       width: 95%;
-      border-color: #62c2e4;
+      /*border-color: #62c2e4;
       -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);*/
       padding: 0px;
   }
 }
@@ -289,11 +336,11 @@ body{
   .ranking-contents{
       margin: 0 auto;
       background: white;
-      font-size: 12px;
+      font-size: 24px;
       width: 95%;
-      border-color: #62c2e4;
+      /*border-color: #62c2e4;
       -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);*/
       padding: 0px;
   }
 }
@@ -326,7 +373,7 @@ body{
         position: relative;
         float:left;
         margin-left: 20px;
-        margin-bottom: 100px;
+        margin-bottom: 210px;
         width: 90%;
     }
     .active-tab{
@@ -368,6 +415,13 @@ body{
       margin-left:0px;
       margin-right: 0px;
     }
+    /*ランキングテーブルマージン*/
+    .table-size{
+      margin: 0 auto;
+      margin-top:0px;
+      margin-left:0px;
+      margin-right: 0px;
+    }
     /*ランキングIMG*/
     .ranking-img{
       margin-bottom: 4px;
@@ -388,11 +442,11 @@ body{
     .ranking-contents{
         margin: 0 auto;
         background: white;
-        font-size: 12px;
+        font-size: 15px;
         width: 95%;
-        border-color: #62c2e4;
-        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-        /*padding: 0px;*/
+        /*border-color: #62c2e4;*/
+        /*-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);*/
+        /*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);*/
+        padding: 0px;
     }
 }
