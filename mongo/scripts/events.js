@@ -11,7 +11,10 @@ db.events.insert({
     displayName:"test",
     Fieldid:"it",
     Venue:"南館1階B教室",
-    Date:"2016/10/12",
+    Holdperiod:{
+      Holdstart :"2016/11/09 9:00",
+      Holdfinish : "2016/11/10 15:00"
+   },
     Createperiod:{
         Createstart:"2016/10/4 9:00",
         Createfinish:"2016/10/11 15:00"
@@ -22,7 +25,52 @@ db.events.insert({
     },
     Image:"public/images/noimage.png"
 });
-
+db.events.insert({
+    Eventid:"101",
+    Eventname:"イベントZ",
+    Overview:"イベントZno説明です",
+    Password:"",
+    Address:"test@example.com",
+    displayName:"test",
+    Fieldid:"it",
+    Venue:"南館1階B教室",
+    Holdperiod:{
+      Holdstart :"2016/11/25 10:00",
+      Holdfinish : "2016/11/25 15:00"
+   },
+    Createperiod:{
+        Createstart:"2016/10/4 9:00",
+        Createfinish:"2016/10/11 15:00"
+    },
+    Voteperiod:{
+        Votestart:"2016/10/12 9:00",
+        Votefinish:"2016/10/20 15:00"
+    },
+    Image:"public/images/noimage.png"
+});
+db.events.insert({
+    Eventid:"102",
+    Eventname:"イベントP",
+    Overview:"イベントZno説明です",
+    Password:"",
+    Address:"test@example.com",
+    displayName:"test",
+    Fieldid:"it",
+    Venue:"南館1階B教室",
+    Holdperiod:{
+      Holdstart :"2016/11/25 12:00",
+      Holdfinish : "2016/11/25 15:00"
+   },
+    Createperiod:{
+        Createstart:"2016/10/4 9:00",
+        Createfinish:"2016/10/11 15:00"
+    },
+    Voteperiod:{
+        Votestart:"2016/10/12 9:00",
+        Votefinish:"2016/10/20 15:00"
+    },
+    Image:"public/images/noimage.png"
+});
 db.events.insert({
     Eventid:"2",
     Eventname:"イベントB",
@@ -32,7 +80,10 @@ db.events.insert({
     displayName:"test",
     Fieldid:"hard",
     Venue:"ホワイエ",
-    Date:"2016/10/21",
+    Holdperiod:{
+      Holdstart :"2016/10/21 9:00",
+      Holdfinish : "2016/10/23 15:00"
+   },
     Createperiod:{
         Createstart:"2016/10/12 9:00",
         Createfinish:"2016/10/20 12:00"
@@ -52,7 +103,10 @@ db.events.insert({
     displayName:"test",
     Fieldid:"game",
     Venue:"ソニックホール",
-    Date:"2016/11/1",
+    Holdperiod:{
+      Holdstart :"2016/11/01 9:00",
+      Holdfinish : "2016/11/03 15:00"
+   },
     Createperiod:{
         Createstart:"2016/10/21 12:00",
         Createfinish:"2016/10/31 15:00"
@@ -73,7 +127,10 @@ db.events.insert({
     displayName:"test",
     Fieldid:"it",
     Venue:"ちか",
-    Date:"2016/12/11",
+    Holdperiod:{
+      Holdstart :"2016/12/1 9:00",
+      Holdfinish : "2016/12/3 15:00"
+   },
     Createperiod:{
         Createstart:"2016/12/21 12:00",
         Createfinish:"2016/12/31 15:00"
@@ -93,7 +150,10 @@ db.events.insert({
     displayName:"test",
     Fieldid:"it",
     Venue:"ちか",
-    Date:"2017/12/11",
+    Holdperiod:{
+      Holdstart :"2017/12/11 9:00",
+      Holdfinish : "2017/12/13 15:00"
+   },
     Createperiod:{
         Createstart:"2017/12/21 12:00",
         Createfinish:"2017/12/31 15:00"
@@ -112,7 +172,10 @@ db.events.insert({
     displayName:"test",
     Fieldid:"it",
     Venue:"ちか",
-    Date:"2018/12/15",
+    Holdperiod:{
+      Holdstart :"2018/12/15 9:00",
+      Holdfinish : "2018/12/17 15:00"
+   },
     Createperiod:{
         Createstart:"2018/12/21 12:00",
         Createfinish:"2018/12/31 15:00"
@@ -131,7 +194,10 @@ db.events.insert({
     displayName:"test",
     Fieldid:"it",
     Venue:"ちか",
-    Date:"2019/12/16",
+    Holdperiod:{
+      Holdstart :"2019/12/16 9:00",
+      Holdfinish : "2019/12/18 15:00"
+   },
     Createperiod:{
         Createstart:"2019/12/21 12:00",
         Createfinish:"2019/12/31 15:00"
@@ -150,7 +216,10 @@ db.events.insert({
     displayName:"test",
     Fieldid:"it",
     Venue:"ちか",
-    Date:"2020/12/17",
+    Holdperiod:{
+      Holdstart :"2020/12/17 9:00",
+      Holdfinish : "2020/12/19 15:00"
+   },
     Createperiod:{
         Createstart:"2020/12/21 12:00",
         Createfinish:"2020/12/31 15:00"
@@ -171,7 +240,10 @@ Address:"test@example.com",
 displayName:"test",
 Fieldid:"all",
 Venue:"本館地下１F",
-Date:"2016/10/30",
+Holdperiod:{
+  Holdstart :"2016/10/30 9:00",
+  Holdfinish : "2016/11/1 15:00"
+},
 Createperiod:{
     Createstart:"2016/10/4 9:00",
     Createfinish:"2016/10/11 15:00"
@@ -192,7 +264,10 @@ Address:"test@example.com",
 displayName:"test",
 Fieldid:"all",
 Venue:"本館地下10F",
-Date:"2016/12/25",
+Holdperiod:{
+  Holdstart :"2016/12/24 9:00",
+  Holdfinish : "2016/12/25 15:00"
+},
 Createperiod:{
     Createstart:"2016/10/4 9:00",
     Createfinish:"2016/10/11 15:00"
@@ -214,7 +289,10 @@ Address:"test@example.com",
 displayName:"test",
 Fieldid:"game",
 Venue:"本館地下0F",
-Date:"2016/12/25",
+Holdperiod:{
+  Holdstart :"2016/12/25 9:00",
+  Holdfinish : "2016/12/26 15:00"
+},
 Createperiod:{
     Createstart:"2016/10/4 9:00",
     Createfinish:"2016/10/11 15:00"
@@ -235,7 +313,10 @@ Address:"test@example.com",
 displayName:"test",
 Fieldid:"graphic",
 Venue:"本館地下0F",
-Date:"2016/1/25",
+Holdperiod:{
+  Holdstart :"2017/1/25 9:00",
+  Holdfinish : "2017/1/27 15:00"
+},
 Createperiod:{
     Createstart:"2016/1/4 9:00",
     Createfinish:"2016/1/11 15:00"

@@ -7,6 +7,11 @@ moment.locale('ja',{weekdays: ["日","月","火","水","木","金","土"]});
 
 //console.log("momentない");
 
+//現在日時を取得（そのまま）
+exports.todate = function(){
+ return moment().format();
+};
+
 //現在日時を取得
 exports.todate = function(format){
  return moment().format(format);

@@ -36,7 +36,10 @@ exports.events = new mongoose.Schema({
   displayName     :String,
   Fieldid          :String,
   Venue            :String,
-  Date             :String,
+  Holdperiod:{                  //holding ... 開催
+    Holdstart      :Date,
+    Holdfinish     :Date
+ },
   Createperiod:{
     Createstart   :Date,
     Createfinish  :Date
