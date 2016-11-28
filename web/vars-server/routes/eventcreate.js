@@ -43,6 +43,8 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
         var field = req.body.field;
         var venue = req.body.venue;
         var date = req.body.dates;
+        var datesstart = req.body.datesstart;
+        var datesfinish = req.body.datesfinish;
         var createstart = req.body.createstart;
         var createfinish = req.body.createfinish;
         var votestart = req.body.votestart;
@@ -67,6 +69,10 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
             'Fieldid':field,
             'Venue':venue,
             'Date':date,
+            'Holdperiod':{
+                'Holdstart':datesstart,
+                'Holdfinish':datesfinish
+            },
             'Createperiod':{
                 'Createstart':createstart,
                 'Createfinish':createfinish
