@@ -329,6 +329,9 @@ body{
         margin-bottom: 100px;
         width: 90%;
     }
+    .active-tab{
+        width: 70%;
+    }
     .allTabs {
         display: none;
         position:absolute;
@@ -341,7 +344,7 @@ body{
         padding-left: 5px;
     }
     li.seeMore{
-        width: 25%;
+        width: 30%;
         height: 40px;
     }
     .allTabs a {
