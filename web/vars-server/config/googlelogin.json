@@ -1,0 +1,7 @@
+{
+  "googlelogin": {
+    "callbackURL" :"http://localhost/googlelogin/return",
+    "clientID": "447132133653-k32oevssqauuaq7h3n1o9457h8b1b9ee.apps.googleusercontent.com",
+    "clientSecret": "rYeblH3Z-MrIhzkJCkjB8bcR"
+  }
+}
