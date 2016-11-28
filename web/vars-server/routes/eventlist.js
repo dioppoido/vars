@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
                 if(docs1!=null){
                     var insessionfieldlist = [];
                     //開催日のイベント一覧
-                    var inSessionEvent=inSessionEventList.inSessionEventList(todate.todate(),docs1,1);
+                    var inSessionEvent=inSessionEventList.inSessionEventList(todate.todate("YYYY-MM-DD HH:mm:ss"),docs1,2);
                     async.eachSeries(inSessionEvent,function(data,next){
                       getField.getSingleField(data.Fieldid).then(function (docs) {
                           insessionfieldlist.push(docs[0].Fieldname);
@@ -26,7 +26,8 @@ router.get('/', function(req, res) {
                     , function complete(err) {
                     //終了イベント一覧
                     var closedfieldlist = [];
-                    var closedEvent=closedEventList.closedEventList(todate.todate("YYYY/MM/D"),docs1,2);
+                    var closedEvent=closedEventList.closedEventList(todate.todate("YYYY-MM-DD HH:mm:ss"),docs1,1);
+                    // var closedEvent=closedEventList.closedEventList(todate.todate("YYYY/MM/D"),docs1,2);
                     async.eachSeries(closedEvent,function(data,next){
                       getField.getSingleField(data.Fieldid).then(function (docs) {
                           closedfieldlist.push(docs[0].Fieldname);

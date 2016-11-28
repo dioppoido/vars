@@ -48,11 +48,12 @@
                               <ul class="list-unstyled">
                                   <li>対象分野 : <%=fieldname%></li>
                                   <%
-                                  var eventdate = new Date(eventdata[0].Date);
+                                  var eventdate = new Date(eventdata[0].Holdperiod.Holdfinish);
                                   var weekDayList = [ "日", "月", "火", "水", "木", "金", "土" ] ;
                                   var week = "(" + weekDayList[ eventdate.getDay() ] + ")";
                                   %>
-                                  <li>日時 : <%=eventdata[0].Date%> <%=week%></li>
+                                  <li>開始日時 : <%=holdstart%></li>
+                                  <li>終了日時 : <%=holdfinish%></li>
                                   <li>場所 : <%=eventdata[0].Venue%></li>
                                   <li>
                                     概要 : <br>

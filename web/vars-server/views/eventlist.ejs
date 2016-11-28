@@ -64,7 +64,8 @@
                                     var weekDayList = [ "日", "月", "火", "水", "木", "金", "土" ] ;
                                     var week = "(" + weekDayList[ eventdate.getDay() ] + ")";
                                 %>
-                                開始日時 : <%= inSessionEventList[cnt].Holdperiod.Holdstart %> <%=week%> ~ <%= inSessionEventList[cnt].Holdperiod.Holdfinish %><br>
+                                開始日時 : <%= inSessionEventList[cnt].Holdperiod.Holdstart %><br>
+                                終了日時 : <%= inSessionEventList[cnt].Holdperiod.Holdfinish %><br>
                                 会場 : <%= inSessionEventList[cnt].Venue %><br>
                                 <div class="visible-md visible-lg">
                                   概要 : <%= inSessionEventList[cnt].Overview %><br>
@@ -98,7 +99,9 @@
                                 var weekDayList = [ "日", "月", "火", "水", "木", "金", "土" ] ;
                                 var week = "(" + weekDayList[ eventdate.getDay() ] + ")";
                                 %>
-                                日時 : <%= closedEventList[cnt].Date %> <%=week%> ~ <br>
+                                開始日時 : <%= closedEventList[cnt].Holdperiod.Holdstart %> <br>
+                                終了日時 : <%= closedEventList[cnt].Holdperiod.Holdfinish %><br>
+                                <!-- 日時 : <%= closedEventList[cnt].Date %> <%=week%> ~ <br> -->
                                 会場 : <%= closedEventList[cnt].Venue %><br>
                                 <div class="visible-md visible-lg">
                                   概要 : <%= closedEventList[cnt].Overview %><br>

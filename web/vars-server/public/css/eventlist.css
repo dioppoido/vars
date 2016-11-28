@@ -60,7 +60,7 @@ body{
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 .list-contents{
-  margin-top: 30px;
+  margin-top: 13px;
   font-size: 22px;
   line-height: 35px;
 }
@@ -418,21 +418,21 @@ body{
     }
 
     .event-img{
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin-top: 25px;
+      margin-bottom: 25px;
       margin-left: 0px;
       -webkit-background-size:cover;
       -moz-background-size:cover;
       background-size: cover;
       -o-background-size:cover;
-      width: 70px;
-      height: 70px;
+      width: 80px;
+      height: 80px;
       border: 2px solid gray;
     }
 
     .list-contents{
       margin-top: 15px;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 20px;
     }
     #tag-btn{
