@@ -55,17 +55,23 @@
                                                             <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                                                 <img class="ranking-img" src="../public/images/voteranking/rank0<%=i%>.png">
                                                             </th>
-                                                            <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ranking-contents">
+                                                            <th class="col-md-8 col-lg-8 ranking-contents">
                                                                 <%=i%>チーム <!-- 総合のチーム名-->
+                                                            </th>
+                                                            <th class="col-md-2 col-lg-2 ranking-contents">
+                                                                １票 <!-- 総合の投票数-->
                                                             </th>
                                                         </tr>
                                                     <% } else if( i > 3){ %>
                                                                 <tr class="hide-rank">
                                                                     <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                                                        <div class="ranking-font text-center"><%=  i %>.</div>
+                                                                        <div class="ranking-font text-center"><%=  i %>位</div>
                                                                     </th>
-                                                                    <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ranking-contents">
+                                                                    <th class="col-md-8 col-lg-8 ranking-contents">
                                                                         <%=i%>チーム <!-- 総合のチーム名-->
+                                                                    </th>
+                                                                    <th class="col-md-2 col-lg-2 ranking-contents">
+                                                                        １票 <!-- 総合の投票数-->
                                                                     </th>
                                                                 </tr>
                                                     <% } %>
@@ -91,8 +97,11 @@
                                                     <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                                         <img class="another-ranking-img" src="../public/images/voteranking/rank0<%=j%>.png">
                                                     </th>
-                                                    <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10 another-ranking-contents">
+                                                    <th class="col-md-8 col-lg-8 another-ranking-contents">
                                                         <%=j%>チーム  <!-- そのた部門チーム名 -->
+                                                    </th>
+                                                    <th class="col-md-2 col-lg-2 another-ranking-contents">
+                                                        １票 <!-- そのたのの投票数-->
                                                     </th>
                                                 </tr>
                                             <% }%>
@@ -126,25 +135,20 @@
                                 <a href="#tabs-5" class="ui-tabs-anchor" tabindex="-1" id="ui-id-5">使ってみたい部門</a>
                             </li>
                         </ul>
-                        
+
                         <div id="tabs-1" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-expanded="true" aria-hidden="false" style="display: block;">
                               <table class=" table-size">
                                   <tr>
                                     <th class="col-xs-2 col-sm-2">
                                       <img class="ranking-img" src="../public/images/voteranking/rank01.png">
                                       </th>
-                                      <th class="col-xs-10 col-sm-10 ranking-contents">
+                                      <th class="col-xs-5 col-sm-5 ranking-contents">
                                         Aアナログ撲滅委員会
                                       </th>
-                                    </tr>
-                                  <tr>
-                                    <th class="col-xs-2 col-sm-2">
-                                      <img class="ranking-img" src="../public/images/voteranking/rank02.png">
-                                    </th>
-                                      <th class="col-xs-10 col-sm-10 ranking-contents">
-                                        Bアナログ撲滅委員会
+                                      <th class="col-xs-5 col-sm-5 ranking-contents">
+                                          １票 <!-- 総合の投票数-->
                                       </th>
-                                  </tr>
+                                    </tr>
                               </table>
                         </div>
                         <div id="tabs-2" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="display: none;" aria-expanded="false" aria-hidden="true">
