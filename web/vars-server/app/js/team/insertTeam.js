@@ -18,7 +18,7 @@ exports.insertTeam = function(TEAMS){
     const mongoose = require('mongoose');
     const db = mongoose.createConnection('mongodb://mongo/vars');
     const schema = require('../db/schema');
-    const TEAM = db.model('teamcreates', schema.teamcreates);
+    const TEAM = db.model('teams', schema.teams);
     //insert処理
     const insertteam=new TEAM(TEAMS);
     insertteam.save();

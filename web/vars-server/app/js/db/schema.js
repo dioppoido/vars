@@ -56,7 +56,11 @@ exports.teams =new mongoose.Schema({
   Teamid        :String,
   Eventid       :String,
   Teamname      :String,
-  Workname      :String
+  Workname      :String,
+  Overview      :String,
+  displayName   :String,
+  Address       :String,
+  Image         :String
 });
 
 exports.aggregates =new mongoose.Schema({
@@ -73,15 +77,4 @@ exports.aggregates =new mongoose.Schema({
 exports.fields =new mongoose.Schema({
   Fieldid    :String,
   Fieldname          :String
-});
-
-exports.teamcreates =new mongoose.Schema({
-  Teamname    :String,
-  Teamid      :String,
-  Eventid     :String,
-  Systemname  :String,
-  Overview    :String,
-  displayName :String,
-  Address     :String,
-  Image       :String
 });
