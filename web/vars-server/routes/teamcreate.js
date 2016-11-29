@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var validator = require('validator'); //validatorモジュール宣言
 var insertTeam =  require("../app/js/team/insertTeam");
+var getTeam = require('../app/js/team/getTeam');
 var randomByte = require("../app/js/db/randomByte");
 var multer  = require('multer');
 var rename = require('../app/js/image/rename');
@@ -28,34 +29,42 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
           var teamname=req.body.teamname;
           var teamid=randomByte.randomByte();//変更必要あり;
           var eventid=req.body.eventid;
-          var systemname=req.body.systemname;
+          var workname=req.body.workname;
           var overview=req.body.overview;
           var displayname=req.session.user.displayName;
           var address=req.session.user.address;
           var imagepath="";
-      //DBに入れ込む処理を呼び出す
-          if(req.file){
-            var extension = req.file.originalname;   //拡張子を取得したいデータを入れる
-            var imageExtension =rename.rename(extension);　//拡張子
-            imagepath=req.file.path+rename.rename(extension); //データベースに格納用のpath
-            require('fs').rename(req.file.path, 'upfile/' + req.file.filename + imageExtension); //ここでファイル名を変更
-          }else{
-            imagepath="public/images/noimage.png"  //NoImageのPathをここに格納
+          var teamdata="";
+          getTeam.getTeamjson({"Eventid":eventid,"Address":address}).then(function(teamdata){
+            if(!(teamdata.length===0)){
+              res.render('confirmation.ejs',{msg:'既にこのイベントでチームを作成しています。',url:'/eventtop?eventid='+eventid});
+            }else{
+        //DBに入れ込む処理を呼び出す
+            if(req.file){
+              var extension = req.file.originalname;   //拡張子を取得したいデータを入れる
+              var imageExtension =rename.rename(extension);　//拡張子
+              imagepath=req.file.path+rename.rename(extension); //データベースに格納用のpath
+              require('fs').rename(req.file.path, 'upfile/' + req.file.filename + imageExtension); //ここでファイル名を変更
+            }else{
+              imagepath="public/images/noimage.png"  //NoImageのPathをここに格納
+            }
+            // 送る値をJSON形式で記述
+            const TEAMS = {
+              'Teamname'    :teamname,
+              'Teamid'      :teamid,
+              'Eventid'     :eventid,
+              'Workname'  :workname,
+              'Overview'    :overview,
+              'displayName' :displayname,
+              'Address'     :address,
+              'Image'       :imagepath
+            };
+
+            insertTeam.insertTeam(TEAMS);   //チーム作成
+            var msg = "チームを作成しました。";   //作成時メッセージ
+            res.render('confirmation.ejs' , {msg:msg, url:'/eventtop?eventid='+eventid});
           }
-          // 送る値をJSON形式で記述
-          const TEAMS = {
-            'Teamname'    :teamname,
-            'Teamid'      :teamid,
-            'Eventid'     :eventid,
-            'Systemname'  :systemname,
-            'Overview'    :overview,
-            'displayName' :displayname,
-            'Address'     :address,
-            'Image'       :imagepath
-          };
-          insertTeam.insertTeam(TEAMS);   //チーム作成
-          var msg = "チームを作成しました。";   //作成時メッセージ
-          res.render('confirmation.ejs' , {msg:msg, url:''});
+        });
       }else{
           res.redirect('/');
       }
