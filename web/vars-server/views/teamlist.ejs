@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<!-- test -->
 <html lang="ja">
 <head>
 
@@ -14,7 +14,7 @@
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../public/css/index.css" rel="stylesheet">
+    <link href="../public/css/teamlist.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
     <link href="../public/css/footer.css" rel="stylesheet">
 
@@ -32,12 +32,52 @@
         <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
-                <div class="text-center">チームリスト画面</div><br>
+              <div class="teamlist">
+
+                  <div class="text-center event-title"><i class="fa fa-info-circle" aria-hidden="true"></i>  チーム一覧</div>
+
+                  <!-- イベントがある場合 今は絶対通るように-->
+                  <% if(1 == 1){ %>
+                    <!-- 開催中イベントの表示 -->
+                    <% for(var cnt=0; cnt<5 ; cnt++) { %>
+                          <%if(cnt == 0){%>
+                            <div class="clear"></div>
+                            <div class="text-center held-situation">- 参加チーム一覧 -</div>
+                          <%}%>
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-form">
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <%if(cnt % 2 == 0){%>
+                                <img src="http://sp.raky.net/pokemon/poke/sm/n794.gif" class="team-img"></a><br>
+                            <%}else{%>
+                                <img src="http://sp.raky.net/pokemon/poke/sm/n795.gif" class="team-img"></a><br>
+                            <%}%>
+                            </div>
+                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                              <div class="list-contents">
+                                イベント名 : aaaaaaaaa<br>
+                                <br>
+                                  チーム名 : aaaaaaaa<br>
+                                </div>
+                              </div>
+                            </div>
+                    <%}%>
+                  <!-- イベントがない場合 -->
+                  <% } else { %>
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noevent-form">
+                      <div class="text-left"> 現在、チームはありません。</div>
+                      </div>
+                  <% } %>
+
+              </div>
+
+              </div>
 
             </div><!-- col -->
 
         </div><!-- row -->
-    </div><!-- container -->
+    </div><!-- contai
+      to
+      -[]::ner -->
 </section>
 
 <%- include('./footer.ejs') %>
@@ -47,6 +87,9 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
+
+<!-- Menu Open & Close -->
+<script src="../public/js/menu.js"></script>
 
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>
