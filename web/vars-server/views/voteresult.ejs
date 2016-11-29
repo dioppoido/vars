@@ -48,21 +48,30 @@
                                 <div class="panel-heading text-center ">総合</div>
                                 <ul class="list-group">
                                     <div class="row">
-                                        <!--  -->
                                         <table class="alt-table-responsive table-size">
-                                            <div>
-                                                <% for(var i=1; i<=3;i++){ %>
-                                                <tr>
-                                                    <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                                        <img class="ranking-img" src="../public/images/voteranking/rank0<%=i%>.png">
-                                                    </th>
-                                                    <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ranking-contents">
-                                                        <%=i%>チーム <!-- 総合のチーム名-->
-                                                    </th>
-                                                </tr>
+                                                <% for(var i=1; i <= 6;i++){ %>
+                                                    <% if( i <= 3 ){ %>
+                                                        <tr>
+                                                            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                                                <img class="ranking-img" src="../public/images/voteranking/rank0<%=i%>.png">
+                                                            </th>
+                                                            <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ranking-contents">
+                                                                <%=i%>チーム <!-- 総合のチーム名-->
+                                                            </th>
+                                                        </tr>
+                                                    <% } else if( i > 3){ %>
+                                                                <tr class="hide-rank">
+                                                                    <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                                                        <div class="ranking-font text-center"><%=  i %>.</div>
+                                                                    </th>
+                                                                    <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ranking-contents">
+                                                                        <%=i%>チーム <!-- 総合のチーム名-->
+                                                                    </th>
+                                                                </tr>
+                                                    <% } %>
                                                 <% } %>
-                                            </div>
                                         </table>
+                                        <div class="text-right"><a id="show-btn" class="btn btn-info" onclick="synthesisToggle();">もっと見る</a></div>
                                     </div>
                                 </ul>
                             </div>
@@ -77,14 +86,16 @@
                                 <ul class="another-list-group">
                                     <div class="row">
                                         <table class="alt-table-responsive another-table-size">
-                                            <tr>
-                                                <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                                    <img class="another-ranking-img" src="../public/images/voteranking/rank01.png">
-                                                </th>
-                                                <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10 another-ranking-contents">
-                                                    <%=i%>チーム  <!-- そのた部門チーム名 -->
-                                                </th>
-                                            </tr>
+                                            <% for(var j = 1 ; j < 4 ; j++) {%>
+                                                <tr>
+                                                    <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                                        <img class="another-ranking-img" src="../public/images/voteranking/rank0<%=j%>.png">
+                                                    </th>
+                                                    <th class="col-xs-10 col-sm-10 col-md-10 col-lg-10 another-ranking-contents">
+                                                        <%=j%>チーム  <!-- そのた部門チーム名 -->
+                                                    </th>
+                                                </tr>
+                                            <% }%>
                                         </table>
                                     </div>
                                 </ul>
@@ -218,6 +229,8 @@
 <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <!-- plusTabs -->
 <script src="../public/js/plusTabs.js"></script>
+<!-- Slide Toggle -->
+<script src="../public/js/toggle.js"></script>
 
 </body>
 
