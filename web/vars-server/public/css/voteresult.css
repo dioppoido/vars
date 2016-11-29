@@ -173,60 +173,62 @@ body{
 
   /*とっぷ文字*/
   .voteresult-title{
-      font-size: 24px;
+      font-size: 34px;
   }
   /*結果発表文字*/
   .voteresult{
-      margin-bottom: 12px;
-      font-size: 14px;
+      margin-bottom: 15px;
+      font-size: 20px;
       font-weight:bold;
   }
-  /* tab */
-  .myWrapper {
-      float: left;
-  }
-  #tabs{
-      background: white;
-      font-family: 'Noto Sans Japanese', sans-serif;
-      font-size: 15px;
-      position: relative;
-      float:left;
-      margin-left: 20px;
-      margin-bottom: 210px;
-      width: 90%;
-  }
-  .active-tab{
-      width: 70%;
-  }
-  .allTabs {
-      display: none;
-      position:absolute;
-      background: #e6e6e6;
-      right: 13px;
-      border: 1px solid lightgrey;
-  }
-  #tabs li{
-      padding-top: 5px;
-      padding-left: 5px;
-  }
-  li.seeMore{
-      width: 30%;
-      height: 40px;
-  }
-  .allTabs a {
-      font-family: 'Noto Sans Japanese', sans-serif;
-      display: block;
-      padding: 10px;
-      font-size: 15px;
-      text-decoration: none;
-  }
-  .allTabs a:hover {
-      background: #ffffff;
-  }
-  .allTabs .highlight {
-      font-weight: bold;
-  }
+    /* tab */
+    .myWrapper {
+        float: left;
+    }
+    #tabs{
+        background: white;
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 15px;
+        position: relative;
+        float:left;
+        margin-left: 20px;
+        /*margin-bottom: 100px;*/
+        width: 95%;
+        /*margin-bottom: 67%;*/
+        margin-bottom: 515px;
 
+    }
+    .allTabs {
+        display: none;
+        position:absolute;
+        background: #e6e6e6;
+        right: 15px;
+        border: 1px solid lightgrey;
+    }
+    #tabs li{
+        padding-top: 5px;
+        padding-left: 5px;
+    }
+    li.seeMore{
+        width: 25%;
+        height: 40px;
+    }
+    .allTabs a {
+        font-family: 'Noto Sans Japanese', sans-serif;
+        display: block;
+        padding: 10px;
+        font-size: 15px;
+        text-decoration: none;
+    }
+    .allTabs a:hover {
+        background: #ffffff;
+    }
+    .allTabs .highlight {
+        font-weight: bold;
+    }
+    .active-tab{
+        width: 49%;
+    }
   /*ランキングテーブルマージン*/
   .table-size{
     margin: 0 auto;
@@ -234,7 +236,6 @@ body{
     margin-left:0px;
     margin-right: 0px;
   }
-
   /*ランキングIMG*/
   .ranking-img{
     margin-bottom: 4px;
@@ -273,12 +274,12 @@ body{
 
   /*とっぷ文字*/
   .voteresult-title{
-      font-size: 24px;
+      font-size: 34px;
   }
   /*結果発表文字*/
   .voteresult{
-      margin-bottom: 12px;
-      font-size: 14px;
+      margin-bottom: 15px;
+      font-size: 20px;
       font-weight:bold;
   }
     /* tab */
@@ -292,8 +293,10 @@ body{
         position: relative;
         float:left;
         margin-left: 20px;
-        margin-bottom: 100px;
+        /*margin-bottom: 100px;*/
         width: 90%;
+        /*margin-bottom: 67%;*/
+        margin-bottom: 470px;
     }
     .allTabs {
         display: none;
@@ -322,6 +325,9 @@ body{
     }
     .allTabs .highlight {
         font-weight: bold;
+    }
+    .active-tab{
+        width: 49%;
     }
   /*ランキングテーブルマージン*/
   .table-size{
@@ -391,7 +397,7 @@ body{
         width: 95%;
     }
     .active-tab{
-        width: 50%;
+        width: 49%;
     }
     .allTabs {
         display: none;
@@ -422,13 +428,7 @@ body{
         font-weight: bold;
     }
 
-    /*ランキングテーブルマージン*/
-    .table-size{
-      margin: 0 auto;
-      margin-top:0px;
-      margin-left:0px;
-      margin-right: 0px;
-    }
+
     /*ランキングテーブルマージン*/
     .table-size{
       margin: 0 auto;
