@@ -92,7 +92,8 @@
                                 <ul class="another-list-group">
                                     <div class="row">
                                         <table class="alt-table-responsive another-table-size">
-                                            <% for(var j = 0 ; j < 3 ; j++) {%>
+                                            <% for(var j = 0 ; j < vote_aggregate[i].length ; j++) {%>
+                                                <%if(j<3){%>
                                                 <tr>
                                                     <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                                         <img class="another-ranking-img" src="../public/images/voteranking/rank0<%=j+1%>.png">
@@ -104,8 +105,22 @@
                                                         <%=vote_aggregate[i][j].votecnt%>票 <!-- そのたのの投票数-->
                                                     </th>
                                                 </tr>
+                                                <%}else{%>
+                                            <tr id="<%=votedata[i].Voteid%>-<%=j%>">
+                                                <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                                    <img class="another-ranking-img" src="../public/images/voteranking/rank0<%=j+1%>.png">
+                                                </th>
+                                                <th class="col-md-8 col-lg-8 another-ranking-contents">
+                                                    <%=vote_aggregate[i][j].Teamname%>  <!-- そのた部門チーム名 -->
+                                                </th>
+                                                <th class="col-md-2 col-lg-2 another-ranking-contents">
+                                                    <%=vote_aggregate[i][j].votecnt%>票 <!-- そのたのの投票数-->
+                                                </th>
+                                            </tr>
+                                            <%}%>
                                             <% }%>
                                         </table>
+                                        <div class="text-right"><a id="category<%=i%>" class="btn btn-info another-btn" onclick="anotherToggle(<%=i%>,'<%=votedata[i].Voteid%>',<%=vote_aggregate[i].length%>)">もっと見る</a></div>
                                     </div>
                                 </ul>
                             </div>
