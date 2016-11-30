@@ -15,7 +15,6 @@ const session = require('express-session');
 const mongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://mongo/vars');
-console.log(googlelogin.googlelogin.clientID)
 
 //Google認証用のモジュール読み込み
 var passport = require('passport');

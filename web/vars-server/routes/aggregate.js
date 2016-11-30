@@ -42,7 +42,7 @@ router.get('/', function(req, res) {
                 getVote.getVote(docs[0].Eventid).then(function (docs3){
 
                     //集計結果
-                    var full_aggregate =  new Array();
+                    var full_aggregate =  [];
 
                     async.eachSeries(docs2,function(field,next){
                         //部門ごとのJSON
@@ -56,6 +56,7 @@ router.get('/', function(req, res) {
                                 votecnt: docs4.length,
                                 Teamname: field.Teamname
                             };
+                            console.log("voteJson:"+voteJson.Teamname);
                             full_aggregate.push(voteJson);
                             next();
                         }).catch(function(err){
@@ -65,6 +66,12 @@ router.get('/', function(req, res) {
                     }, function complete(err) {
                         if(!err){
                             //分野毎の得票数
+                            full_aggregate.sort(function (a,b) {
+                                if(a.votecnt>b.votecnt)return -1;
+                                if(a.votecnt<b.votecnt)return 1;
+                                return 0;
+                            });
+                            console.log("総合"+full_aggregate[0].Teamname);
                             var n=0;
                             var i=0;
                             var vote_aggregate =  new Array();
@@ -95,6 +102,11 @@ router.get('/', function(req, res) {
                                         callback1();
                                     }else{
                                         //console.log("二重ループのテストで一応成功しているらしい");
+                                        votedata.sort(function (a,b) {
+                                            if(a.votecnt>b.votecnt)return -1;
+                                            if(a.votecnt<b.votecnt)return 1;
+                                            return 0;
+                                        });
                                         console.log(vote.Votename);
                                         for(var cnt in votedata) {
                                             console.log("votedata仕上げ:" + votedata[cnt].votecnt+":"+votedata[cnt].Teamname);
@@ -114,7 +126,7 @@ router.get('/', function(req, res) {
                                         console.log("votedata仕上げ:" + vote_aggregate[cnt1][cnt2].votecnt+":"+vote_aggregate[cnt1][cnt2].Teamname);
                                     }
                                 }
-                                res.render('aggregate.ejs',{error: "", event: "", team: "", vote: ""});
+                                res.render('voteresult.ejs',{error: "", full_aggregate:full_aggregate,vote_aggregate:vote_aggregate,votedata:docs3});
                             })
 
                             }
