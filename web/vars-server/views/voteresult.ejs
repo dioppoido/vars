@@ -106,10 +106,9 @@
                                                     </th>
                                                 </tr>
                                                 <%}else{%>
-                                            <tr id="<%=votedata[i].Voteid%>-<%=j%>">
+                                            <tr id="<%=votedata[i].Voteid%>-<%=j+1%>" style="display: none;">
                                                 <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                                    <img class="another-ranking-img" src="../public/images/voteranking/rank0<%=j+1%>.png">
-                                                </th>
+                                                    <div class="ranking-font text-center"><%=  j+1 %>位</div>                                                </th>
                                                 <th class="col-md-8 col-lg-8 another-ranking-contents">
                                                     <%=vote_aggregate[i][j].Teamname%>  <!-- そのた部門チーム名 -->
                                                 </th>
