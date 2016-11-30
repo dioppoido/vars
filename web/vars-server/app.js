@@ -126,6 +126,8 @@ app.use('/multer',require('./routes/multer'));
 app.use('/aggregate',require('./routes/aggregate'));
 //パスワードページ
 app.use('/password',require('./routes/password'));
+//チームトップ
+app.use('/teamtop',require('./routes/teamtop'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
