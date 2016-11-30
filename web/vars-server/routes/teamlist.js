@@ -10,10 +10,11 @@ router.get('/', function(req, res) {
             var eventid = req.query.eventid;
             getEvent.getEvent(eventid).then(function (eventdata) {
                 getTeam.getTeam(eventid).then(function (teamdata) {
-                    res.render('teamlist.ejs');
+                    res.render('teamlist.ejs',{eventdata:eventdata,teamdata:teamdata});
                 }).catch(function (msg) {
                     res.render('confirmation.ejs', {msg: msg, url: '/eventtop?eventid=' + eventid});
-                })
+                    //res.render('teamlist.ejs',{eventdata:eventdata,teamdata:teamdata});
+                                    })
             }).catch(function (msg) {
                 res.render('confirmation.ejs', {msg: msg, url: '/eventlist'});
             })
