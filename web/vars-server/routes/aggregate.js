@@ -116,7 +116,7 @@ router.get('/', function(req, res) {
                                         console.log("votedata仕上げ:" + vote_aggregate[cnt1][cnt2].votecnt+":"+vote_aggregate[cnt1][cnt2].Teamname);
                                     }
                                 }
-                                res.render('voteresult.ejs',{error: "", full_aggregate:full_aggregate});
+                                res.render('voteresult.ejs',{error: "", full_aggregate:full_aggregate,vote_aggregate:vote_aggregate,votedata:docs3});
                             })
 
                             }
