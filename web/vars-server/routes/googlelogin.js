@@ -41,14 +41,14 @@ router.get('/return',passport.authenticate('google', {failureRedirect: '/login' 
         }else{
             console.log("ログイン処理失敗");
         }
-        
+
         if(success){
             res.redirect('/');
         }else{
             req.session.destroy();
             res.render('confirmation.ejs' , {msg:'学校から配布されたメールアドレスを使用してください。', url:''});
         }
-        
+
     }).catch(function (msg) {   //エラー処理
         console.log(msg);
         req.session.destroy();
