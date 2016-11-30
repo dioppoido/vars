@@ -41,5 +41,5 @@ db.aggregates.insert({
     Eventid         : "1",
     Voteid          : "1",
     Address          : "kd5",
-    Teamid          : "1"
+    Teamid          : "2"
 });

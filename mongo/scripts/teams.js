@@ -33,6 +33,16 @@ db.teams.insert({
     Image       :"/upfile/vars.png"
 });
 db.teams.insert({
+    Teamid:"5",
+    Eventid:"1",
+    Teamname:"P2P",
+    Workname:"AoI",
+    Overview   :"概要",
+    displayName :"小野先生",
+    Address     :"onosenseee@gmail.com",
+    Image       :"/upfile/vars.png"
+});
+db.teams.insert({
     Teamid:"4",
     Eventid:"2",
     Teamname:"PARM",
