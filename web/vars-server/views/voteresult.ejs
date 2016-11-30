@@ -108,7 +108,7 @@
                                                 <%}else{%>
                                             <tr id="<%=votedata[i].Voteid%>-<%=j+1%>" style="display: none;">
                                                 <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                                    <div class="ranking-font text-center"><%=  j+1 %>位</div>                                                </th>
+                                                    <div class="another-ranking-font text-center"><%=  j+1 %>&nbsp位</div>                                                </th>
                                                 <th class="col-md-8 col-lg-8 another-ranking-contents">
                                                     <%=vote_aggregate[i][j].Teamname%>  <!-- そのた部門チーム名 -->
                                                 </th>
@@ -151,7 +151,7 @@
                                         <%if(i<3){%>
                                       <img class="ranking-img" src="../public/images/voteranking/rank0<%=i+1%>.png">
                                         <%}else{%>
-                                        <div class="ranking-font text-center"><%=  i+1 %>位</div>
+                                        <div class="ranking-font text-center"><%=  i+1 %>&nbsp位</div>
                                         <%}%>
                                       </th>
                                       <th class="col-xs-8 col-sm-8 ranking-contents">
