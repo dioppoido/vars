@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var validator = require('validator'); //validatorモジュール宣言
+var getEvent=require("../app/js/event/getEvent");
 var insertTeam =  require("../app/js/team/insertTeam");
 var getTeam = require('../app/js/team/getTeam');
 var randomByte = require("../app/js/db/randomByte");
@@ -11,12 +12,26 @@ var getField = require("../app/js/field/getField");
 //特に送り付ける値はなし
 router.get('/', function(req, res) {
     if(req.session.user){
+        if(req.query.eventid){
         var eventid=req.query.eventid;
-        res.render('teamcreate.ejs',{
-          displayName: req.session.user.displayName,
-          address: req.session.user.address,
-          eventid:eventid
-        });
+            getEvent.getEvent(eventid).then(function (docs) {
+                var today = moment.todate();
+                var create_flag = moment.comparison(today,docs[0].Createperiod.Createstart,docs[0].Createperiod.Createfinish);
+                if(create_flag){
+                    res.render('teamcreate.ejs',{
+                        displayName: req.session.user.displayName,
+                        address: req.session.user.address,
+                        eventid:eventid
+                    });
+                }else{
+                    res.render('errorconfirmation.ejs', {msg:'チーム登録期間外です。',url:'/eventtop?eventid='+eventid});
+                }
+            }).catch(function (msg) {
+                res.render('errorconfirmation.ejs', {msg:msg,url:'/eventtop?eventid='+eventid});
+            })
+        }else{
+            res.redirect('/eventlist');
+        }
     } else{
         res.redirect('/');
     }

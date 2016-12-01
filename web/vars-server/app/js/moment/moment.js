@@ -26,15 +26,15 @@ exports.parsedate = function(date,format){
 };
 
 /* 投票の日付比較関数 */
-exports.comparison = function(today,votestart,votefinish){
+exports.comparison = function(today,start,finish){
 
-  var vote_flag;
+  var flag;
   console.log("当日" + today);
-  console.log("投票開始" + votestart);
-  console.log("投票終了" + votefinish);
+  console.log("開始" + start);
+  console.log("終了" + finish);
   //日付比較
-  vote_flag = moment(today).isBetween(votestart, votefinish);
-  console.log("投票フラグ" + vote_flag);
+  flag = moment(today).isBetween(start, finish);
+  console.log("フラグ" + flag);
 
-  return  vote_flag;
+  return  flag;
 };
