@@ -17,6 +17,11 @@ body{
     -o-background-size: cover;
     font-family: 'Noto Sans Japanese', sans-serif;
 }
+
+.footer-bihind{
+  margin-bottom: 100px;
+}
+
 .container {
     width: auto;
 }
