@@ -43,3 +43,10 @@ db.aggregates.insert({
     Address          : "kd5",
     Teamid          : "2"
 });
+db.aggregates.insert({
+    Aggregateid    : "6",
+    Eventid         : "1",
+    Voteid          : "1",
+    Address          : "kd5",
+    Teamid          : "6"
+});

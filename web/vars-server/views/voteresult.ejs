@@ -144,7 +144,7 @@
                         </ul>
 
                         <div id="tabs-all" aria-labelledby="ui-id-all" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-expanded="true" aria-hidden="false" style="display: block;">
-                              <table class=" table-size">
+                              <table class="alt-table-responsive table-size">
                                   <%for(var i=0;i<full_aggregate.length;i++){%>
                                   <tr>
                                     <th class="col-xs-2 col-sm-2">
@@ -173,7 +173,7 @@
                                     <%if(j<3){%>
                                     <img class="ranking-img" src="../public/images/voteranking/rank0<%=j+1%>.png">
                                     <%}else{%>
-                                    <div class="ranking-font text-center"><%=  j+1 %>位</div>
+                                    <div class="ranking-font text-center"><%=  j+1 %>&nbsp位</div>
                                     <%}%>
                                   </th>
                                   <th class="col-xs-8 col-sm-8 ranking-contents">

@@ -263,10 +263,10 @@ body{
   }
 
   .ranking-font{
-    /*margin-bottom: 4px;*/
-    width: 40px;
-    height: 60px;
-    font-size: 24px;
+      margin: 0 auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 24px;
   }
 
   .ranking-contents{
@@ -367,10 +367,10 @@ body{
   }
 
   .ranking-font{
-    /*margin-bottom: 4px;*/
-    width: 50px;
-    height: 42px;
-    font-size: 12px;
+      margin: 0 auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 12px;
   }
 
   .ranking-contents{
@@ -471,9 +471,9 @@ body{
     }
 
     .ranking-font{
-      /*margin-bottom: 4px;*/
-      width: 50px;
-      height: 42px;
+      margin: 0 auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
       font-size: 12px;
     }
 
@@ -483,5 +483,7 @@ body{
         font-size: 12px;
         width: 95%;
         padding: 0px;
+    }
+    tr{
     }
 }
