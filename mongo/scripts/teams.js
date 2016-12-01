@@ -52,3 +52,13 @@ db.teams.insert({
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png"
 });
+db.teams.insert({
+    Teamid:"6",
+    Eventid:"1",
+    Teamname:"PARSSSSM",
+    Workname:"Dチームの作品",
+    displayName :"土井",
+    Overview   :"概要",
+    Address     :"nakatugawa@gmail.com",
+    Image       :"public/images/noimage.png"
+});
