@@ -50,7 +50,7 @@
                               <a href="/teamtop?teamid=<%=teamdata[cnt].Teamid%>"><img src="../public/images/noimage.png" class="team-img"></a><br>
                             <%}else{%>
                               <%var images="../"+teamdata[cnt].Image;%>
-                              <a href="/teamtop?teamid=<%=teamdata[cnt].Teamid%>"><img src="<%=images%>" class="team-img"></a><br>
+                              <a href="/teamtop?teamid=<%=teamdata[cnt].Teamid%>"><img src="<%=teamdata[cnt].Image%>" class="team-img"></a><br>
                             <%}%>
                             </div>
                             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
