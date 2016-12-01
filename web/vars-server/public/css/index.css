@@ -13,7 +13,22 @@ body{
     background-size: cover;
     -o-background-size: cover;
     font-family: 'Noto Sans Japanese', sans-serif;
+  }
+
+blockquote{
+    border-left: 0px;
 }
+
+blockquote.twitter-tweet {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: bold;
+      line-height: 100px;
+      margin: 10px 5px;
+      padding: 0 16px 16px 16px;
+      max-width: 600px;
+}
+
 .container {
     width: auto;
 }
