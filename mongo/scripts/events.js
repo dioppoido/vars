@@ -25,6 +25,31 @@ db.events.insert({
     },
     Image:"public/images/noimage.png"
 });
+
+db.events.insert({
+    Eventid:"0",
+    Eventname:"イベント9",
+    Overview:"イベント9の説明です",
+    Password:"",
+    Address:"test@example.com",
+    displayName:"test",
+    Fieldid:"it",
+    Venue:"南館1階F教室",
+    Holdperiod:{
+      Holdstart :"2016/12/1 9:00",
+      Holdfinish : "2016/12/1 15:00"
+   },
+    Createperiod:{
+        Createstart:"2016/12/1 9:00",
+        Createfinish:"2016/12/1 15:00"
+    },
+    Voteperiod:{
+        Votestart:"2016/12/1 9:00",
+        Votefinish:"2016/12/1 15:00"
+    },
+    Image:"public/images/noimage.png"
+});
+
 db.events.insert({
     Eventid:"101",
     Eventname:"イベントZ",
