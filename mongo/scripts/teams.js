@@ -10,7 +10,8 @@ db.teams.insert({
     Overview   :"概要",
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
-    Image       :"public/images/noimage.png"
+    Image       :"public/images/noimage.png",
+    Works       :"publoc/images/noimage.png"
 });
 db.teams.insert({
     Teamid:"2",
@@ -20,7 +21,8 @@ db.teams.insert({
     Overview   :"概要",
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
-    Image       :"public/images/noimage.png"
+    Image       :"public/images/noimage.png",
+    Works       :"publoc/images/noimage.png"
 });
 db.teams.insert({
     Teamid:"3",
@@ -30,7 +32,8 @@ db.teams.insert({
     Overview   :"概要",
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
-    Image       :"public/images/noimage.png"
+    Image       :"public/images/noimage.png",
+    Works       :"publoc/images/noimage.png"
 });
 db.teams.insert({
     Teamid:"5",
@@ -40,7 +43,8 @@ db.teams.insert({
     Overview   :"概要",
     displayName :"小野先生",
     Address     :"onosenseee@gmail.com",
-    Image       :"/upfile/vars.png"
+    Image       :"/upfile/vars.png",
+    Works       :"publoc/images/noimage.png"
 });
 db.teams.insert({
     Teamid:"4",
@@ -50,7 +54,8 @@ db.teams.insert({
     Overview   :"概要",
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
-    Image       :"public/images/noimage.png"
+    Image       :"public/images/noimage.png",
+    Works       :"publoc/images/noimage.png"
 });
 db.teams.insert({
     Teamid:"6",
