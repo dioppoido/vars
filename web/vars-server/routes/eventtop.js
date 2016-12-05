@@ -13,11 +13,17 @@ router.get('/', function(req, res) {
         console.log("eventid:"+eventid);
         getEvent.getEvent(eventid).then(function (docs) {
               getField.getSingleField(docs[0].Fieldid).then(function (docs1){
-                var Holdfinish=todate.parsedate(docs[0].Holdperiod.Holdfinish,"YYYY年MM月D日(dddd) HH時mm分");
-                var Holdstart=todate.parsedate(docs[0].Holdperiod.Holdstart,"YYYY年MM月D日(dddd) HH時mm分");
+                var Holdfinish=todate.parsedate(docs[0].Holdperiod.Holdfinish,"YYYY/M/D(dddd) HH時mm分");
+                var Holdstart=todate.parsedate(docs[0].Holdperiod.Holdstart,"YYYY/M/D(dddd) HH時mm分");
+                var Createstart=todate.parsedate(docs[0].Createperiod.Createstart,"YYYY/M/D(dddd) HH時mm分")
+                var Createfinish=todate.parsedate(docs[0].Createperiod.Createfinish,"YYYY/M/D(dddd) HH時mm分")
+                var Votestart=todate.parsedate(docs[0].Voteperiod.Votestart,"YYYY/M/D(dddd) HH時mm分")
+                var Votefinish=todate.parsedate(docs[0].Voteperiod.Votefinish,"YYYY/M/D(dddd) HH時mm分")
                 console.log(docs1[0].Fieldid);
                   res.render('eventtop.ejs',{eventdata:docs, fieldname:docs1[0].Fieldname,
-                                            holdfinish:Holdfinish,holdstart:Holdstart});
+                                            holdfinish:Holdfinish,holdstart:Holdstart,
+                                            createstart:Createstart,createfinish:Createfinish,
+                                            votestart:Votestart,votefinish:Votefinish});
             });
           }).catch(function(){
               res.render('confirmation.ejs',{msg:'イベントIDが存在しません',url:'/eventlist'});

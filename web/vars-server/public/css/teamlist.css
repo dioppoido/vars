@@ -24,6 +24,9 @@ body{
     padding-left: 0px;
     padding-right: 0px;
 }
+.footer-bihind{
+  margin-bottom: 100px;
+}
 /* !All */
 
 /* EventList */
@@ -278,6 +281,9 @@ body{
     tr{
       font-size: 15px;
     }
+    .footer-bihind{
+      margin-bottom: 50px;
+    }
 
 }
 @media screen and (min-width: 480px) and (max-width: 767px)  {
@@ -369,6 +375,9 @@ body{
 
     tr{
       font-size: 15px;
+    }
+    .footer-bihind{
+      margin-bottom: 50px;
     }
 
 }
@@ -462,6 +471,9 @@ body{
 
     tr{
       font-size: 11px;
+    }
+    .footer-bihind{
+      margin-bottom: 50px;
     }
 
 }
