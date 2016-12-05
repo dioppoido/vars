@@ -24,6 +24,10 @@ body{
 .clear{
     clear: both;
 }
+
+.footer-bihind{
+  margin-bottom: 100px;
+}
 /* !All */
 
 /* EventTop */
@@ -305,6 +309,10 @@ body{
         -o-background-size: cover;
         font-family: 'Noto Sans Japanese', sans-serif;
     }
+    .footer-bihind{
+      margin-bottom: 40px;
+    }
+
 }
 @media screen and (min-width: 480px) and (max-width: 767px)  {
     /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
@@ -394,6 +402,10 @@ body{
         -o-background-size: cover;
         font-family: 'Noto Sans Japanese', sans-serif;
     }
+    .footer-bihind{
+      margin-bottom: 40px;
+    }
+
 }
 @media screen and (max-width: 479px) {
     /* 479px以下用（スマートフォン用）の記述 */
@@ -482,6 +494,10 @@ body{
         background-size: cover;
         -o-background-size: cover;
         font-family: 'Noto Sans Japanese', sans-serif;
+    }
+
+    .footer-bihind{
+      margin-bottom: 40px;
     }
 }
 /* !EventTop */

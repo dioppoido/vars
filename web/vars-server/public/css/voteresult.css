@@ -142,7 +142,13 @@ body{
     font-size: 24px;
     padding: 20px;
 }
+.panel-font{
+    font-size: 45px;
+}
 
+.another-panel-font{
+    font-size:24px;
+}
 
 .panel-list{
     width:100%;
@@ -173,6 +179,10 @@ body{
 .another-list-group{
   height: 250px;
     overflow-x: hidden;
+}
+
+.footer-bihind{
+  margin-bottom: 100px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 979px) {
