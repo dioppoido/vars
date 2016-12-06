@@ -12,6 +12,9 @@
      * @param TEAMS.displayName : 代表者
      * @param TEAMS.Address : メールアドレス
      * @param TEAMS.Image : サムネイル
+     * @param TEAMS.Works : PDF,チラシアップ場所
+     * @param TEAMS.Department : 部門
+     * @param TEAMS.Order : 発表順番
  */
 
 exports.insertTeam = function(TEAMS){

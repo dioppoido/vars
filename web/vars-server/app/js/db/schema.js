@@ -62,7 +62,7 @@ exports.teams =new mongoose.Schema({
   Address       :String,
   Image         :String,
   Works         :String,
-  Department    :String,
+  Department    :Array,
   Order         :Number
 });
 
