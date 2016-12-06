@@ -12,16 +12,16 @@ db.events.insert({
     Fieldid:"it",
     Venue:"南館1階B教室",
     Holdperiod:{
-      Holdstart :"2016/1/1 9:00",
-      Holdfinish : "2018/1/1 15:00"
+      Holdstart :"2016/11/09 9:00",
+      Holdfinish : "2016/11/10 15:00"
    },
     Createperiod:{
-        Createstart:"2016/1/1 9:00",
-        Createfinish:"2018/1/1 15:00"
+        Createstart:"2016/10/4 9:00",
+        Createfinish:"2016/10/11 15:00"
     },
     Voteperiod:{
-        Votestart:"2016/1/1 9:00",
-        Votefinish:"2018/1/1 15:00"
+        Votestart:"2016/10/12 9:00",
+        Votefinish:"2016/10/20 15:00"
     },
     Image:"public/images/noimage.png"
 });

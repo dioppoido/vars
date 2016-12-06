@@ -25,7 +25,8 @@ body{
     clear: both;
 }
 li{
-  margin-bottom:7px;
+  margin-bottom:9px;
+  /*font-weight: 500;*/
 }
 
 .footer-bihind{
@@ -76,8 +77,16 @@ li{
     font-size: 21px;
 }
 .overview{
+    font-size: 19px;
     margin-left: 30px;
 }
+
+.date{
+    font-size:19px;
+    margin-left: 30px;
+    /*font-weight: 500;*/
+}
+
 .icon{
     width: 90%;
     height: 90%;
@@ -164,6 +173,9 @@ li{
     }
     .overview{
         margin-left: 30px;
+    }
+    .date{
+        margin-left: 5px;
     }
     .icon{
         width: 70%;
@@ -253,6 +265,10 @@ li{
     }
     .overview{
         margin-left: 30px;
+    }
+    .date{
+        margin-left: 5px;
+        font-size: 12px;
     }
     .icon{
         width: 70%;
@@ -438,7 +454,7 @@ li{
     }
     .overview{
         margin-left: 5px;
-        font-size: 11px;
+        font-size: 12px;
     }
     .icon{
         width: 90%;
@@ -502,5 +518,10 @@ li{
     .footer-bihind{
       margin-bottom: 40px;
     }
+    .date{
+        margin-left: 5px;
+        font-size:12px;
+    }
+
 }
 /* !EventTop */

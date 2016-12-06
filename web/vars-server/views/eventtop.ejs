@@ -59,11 +59,22 @@
                                   <li>投票開始日時 : <%=votestart%></li>
                                   <li>投票終了日時 : <%=votefinish%></li> -->
                                   <li>イベント期間 : <br>
-                                  <%=holdstart%> ~ <%=holdfinish%></li>
+                                    <ul class="list-unstyled date">
+                                      <li><%=holdstart%> ~ <%=holdfinish%></li>
+                                    </ul>
+                                  </li>
+
                                   <li>参加チーム登録期間 : <br>
-                                  <%=createstart%> ~ <%=createfinish%></li>
+                                    <ul class="list-unstyled date">
+                                      <li><%=createstart%> ~ <%=createfinish%></li>
+                                    </ul>
+                                  </li>
+
                                   <li>投票期間 : <br>
-                                  <%=votestart%> ~  <%=votefinish%></li>
+                                    <ul class="list-unstyled date">
+                                      <li><%=votestart%> ~  <%=votefinish%></li>
+                                    </ul>
+                                  </li>
 
                                   <li>場所 : <%=eventdata[0].Venue%></li>
                                   <li>

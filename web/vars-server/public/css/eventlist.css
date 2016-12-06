@@ -68,6 +68,7 @@ body{
   margin-top: 13px;
   font-size: 22px;
   line-height: 35px;
+  margin-bottom: 13px;
 }
 .held-situation{
   margin-top: 35px;
@@ -201,15 +202,15 @@ body{
     .held-situation{
       margin-top: 25px;
       margin-bottom: 25px;
-      font-size: 24px;
+      font-size: 20px;
     }
     .clear{
       clear: both;
     }
     .held-situation1{
-      margin-top:15px;
+      margin-top:5px;
       margin-bottom: 25px;
-      font-size: 24px;
+      font-size: 20px;
     }
 
     .event-title{
@@ -219,9 +220,9 @@ body{
     .list-form{
         margin: 0 auto;
         margin-top:20px;
-        margin-left:0px;
+        margin-left:15px;
         margin-bottom: 30px;
-        width: 100%;
+        width: 95%;
         font-size: 20px;
         padding: 0px;
         background: white;
@@ -231,20 +232,19 @@ body{
     }
     .noevent-form{
         margin: 0 auto;
-        margin-top:20px;
-        margin-left:0px;
+        margin-top:10px;
+        margin-left:10px;
         margin-bottom: 30px;
-        width: 100%;
-        font-size: 20px;
+        width: 96%;
+        font-size: 12px;
         padding: 15px;
         background: white;
         border-radius: 10px;
         -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     }
-
     .event-img{
-      margin-top: 20px;
+      margin-top: 35px;
       margin-bottom: 20px;
       margin-left: 10px;
       -webkit-background-size:cover;
@@ -257,16 +257,22 @@ body{
     }
 
     .list-contents{
-      margin-top: 18px;
+      margin-top: 20px;
+      margin-bottom: 20px;
       font-size: 20px;
       line-height: 25px;
+    }
+
+    #tag-btn{
+        margin-left: 10px;
+        font-size: 14px;
     }
     #tag-target{
         display: none;
         margin: 0 auto;
         margin-top:30px;
         margin-bottom: 30px;
-        font-size: 18px;
+        font-size: 13px;
         padding: 15px;
         background: white;
         border-radius: 10px;
@@ -278,6 +284,7 @@ body{
         text-decoration: none;
         margin-left: 5px;
     }
+
     tr{
       font-size: 15px;
     }
@@ -330,7 +337,7 @@ body{
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     }
     .event-img{
-      margin-top: 20px;
+      margin-top: 35px;
       margin-bottom: 20px;
       margin-left: 10px;
       -webkit-background-size:cover;
@@ -344,6 +351,7 @@ body{
 
     .list-contents{
       margin-top: 20px;
+      margin-bottom: 20px;
       font-size: 20px;
       line-height: 25px;
     }
@@ -437,6 +445,7 @@ body{
 
     .list-contents{
       margin-top: 15px;
+      margin-bottom: 15px;
       font-size: 12px;
       line-height: 20px;
     }
@@ -465,6 +474,8 @@ body{
     tr{
       font-size: 11px;
     }
-
+    .footer-bihind{
+      margin-bottom: 20px;
+    }
 }
 /* !EventList */
