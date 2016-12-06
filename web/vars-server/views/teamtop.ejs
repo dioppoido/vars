@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title-->
-    <title>EventTop - VARS -</title>
+    <title>Teamtop - VARS -</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../public/css/eventtop.css" rel="stylesheet">
+    <link href="../public/css/teamtop.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
     <link href="../public/css/footer.css" rel="stylesheet">
 
@@ -27,8 +27,53 @@
 
 <%- include('./header.ejs') %>
 
-チームトップですよ
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
+              <div class="teamtop">
+
+                  <div class="text-left contents-title"><i class="fa fa-asterisk" aria-hidden="true"></i> チームトップ</div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center">
+                      <img src="../upfile/vars.png" class="team-img"><br>
+                      <a href="" class="btn btn-success admin-btn">チーム管理</a>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                    <div class="team-contents">
+                      <ul class="list-unstyled">
+                        <li>チーム名 ： アナログ僕撲滅委員会</li>
+                        <li>作&nbsp;品&nbsp;名 : vars</li>
+                        <li>代&nbsp;表&nbsp;者 : 長谷川遼</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="team-form">
+                    efefe<br>
+                    dfdf<br>
+                    ferfrwfewr<br>
+                    vfrfer
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 left">
+                  <object data="../upfile//test.pdf" width="1000" height="1000">
+                    <p>ご覧の環境では、object要素がサポートされていないようです。
+                      <a href="../upfile/test.pdf">PDFファイルをダウンロードしてください</a>。
+                    </p>
+                  </object>
+                </div>
+
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="footer-bihind">&nbsp;</div>
+</section>
 <%- include('./footer.ejs') %>
 
 <!-- jQuery -->
@@ -39,6 +84,12 @@
 
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>
+
+<script src="../public/js/pdf.js"></script>
+<script type="text/javascript">
+    PDFJS.workerSrc = "../public/js/pdf.worker.js";
+</script>
+
 
 </body>
 </html>

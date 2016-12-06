@@ -5,9 +5,9 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
 
     if(req.session.user){
-        res.redirect('/teamtop.');
+      res.render('teamtop.ejs');
     }else{
-        res.render('/login.');
+        res.render('/login');
     }
 });
 
