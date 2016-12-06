@@ -61,7 +61,9 @@ exports.teams =new mongoose.Schema({
   displayName   :String,
   Address       :String,
   Image         :String,
-  Works         :String
+  Works         :String,
+  Department    :String,
+  Order         :Number
 });
 
 exports.aggregates =new mongoose.Schema({
