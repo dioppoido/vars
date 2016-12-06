@@ -10,11 +10,13 @@ exports.getEventList = function(tag){
         const db = mongoose.createConnection('mongodb://mongo/vars');
         const schema = require('../db/schema');
         const Events = db.model('events', schema.events);
+        console.log("getEventList遷移");
         //イベントリストオール抽出　引数なし
         if(tag==null){
           Events.find({}, {},{sort:{Date:1}},function(err, docs){
                 if (docs.length >= 1) {
                     resolve(docs);
+                    console.log("getEventList正常処理完了");
                 } else {
                 reject();
               }
@@ -32,3 +34,5 @@ exports.getEventList = function(tag){
         }
     });
 };
+
+  // var inSessionEvent=inSessionEventList.inSessionEventList(todate.todate("YYYY-MM-DD HH:mm:ss"),docs1,2);

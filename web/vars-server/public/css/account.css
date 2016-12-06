@@ -36,7 +36,7 @@ body{
 .panel-custom{
     width: 40%;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 30px;
     font-size: 18px;
     border-color: #3b5998;
@@ -73,7 +73,7 @@ body{
     .panel-custom{
         width: 80%;
         margin: 0 auto;
-        margin-top: 20px;
+        margin-top: 120px;
         margin-bottom: 20px;
         font-size: 16px;
         border-color: #3b5998;
@@ -97,7 +97,7 @@ body{
     .panel-custom{
         width: 80%;
         margin: 0 auto;
-        margin-top: 20px;
+        margin-top: 120px;
         margin-bottom: 20px;
         font-size: 16px;
         border-color: #3b5998;
@@ -120,7 +120,7 @@ body{
     .panel-custom{
         width: 80%;
         margin: 0 auto;
-        margin-top: 20px;
+        margin-top: 120px;
         margin-bottom: 20px;
         font-size: 14px;
         border-color: #3b5998;

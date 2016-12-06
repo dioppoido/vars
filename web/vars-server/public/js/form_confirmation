@@ -204,17 +204,11 @@ function date_confirm(){
 
     //開催日 - 投票日
     //if(hold_start < vote_start){
-    //    alert("投票開始日時エラー : イベント開催前に投票が出来る状態です。");
-    //    return false;
-    //}
     if(hold_start > vote_end){
         alert("開催日エラー : イベント前に投票期間が終了しています");
         return false;
     }
-    if(hold_end > vote_end){
-        alert("開催終了日エラー : イベント終了前に投票期間が終了しています。");
-        return false;
-    }
+  
 
     //開催日 - チーム作成期間
     if(hold_start < team_start){

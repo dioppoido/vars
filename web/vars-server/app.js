@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var googlelogin = require('./config/googlelogin.json')
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -7,6 +8,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
 
 //　sessionモジュール読み込み
 const session = require('express-session');
@@ -19,17 +21,8 @@ var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 
-
-//Google認証用のコールバック先のURLを記述
-var callbackURL='http://localhost/googlelogin/return';
-var consumerKey='447132133653-k32oevssqauuaq7h3n1o9457h8b1b9ee.apps.googleusercontent.com';
-var consumerSecret='rYeblH3Z-MrIhzkJCkjB8bcR';
-
-passport.use(new GoogleStrategy({
-      clientID: consumerKey,
-      clientSecret: consumerSecret,
-      callbackURL: callbackURL
-    },
+passport.use(new GoogleStrategy(
+    googlelogin.googlelogin,
     function(token, tokenSecret, profile, done) {
       process.nextTick(function () {
         return done(null, profile);
@@ -128,8 +121,12 @@ app.use('/getTeam',require('./routes/getTeam'));
 app.use('/boot',require('./routes/boot'));
 //multerテスト
 app.use('/multer',require('./routes/multer'));
+//Aggregateテスト
+app.use('/aggregate',require('./routes/aggregate'));
 //パスワードページ
 app.use('/password',require('./routes/password'));
+//チームトップ
+app.use('/teamtop',require('./routes/teamtop'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

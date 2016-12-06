@@ -40,9 +40,9 @@ router.get('/',PasswordCheck, function(req, res) {
             getEvent.getEvent(eventid).then(function (eventdata) {
                 //日付処理
                 //当日
-                var today = todate.todate("YYYY-MM-D HH:mm:ss");
-                var votestart = todate.parsedate(eventdata[0].Voteperiod.Votestart,"YYYY-MM-D HH:mm:ss");
-                var votefinish = todate.parsedate(eventdata[0].Voteperiod.Votefinish, "YYYY-MM-D HH:mm:ss");
+                var today = todate.todate();
+                var votestart = eventdata[0].Voteperiod.Votestart
+                var votefinish = eventdata[0].Voteperiod.Votefinish
                 var vote_flag = todate.comparison(today,votestart,votefinish);
 
                 if( vote_flag === false){

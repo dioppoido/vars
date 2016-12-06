@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<!-- test -->
 <html lang="ja">
 <head>
 
@@ -14,7 +14,7 @@
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../public/css/index.css" rel="stylesheet">
+    <link href="../public/css/teamlist.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
     <link href="../public/css/footer.css" rel="stylesheet">
 
@@ -32,12 +32,53 @@
         <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
-                <div class="text-center">チームリスト画面</div><br>
+              <div class="teamlist">
+
+                  <div class="text-center event-title"><i class="fa fa-info-circle" aria-hidden="true"></i>  チーム一覧</div>
+
+                  <!-- イベントがある場合 -->
+                  <% if(teamdata.length !== 0){ %>
+                    <!-- 開催中イベントの表示 -->
+                    <% for(var cnt=0; cnt<teamdata.length ; cnt++) { %>
+                          <%if(cnt == 0){%>
+                            <div class="clear"></div>
+                            <div class="text-center held-situation">- <%=eventdata[cnt].Eventname%>の参加チーム一覧 -</div>
+                          <%}%>
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-form">
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <%if(teamdata[cnt].Image=="public/images/noimage.png"){%>
+                              <a href="/teamtop?teamid=<%=teamdata[cnt].Teamid%>"><img src="../public/images/noimage.png" class="team-img"></a><br>
+                            <%}else{%>
+                              <%var images="../"+teamdata[cnt].Image;%>
+                              <a href="/teamtop?teamid=<%=teamdata[cnt].Teamid%>"><img src="<%=teamdata[cnt].Image%>" class="team-img"></a><br>
+                            <%}%>
+                            </div>
+                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                              <div class="list-contents">
+                                 チーム名 :<a href="/teamtop?teamid=<%=teamdata[cnt].Teamid%>"><%= teamdata[cnt].Teamname %></a><br>
+                                <br>
+                                 作品名 :<%= teamdata[cnt].Workname %></a>
+                                </div>
+                              </div>
+                            </div>
+                    <%}%>
+                  <!-- イベントがない場合 -->
+                  <% } else { %>
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noevent-form">
+                      <div class="text-left"> 現在、チームはありません。</div>
+                      </div>
+                  <% } %>
+
+              </div>
+
+              </div>
 
             </div><!-- col -->
 
         </div><!-- row -->
-    </div><!-- container -->
+    </div><!-- contai
+      to
+      -[]::ner -->
 </section>
 
 <%- include('./footer.ejs') %>
@@ -47,6 +88,9 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
+
+<!-- Menu Open & Close -->
+<script src="../public/js/menu.js"></script>
 
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>

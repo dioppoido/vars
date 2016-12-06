@@ -36,7 +36,10 @@ exports.events = new mongoose.Schema({
   displayName     :String,
   Fieldid          :String,
   Venue            :String,
-  Date             :String,
+  Holdperiod:{                  //holding ... 開催
+    Holdstart      :Date,
+    Holdfinish     :Date
+ },
   Createperiod:{
     Createstart   :Date,
     Createfinish  :Date
@@ -53,7 +56,12 @@ exports.teams =new mongoose.Schema({
   Teamid        :String,
   Eventid       :String,
   Teamname      :String,
-  Workname      :String
+  Workname      :String,
+  Overview      :String,
+  displayName   :String,
+  Address       :String,
+  Image         :String,
+  Works         :String
 });
 
 exports.aggregates =new mongoose.Schema({
@@ -71,4 +79,3 @@ exports.fields =new mongoose.Schema({
   Fieldid    :String,
   Fieldname          :String
 });
-

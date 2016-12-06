@@ -17,11 +17,6 @@ body{
     -o-background-size: cover;
     font-family: 'Noto Sans Japanese', sans-serif;
 }
-
-.footer-bihind{
-  margin-bottom: 100px;
-}
-
 .container {
     width: auto;
 }
@@ -32,7 +27,7 @@ body{
 /* !All */
 
 /* EventList */
-.eventlist{
+.teamlist{
     margin-top: 30px;
     font-size: 30px;
     font-weight:bold;
@@ -41,8 +36,8 @@ body{
 }
 .list-form{
     margin: 0 auto;
-    margin-top:30px;
-    margin-bottom: 30px;
+    margin-top:10px;
+    margin-bottom: 10px;
     width: 100%;
     font-size: 20px;
     padding: 15px;
@@ -65,9 +60,10 @@ body{
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 .list-contents{
-  margin-top: 13px;
-  font-size: 22px;
+  margin-top: 30px;
+  font-size: 25px;
   line-height: 35px;
+  text-align: left;
 }
 .held-situation{
   margin-top: 35px;
@@ -82,16 +78,16 @@ body{
   margin-bottom: 35px;
   font-size: 25px;
 }
-.event-img{
+.team-img{
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 10px;
+  margin-left: 20px;
   -webkit-background-size:cover;
   -moz-background-size:cover;
   background-size: cover;
   -o-background-size:cover;
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   border: 2px solid gray;
 }
 #tag-btn{
@@ -137,7 +133,7 @@ body{
         margin: 0 auto;
         margin-top:20px;
         margin-left:0px;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         width: 100%;
         font-size: 20px;
         padding: 0px;
@@ -159,16 +155,16 @@ body{
         -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     }
-    .event-img{
-      margin-top: 20px;
-      margin-bottom: 20px;
+    .team-img{
+      margin-top: 18px;
+      margin-bottom: 18px;
       margin-left: 10px;
       -webkit-background-size:cover;
       -moz-background-size:cover;
       background-size: cover;
       -o-background-size:cover;
-      width: 100px;
-      height: 100px;
+      width: 140px;
+      height: 140px;
       border: 2px solid gray;
     }
 
@@ -176,6 +172,7 @@ body{
       margin-top: 18px;
       font-size: 20px;
       line-height: 25px;
+      text-align:left;
     }
     #tag-target{
         display: none;
@@ -243,10 +240,10 @@ body{
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     }
 
-    .event-img{
-      margin-top: 20px;
-      margin-bottom: 20px;
-      margin-left: 10px;
+    .team-img{
+      margin-top: 15px;
+      margin-bottom: 15px;
+      margin-left: 0px;
       -webkit-background-size:cover;
       -moz-background-size:cover;
       background-size: cover;
@@ -306,8 +303,8 @@ body{
     .list-form{
         margin: 0 auto;
         margin-top:20px;
-        margin-left:15px;
-        margin-bottom: 30px;
+        margin-left:5px;
+        margin-bottom: 10px;
         width: 95%;
         font-size: 20px;
         padding: 0px;
@@ -329,10 +326,10 @@ body{
         -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     }
-    .event-img{
-      margin-top: 20px;
-      margin-bottom: 20px;
-      margin-left: 10px;
+    .team-img{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 5px;
       -webkit-background-size:cover;
       -moz-background-size:cover;
       background-size: cover;
@@ -398,8 +395,8 @@ body{
     .list-form{
         margin: 0 auto;
         margin-top:10px;
-        margin-left:7px;
-        margin-bottom: 30px;
+        margin-left:5px;
+        margin-bottom: 5px;
         width: 96%;
         font-size: 12px;
         padding: 5px 3px 5px 3px;
@@ -408,6 +405,7 @@ body{
         -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     }
+
     .noevent-form{
         margin: 0 auto;
         margin-top:10px;
@@ -422,22 +420,22 @@ body{
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     }
 
-    .event-img{
-      margin-top: 25px;
-      margin-bottom: 25px;
+    .team-img{
+      margin-top: 10px;
+      margin-bottom: 10px;
       margin-left: 0px;
       -webkit-background-size:cover;
       -moz-background-size:cover;
       background-size: cover;
       -o-background-size:cover;
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
       border: 2px solid gray;
     }
 
     .list-contents{
       margin-top: 15px;
-      font-size: 12px;
+      font-size: 13px;
       line-height: 20px;
     }
     #tag-btn{

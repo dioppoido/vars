@@ -8,6 +8,7 @@ var multer  = require('multer');
 var rename = require('../app/js/image/rename');
 var moment = require('../app/js/moment/moment');
 var getField = require("../app/js/field/getField");
+var execSync = require('child_process').execSync; //twitter書き込み
 //特に送り付ける値はなし
 router.get('/', function(req, res) {
     if(req.session.user){
@@ -43,6 +44,8 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
         var field = req.body.field;
         var venue = req.body.venue;
         var date = req.body.dates;
+        var datesstart = req.body.datesstart;
+        var datesfinish = req.body.datesfinish;
         var createstart = req.body.createstart;
         var createfinish = req.body.createfinish;
         var votestart = req.body.votestart;
@@ -67,6 +70,10 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
             'Fieldid':field,
             'Venue':venue,
             'Date':date,
+            'Holdperiod':{
+                'Holdstart':datesstart,
+                'Holdfinish':datesfinish
+            },
             'Createperiod':{
                 'Createstart':createstart,
                 'Createfinish':createfinish
@@ -91,11 +98,9 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
         console.log(votestart);
         console.log(votefinish);
 
-
-
-
-
         insertEvent.insertEvent(EVENTS);
+        //twitter投稿（空白を入れると改行
+        execSync('node ./app/js/event/twitterWrite.js イベントが作成されました リンクはこちら↓ http://localhost/eventtop?eventid='+eventid);
         var msg = "イベントを作成しました。";   //作成時メッセージ
         res.render('confirmation.ejs' , {msg:msg, url:''});
     }else{

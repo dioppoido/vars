@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 
@@ -12,44 +11,258 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <!-- JQuery Ui -->
+    <link rel="stylesheet" type="text/css" href="../public/css/jquery-ui.css">
 
     <!-- Custom CSS -->
-    <link href="../public/css/index.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
     <link href="../public/css/footer.css" rel="stylesheet">
+    <link href="../public/css/voteresult.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/earlyaccess/notosansjapanese.css' rel='stylesheet' type='text/css'>
 
+
 </head>
+
 <body>
-
 <%- include('./header.ejs') %>
-
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+            <div class="voteresults">
+                <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
-                <div class="text-center">投票結果画面</div><br>
+                    <div class="voteresult-title text-center">
+                        <img class="voteresult-img" src="../public/images/voteranking/votingresultsicon.png"> 投票結果画面
+                    </div>
 
-            </div><!-- col -->
+                    <div class="voteresult text-center">- ソフト４コース合評会結果発表 -</div>
 
-        </div><!-- row -->
-    </div><!-- container -->
+                    <!-- PC用画面 -->
+                    <div class="vote-list visible-md visible-lg">
+                        <!-- 総合部門 -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="panel panel-list panel-primary">
+                                <div class="panel-heading panel-font text-center ">総合部門</div>
+                                <ul class="list-group">
+                                    <div class="row">
+                                        <table class="alt-table-responsive table-size">
+                                                <% for(var i=0; i < full_aggregate.length;i++){ %>
+                                                    <% if( i < 3 ){ %>
+                                                        <tr>
+                                                            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                                                <img class="ranking-img" src="../public/images/voteranking/rank0<%=i+1%>.png">
+                                                            </th>
+                                                            <th class="col-md-8 col-lg-8 ranking-contents">
+                                                                <%=full_aggregate[i].Teamname%> <!-- 総合のチーム名-->
+                                                            </th>
+                                                            <th class="col-md-2 col-lg-2 ranking-contents">
+                                                                <%=full_aggregate[i].votecnt%>票 <!-- 総合の投票数-->
+                                                            </th>
+                                                        </tr>
+                                                    <% } else if( i >= 3){ %>
+                                                                <tr class="hide-rank">
+                                                                    <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                                                        <div class="ranking-font text-center"><%=  i+1 %>位</div>
+                                                                    </th>
+                                                                    <th class="col-md-8 col-lg-8 ranking-contents">
+                                                                        <%=full_aggregate[i].Teamname%> <!-- 総合のチーム名-->
+                                                                    </th>
+                                                                    <th class="col-md-2 col-lg-2 ranking-contents">
+                                                                        <%=full_aggregate[i].votecnt%>票 <!-- 総合の投票数-->
+                                                                    </th>
+                                                                </tr>
+                                                    <% } %>
+                                                <% } %>
+                                        </table>
+                                        <div class="text-right"><a id="show-btn" class="btn btn-info" onclick="synthesisToggle();">もっと見る</a></div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- その他の部門 -->
+                        <%var category=["デザイン部門","システム部門","利便部門","使ってみたい部門"];%> <!-- 部門のテストデータ-->
+                        <%for(var i=0;i<vote_aggregate.length;i++){%>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 visible-md visible-lg">
+                            <div class="panel panel-list panel-primary">
+                                <div class="panel-heading another-panel-font text-center"><%=votedata[i].Votename%>部門</div>
+                                <ul class="another-list-group">
+                                    <div class="row">
+                                        <table class="alt-table-responsive another-table-size">
+                                            <% for(var j = 0 ; j < vote_aggregate[i].length ; j++) {%>
+                                                <%if(j<3){%>
+                                                <tr>
+                                                    <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                                        <img class="another-ranking-img" src="../public/images/voteranking/rank0<%=j+1%>.png">
+                                                    </th>
+                                                    <th class="col-md-8 col-lg-8 another-ranking-contents">
+                                                        <%=vote_aggregate[i][j].Teamname%>  <!-- そのた部門チーム名 -->
+                                                    </th>
+                                                    <th class="col-md-2 col-lg-2 another-ranking-contents">
+                                                        <%=vote_aggregate[i][j].votecnt%>票 <!-- そのたのの投票数-->
+                                                    </th>
+                                                </tr>
+                                                <%}else{%>
+                                            <tr id="<%=votedata[i].Voteid%>-<%=j+1%>" style="display: none;">
+                                                <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                                    <div class="another-ranking-font text-center"><%=  j+1 %>&nbsp位</div>                                                </th>
+                                                <th class="col-md-8 col-lg-8 another-ranking-contents">
+                                                    <%=vote_aggregate[i][j].Teamname%>  <!-- そのた部門チーム名 -->
+                                                </th>
+                                                <th class="col-md-2 col-lg-2 another-ranking-contents">
+                                                    <%=vote_aggregate[i][j].votecnt%>票 <!-- そのたのの投票数-->
+                                                </th>
+                                            </tr>
+                                            <%}%>
+                                            <% }%>
+                                        </table>
+                                        <div class="text-right"><a id="category<%=i%>" class="btn btn-info another-btn" onclick="anotherToggle(<%=i%>,'<%=votedata[i].Voteid%>',<%=vote_aggregate[i].length%>)">もっと見る</a></div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <%}%>
+                    </div><!-- votelist -->
+                </div>
+
+                <!-- スマフォ画面 -->
+                <div class="col-xs-12 col-sm-12 visible-xs visible-sm">
+                    <div id="tabs" class="plusTabs ui-tabs ui-widget ui-widget-content ui-corner-all">
+                        <!-- タブリンク -->
+                        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                            <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active active-tab" tabindex="0" aria-controls="tabs-all" aria-labelledby="ui-id-all" aria-selected="true" >
+                                <a href="#tabs-all" class="ui-tabs-anchor"  tabindex="-1" id="ui-id-all">総合結果</a>
+                            </li>
+                            <%for(var i=0;i<vote_aggregate.length;i++){%>
+                            <li class="ui-state-default ui-corner-top active-tab" role="tab" tabindex="-1" aria-controls="tabs-<%=i%>" aria-labelledby="ui-id-<%=i%>" aria-selected="false">
+                                <a href="#tabs-<%=i%>" class="ui-tabs-anchor" tabindex="-1" id="ui-id-<%=i%>"><%=votedata[i].Votename%>部門</a>
+                            </li>
+                            <%}%>
+                        </ul>
+
+                        <div id="tabs-all" aria-labelledby="ui-id-all" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-expanded="true" aria-hidden="false" style="display: block;">
+                              <table class="alt-table-responsive table-size">
+                                  <%for(var i=0;i<full_aggregate.length;i++){%>
+                                  <tr>
+                                    <th class="col-xs-2 col-sm-2">
+                                        <%if(i<3){%>
+                                      <img class="ranking-img" src="../public/images/voteranking/rank0<%=i+1%>.png">
+                                        <%}else{%>
+                                        <div class="ranking-font text-center"><%=  i+1 %>&nbsp位</div>
+                                        <%}%>
+                                      </th>
+                                      <th class="col-xs-8 col-sm-8 ranking-contents">
+                                        <%=full_aggregate[i].Teamname%>
+                                      </th>
+                                      <th class="col-xs-2 col-sm-2 ranking-contents">
+                                        <%=full_aggregate[i].votecnt%>&nbsp票  <!-- 総合の投票数-->
+                                      </th>
+                                    </tr>
+                                  <%}%>
+                              </table>
+                        </div>
+                        <%for(var i=0;i<vote_aggregate.length;i++){%>
+                        <div id="tabs-<%=i%>" aria-labelledby="ui-id-<%=i%>" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="display: none;" aria-expanded="false" aria-hidden="true">
+                          <table class=" table-size">
+                              <%for(var j=0;j<vote_aggregate[i].length;j++){%>
+                              <tr>
+                                <th class="col-xs-2 col-sm-2">
+                                    <%if(j<3){%>
+                                    <img class="ranking-img" src="../public/images/voteranking/rank0<%=j+1%>.png">
+                                    <%}else{%>
+                                    <div class="ranking-font text-center"><%=  j+1 %>&nbsp位</div>
+                                    <%}%>
+                                  </th>
+                                  <th class="col-xs-8 col-sm-8 ranking-contents">
+                                    <%=vote_aggregate[i][j].Teamname%>
+                                  </th>
+                                  <th class="col-xs-2 col-sm-2 ranking-contents">
+                                    <%=vote_aggregate[i][j].votecnt%>&nbsp票  <!-- 総合の投票数-->
+                                  </th>
+                              </tr>
+                              <%}%>
+                          </table>
+                        </div>
+                        <%}%>
+                        <div id="tabs-3" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="display: none;" aria-expanded="false" aria-hidden="true">
+                          <table class=" table-size">
+                              <tr>
+                                <th class="col-xs-2 col-sm-2">
+                                  <img class="ranking-img" src="../public/images/voteranking/rank01.png">
+                                  </th>
+                                  <th class="col-xs-8 col-sm-8 ranking-contents">
+                                    Zアナログ撲滅委員会
+                                  </th>
+                                  <th class="col-xs-2 col-sm-2 ranking-contents">
+                                    1&nbsp票  <!-- 総合の投票数-->
+                                  </th>
+                              </tr>
+                          </table>
+                        </div>
+                        <div id="tabs-4" aria-labelledby="ui-id-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="display: none;" aria-expanded="false" aria-hidden="true">
+                          <table class=" table-size">
+                              <tr>
+                                <th class="col-xs-2 col-sm-2">
+                                  <img class="ranking-img" src="../public/images/voteranking/rank01.png">
+                                  </th>
+                                  <th class="col-xs-8 col-sm-8 ranking-contents">
+                                    Aアナllログ撲滅委員会
+                                  </th>
+                                  <th class="col-xs-2 col-sm-2 ranking-contents">
+                                    1&nbsp票  <!-- 総合の投票数-->
+                                  </th>
+                              </tr>
+                          </table>
+                        </div>
+                        <div id="tabs-5" aria-labelledby="ui-id-5" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="display: none;" aria-expanded="false" aria-hidden="true">
+                          <table class=" table-size">
+                              <tr>
+                                <th class="col-xs-2 col-sm-2">
+                                  <img class="ranking-img" src="../public/images/voteranking/rank01.png">
+                                  </th>
+                                  <th class="col-xs-8 col-sm-8 ranking-contents">
+                                    Aアsナログ撲滅委員会
+                                  </th>
+                                  <th class="col-xs-2 col-sm-2 ranking-contents">
+                                    1&nbsp票  <!-- 総合の投票数-->
+                                  </th>
+                              </tr>
+                          </table>
+                        </div>
+                        <!-- その他タブ-->
+                        <div class="allTabs" style="top: 47px; width: 66%; display: none;">
+                            <a href="#tabs-1" class="ui-tabs-anchor highlight" tabindex="-1" id="ui-id-1">総合部門</a>
+                            <a href="#tabs-2" class="ui-tabs-anchor" tabindex="-1" id="ui-id-2">デザイン部門</a>
+                            <a href="#tabs-3" class="ui-tabs-anchor" tabindex="-1" id="ui-id-3">システム部門</a>
+                            <a href="#tabs-4" class="ui-tabs-anchor" tabindex="-1" id="ui-id-4">利便部門</a>
+                            <a href="#tabs-5" class="ui-tabs-anchor" tabindex="-1" id="ui-id-5">使ってみたい部門</a>
+                        </div>
+                    </div>
+                </div>
+                </div><!-- voteresult -->
+            </div><!-- row -->
+            <div class="footer-bihind">&nbsp</div> <!-- フッター前余白-->
+        </div><!-- container -->
+    </div>
 </section>
+
 
 <%- include('./footer.ejs') %>
 
 <!-- jQuery -->
-<script src="../public/js/jquery.js"></script>
-
+<script type="text/javascript" src="../public/js/jquery.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
-
-<!-- Footer Fixed -->
-<script src="../public/js/footerFixed.js"></script>
+<!-- JQuery Ui -->
+<script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<!-- plusTabs -->
+<script src="../public/js/plusTabs.js"></script>
+<!-- Slide Toggle -->
+<script src="../public/js/toggle.js"></script>
 
 </body>
+
 </html>

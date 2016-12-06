@@ -48,11 +48,12 @@
                               <ul class="list-unstyled">
                                   <li>対象分野 : <%=fieldname%></li>
                                   <%
-                                  var eventdate = new Date(eventdata[0].Date);
+                                  var eventdate = new Date(eventdata[0].Holdperiod.Holdfinish);
                                   var weekDayList = [ "日", "月", "火", "水", "木", "金", "土" ] ;
                                   var week = "(" + weekDayList[ eventdate.getDay() ] + ")";
                                   %>
-                                  <li>日時 : <%=eventdata[0].Date%> <%=week%></li>
+                                  <li>開始日時 : <%=holdstart%></li>
+                                  <li>終了日時 : <%=holdfinish%></li>
                                   <li>場所 : <%=eventdata[0].Venue%></li>
                                   <li>
                                     概要 : <br>
@@ -70,22 +71,23 @@
                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 event-menu">
                <div class="clear"> </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                        <a href="#" class="icon"><img class="img-icon" src="images/teamicon.png"></a>
+                        <a href="teamcreate?eventid=<%=eventdata[0].Eventid%>" class="icon"><img class="img-icon" src="images/teamicon.png"></a>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                        <a href="#" class="icon2"><img class="img-icon2" src="images/teamlisticon.png"></a>
+                        <a href="/teamlist?eventid=<%=eventdata[0].Eventid%>" class="icon2"><img class="img-icon2" src="images/teamlisticon.png"></a>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                         <a href="/vote?eventid=<%=eventdata[0].Eventid%>" class="icon"><img class="img-icon" src="images/voteicon.png"></a>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                        <a href="#" class="icon3"><img class="img-icon" src="images/votingresultsicon.png"></a>
+                        <a href="voteresult?eventid=<%=eventdata[0].Eventid%>" class="icon3"><img class="img-icon" src="images/votingresultsicon.png"></a>
                     </div>
                </div>
 
             </div><!-- col -->
 
         </div><!-- row -->
+        <div class="footer-bihind">&nbsp</div>
     </div><!-- container -->
 </section>
 

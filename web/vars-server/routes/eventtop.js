@@ -3,6 +3,7 @@ var router = express.Router();
 var validator = require('validator'); //validatorモジュール宣言
 var getEvent = require("../app/js/event/getEvent");
 var getField = require("../app/js/field/getField");
+var todate = require("../app/js/moment/moment.js");
 //特に送り付ける値はなし
 
 router.get('/', function(req, res) {
@@ -12,9 +13,12 @@ router.get('/', function(req, res) {
         console.log("eventid:"+eventid);
         getEvent.getEvent(eventid).then(function (docs) {
               getField.getSingleField(docs[0].Fieldid).then(function (docs1){
-                      console.log(docs1[0].Fieldid);
-                  res.render('eventtop.ejs',{eventdata:docs, fieldname:docs1[0].Fieldname});
-              });
+                var Holdfinish=todate.parsedate(docs[0].Holdperiod.Holdfinish,"YYYY年MM月D日(dddd) HH時mm分");
+                var Holdstart=todate.parsedate(docs[0].Holdperiod.Holdstart,"YYYY年MM月D日(dddd) HH時mm分");
+                console.log(docs1[0].Fieldid);
+                  res.render('eventtop.ejs',{eventdata:docs, fieldname:docs1[0].Fieldname,
+                                            holdfinish:Holdfinish,holdstart:Holdstart});
+            });
           }).catch(function(){
               res.render('confirmation.ejs',{msg:'イベントIDが存在しません',url:'/eventlist'});
           });
