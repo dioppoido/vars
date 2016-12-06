@@ -20,8 +20,8 @@
                   close[closeNo].Eventid=json[cnt].Eventid;
                   close[closeNo].Eventname=json[cnt].Eventname;
                   close[closeNo].Fieldid=json[cnt].Fieldid;
-                  close[closeNo].Holdperiod.Holdstart=todate.parsedate(json[cnt].Holdperiod.Holdstart,"YYYY年MM月D日(dddd) HH時mm分");
-                  close[closeNo].Holdperiod.Holdfinish=todate.parsedate(json[cnt].Holdperiod.Holdfinish,"YYYY年MM月D日(dddd) HH時mm分");
+                  close[closeNo].Holdperiod.Holdstart=todate.parsedate(json[cnt].Holdperiod.Holdstart,"YYYY年M月D日(dddd) HH時mm分");
+                  close[closeNo].Holdperiod.Holdfinish=todate.parsedate(json[cnt].Holdperiod.Holdfinish,"YYYY年M月D日(dddd) HH時mm分");
                   close[closeNo].Venue=json[cnt].Venue;
                   close[closeNo].Image=json[cnt].Image;
                   close[closeNo].Overview=json[cnt].Overview;

@@ -62,11 +62,11 @@ app.use(session({
     db: 'vars', // データベース名
     host: 'mongo', // データベースのアドレス
     port: '27017',
-    clear_interval: 60 * 60 // 保存期間(sec)
+    clear_interval: 60 * 60 * 3 // 保存期間(sec)
   }),
   cookie: {
     httpOnly: false, // cookieへのアクセスをHTTPのみに制限
-    maxAge: 60 * 60 * 1000 // クッキーの有効期限(msec)
+    maxAge: 60 * 60 * 3 * 1000 // クッキーの有効期限(msec)
   }
 }));
 

@@ -35,7 +35,7 @@ exports.createEvent = function(eventid,eventname,overwiew,createstart,createfini
     events_model.save( function(err) {
       //log check
       if(!err){
-        console.log("データーが挿入されました");
+        console.log("データが挿入されました");
         events.find({Eventid:eventid},{},function(err,docs){
         if(docs === 1 )console.log(docs);
         });

@@ -52,8 +52,30 @@
                                   var weekDayList = [ "日", "月", "火", "水", "木", "金", "土" ] ;
                                   var week = "(" + weekDayList[ eventdate.getDay() ] + ")";
                                   %>
-                                  <li>開始日時 : <%=holdstart%></li>
-                                  <li>終了日時 : <%=holdfinish%></li>
+                                  <!-- <li>イベント開始日時 : <%=holdstart%></li>
+                                  <li>イベント終了日時 : <%=holdfinish%></li>
+                                  <li>参加チーム登録受付日時 : <%=createstart%></li>
+                                  <li>参加チーム受付終了日時 : <%=createfinish%></li>
+                                  <li>投票開始日時 : <%=votestart%></li>
+                                  <li>投票終了日時 : <%=votefinish%></li> -->
+                                  <li>イベント期間 : <br>
+                                    <ul class="list-unstyled date">
+                                      <li><%=holdstart%> ~ <%=holdfinish%></li>
+                                    </ul>
+                                  </li>
+
+                                  <li>参加チーム登録期間 : <br>
+                                    <ul class="list-unstyled date">
+                                      <li><%=createstart%> ~ <%=createfinish%></li>
+                                    </ul>
+                                  </li>
+
+                                  <li>投票期間 : <br>
+                                    <ul class="list-unstyled date">
+                                      <li><%=votestart%> ~  <%=votefinish%></li>
+                                    </ul>
+                                  </li>
+
                                   <li>場所 : <%=eventdata[0].Venue%></li>
                                   <li>
                                     概要 : <br>

@@ -49,9 +49,12 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
           var displayname=req.session.user.displayName;
           var address=req.session.user.address;
           var imagepath="";
+          var works = 1;//req.session.user.works;
+          var department =1;// req.session.user.department;
+          var order;
           var teamdata="";
           getTeam.getTeamjson({"Eventid":eventid,"Address":address}).then(function(teamdata){
-            if(!(teamdata.length===0)){
+            if(!(teamdata.length===0 || req.session.user.admin === true)){
               res.render('confirmation.ejs',{msg:'既にこのイベントでチームを作成しています。',url:'/eventtop?eventid='+eventid});
             }else{
         //DBに入れ込む処理を呼び出す
@@ -63,21 +66,28 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
             }else{
               imagepath="public/images/noimage.png"  //NoImageのPathをここに格納
             }
-            // 送る値をJSON形式で記述
-            const TEAMS = {
-              'Teamname'    :teamname,
-              'Teamid'      :teamid,
-              'Eventid'     :eventid,
-              'Workname'  :workname,
-              'Overview'    :overview,
-              'displayName' :displayname,
-              'Address'     :address,
-              'Image'       :imagepath
-            };
+          //発表順はとりあえず連番で取得する
+            getTeam.getTeam(eventid).then(function(docs){
+                order = docs.length++;
+                // 送る値をJSON形式で記述
+                const TEAMS = {
+                    'Teamname'    :teamname,
+                    'Teamid'      :teamid,
+                    'Eventid'     :eventid,
+                    'Workname'  :workname,
+                    'Overview'    :overview,
+                    'displayName' :displayname,
+                    'Address'     :address,
+                    'Image'       :imagepath,
+                    'Works'       :works,
+                    'Department' :department,
+                    'Order'         :order
+                };
 
-            insertTeam.insertTeam(TEAMS);   //チーム作成
-            var msg = "チームを作成しました。";   //作成時メッセージ
-            res.render('confirmation.ejs' , {msg:msg, url:'/eventtop?eventid='+eventid});
+                insertTeam.insertTeam(TEAMS);   //チーム作成
+                var msg = "チームを作成しました。";   //作成時メッセージ
+                res.render('confirmation.ejs' , {msg:msg, url:'/eventtop?eventid='+eventid});
+            });
           }
         });
       }else{

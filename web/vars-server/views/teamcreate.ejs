@@ -13,8 +13,10 @@
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Date Picker -->
-    <link href="../public/css/datepicker.min.css" rel="stylesheet">
+    <!-- jQuery Ui -->
+    <link href="../public/css/jquery-ui.css" rel="stylesheet">
+    <!-- Multiple select -->
+    <link href="../public/css/jquery.multiselect.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../public/css/teamcreate.css" rel="stylesheet">
@@ -66,6 +68,21 @@
                               <label>メールアドレス : </label>
                               <input type="text" class="form-control input-lg team-input" name="address" value="<%= address %>" disabled="disabled" required>
                             </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label>部門選択 : </label><br>
+                                    <!-- size = 部門の個数 -->
+                                        <select id="department" class="form-control" multiple="multiple" name="department" size="3" style="display: none;">
+                                            <option value="option1">総合部門</option>
+                                            <option value="option2">デザイン部門</option>
+                                            <option value="option3">システム部門</option>
+                                        </select>
+                                </div>
+                             </div>
+
+
+
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <label>サムネイル画像( .jpg .png .gifのみ ) : </label>
                             </div>
@@ -109,6 +126,12 @@
 <!-- jQuery -->
 <script src="../public/js/jquery.js"></script>
 
+<!-- jQuery Ui -->
+<script src="../public/js/jquery-ui.min.js"></script>
+
+<!-- multiselect -->
+<script src="../public/js/jquery.multiselect.js"></script>
+
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
 
@@ -117,10 +140,6 @@
 
 <!-- Form　confirmation -->
 <script src="../public/js/form_confirmation"></script>
-
-<!-- Date Picker -->
-<script src="../public/js/datepicker.min.js"></script>
-<script src="../public/js/datepicker.ja.js"></script>
 
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>

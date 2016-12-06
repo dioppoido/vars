@@ -8,6 +8,7 @@ var randomByte = require("../app/js/db/randomByte");
 var getVote=require('../app/js/votes/getVote');
 var insertVote=require('../app/js/votes/insertVote');
 var todate = require("../app/js/moment/moment.js");
+var async = require('async');
 
 const PasswordCheck = function(req, res, next) {
     if(req.session.user){
@@ -41,43 +42,31 @@ router.get('/',PasswordCheck, function(req, res) {
                 //日付処理
                 //当日
                 var today = todate.todate();
-                var votestart = eventdata[0].Voteperiod.Votestart
-                var votefinish = eventdata[0].Voteperiod.Votefinish
+                var votestart = eventdata[0].Voteperiod.Votestart;
+                var votefinish = eventdata[0].Voteperiod.Votefinish;
                 var vote_flag = todate.comparison(today,votestart,votefinish);
 
-                if( vote_flag === false){
-                    res.render('vote.ejs',{
-                        eventdata: "",
-                        teamdata: "",
-                        votedata: "",
-                        msg:"このイベントの投票は投票期間外です。"
-                    });
-                }else if(vote_flag === true){
-
-                    getTeam.getTeam(eventid).then(function (teamdata) {
-                        getVote.getVote(eventid).then(function (votedata) {
-                            var Aggregate_JSON={
-                                Eventid:eventid,
-                                Address:req.session.user.address
-                            }
-                            getAggregate.getAggregate(Aggregate_JSON).then(function (aggregatedata) {
-                                if(aggregatedata.length>0){
-                                    msg="既に投票済みです。";
-                                    res.render('vote.ejs',{
-                                        eventdata: "",
-                                        teamdata: "",
-                                        votedata: "",
-                                        msg:msg
-                                    });
-                                }else{
-                                    res.render('vote.ejs', {
-                                        eventdata: eventdata,
-                                        teamdata: teamdata,
-                                        votedata: votedata,
-                                        msg: msg
-                                    });
-                                }
-                            }).catch(function (msg) {
+                if(vote_flag === true){
+                    var Aggregate_JSON={
+                        Eventid:eventid,
+                        Address:req.session.user.address
+                    }
+                    getAggregate.getAggregate(Aggregate_JSON).then(function (aggregatedata) {
+                        if(aggregatedata.length>0){
+                            getVote.getVote(eventid).then(function (votedata) {
+                                var teamdata=[];
+                                async.eachSeries(votedata,function (vote,next) {
+                                    getTeam.getTeamjson({Department:vote.Voteid}).then(function (team) {
+                                        if(team.length>0) {
+                                            teamdata.push(team);
+                                        }
+                                    }).catch(function (msg) {
+                                        console.log(msg);
+                                    })
+                                },function(err){
+                                    res.json(teamdata);
+                                });
+                            }).catch(function(msg){
                                 res.render('vote.ejs',{
                                     eventdata: "",
                                     teamdata: "",
@@ -85,14 +74,15 @@ router.get('/',PasswordCheck, function(req, res) {
                                     msg:msg
                                 });
                             });
-                        }).catch(function (msg) {
+                        }else{
+                            msg="既に投票済みです。";
                             res.render('vote.ejs',{
                                 eventdata: "",
                                 teamdata: "",
                                 votedata: "",
                                 msg:msg
                             });
-                        });
+                        }
                     }).catch(function(msg){
                         res.render('vote.ejs',{
                             eventdata: "",
@@ -100,6 +90,13 @@ router.get('/',PasswordCheck, function(req, res) {
                             votedata: "",
                             msg:msg
                         });
+                    });
+                }else   if( vote_flag === false){
+                    res.render('vote.ejs',{
+                        eventdata: "",
+                        teamdata: "",
+                        votedata: "",
+                        msg:"このイベントの投票は投票期間外です。"
                     });
                 }
             }).catch(function(){
@@ -143,7 +140,7 @@ router.post('/', function(req, res) {
 
         };
         insertVote.insertVote(AGGREGATES);
-        res.redirect('/voteresult');
+        res.redirect('/voteresult?eventid='+req.body.eventid[0]);
     }else{
         res.redirect('/');
     }
