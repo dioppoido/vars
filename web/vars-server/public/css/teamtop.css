@@ -1,0 +1,354 @@
+/* teamtop.css */
+
+/* All */
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background: #F5F5F5;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: 'Noto Sans Japanese', sans-serif;
+}
+.left{
+  margin-left: 20px;
+}
+
+.container {
+    width: auto;
+}
+.col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.clear{
+    clear: both;
+}
+
+.footer-bihind{
+  margin-bottom: 100px;
+}
+/* !All */
+
+/* teamTop */
+.teamtop{
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight:bold;
+}
+.team-title{
+}
+.team-img{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-size: cover;
+    -o-background-size:cover;
+    width: 200px;
+    height: 200px;
+    border: 2px solid gray;
+}
+.admin-btn{
+    width: 200px;
+    font-size: 20px;
+}
+.team-form{
+    margin: 0 auto;
+    margin-top:30px;
+    margin-left:35px;
+    margin-bottom: 30px;
+    width: 100%;
+    min-height: 150px;
+    max-width: 95%;
+    font-size: 30px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+.team-title{
+    font-size: 30px;
+}
+.team-contents{
+    margin:0 auto;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 979px) {
+      /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+      /* フッター前マージン */
+        .footer-bihind{
+          margin-bottom: 100px;
+        }
+        /* !All */
+        .contents-title{
+            margin-left: 5%;
+            font-size: 20px;
+        }
+        /* teamTop */
+        .teamtop{
+            margin-top: 30px;
+            font-size: 24px;
+            font-weight:bold;
+        }
+        .team-title{
+        }
+        /* team icon */
+        .team-img{
+            margin-top: 40px;
+            margin-bottom: 20px;
+            -webkit-background-size:cover;
+            -moz-background-size:cover;
+            background-size: cover;
+            -o-background-size:cover;
+            width: 200px;
+            height: 200px;
+            border: 2px solid gray;
+        }
+        .admin-btn{
+            width: 200px;
+            font-size: 20px;
+        }
+
+        .pic-btn{
+          margin-top: 30px;
+          /*background: blue;*/
+          width: 200px;
+          font-size: 20px;
+        }
+
+        /* 白枠 */
+        .team-form{
+            margin: 0 auto;
+            margin-top:10px;
+            /*margin-bottom: 30px;*/
+            min-height: 100px;
+            max-width: 95%;
+            font-size: 14px;
+            width: 95%;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        }
+        .team-title{
+            font-size: 18px;
+        }
+        .team-contents{
+            margin:0 auto;
+            margin-top: 30px;
+            margin-left: 20px;
+            font-size: 24px;
+            font-weight:bold;
+        }
+
+        .font-size{
+          font-size:14px;
+        }
+
+        .ifrm-container {
+          width:480px;
+          height:500px;
+          overflow:auto;
+          -webkit-overflow-scrolling:touch;
+          display: inline-block;
+          margin: 10px;
+      }
+
+      .ifrm {
+        width:100%;
+        height:100%;
+        border:none;
+        display:block;
+      }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px)  {
+    /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+/* フッター前マージン */
+  .footer-bihind{
+    margin-bottom: 100px;
+  }
+  /* !All */
+  .contents-title{
+      margin-left: 5%;
+      font-size: 20px;
+  }
+  /* teamTop */
+  .teamtop{
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight:bold;
+  }
+  .team-title{
+  }
+  /* team icon */
+  .team-img{
+      margin-top: 40px;
+      margin-bottom: 20px;
+      -webkit-background-size:cover;
+      -moz-background-size:cover;
+      background-size: cover;
+      -o-background-size:cover;
+      width: 200px;
+      height: 200px;
+      border: 2px solid gray;
+  }
+  .admin-btn{
+      width: 200px;
+      font-size: 20px;
+  }
+
+  .pic-btn{
+    margin-top: 30px;
+    /*background: blue;*/
+    width: 200px;
+    font-size: 20px;
+  }
+
+  /* 白枠 */
+  .team-form{
+      margin: 0 auto;
+      margin-top:10px;
+      /*margin-bottom: 30px;*/
+      min-height: 100px;
+      max-width: 95%;
+      font-size: 14px;
+      width: 95%;
+      padding: 15px;
+      background: white;
+      border-radius: 10px;
+      -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  }
+  .team-title{
+      font-size: 18px;
+  }
+  .team-contents{
+      margin:0 auto;
+      margin-top: 30px;
+      margin-left: 20px;
+      font-size: 24px;
+      font-weight:bold;
+  }
+
+  .font-size{
+    font-size:14px;
+  }
+
+  .ifrm-container {
+    width:480px;
+    height:500px;
+    overflow:auto;
+    -webkit-overflow-scrolling:touch;
+    display: inline-block;
+    margin: 10px;
+}
+
+.ifrm {
+  width:100%;
+  height:100%;
+  border:none;
+  display:block;
+}
+}
+
+@media screen and (max-width: 479px) {
+/* フッター前マージン */
+  .footer-bihind{
+    margin-bottom: 100px;
+  }
+  .contents-title{
+      margin-left: 5%;
+      font-size: 20px;
+  }
+  /* !All */
+
+  /* teamTop */
+  .teamtop{
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight:bold;
+  }
+  .team-title{
+  }
+  /* team icon */
+  .team-img{
+      margin-top: 40px;
+      margin-bottom: 20px;
+      -webkit-background-size:cover;
+      -moz-background-size:cover;
+      background-size: cover;
+      -o-background-size:cover;
+      width: 200px;
+      height: 200px;
+      border: 2px solid gray;
+  }
+  .admin-btn{
+      width: 200px;
+      font-size: 20px;
+  }
+
+  .pic-btn{
+    margin-top: 30px;
+    /*background: blue;*/
+    width: 200px;
+    font-size: 20px;
+  }
+
+  /* 白枠 */
+  .team-form{
+      margin: 0 auto;
+      margin-top:10px;
+      margin-bottom: 30px;
+      min-height: 100px;
+      max-width: 95%;
+      font-size: 14px;
+      width: 95%;
+      padding: 15px;
+      background: white;
+      border-radius: 10px;
+      -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  }
+  .team-title{
+      font-size: 18px;
+  }
+  .team-contents{
+      margin:0 auto;
+      margin-top: 30px;
+      margin-left: 20px;
+      font-size: 14px;
+      font-weight:bold;
+  }
+
+  .font-size{
+    font-size:14px;
+  }
+
+  .ifrm-container {
+  width:350px;
+  height:500px;
+  overflow:auto;
+  -webkit-overflow-scrolling:touch;
+  display: inline-block;
+  margin: 10px;
+}
+
+.ifrm {
+  width:100%;
+  height:100%;
+  border:none;
+  display:block;
+}
+}

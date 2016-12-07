@@ -46,7 +46,11 @@
                           <div class="event-title"><%=eventdata[0].Eventname%></div>
                           <div class="event-contents">
                               <ul class="list-unstyled">
-                                  <li>対象分野 : <%=fieldname%></li>
+                                  <li>対象分野 :<br>
+                                    <ul class="list-unstyled overview">
+                                     <%=fieldname%></li>
+                                   </ul>
+                                 </li>
                                   <%
                                   var eventdate = new Date(eventdata[0].Holdperiod.Holdfinish);
                                   var weekDayList = [ "日", "月", "火", "水", "木", "金", "土" ] ;
@@ -76,7 +80,12 @@
                                     </ul>
                                   </li>
 
-                                  <li>場所 : <%=eventdata[0].Venue%></li>
+                                  <li>場所 : <br>
+                                    <ul class="list-unstyled date">
+                                      <%=eventdata[0].Venue%></li>
+                                    </ul>
+                                  </li>
+
                                   <li>
                                     概要 : <br>
                                     <ul class="list-unstyled overview">
