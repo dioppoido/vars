@@ -73,10 +73,10 @@
                                 <div class="form-group">
                                     <label>部門選択 : </label><br>
                                     <!-- size = 部門の個数 -->
-                                        <select id="department" class="form-control" multiple="multiple" name="department" size="3" style="display: none;">
-                                            <option value="option1">総合部門</option>
-                                            <option value="option2">デザイン部門</option>
-                                            <option value="option3">システム部門</option>
+                                        <select id="department" class="form-control" multiple="multiple" name="department" size="<%= vote.length %>" style="display: none;">
+                                        <% for(var i=0; i < vote.length ; i++){  %>
+                                            <option value="<%= vote[i].Voteid %>"><%= vote[i].Votename %></option>
+                                          <% } %>
                                         </select>
                                 </div>
                              </div>
