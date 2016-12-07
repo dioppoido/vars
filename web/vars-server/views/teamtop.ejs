@@ -55,9 +55,9 @@
                   <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                     <div class="team-contents">
                       <ul class="list-unstyled">
-                        <li>チーム名 : アナログ僕撲滅委員会</li>
-                        <li>作&nbsp;品&nbsp;名 : vars</li>
-                        <li>代&nbsp;表&nbsp;者 : 長谷川遼</li>
+                        <li>チーム名 : <%=teamdata[0].Teamname%></li>
+                        <li>作&nbsp;品&nbsp;名&nbsp;&nbsp; : &nbsp;<%=teamdata[0].Workname%></li>
+                        <li>代&nbsp;表&nbsp;者&nbsp;&nbsp; : <%=teamdata[0].displayName%></li>
                       </ul>
                     </div>
                   </div>
@@ -65,20 +65,20 @@
                 <!-- チーム概要 -->
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <div class="team-form">
-                    とりあえずメンバー
-                    　<li>多田くん</li>
+                    チーム概要 :<br>
+                    <%=teamdata[0].Overview%>
                   </div>
                 </div>
 
                 <!-- pc pdf -->
                 <div class="col-md-6 col-lg-6 visible-md visible-lg left">
-                  <iframe width="95%" height="700" src="../upfile/test.pdf#page=1&zoom=50"></iframe>
+                  <iframe width="95%" height="700" src="../<%=teamdata[0].Works%>#page=1&zoom=50"></iframe>
                 </div>
 
                 <!-- smartphone pdf -->
                <div class="col-xs-12 col-sm-12 visible-xs visible-sm">
                    <div class="text-center">
-                     <a href="../upfile/test.pdf" target="_blank" class="btn pic-btn btn-primary">
+                     <a href="../<%=teamdata[0].Works%>" target="_blank" class="btn pic-btn btn-primary">
                        <i class="fa fa-file-text-o" aria-hidden="true"></i> チラシはこちら</a>
                  </div>
                  <!-- <div class="ifrm-container"> -->
