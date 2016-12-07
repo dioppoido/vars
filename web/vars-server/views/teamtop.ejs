@@ -40,38 +40,56 @@
                       <img src="../upfile/vars.png" class="team-img"><br>
                       <a href="" class="btn btn-success admin-btn">チーム管理</a>
                   </div>
+                  <!-- smartphone pdf -->
+                 <!-- <div class="col-xs-12 col-sm-12 visible-xs visible-sm"> -->
+                     <!-- <div class="text-center"> -->
+                       <!-- <a href="../upfile/test.pdf" target="blank" class="btn pic-btn btn-primary">チラシはこちら</a> -->
+                   <!-- </div> -->
+                   <!-- <div class="ifrm-container"> -->
+                     <!-- <iframe class="ifrm" scrolling="auto" src="../upfile/test.pdf#page=1&zoom=50"></iframe> -->
+                    <!-- </div> -->
+                 <!-- </div> -->
 
+
+                  <!-- チーム情報 -->
                   <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                     <div class="team-contents">
                       <ul class="list-unstyled">
-                        <li>チーム名 ： アナログ僕撲滅委員会</li>
+                        <li>チーム名 : アナログ僕撲滅委員会</li>
                         <li>作&nbsp;品&nbsp;名 : vars</li>
                         <li>代&nbsp;表&nbsp;者 : 長谷川遼</li>
                       </ul>
                     </div>
                   </div>
 
+                <!-- チーム概要 -->
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <div class="team-form">
-                    efefe<br>
-                    dfdf<br>
-                    ferfrwfewr<br>
-                    vfrfer
+                    とりあえずメンバー
+                    　<li>多田くん</li>
                   </div>
                 </div>
 
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 left">
-                  <object data="../upfile//test.pdf" width="1000" height="1000">
-                    <p>ご覧の環境では、object要素がサポートされていないようです。
-                      <a href="../upfile/test.pdf">PDFファイルをダウンロードしてください</a>。
-                    </p>
-                  </object>
+                <!-- pc pdf -->
+                <div class="col-md-6 col-lg-6 visible-md visible-lg left">
+                  <iframe width="95%" height="700" src="../upfile/test.pdf#page=1&zoom=50"></iframe>
                 </div>
 
-              </div>
+                <!-- smartphone pdf -->
+               <div class="col-xs-12 col-sm-12 visible-xs visible-sm">
+                   <div class="text-center">
+                     <a href="../upfile/test.pdf" target="_blank" class="btn pic-btn btn-primary">
+                       <i class="fa fa-file-text-o" aria-hidden="true"></i> チラシはこちら</a>
+                 </div>
+                 <!-- <div class="ifrm-container"> -->
+                   <!-- <iframe class="ifrm" scrolling="auto" src="../upfile/test.pdf#page=1&zoom=50"></iframe> -->
+                  <!-- </div> -->
+               </div>
+
             </div>
         </div>
       </div>
+
       <div class="footer-bihind">&nbsp;</div>
 </section>
 <%- include('./footer.ejs') %>
@@ -84,11 +102,6 @@
 
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>
-
-<script src="../public/js/pdf.js"></script>
-<script type="text/javascript">
-    PDFJS.workerSrc = "../public/js/pdf.worker.js";
-</script>
 
 
 </body>
