@@ -9,11 +9,13 @@ var multer  = require('multer');
 var rename = require('../app/js/image/rename');
 var moment = require('../app/js/moment/moment');
 var getField = require("../app/js/field/getField");
+var getVote = require('../app/js/votes/getVote');
 //特に送り付ける値はなし
 router.get('/', function(req, res) {
     if(req.session.user){
         if(req.query.eventid){
         var eventid=req.query.eventid;
+        getVote.getVote(eventid).then(function (vote){
             getEvent.getEvent(eventid).then(function (docs) {
                 var today = moment.todate();
                 var create_flag = moment.comparison(today,docs[0].Createperiod.Createstart,docs[0].Createperiod.Createfinish);
@@ -21,11 +23,14 @@ router.get('/', function(req, res) {
                     res.render('teamcreate.ejs',{
                         displayName: req.session.user.displayName,
                         address: req.session.user.address,
-                        eventid:eventid
+                        eventid:eventid,
+                        vote:vote
                     });
                 }else{
                     res.render('errorconfirmation.ejs', {msg:'チーム登録期間外です。',url:'/eventtop?eventid='+eventid});
                 }
+              })
+
             }).catch(function (msg) {
                 res.render('errorconfirmation.ejs', {msg:msg,url:'/eventtop?eventid='+eventid});
             })
@@ -49,10 +54,11 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
           var displayname=req.session.user.displayName;
           var address=req.session.user.address;
           var imagepath="";
-          var works = 1;//req.session.user.works;
-          var department =1;// req.session.user.department;
+          var works = "";
+          var department =req.body.department;// req.body.department;
           var order;
           var teamdata="";
+
           getTeam.getTeamjson({"Eventid":eventid,"Address":address}).then(function(teamdata){
             if(!(teamdata.length===0 || req.session.user.admin === true)){
               res.render('confirmation.ejs',{msg:'既にこのイベントでチームを作成しています。',url:'/eventtop?eventid='+eventid});
