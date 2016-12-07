@@ -56,8 +56,8 @@
                                             <div class="form-group">
                                                 <label for="category<%= i %>"><%= votedata[i].Votename %>部門 : </label>
                                                 <select class="form-control input-lg" id="category<%= i %>" name="teamid">
-                                                    <%for(var f=0;f<teamdata.length;f++){%>
-                                                        <option value=<%=teamdata[f].Teamid%>><%=teamdata[f].Teamname%>
+                                                    <%for(var f=0;f<teamdata[i].length;f++){%>
+                                                        <option value=<%=teamdata[i][f].Teamid%>><%=teamdata[i][f].Teamname%>
                                                     <%}%>
                                                             <input type="hidden" name="voteid" value=<%=votedata[i].Voteid%>>
                                                             <input type="hidden" name="eventid" value=<%=votedata[i].Eventid%>>
@@ -82,9 +82,9 @@
                                         ※メモは、投票ボタンを押すと消えてしまいますので予めご了承ください。
                                     </div>
 
-                                    <% for(var i = 0 ; i < teamdata.length; i++){ %>
+                                    <% for(var i = 0 ; i < allteamdata.length; i++){ %>
                                         <% if(i == 0){ %>
-                                            <div id="teamname<%=i%>" onclick="switch_memo(<%= i %>);" class="switch"><%=teamdata[i].Teamname%> ▲</div>
+                                            <div id="teamname<%=i%>" onclick="switch_memo(<%= i %>);" class="switch"><%=allteamdata[i].Teamname%> ▲</div>
                                             <div class="memo_active">
                                                 <form>
                                                     <div class="form-group">
@@ -96,7 +96,7 @@
                                             </div>
                                             <% continue; %>
                                         <% } %>
-                                            <div id="teamname<%=i%>" onclick="switch_memo(<%= i %>);" class="switch"><%=teamdata[i].Teamname%> ▼</div>
+                                            <div id="teamname<%=i%>" onclick="switch_memo(<%= i %>);" class="switch"><%=allteamdata[i].Teamname%> ▼</div>
                                             <div class="toggle_faq">
                                                 <form>
                                                     <div class="form-group">

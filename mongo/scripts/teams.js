@@ -12,7 +12,7 @@ db.teams.insert({
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
     Works       :"publoc/images/noimage.png",
-    Department  :['voteid1','voteid2'],
+    Department  :['voteid1','voteid2',"1","2"],
     Order       :1
 });
 db.teams.insert({
@@ -25,7 +25,7 @@ db.teams.insert({
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
     Works       :"publoc/images/noimage.png",
-    Department  :['voteid1','voteid2'],
+    Department  :['voteid1','voteid2',"2","3"],
     Order       :2
 });
 db.teams.insert({
@@ -38,7 +38,7 @@ db.teams.insert({
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
     Works       :"publoc/images/noimage.png",
-    Department  :['voteid1','voteid2'],
+    Department  :['voteid1','voteid2',"1","3"],
     Order       :3
 });
 db.teams.insert({
@@ -50,8 +50,8 @@ db.teams.insert({
     displayName :"小野先生",
     Address     :"onosenseee@gmail.com",
     Image       :"/upfile/vars.png",
-    Works       :"publoc/images/noimage.png"
-    Department  :['voteid1','voteid2'],
+    Works       :"publoc/images/noimage.png",
+    Department  :['voteid1','voteid2',"4","2"],
     Order       :4
 });
 db.teams.insert({
@@ -64,7 +64,7 @@ db.teams.insert({
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
     Works       :"publoc/images/noimage.png",
-    Department  :['voteid1','voteid2'],
+    Department  :['voteid1','voteid2',"1"],
     Order       :5
 });
 db.teams.insert({
@@ -77,6 +77,6 @@ db.teams.insert({
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
     Works       :"publoc/images/noimage.png",
-    Department  :['voteid1','voteid2'],
+    Department  :['voteid1','voteid2',"4","3"],
     Order       :6
 });
