@@ -110,7 +110,7 @@ app.use('/teamcreate',require('./routes/teamcreate'));
 //チームリスト
 app.use('/teamlist',require('./routes/teamlist'));
 //イベント管理
-app.use('/eventadmin',require('./routes/eventadmin'));
+app.use('/eventcontrol',require('./routes/eventcontrol'));
 //投票
 app.use('/vote',require('./routes/vote'));
 //投票結果
