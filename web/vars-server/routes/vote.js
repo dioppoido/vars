@@ -61,22 +61,48 @@ router.get('/', PasswordCheck, function (req, res) {
                             getVote.getVote(eventid).then(function (votedata) {
                                 //イベント内の全チームを取り出す
                                 getTeam.getTeam(eventid).then(function (allteamdata) {
-                                    var teamdata = [];
+                                    var teamdata = new Array();
+                                    var teams=[];
                                     //投票部門に入っているチームの取り出し（async）
-                                    async.eachSeries(votedata, function (vote, next) {
-                                        getTeam.getTeamjson({
-                                            Department: vote.Voteid,
-                                            Eventid: eventid
-                                        }).then(function (team) {
-                                            if (team.length > 0) {
-                                                teamdata.push(team);
+                                    async.eachSeries(votedata, function (vote, callback1) {
+                                        teams=[];
+                                        console.log("order:"+eventdata[0].Order);
+                                        async.eachSeries(eventdata[0].Order,function(order,callback2){
+
+                                            getTeam.getTeamjson({
+                                                Department: vote.Voteid,
+                                                Teamid: order
+                                            }).then(function (team) {
+                                                if (team.length > 0) {
+                                                    console.log("team:"+team.Teamname)
+                                                    teams.push(team[0]);
+                                                }
+                                                callback2();
+                                            }).catch(function (msg) {
+                                                res.render('errorconfirmation.ejs', {msg:msg,url:'/eventtop?eventid='+eventid});
+                                            })
+                                        },function (err) {
+                                            if(!err){
+                                                //console.log("teams:"+teams)
+                                                teamdata[teamdata.length] = new Array();
+                                                console.log("teamdata.length"+teamdata.length);
+                                                teamdata[teamdata.length - 1] = teams;
+                                                //console.log("teamdata.test:"+teamdata[teamdata.length - 1])
+                                                callback1();
+                                            }else{
+                                                callback1();
                                             }
-                                            next();
-                                        }).catch(function (msg) {
-                                            res.render('errorconfirmation.ejs', {msg:msg,url:'/eventtop?eventid='+eventid});
-                                        })
+                                        });
                                         //ループ終了した後
                                     }, function (err) {
+                                        console.log(typeof(teamdata[0][0]));
+                                        for (var cnt1 in teamdata) {
+                                            console.log(votedata[cnt1].Votename);
+                                            for (var cnt2 in teamdata[cnt1]) {
+                                                //console.log("teamdata["+cnt1+"]["+cnt2+"]仕上げ:" + teamdata[cnt1][cnt2]);
+
+                                            }
+                                        }
                                         res.render('vote.ejs', {
                                             eventdata: eventid,
                                             allteamdata:allteamdata,

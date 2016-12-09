@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var validator = require('validator'); //validatorモジュール宣言
 var getEvent=require("../app/js/event/getEvent");
+var updateEvent=require("../app/js/event/updateEvent");
 var insertTeam =  require("../app/js/team/insertTeam");
 var getTeam = require('../app/js/team/getTeam');
 var randomByte = require("../app/js/db/randomByte");
@@ -92,10 +93,12 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
                     'Image'       :imagepath,
                     'Works'       :works,
                     'Department' :department,
-                    'Order'         :order
+                    'Order'         :0
                 };
 
                 insertTeam.insertTeam(TEAMS);   //チーム作成
+                updateEvent.updateEvent({Eventid:eventid},{$push:{Order:teamid}});
+
                 var msg = "チームを作成しました。";   //作成時メッセージ
                 res.render('confirmation.ejs' , {msg:msg, url:'/eventtop?eventid='+eventid});
             });
