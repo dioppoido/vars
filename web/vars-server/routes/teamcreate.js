@@ -15,8 +15,12 @@ router.get('/', function(req, res) {
     if(req.session.user){
         if(req.query.eventid){
         var eventid=req.query.eventid;
-        getVote.getVote(eventid).then(function (vote){
+        getVote.getVotejson({Eventid:eventid}).then(function (vote){
             getEvent.getEvent(eventid).then(function (docs) {
+                var vote_flg = 0;
+                if (vote.length === 0){         //投票項目があるか判別
+                    vote_flg =1;
+                }
                 var today = moment.todate();
                 var create_flag = moment.comparison(today,docs[0].Createperiod.Createstart,docs[0].Createperiod.Createfinish);
                 if(create_flag){
@@ -24,7 +28,8 @@ router.get('/', function(req, res) {
                         displayName: req.session.user.displayName,
                         address: req.session.user.address,
                         eventid:eventid,
-                        vote:vote
+                        vote:vote,
+                        vote_flg:vote_flg
                     });
                 }else{
                     res.render('errorconfirmation.ejs', {msg:'チーム登録期間外です。',url:'/eventtop?eventid='+eventid});

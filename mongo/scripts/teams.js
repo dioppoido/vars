@@ -49,8 +49,8 @@ db.teams.insert({
     Overview   :"概要",
     displayName :"小野先生",
     Address     :"onosenseee@gmail.com",
-    Image       :"/upfile/vars.png",
-    Works       :"publoc/images/noimage.png",
+    Image       :"upfile/vars.png",
+    Works       :"upfile/test.pdf",
     Department  :['voteid1','voteid2',"4","2"],
     Order       :4
 });

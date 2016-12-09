@@ -71,13 +71,17 @@
 
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="form-group">
+                                <% if(vote_flg == 1 ){ %>
+
+                                <% } else { %>
                                     <label>部門選択 : </label><br>
                                     <!-- size = 部門の個数 -->
                                         <select id="department" class="form-control" multiple="multiple" name="department" size="<%= vote.length %>" style="display: none;">
                                         <% for(var i=0; i < vote.length ; i++){  %>
                                             <option value="<%= vote[i].Voteid %>"><%= vote[i].Votename %></option>
                                           <% } %>
-                                        </select>
+                                      </select>
+                                <% } %>
                                 </div>
                              </div>
 
