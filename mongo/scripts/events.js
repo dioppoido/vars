@@ -352,3 +352,26 @@ Voteperiod:{
 },
     Image:"public/images/goripic/heart.png"
   });
+  db.events.insert({
+      Eventid:"14",
+      Eventname:"ソフトⅣコース中間発表",
+      Overview:"12/14日　南館1階B教室で行う中間発表です。",
+      Password:"",
+      Address:"test@example.com",
+      displayName:"test",
+      Fieldid:"it",
+      Venue:"南館1階B教室",
+      Holdperiod:{
+        Holdstart :"2016/12/14 9:00",
+        Holdfinish : "2017/12/14 12:00"
+     },
+      Createperiod:{
+          Createstart:"2017/9/10 12:00",
+          Createfinish:"2017/12/10 15:00"
+      },
+      Voteperiod:{
+          Votestart:"2017/12/14 9:00",
+          Votefinish:"2017/12/14 15:00"
+      },
+      Image:"public/images/goripic/dancegori.png"
+    });
