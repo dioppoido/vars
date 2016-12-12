@@ -48,7 +48,7 @@ exports.getTeamjson = function(FINDJSON){
        if(!err){
          if(docs.length>=1){
            console.log("getTeam:"+"データがあります");
-           console.log("Eventid" + docs[0].Eventid + "は" + docs.length+"件見つかりました");
+           console.log( + FINDJSON + "は" + docs.length+"件見つかりました");
            for(var i=0; i<docs.length;i++){
              console.log(docs[i]);
 

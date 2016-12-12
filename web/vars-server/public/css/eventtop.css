@@ -43,7 +43,7 @@ li{
 .event-title{
 }
 .event-img{
-    margin-top: 40px;
+    margin-top: 100px;
     margin-bottom: 20px;
     -webkit-background-size:cover;
     -moz-background-size:cover;
@@ -244,6 +244,18 @@ li{
     .contents-title{
         font-size: 34px;
     }
+    .event-img{
+        margin-top: 40px;
+        margin-bottom: 20px;
+        -webkit-background-size:cover;
+        -moz-background-size:cover;
+        background-size: cover;
+        -o-background-size:cover;
+        width: 200px;
+        height: 200px;
+        border: 2px solid gray;
+    }
+
     .event-form{
         margin: 0 auto;
         margin-top:30px;
@@ -339,6 +351,18 @@ li{
         margin-left: 5%;
         font-size: 20px;
     }
+    .event-img{
+        margin-top: 40px;
+        margin-bottom: 20px;
+        -webkit-background-size:cover;
+        -moz-background-size:cover;
+        background-size: cover;
+        -o-background-size:cover;
+        width: 200px;
+        height: 200px;
+        border: 2px solid gray;
+    }
+
     .event-form{
         margin: 0 auto;
         margin-top:30px;
@@ -444,6 +468,17 @@ li{
         -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     }
+    .event-img{
+        margin-top: 40px;
+        margin-bottom: 20px;
+        -webkit-background-size:cover;
+        -moz-background-size:cover;
+        background-size: cover;
+        -o-background-size:cover;
+        width: 200px;
+        height: 200px;
+        border: 2px solid gray;
+    }
     .event-title{
         margin-left: 0px;
         font-size: 20px;
@@ -520,7 +555,7 @@ li{
     }
     .date{
         margin-left: 5px;
-        font-size:12px;
+        font-size:11px;
     }
 
 }

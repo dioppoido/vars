@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var validator = require('validator'); //validatorモジュール宣言
 var getEvent=require("../app/js/event/getEvent");
+var updateEvent=require("../app/js/event/updateEvent");
 var insertTeam =  require("../app/js/team/insertTeam");
 var getTeam = require('../app/js/team/getTeam');
 var randomByte = require("../app/js/db/randomByte");
@@ -9,23 +10,33 @@ var multer  = require('multer');
 var rename = require('../app/js/image/rename');
 var moment = require('../app/js/moment/moment');
 var getField = require("../app/js/field/getField");
+var getVote = require('../app/js/votes/getVote');
 //特に送り付ける値はなし
 router.get('/', function(req, res) {
     if(req.session.user){
         if(req.query.eventid){
         var eventid=req.query.eventid;
+        getVote.getVotejson({Eventid:eventid}).then(function (vote){
             getEvent.getEvent(eventid).then(function (docs) {
+                var vote_flg = 0;
+                if (vote.length === 0){         //投票項目があるか判別
+                    vote_flg =1;
+                }
                 var today = moment.todate();
                 var create_flag = moment.comparison(today,docs[0].Createperiod.Createstart,docs[0].Createperiod.Createfinish);
                 if(create_flag){
                     res.render('teamcreate.ejs',{
                         displayName: req.session.user.displayName,
                         address: req.session.user.address,
-                        eventid:eventid
+                        eventid:eventid,
+                        vote:vote,
+                        vote_flg:vote_flg
                     });
                 }else{
                     res.render('errorconfirmation.ejs', {msg:'チーム登録期間外です。',url:'/eventtop?eventid='+eventid});
                 }
+              })
+
             }).catch(function (msg) {
                 res.render('errorconfirmation.ejs', {msg:msg,url:'/eventtop?eventid='+eventid});
             })
@@ -38,7 +49,7 @@ router.get('/', function(req, res) {
 
 });
 
-var upload = multer({ dest: 'upfile/' });
+var upload = multer({ dest: 'upfile/image/' });
 router.post('/', upload.single('thumbnail'), function (req, res) {
     if(req.session.user){
           var teamname=req.body.teamname;
@@ -49,10 +60,11 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
           var displayname=req.session.user.displayName;
           var address=req.session.user.address;
           var imagepath="";
-          var works = 1;//req.session.user.works;
-          var department =1;// req.session.user.department;
+          var works = "";
+          var department =req.body.department;// req.body.department;
           var order;
           var teamdata="";
+
           getTeam.getTeamjson({"Eventid":eventid,"Address":address}).then(function(teamdata){
             if(!(teamdata.length===0 || req.session.user.admin === true)){
               res.render('confirmation.ejs',{msg:'既にこのイベントでチームを作成しています。',url:'/eventtop?eventid='+eventid});
@@ -62,7 +74,7 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
               var extension = req.file.originalname;   //拡張子を取得したいデータを入れる
               var imageExtension =rename.rename(extension);　//拡張子
               imagepath=req.file.path+rename.rename(extension); //データベースに格納用のpath
-              require('fs').rename(req.file.path, 'upfile/' + req.file.filename + imageExtension); //ここでファイル名を変更
+              require('fs').rename(req.file.path, 'upfile/image/' + req.file.filename + imageExtension); //ここでファイル名を変更
             }else{
               imagepath="public/images/noimage.png"  //NoImageのPathをここに格納
             }
@@ -81,10 +93,12 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
                     'Image'       :imagepath,
                     'Works'       :works,
                     'Department' :department,
-                    'Order'         :order
+                    'Order'         :0
                 };
 
                 insertTeam.insertTeam(TEAMS);   //チーム作成
+                updateEvent.updateEvent({Eventid:eventid},{$push:{Order:teamid}});
+
                 var msg = "チームを作成しました。";   //作成時メッセージ
                 res.render('confirmation.ejs' , {msg:msg, url:'/eventtop?eventid='+eventid});
             });
