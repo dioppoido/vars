@@ -35,6 +35,7 @@ router.post('/', function(req, res) {
         res.render('confirmation.ejs',{msg:'イベントを削除しました',url:'/eventlist'});
       }else{
         res.redirect('/eventlist');
+      }
 });
 
 

@@ -23,6 +23,11 @@ body{
       padding-right: 0px;
   }
   /* !All */
+  .submit-left{
+    margin: 0 auto;
+    margin-right: 15px;
+  }
+
 
   /* event */
   .eventcontrols{
@@ -149,7 +154,6 @@ body{
       .panel-events:hover{
         /*background-color: #DDDDDD;*/
         }
-
 
 }
 
