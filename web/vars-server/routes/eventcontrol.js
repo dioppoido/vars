@@ -3,7 +3,7 @@ var router = express.Router();
 var getEvent = require("../app/js/event/getEvent");
 var deleteEvent= require("../app/js/event/deleteEvent");
 var deleteTeam= require("../app/js/team/deleteTeam");
-
+var getVote = require("../app/js/votes/getVote");
 router.get('/', function(req, res) {
     if(req.session.user){
         if(req.query.eventid){
@@ -58,7 +58,10 @@ router.get('/eventsetting', function(req, res) {
 
 router.get('/votesetting', function(req, res) {
     if(req.session.user){
-        res.render('votesetting.ejs');
+      var eventid=req.query.eventid;
+      getVote.getVotejson({Eventid:eventid}).then(function (vote){
+        res.render('votesetting.ejs',{vote:vote});
+      });
     } else{
         res.redirect('/');
     }
