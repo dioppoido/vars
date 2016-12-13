@@ -41,9 +41,18 @@ router.post('/', function(req, res) {
 
 router.get('/eventsetting', function(req, res) {
     if(req.session.user){
-        res.render('eventsetting.ejs');
-    } else{
-        res.redirect('/');
+          var eventid=req.query.eventid;
+          getEvent.getEvent(eventid).then(function (docs){
+              console.log(docs);
+              res.render('eventsetting.ejs',{eventdata:docs});
+
+          }).catch(function(){
+
+            res.render('confirmation.ejs',{msg:'イベントIDが存在しません',url:'/eventlist'});
+
+        });
+    } else {
+        res.redirect('/eventlist');
     }
 });
 
