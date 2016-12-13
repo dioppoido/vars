@@ -14,7 +14,7 @@
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../public/css/confirmation.css" rel="stylesheet">
+    <link href="../public/css/eventcontrols.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
     <link href="../public/css/footer.css" rel="stylesheet">
 
@@ -32,22 +32,69 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+              <div class="eventcontrols">
 
-                <div class="text-center">イベント管理画面</div>
+                  <div class="panel panel-list panel-primary">
 
-                <div class="text-center"><a href="/eventcontrol/eventsetting" class="btn">イベント設定</a></div>
+                      <div class="panel-heading controls-title">イベント管理</div>
 
-                <div class="text-center"><a href="/eventcontrol/votesetting" class="btn">投票設定</a></div>
+                      <div class="top-margin">&nbsp;</div>
 
-                <div class="text-center"><a href="/eventcontrol/fieldsetting" class="btn">部門設定</a></div>
+                      <div class="row">
+                          <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 
-                <div class="text-center"><a href="/eventcontrol/announcesetting" class="btn">発表順番設定</a></div>
+                            <a href="/eventcontrol/eventsetting">
+                              <div class="panel-body panel-events">
+                                  イベント設定
+                                  <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                              </div>
+                            </a>
 
+                              <a href="/eventcontrol/votesetting">
+                              <div class="panel-body panel-events">
+                                投票設定
+                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                              </div>
+                            </a>
+
+                            <a href="/eventcontrol/fieldsetting">
+                              <div class="panel-body panel-events">
+                                部門設定
+                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                              </div>
+                            </a>
+
+                            <a href="/eventcontrol/announcesetting">
+                              <div class="panel-body panel-events">
+                                発表順番設定
+                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                              </div>
+                            </a>
+
+                          </div>
+
+                          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                              <div class="text-center">
+                                  <img src="../public/images/noimage.png" class="event-img">
+                                  <!-- イベント削除テスト -->
+                                  <div class="submit-left">
+                                  <form method="post" action="/eventcontrol">
+                                      <input type="submit" name="eventdelete" value="イベント削除">
+                                      <input type="hidden" name="eventid" value="<%=id%>">
+                                  </form>
+                                </div>
+                              </div>
+                          </div>
+                    </div>
+
+                    <div class="top-margin">&nbsp;</div>
+
+                </div>
+
+              </div><!-- eventcontrols -->
             </div><!-- col -->
-
-
-
         </div><!-- row -->
+        <div class="footer-bihind">&nbsp;</div>
     </div><!-- container -->
 </section>
 

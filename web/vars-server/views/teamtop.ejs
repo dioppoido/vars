@@ -72,15 +72,25 @@
 
                 <!-- pc pdf -->
                 <div class="col-md-6 col-lg-6 visible-md visible-lg left">
+                  <% var work=teamdata[0].Works;
+                  if(work == ''){%>
+                    <img src="../public/images/noimage.png#page=1&zoom=50">
+                  <%}else{%>
                   <iframe width="95%" height="700" src="../<%=teamdata[0].Works%>#page=1&zoom=50"></iframe>
+                  <%}%>
                 </div>
 
                 <!-- smartphone pdf -->
                <div class="col-xs-12 col-sm-12 visible-xs visible-sm">
                    <div class="text-center">
+                     <% var work=teamdata[0].Works;
+                     if(work == ''){%>
+                     <a href="../public/images/noimage.png" target="_blank" class="btn pic-btn btn-primary">
+                     <%}else{%>
                      <a href="../<%=teamdata[0].Works%>" target="_blank" class="btn pic-btn btn-primary">
+                    <%}%>
                        <i class="fa fa-file-text-o" aria-hidden="true"></i> チラシはこちら</a>
-                 </div>
+              </div>
                  <!-- <div class="ifrm-container"> -->
                    <!-- <iframe class="ifrm" scrolling="auto" src="../upfile/test.pdf#page=1&zoom=50"></iframe> -->
                   <!-- </div> -->

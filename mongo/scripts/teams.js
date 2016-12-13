@@ -11,7 +11,7 @@ db.teams.insert({
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"public/images/noimage.png",
+    Works       :"upfile/test.pdf",
     Department  :['voteid1','voteid2',"1","2"],
     Order       :1
 });
@@ -24,7 +24,7 @@ db.teams.insert({
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"public/images/noimage.png",
+    Works       :"upfile/test.pdf",
     Department  :['voteid1','voteid2',"2","3"],
     Order       :2
 });
@@ -37,7 +37,7 @@ db.teams.insert({
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"public/images/noimage.png",
+    Works       :"upfile/test.pdf",
     Department  :['voteid1','voteid2',"1","3"],
     Order       :3
 });
@@ -63,7 +63,7 @@ db.teams.insert({
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"public/images/noimage.png",
+    Works       :"upfile/test.pdf",
     Department  :['voteid1','voteid2',"1"],
     Order       :5
 });
@@ -90,7 +90,7 @@ db.teams.insert({
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/goripic/tameikigori.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"upfile/test.pdf",
     Department  :['voteid1','voteid2',"1","2"],
     Order       :1
 });
@@ -103,7 +103,7 @@ db.teams.insert({
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/goripic/heart.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"upfile/test.pdf",
     Department  :['voteid1','voteid2',"2","3"],
     Order       :2
 });
@@ -116,7 +116,7 @@ db.teams.insert({
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/goripic/yokattagori.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"upfile/test.pdf",
     Department  :['voteid1','voteid2',"1","3"],
     Order       :3
 });
@@ -129,7 +129,7 @@ db.teams.insert({
     Overview   :"概要",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/goripic/gori.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"upfile/test.pdf",
     Department  :['voteid1','voteid2',"4","3"],
     Order       :6
 });
