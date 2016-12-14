@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var getEvent = require("../app/js/event/getEvent");
-var deleteEvent= require("../app/js/event/deleteEvent");
-var deleteTeam= require("../app/js/team/deleteTeam");
+var deleteEvent = require("../app/js/event/deleteEvent");
+var deleteTeam = require("../app/js/team/deleteTeam");
 var getVote = require("../app/js/votes/getVote");
 var getTeam = require("../app/js/team/getTeam");
+var async = require('async');
+
 router.get('/', function(req, res) {
     if(req.session.user){
         if(req.query.eventid){
@@ -72,19 +74,50 @@ router.get('/votesetting', function(req, res) {
     }
 });
 
-router.get('/fieldsetting', function(req, res) {
-    if(req.session.user){
-      var eventid=req.query.eventid;
-      getTeam.getTeamjson({Eventid:eventid}).then(function (team){
-        getVote.getVotejson({Eventid:eventid}).then(function (vote){
-        res.render('fieldsetting.ejs',{team:team,vote:vote});
-      });
-      }).catch(function(){
-
-        res.render('confirmation.ejs',{msg:'イベントIDが存在しません',url:'/eventlist'});
-
-    });
-    } else{
+/**
+ * チームの部門設定ページ
+ * /eventcontrol/fieldsetting
+ * 作成者：土居
+ */
+router.get('/fieldsetting', function (req, res) {
+    //ログインチェック
+    if (req.session.user) {
+        //イベントIDのチェック
+        if (req.query.eventid) {
+            var eventid = req.query.eventid;
+            //イベントデータ取り出し
+            getEvent.getEvent(eventid).then(function (eventdata) {
+                //イベントIDで投票部門データを取り出し
+                getVote.getVote(eventid).then(function (votedata) {
+                    var teamdata = [];
+                    //発表順番データでループする（発表順番データの配列内のチームIDで検索をかける）
+                    async.eachSeries(eventdata[0].Order, function (order, callback1) {
+                        //イベントデータ.Orderから取得されるチームIDでチームデータを取得
+                        getTeam.getTeamjson({Teamid:order}).then(function (team) {
+                            //チームデータを順番通りに格納する
+                            teamdata.push(team[0]);
+                            callback1();
+                        }).catch(function (msg) {
+                            //チーム取り出し時のDBエラーを記述
+                            console.log(msg);
+                            res.render('errorconfirmation.ejs', {msg: msg, url: '/eventcontrol?eventid='+eventid});
+                        })
+                    }, function (err) {
+                        //処理成功時を記述
+                        res.json(votedata);
+                    })
+                }).catch(function (msg) {
+                    //投票部門データが検索できなかった時にエラーページを表示
+                    res.render('errorconfirmation.ejs', {msg: "投票データが存在しません。", url: '/eventcontrol?eventid='+eventid});
+                });
+            }).catch(function (msg) {
+                //イベントデータが検索できなかった時にエラーページを表示
+                res.render('errorconfirmation.ejs', {msg: "イベントが存在しません。", url: '/eventlist'});
+            });
+        } else {
+            res.render('errorconfirmation.ejs', {msg: "イベントが存在しません。", url: '/eventlist'});
+        }
+    } else {
         res.redirect('/');
     }
 });
