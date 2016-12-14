@@ -4,6 +4,7 @@ var getEvent = require("../app/js/event/getEvent");
 var deleteEvent= require("../app/js/event/deleteEvent");
 var deleteTeam= require("../app/js/team/deleteTeam");
 var getVote = require("../app/js/votes/getVote");
+var getTeam = require("../app/js/team/getTeam");
 router.get('/', function(req, res) {
     if(req.session.user){
         if(req.query.eventid){
@@ -61,7 +62,11 @@ router.get('/votesetting', function(req, res) {
       var eventid=req.query.eventid;
       getVote.getVotejson({Eventid:eventid}).then(function (vote){
         res.render('votesetting.ejs',{vote:vote});
-      });
+      }).catch(function(){
+
+        res.render('confirmation.ejs',{msg:'イベントIDが存在しません',url:'/eventlist'});
+
+    });
     } else{
         res.redirect('/');
     }
@@ -69,7 +74,16 @@ router.get('/votesetting', function(req, res) {
 
 router.get('/fieldsetting', function(req, res) {
     if(req.session.user){
-        res.render('fieldsetting.ejs');
+      var eventid=req.query.eventid;
+      getTeam.getTeamjson({Eventid:eventid}).then(function (team){
+        getVote.getVotejson({Eventid:eventid}).then(function (vote){
+        res.render('fieldsetting.ejs',{team:team,vote:vote});
+      });
+      }).catch(function(){
+
+        res.render('confirmation.ejs',{msg:'イベントIDが存在しません',url:'/eventlist'});
+
+    });
     } else{
         res.redirect('/');
     }
