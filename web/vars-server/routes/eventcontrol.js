@@ -123,11 +123,21 @@ router.get('/fieldsetting', function (req, res) {
 });
 
 router.get('/announcesetting', function(req, res) {
-    if(req.session.user){
-        res.render('announcesetting.ejs');
-    } else{
-        res.redirect('/');
-    }
+      if(req.session.user){
+            var eventid=req.query.eventid;
+            getEvent.getEvent(eventid).then(function (docs) {
+                getTeam.getTeam(eventid).then(function (docs){
+                    console.log(docs);
+                    res.render('announcesetting.ejs',{eventdata:docs});
+                }).catch(function(){
+                        res.render('confirmation.ejs',{msg:'チームが存在しません',url:'/eventlist'});
+                });
+            }).catch(function(){
+                res.render('confirmation.ejs',{msg:'イベントIDが存在しません',url:'/eventlist'});
+            });
+      } else {
+          res.redirect('/eventlist');
+      }
 });
 
 
