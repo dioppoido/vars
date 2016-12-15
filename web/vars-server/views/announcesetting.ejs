@@ -37,34 +37,46 @@
             <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
                 <div class="announce">
+                    <div class="panel panel-list panel-primary">
+                      <div class="panel-heading announce-title">発表順番変更</div>
+                      <div class="panel-body">
+                        <div class="announce-denger">ドラッグ＆ドロップで順番を入れ替えてください。</div>
+                      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                          <!-- <div class="text-center">発表順番</div> -->
+                          <ul class="list-unstyled order">
+                              <li class="ui-state-default">1</li>
+                              <li class="ui-state-default">2</li>
+                              <li class="ui-state-default">3</li>
+                              <li class="ui-state-default">4</li>
+                              <li class="ui-state-default">5</li>
+                              <li class="ui-state-default">6</li>
+                              <li class="ui-state-default">7</li>
+                              <li class="ui-state-default">8</li>
+                              <li class="ui-state-default">9</li>
+                          </ul>
+                          </div>
 
-                    <div class="text-center">発表順番変更</div><br>
+                      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                          <!-- <div class="text-center">チーム名</div> -->
+                          <form method="POST" action="/eventcontrol/announcesetting" id="announceform">
+                              <ul id="jquery-ui-sortable" class="list-unstyled">
+                                  <li class="ui-state-default list-width">項目名 A <span style="display:none;">1</span></li>
+                                  <li class="ui-state-default list-width">項目名 B <span style="display:none;">2</span></li>
+                                  <li class="ui-state-default list-width">項目名 C <span style="display:none;">3</span></li>
+                                  <li class="ui-state-default list-width">項目名 D <span style="display:none;">4</span></li>
+                                  <li class="ui-state-default list-width">項目名 E <span style="display:none;">5</span></li>
+                                  <li class="ui-state-default list-width">項目名 F <span style="display:none;">6</span></li>
+                                  <li class="ui-state-default list-width">項目名 G <span style="display:none;">7</span></li>
+                                  <li class="ui-state-default list-width">項目名 H <span style="display:none;">8</span></li>
+                                  <li class="ui-state-default list-width">項目名 I <span style="display:none;">9</span></li>
+                              </ul>
+                              <input type="hidden" id="announce" name="announce" value="null">
+                              <div class="text-right list-width"><button id="submitSortable" class="btn btn-primary announce-btn" type="submit">発表順番変更</button></div>
+                          </form>
+                      </div>
 
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                        <div class="text-center">発表順番</div>
-                        <ul class="list-unstyled order">
-                            <li class="ui-state-default">1</li>
-                            <li class="ui-state-default">2</li>
-                            <li class="ui-state-default">3</li>
-                            <li class="ui-state-default">4</li>
-                            <li class="ui-state-default">5</li>
-                        </ul>
-                    </div>
-
-                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                        <div class="text-center">チーム名</div>
-                        <form method="POST" action="/eventcontrol/announcesetting" id="announceform">
-                            <ul id="jquery-ui-sortable" class="list-unstyled">
-                                <li class="ui-state-default">項目名 A <span style="display:none;">1</span></li>
-                                <li class="ui-state-default">項目名 B <span style="display:none;">2</span></li>
-                                <li class="ui-state-default">項目名 C <span style="display:none;">3</span></li>
-                                <li class="ui-state-default">項目名 D <span style="display:none;">4</span></li>
-                                <li class="ui-state-default">項目名 E <span style="display:none;">5</span></li>
-                            </ul>
-                            <input type="hidden" id="announce" name="announce" value="null">
-                            <div class="text-center"><button id="submitSortable" class="btn btn-primary" type="submit">発表順番変更</button></div>
-                        </form>
-                    </div>
+                    </div><!-- panel -->
+                  </div><!-- panel-body -->
 
                 </div><!-- announce -->
 
@@ -75,6 +87,7 @@
 
 
         </div><!-- row -->
+        <div class="footer-bihind"> </div>
     </div><!-- container -->
 </section>
 
