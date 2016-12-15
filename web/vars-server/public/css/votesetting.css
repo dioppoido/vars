@@ -27,8 +27,28 @@ body{
 /* Vote */
 .vote{
     margin-top: 50px;
+    margin-bottom: 50px;
     font-size: 20px;
     font-weight:bold;
+}
+
+.controls-title{
+    font-size: 30px;
+}
+
+.submit-btn{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+.hr-field{
+    background-color: #fff;
+    border-top: 2px dashed #8c8b8b;
+}
+.top-margin{
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 979px) {

@@ -155,3 +155,30 @@ function editRow(obj) {
     }
     
 }
+
+/*
+ * changeRow 部門変更で切り替え
+ */
+
+function changeRow(obj) {
+    
+    var objindex = obj.id.split("-");
+    objindex = objindex[1];
+    var objInp = document.getElementById("change" + objindex);
+    var objBtn = document.getElementById(obj.id);
+    if (!objInp || !objBtn){
+        return;
+    }
+
+    // モードの切り替えはボタンの値で判定
+    if (objBtn.value == "編集")
+    {
+        objInp.readOnly = false;
+        objInp.focus();
+        objBtn.value = "確定";
+    }
+    else if(objBtn.value == "確定"){
+        objInp.readOnly = true;
+        objBtn.value = "編集";
+    }
+}
