@@ -8,13 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title-->
-    <title>Announcementsetting - VARS -</title>
+    <title>Announcesetting - VARS -</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- JQuery Ui -->
+    <link rel="stylesheet" type="text/css" href="../public/css/jquery-ui.css">
+
     <!-- Custom CSS -->
-    <link href="../public/css/confirmation.css" rel="stylesheet">
+    <link href="../public/css/announcesetting.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
     <link href="../public/css/footer.css" rel="stylesheet">
 
@@ -33,7 +36,39 @@
         <div class="row">
             <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
-                <div class="text-center">発表設定画面</div>
+                <div class="announce">
+
+                    <div class="text-center">発表順番変更</div><br>
+
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <div class="text-center">発表順番</div>
+                        <ul class="list-unstyled order">
+                            <li class="ui-state-default">1</li>
+                            <li class="ui-state-default">2</li>
+                            <li class="ui-state-default">3</li>
+                            <li class="ui-state-default">4</li>
+                            <li class="ui-state-default">5</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                        <div class="text-center">チーム名</div>
+                        <form method="POST" action="/eventcontrol/announcesetting" id="announceform">
+                            <ul id="jquery-ui-sortable" class="list-unstyled">
+                                <li class="ui-state-default">項目名 A <span style="display:none;">1</span></li>
+                                <li class="ui-state-default">項目名 B <span style="display:none;">2</span></li>
+                                <li class="ui-state-default">項目名 C <span style="display:none;">3</span></li>
+                                <li class="ui-state-default">項目名 D <span style="display:none;">4</span></li>
+                                <li class="ui-state-default">項目名 E <span style="display:none;">5</span></li>
+                            </ul>
+                            <input type="hidden" id="announce" name="announce" value="null">
+                            <div class="text-center"><button id="submitSortable" class="btn btn-primary" type="submit">発表順番変更</button></div>
+                        </form>
+                    </div>
+
+                </div><!-- announce -->
+
+
 
             </div><!-- col -->
 
@@ -47,6 +82,12 @@
 
 <!-- jQuery -->
 <script src="../public/js/jquery.js"></script>
+
+<!-- jQuery Ui -->
+<script src="../public/js/jquery-ui.min.js"></script>
+
+<!-- Sortable -->
+<script src="../public/js/sortable.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
