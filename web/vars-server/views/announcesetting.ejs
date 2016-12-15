@@ -8,13 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title-->
-    <title>Announcementsetting - VARS -</title>
+    <title>Announcesetting - VARS -</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- JQuery Ui -->
+    <link rel="stylesheet" type="text/css" href="../public/css/jquery-ui.css">
+
     <!-- Custom CSS -->
-    <link href="../public/css/confirmation.css" rel="stylesheet">
+    <link href="../public/css/announcesetting.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
     <link href="../public/css/footer.css" rel="stylesheet">
 
@@ -33,13 +36,48 @@
         <div class="row">
             <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
-                <div class="text-center">発表設定画面</div>
+                <div class="announce">
+                    <div class="panel panel-list panel-primary">
+                      <div class="panel-heading announce-title">発表順番変更</div>
+                      <div class="panel-body">
+                        <div class="announce-denger">ドラッグ＆ドロップで順番を入れ替えてください。</div>
+                      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                          <ul class="list-unstyled order">
+
+                              <%for(var i=0;i<eventdata.length;i++){%>
+                                <li class="ui-state-default"><%=i+1%></li>
+                              <%}%>
+
+                          </ul>
+                          </div>
+
+                      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                          <form method="POST" action="/eventcontrol/announcesetting" id="announceform">
+                              <ul id="jquery-ui-sortable" class="list-unstyled">
+
+                                <%for(var i=0;i<eventdata.length;i++){%>
+                                  <li class="ui-state-default list-width"><%=eventdata[i].Teamname%><span style="display:none;"><%=i+1%></span></li>
+                                  <%}%>
+                                  
+                              </ul>
+                              <input type="hidden" id="announce" name="announce" value="null">
+                              <div class="text-right list-width"><button id="submitSortable" class="btn btn-primary announce-btn" type="submit">発表順番変更</button></div>
+                          </form>
+                      </div>
+
+                    </div><!-- panel -->
+                  </div><!-- panel-body -->
+
+                </div><!-- announce -->
+
+
 
             </div><!-- col -->
 
 
 
         </div><!-- row -->
+        <div class="footer-bihind"> </div>
     </div><!-- container -->
 </section>
 
@@ -47,6 +85,12 @@
 
 <!-- jQuery -->
 <script src="../public/js/jquery.js"></script>
+
+<!-- jQuery Ui -->
+<script src="../public/js/jquery-ui.min.js"></script>
+
+<!-- Sortable -->
+<script src="../public/js/sortable.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>

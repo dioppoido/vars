@@ -106,6 +106,15 @@ router.get('/votesetting', function(req, res) {
     }
 });
 
+router.post('/votesetting', function(req, res) {
+
+    var field = req.body.fieldname;
+
+    console.log(field);
+
+    res.render('votesetting.ejs');
+});
+
 /**
  * チームの部門設定ページ
  * /eventcontrol/fieldsetting
@@ -127,7 +136,9 @@ router.get('/fieldsetting', function (req, res) {
                         //イベントデータ.Orderから取得されるチームIDでチームデータを取得
                         getTeam.getTeamjson({Teamid:order}).then(function (team) {
                             //チームデータを順番通りに格納する
-                            teamdata.push(team[0]);
+                            if(team.length>0) {
+                                teamdata.push(team[0]);
+                            }
                             callback1();
                         }).catch(function (msg) {
                             //チーム取り出し時のDBエラーを記述
@@ -136,7 +147,7 @@ router.get('/fieldsetting', function (req, res) {
                         })
                     }, function (err) {
                         //処理成功時を記述
-                        res.json(votedata);
+                        res.json(teamdata);
                     })
                 }).catch(function (msg) {
                     //投票部門データが検索できなかった時にエラーページを表示
@@ -156,22 +167,41 @@ router.get('/fieldsetting', function (req, res) {
 
 router.get('/announcesetting', function(req, res) {
       if(req.session.user){
-            var eventid=req.query.eventid;
-            getEvent.getEvent(eventid).then(function (docs) {
-                getTeam.getTeam(eventid).then(function (docs){
-                    console.log(docs);
-                    res.render('announcesetting.ejs',{eventdata:docs});
-                }).catch(function(){
-                        res.render('confirmation.ejs',{msg:'チームが存在しません',url:'/eventlist'});
-                });
-            }).catch(function(){
-                res.render('confirmation.ejs',{msg:'イベントIDが存在しません',url:'/eventlist'});
-            });
+          if(req.query.eventid) {
+              var eventid = req.query.eventid;
+              getEvent.getEvent(eventid).then(function (eventdata) {
+                  var teamdata = [];
+                  async.eachSeries(eventdata[0].Order, function (order, callback) {
+                      getTeam.getTeamjson({Teamid: order}).then(function (team) {
+                          if (team.length > 0) {
+                              teamdata.push(team[0]);
+                          }
+                          callback();
+                      }).catch(function (msg) {
+                          res.render('errorconfirmation.ejs', {msg: msg, url: '/announcesetting?eventid=' + eventid});
+                      })
+                  }, function (err) {
+                      res.render('announcesetting.ejs', {eventdata: teamdata});
+                  });
+              }).catch(function () {
+                  res.render('errorconfirmation.ejs', {msg: 'イベントIDが存在しません', url: '/eventlist'});
+              });
+          }else{
+              res.render('errorconfirmation.ejs', {msg: 'イベントIDが存在しません', url: '/eventlist'});
+          }
       } else {
-          res.redirect('/eventlist');
+          res.redirect('/');
       }
 });
 
+router.post('/announcesetting', function(req, res) {
+
+    var announce = req.body.announce;
+
+    console.log(announce);
+
+    res.render('announcesetting.ejs');
+});
 
 
 module.exports = router;

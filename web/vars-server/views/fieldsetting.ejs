@@ -13,8 +13,11 @@
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Toggle -->
+    <link href="../public/css/bootstrap-toggle.css" rel="stylesheet">
+
     <!-- Custom CSS -->
-    <link href="../public/css/confirmation.css" rel="stylesheet">
+    <link href="../public/css/fieldsetting.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
     <link href="../public/css/footer.css" rel="stylesheet">
 
@@ -33,7 +36,38 @@
         <div class="row">
             <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
-                <div class="text-center">部門設定画面</div>
+                <div class="field">
+
+                    <div class="text-center">部門設定</div><br>
+                    <form method="POST" action="/eventcontrol/fieldsetting">
+
+                        <div class="form-group">
+                            <select class="form-control input-lg team-select" name="field" onchange="change_field(this)">
+                                <% for(var i = 1 ; i < 6; i++) { %>
+                                    <option value="<%=i%>">チーム<%=i%></option>
+                                <% } %>
+                            </select>
+                        </div>
+
+                        <div class="field-form">
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                                    <% for( var i = 1 ; i < 4 ; i++) { %>
+                                            部門<%= i %><br>
+                                    <% } %>
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 text-center">
+                                    <% for( var i = 1 ; i < 4 ; i++) { %>
+                                        <input checked data-toggle="toggle" data-size="small" type="checkbox"><br>
+                                    <% } %>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div><!-- field -->
 
             </div><!-- col -->
 
@@ -50,6 +84,12 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
+
+<!-- Toggle -->
+<script src="../public/js/bootstrap-toggle.js"></script>
+
+<!-- Change -->
+<script src="../public/js/change.js"></script>
 
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>

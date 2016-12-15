@@ -13,8 +13,11 @@
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Toggle -->
+    <link href="../public/css/bootstrap-toggle.css" rel="stylesheet">
+
     <!-- Custom CSS -->
-    <link href="../public/css/confirmation.css" rel="stylesheet">
+    <link href="../public/css/votesetting.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
     <link href="../public/css/footer.css" rel="stylesheet">
 
@@ -33,7 +36,111 @@
         <div class="row">
             <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
-                <div class="text-center">投票設定画面</div>
+                <div class="vote">
+
+                    <div class="panel panel-list panel-primary">
+
+                        <div class="panel-heading controls-title">部門設定</div>
+
+                        <div class="panel-body">
+
+                            <div class="top-margin">&nbsp;</div>
+                            <div class="text-left">< 部門追加 ></div><br>
+
+                            <form id="field" name="field" method="POST" action="/eventcontrol/votesetting/append">
+                                <table id="field-tbl" class="table alt-table-responsive table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">番号</th>
+                                        <th class="col-xs-7 col-sm-7 col-md-7 col-lg-7 text-center">部門名</th>
+                                        <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center" colspan="3">編集機能</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row"><div class="text-center"><span class="fieldnumber">1</span></div></th>
+                                        <td><input type="text" id="field1" name="fieldname" class="inputfield form-control" value="test1" readonly></td>
+                                        <td><div class="text-center"><input class="btn btn-primary edit-btn" type="button" id="editbtn-1" value="編集" onclick="editRow(this)"></div></td>
+                                        <td><div class="text-center"><input type="button" class="btn btn-success append-btn" value="追加" onclick="appendRow()"></div></td>
+                                        <td><div class="text-center"><input class="btn btn-warning delete-btn" type="button" id="deletebtn-1" value="削除" onclick="deleteRow(this)"></div></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="text-right"><input class="btn btn-info submit-btn" type="submit" value="追　加"></div>
+                            </form>
+
+                            <hr class="hr-field">
+
+                            <br><div class="text-left">< 部門変更 ></div><br>
+
+                            <form method="POST" action="/eventcontrol/votesetting/change">
+                                <table id="field-tbl" class="table alt-table-responsive table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">番号</th>
+                                        <th class="col-xs-7 col-sm-7 col-md-7 col-lg-7 text-center">部門名</th>
+                                        <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center" colspan="3">編集機能</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row"><div class="text-center"><span class="fieldnumber">1</span></div></th>
+                                        <td><input type="text" id="change1" name="fieldname" class="inputfield form-control" value="test1" readonly></td>
+                                        <td><div class="text-center"><input class="btn btn-primary edit-btn" type="button" id="changebtn-1" value="編集" onclick="changeRow(this)"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><div class="text-center"><span class="fieldnumber">2</span></div></th>
+                                        <td><input type="text" id="change2" name="fieldname" class="inputfield form-control" value="test2" readonly></td>
+                                        <td><div class="text-center"><input class="btn btn-primary edit-btn" type="button" id="changebtn-2" value="編集" onclick="changeRow(this)"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><div class="text-center"><span class="fieldnumber">3</span></div></th>
+                                        <td><input type="text" id="change3" name="fieldname" class="inputfield form-control" value="test3" readonly></td>
+                                        <td><div class="text-center"><input class="btn btn-primary edit-btn" type="button" id="changebtn-3" value="編集" onclick="changeRow(this)"></div></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="text-right"><input class="btn btn-success submit-btn" type="submit" value="変　更"></div>
+                            </form>
+
+                            <hr class="hr-field">
+
+                            <br><div class="text-left">< 部門削除 ></div><br>
+
+                            <form method="POST" action="/eventcontrol/votesetting/delete">
+                                <table id="field-tbl" class="table alt-table-responsive table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">番号</th>
+                                        <th class="col-xs-7 col-sm-7 col-md-7 col-lg-7 text-center">部門名</th>
+                                        <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center" colspan="3">編集機能</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row"><div class="text-center"><span class="fieldnumber">1</span></div></th>
+                                        <td>test1</td>
+                                        <td><div class="text-center"><input data-toggle="toggle" data-size="small" type="checkbox"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><div class="text-center"><span class="fieldnumber">2</span></div></th>
+                                        <td>test2</td>
+                                        <td><div class="text-center"><input data-toggle="toggle" data-size="small" type="checkbox"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><div class="text-center"><span class="fieldnumber">3</span></div></th>
+                                        <td>test3</td>
+                                        <td><div class="text-center"><input data-toggle="toggle" data-size="small" type="checkbox"></div></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="text-right"><input class="btn btn-warning submit-btn" type="submit" value="削　除"></div>
+                            </form>
+
+                        </div>
+                    </div><!-- panel -->
+
+                </div><!-- vote -->
 
             </div><!-- col -->
 
@@ -50,6 +157,12 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
+
+<!-- Toggle -->
+<script src="../public/js/bootstrap-toggle.js"></script>
+
+<!-- table control -->
+<script src="../public/js/tablecontrol.js"></script>
 
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>
