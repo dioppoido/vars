@@ -142,14 +142,14 @@ router.get('/announcesetting', function(req, res) {
                   async.eachSeries(eventdata[0].Order, function (order, callback) {
                       getTeam.getTeamjson({Teamid: order}).then(function (team) {
                           if (team.length > 0) {
-                              teamdata.push(team);
+                              teamdata.push(team[0]);
                           }
                           callback();
                       }).catch(function (msg) {
                           res.render('errorconfirmation.ejs', {msg: msg, url: '/announcesetting?eventid=' + eventid});
                       })
                   }, function (err) {
-                      res.render('announcesetting.ejs', {eventdata: eventdata});
+                      res.render('announcesetting.ejs', {eventdata: teamdata});
                   });
               }).catch(function () {
                   res.render('errorconfirmation.ejs', {msg: 'イベントIDが存在しません', url: '/eventlist'});
