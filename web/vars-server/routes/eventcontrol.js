@@ -74,6 +74,15 @@ router.get('/votesetting', function(req, res) {
     }
 });
 
+router.post('/votesetting', function(req, res) {
+
+    var field = req.body.fieldname;
+
+    console.log(field);
+
+    res.render('votesetting.ejs');
+});
+
 /**
  * チームの部門設定ページ
  * /eventcontrol/fieldsetting
@@ -140,6 +149,14 @@ router.get('/announcesetting', function(req, res) {
       }
 });
 
+router.post('/announcesetting', function(req, res) {
+
+    var announce = req.body.announce;
+
+    console.log(announce);
+
+    res.render('announcesetting.ejs');
+});
 
 
 module.exports = router;
