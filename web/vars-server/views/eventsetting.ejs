@@ -8,13 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title-->
-    <title>Eventsetting - VARS -</title>
+    <title>EventSetting - VARS -</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Date Picker -->
+    <link href="../public/css/datepicker.min.css" rel="stylesheet">
+
+    <!-- Toggle -->
+    <link href="../public/css/bootstrap-toggle.css" rel="stylesheet">
+
     <!-- Custom CSS -->
-    <link href="../public/css/confirmation.css" rel="stylesheet">
+    <link href="../public/css/eventsetting.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
     <link href="../public/css/footer.css" rel="stylesheet">
 
@@ -27,17 +33,159 @@
 
 <%- include('./header.ejs') %>
 
-<!-- 確認画面 -->
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
-                <div class="text-center">イベント設定画面</div>
+                <div class="eventsetting">
+
+                    <div class="event-title text-center"><i class="fa fa-plus-circle" aria-hidden="true"></i> イベント情報変更</div>
+
+                    <div class="setting-form">
+                        <form method="post" name="eventsetting" action="eventsetting" enctype="multipart/form-data" onsubmit="return date_confirm()">
+
+                            <div class="form-group">
+                              <label>イベント名 : </label>
+                              <input type="text" class="form-control input-lg event-input" name="eventname" placeholder="例)2016年合評会" required>
+                            </div>
+
+
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>開催日時 : </label>
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="datesstart" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required/>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>開催終了日時 : </label>
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="datesfinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>会場 : </label>
+                                <input type="text" class="form-control input-lg event-input" name="venue" placeholder="例）神戸電子専門学校 ソニックホール" required>
+                            </div>
+
+                            <div class="form-group">
+                              <label>イベント概要 : </label>
+                              <textarea class="form-control input-lg event-input" name="overview" placeholder="例)合評会です." required></textarea>
+                            </div>
+
+
+                            <div class="form-group">
+                              <label>代表者名(作成者) : </label>
+                              <input type="text" class="form-control input-lg event-input" name="displayname" value="<%= user %>" required>
+                            </div>
+
+                            <div class="form-group">
+                              <label>メールアドレス : </label>
+                              <input type="text" class="form-control input-lg event-input" name="address" value="<%= adress %>" required>
+                            </div>
+
+                            <div class="form-group">
+                              <label>分野 : </label>
+                              <select class="form-control input-lg event-input" name="field" required>
+                                  <% for(var i = 0 ; i < field.length; i++) { %>
+                                        <option value="<%=field[i].Fieldid%>"><%=field[i].Fieldname%></option>
+                                  <% } %>
+                              </select>
+                            </div>
+
+
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>参加チーム登録受付日時 : </label>
+
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="createstart" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly"  required />
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>参加チーム受付終了日時 : </label>
+
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="createfinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required />
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>投票開始日時 : </label>
+
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="votestart" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required />
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>投票終了日時 : </label>
+
+                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="votefinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required />
+
+                                </div>
+                            </div>
+
+                                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                    <div class="form-group">
+                                        <label>パスワード設定: </label>
+                                        <input checked data-toggle="toggle" data-size="small" type="checkbox"  data-toggle="button" name="passtoggle" onclick="change_pass_setting();">
+                                        <input type='password' id="passarea" class='form-control input-lg event-input pass-place-size' name="password" disabled="disabled"  maxlength='12' placeholder="4文字以上12文字以下で入力してください"/>
+                                    </div>
+                                </div>
+
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <label>サムネイル画像変更( .jpg .png .gifのみ ) : </label>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+                                <div class="form-group">
+                                    <label class="btn btn-primary file-btn">
+                                        ファイルを選択
+                                        <input type='file' id="thumbnail_file" name="thumbnail" accept="image/jpeg, image/gif, image/png" onchange="showFilename();">
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                <body onload="showFilename();"></body>
+                                <div id="file_name" class="name"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-success submit-btn">イベント情報変更</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <br>
+                        <form method="post" name="eventsetting" action="eventsetting" enctype="multipart/form-data" onsubmit="return date_confirm()" novalidate>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-danger submit-btn" novalidate>イベント削除</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+
+                </div>
+
 
             </div><!-- col -->
-
-
 
         </div><!-- row -->
     </div><!-- container -->
@@ -51,8 +199,24 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
 
+<!-- Show File Name -->
+<script src="../public/js/show.js"></script>
+
+<!-- Form　confirmation -->
+<script src="../public/js/form_confirmation"></script>
+
+<!-- Date Picker -->
+<script src="../public/js/datepicker.min.js"></script>
+<script src="../public/js/datepicker.ja.js"></script>
+
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>
+
+<!-- onChange -->
+<script src="../public/js/change_setting.js"></script>
+
+<!-- Toggle -->
+<script src="../public/js/bootstrap-toggle.js"></script>
 
 </body>
 </html>

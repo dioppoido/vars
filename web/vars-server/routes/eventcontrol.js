@@ -5,6 +5,7 @@ var deleteEvent = require("../app/js/event/deleteEvent");
 var deleteTeam = require("../app/js/team/deleteTeam");
 var getVote = require("../app/js/votes/getVote");
 var getTeam = require("../app/js/team/getTeam");
+var getField = require("../app/js/field/getField");
 var async = require('async');
 
 router.get('/', function(req, res) {
@@ -45,10 +46,17 @@ router.post('/', function(req, res) {
 router.get('/eventsetting', function(req, res) {
     if(req.session.user){
           var eventid=req.query.eventid;
-          getEvent.getEvent(eventid).then(function (docs){
+          getEvent.getEvent(eventid).then(function (docs){      //イベントが存在しているか確認
               console.log(docs);
-              res.render('eventsetting.ejs',{eventdata:docs});
-
+              getField.getField().then(function (field) {    //分野取得
+                  console.log("分野:" + field);
+                  res.render('eventsetting.ejs',{
+                      eventdata:docs,
+                      field : field,
+                      user: req.session.user.displayName,
+                      adress: req.session.user.address
+                  });
+              });
           }).catch(function(){
 
             res.render('confirmation.ejs',{msg:'イベントIDが存在しません',url:'/eventlist'});
