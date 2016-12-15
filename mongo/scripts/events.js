@@ -365,7 +365,8 @@ Voteperiod:{
     Votestart:"2016/1/25 9:00",
     Votefinish:"2016/1/25 15:00"
 },
-    Image:"public/images/goripic/heart.png"
+    Image:"public/images/goripic/heart.png",
+    Order: []
   });
   db.events.insert({
       Eventid:"14",
@@ -388,5 +389,31 @@ Voteperiod:{
           Votestart:"2017/12/14 9:00",
           Votefinish:"2017/12/14 15:00"
       },
-      Image:"public/images/goripic/dancegori.png"
+      Image:"public/images/goripic/dancegori.png",
+      Order: []
     });
+
+db.events.insert({
+    Eventid:"15",
+    Eventname:"平成27年度デジタルワークス",
+    Overview:"中間発表用テストデータ 去年のデジタルワークス",
+    Password:"",
+    Address:"test@example.com",
+    displayName:"test",
+    Fieldid:"it",
+    Venue:"神戸産業振興センター",
+    Holdperiod:{
+        Holdstart :"2016/2/14 9:00",
+        Holdfinish : "2017/2/14 17:00"
+    },
+    Createperiod:{
+        Createstart:"2016/9/10 12:00",
+        Createfinish:"2016/12/10 15:00"
+    },
+    Voteperiod:{
+        Votestart:"2016/12/10 9:00",
+        Votefinish:"2017/2/15 15:00"
+    },
+    Image:"public/images/goripic/dancegori.png",
+    Order: []
+});
