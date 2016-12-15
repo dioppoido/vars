@@ -28,7 +28,7 @@ body{
 
 /* Announce */
 .announce{
-    margin-top: 50px;
+    margin-top: 60px;
     font-size: 20px;
     font-weight:bold;
 }
@@ -38,6 +38,7 @@ body{
 .order li{
     text-align: center;
     background: white;
+    margin-left: 40px;
     padding: 10px;
     font-size: 15px;
 }
@@ -49,6 +50,7 @@ body{
 #jquery-ui-sortable li {
     background: white;
     padding: 10px;
+    margin-left: 0px;
     font-size: 15px;
     font-weight: bold;
     cursor: move;
@@ -57,17 +59,133 @@ body{
     margin-top: 30px;
     font-size: 20px;
 }
+.list-width{
+  width:95%;
+}
+.announce-title{
+  font-size: 30px;
+}
+.announce-denger{
+  margin-left:20px;
+  margin-top:20px;
+  font-size: 16px;
+  font-weight: normal;
+  /*padding:10px;*/
+}
+.announce-btn{
+  padding:10px;
+  margin-bottom: 20px;
+}
+.panel-list{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    border-color: #62c2e4;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.footer-bihind{
+  margin-bottom: 40px;
+}
 
 @media screen and (min-width: 768px) and (max-width: 979px) {
     /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
-
+    .panel-list{
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 18px;
+        border-color: #62c2e4;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
     /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .panel-list{
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 18px;
+        border-color: #62c2e4;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
 }
 
 @media screen and (max-width: 479px) {
+  /* Announce */
+  .announce{
+      margin-top: 60px;
+      font-size: 20px;
+      font-weight:bold;
+  }
+  .order{
+      margin-top: 29px;
+  }
+  .order li{
+      text-align: center;
+      background: white;
+      margin-left: 0px;
+      padding: 10px;
+      font-size: 11px;
+  }
+  #jquery-ui-sortable {
+      margin-top: 29px;
+      padding: 0;
+      width: 100%;
+  }
+  #jquery-ui-sortable li {
+      background: white;
+      width: 100%;
+      padding: 10px;
+      margin-left: 0px;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: move;
+  }
+  #submitSortable{
+      margin-top: 30px;
+      font-size: 20px;
+  }
+  .list-width{
+    width:95%;
+  }
+  .announce-title{
+    font-size: 24px;
+  }
+  .announce-denger{
+    /*margin-left:20px;*/
+    /*margin-top:20px;*/
+    font-size: 11px;
+    font-weight: normal;
+    /*padding:10px;*/
+  }
+  .announce-btn{
+    padding:10px;
+    margin-bottom: 20px;
+  }
+  .panel-list{
+      width: 95%;
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-left: 10px;
+      margin-bottom: 30px;
+      font-size: 15px;
+      border-color: #62c2e4;
+      -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  }
+
+  .footer-bihind{
+    margin-bottom: 40px;
+  }
 
 }
 

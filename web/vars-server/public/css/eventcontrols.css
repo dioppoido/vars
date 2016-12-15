@@ -33,10 +33,10 @@ body{
   .eventcontrols{
       margin-top: 60px;
       font-size: 30px;
-      /*font-weight:bold;*/
   }
   .controls-title{
     font-size: 30px;
+    font-weight:bold;
   }
 
   .top-margin{
@@ -79,7 +79,7 @@ body{
   }
 
   .footer-bihind{
-    margin-bottom: 25px;
+    margin-bottom: 55px;
   }
 
 .eventcontrols a{
