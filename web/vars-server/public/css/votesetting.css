@@ -26,7 +26,7 @@ body{
 
 /* Vote */
 .vote{
-    margin-top: 50px;
+    margin-top: 60px;
     margin-bottom: 50px;
     font-size: 20px;
     font-weight:bold;
@@ -50,18 +50,66 @@ body{
     margin: 0 auto;
     margin-bottom: 10px;
 }
+.panel-list{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    border-color: #62c2e4;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+.footer-bihind{
+  margin-bottom: 55px;
+}
 
 @media screen and (min-width: 768px) and (max-width: 979px) {
     /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .panel-list{
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-bottom: 30px;
+        font-size: 15px;
+        border-color: #62c2e4;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
 
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
     /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .panel-list{
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-bottom: 30px;
+        font-size: 15px;
+        border-color: #62c2e4;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
 }
 
 @media screen and (max-width: 479px) {
-
+  .controls-title{
+      font-size: 24px;
+  }
+  .panel-list{
+      width: 95%;
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-left: 10px;
+      margin-bottom: 30px;
+      font-size: 15px;
+      border-color: #62c2e4;
+      -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  }
 }
 
 /* !Vote */
