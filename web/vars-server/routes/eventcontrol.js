@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var getEvent = require("../app/js/event/getEvent");
 var deleteEvent = require("../app/js/event/deleteEvent");
+var updateEvent = require("../app/js/event/updateEvent");
 var deleteTeam = require("../app/js/team/deleteTeam");
 var getVote = require("../app/js/votes/getVote");
 var getTeam = require("../app/js/team/getTeam");
@@ -56,6 +57,37 @@ router.get('/eventsetting', function(req, res) {
         });
     } else {
         res.redirect('/eventlist');
+    }
+});
+
+router.post('/eventsetting', function(req, res) {
+    if(req.session.user){
+      var eventdata={
+        Eventname:req.body.eventname,
+        Overview:req.body.overview,
+        Password:req.body.password,
+        Address:req.body.address,
+        displayName:req.body.displayname,
+        Fieldid:req.body.fielid,
+        Venue:req.body.venue,
+        Holdperiod:{
+          Holdstart:req.body.holdstart,
+          Holdfinish:req.body.holdfinish
+        },
+        Createperiod:{
+          Createstart:req.body.createstart,
+          Createfinish:req.body.createfinish
+        },
+        Voteperiod: {
+            Votestart:req.body.votestart,
+            Votefinish:req.body.votefinish
+        },
+
+      }
+      updateEvent.updateEvent({Eventid:req.body.eventid}, {$set:{eventdata}})
+
+    } else {
+        res.redirect('/');
     }
 });
 
