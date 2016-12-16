@@ -57,9 +57,10 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+
                                     <tr>
                                         <th scope="row"><div class="text-center"><span class="fieldnumber">1</span></div></th>
-                                        <td><input type="text" id="field1" name="fieldname" class="inputfield form-control" value="test1" readonly></td>
+                                        <td><input type="text" id="field1" name="votename" class="inputfield form-control" value="" readonly></td>
                                         <td><div class="text-center"><input class="btn btn-primary edit-btn" type="button" id="editbtn-1" value="編集" onclick="editRow(this)"></div></td>
                                         <td><div class="text-center"><input type="button" class="btn btn-success append-btn" value="追加" onclick="appendRow()"></div></td>
                                         <td><div class="text-center"><input class="btn btn-warning delete-btn" type="button" id="deletebtn-1" value="削除" onclick="deleteRow(this)"></div></td>
@@ -83,21 +84,14 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <%for(var i=0;i<vote.length;i++){%>
                                     <tr>
-                                        <th scope="row"><div class="text-center"><span class="fieldnumber">1</span></div></th>
-                                        <td><input type="text" id="change1" name="fieldname" class="inputfield form-control" value="test1" readonly></td>
-                                        <td><div class="text-center"><input class="btn btn-primary edit-btn" type="button" id="changebtn-1" value="編集" onclick="changeRow(this)"></div></td>
+                                        <th scope="row"><div class="text-center"><span class="fieldnumber"><%=i+1%></span></div></th>
+                                        <td><input type="text" id="change<%=i+1%>" name="fieldname" class="inputfield form-control" value="<%=vote[i].Votename%>" readonly></td>
+                                        <input type="hidden" name="voteid" value="<%=vote[i].Voteid%>">
+                                        <td><div class="text-center"><input class="btn btn-primary edit-btn" type="button" id="changebtn-<%=i+1%>" value="編集" onclick="changeRow(this)"></div></td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row"><div class="text-center"><span class="fieldnumber">2</span></div></th>
-                                        <td><input type="text" id="change2" name="fieldname" class="inputfield form-control" value="test2" readonly></td>
-                                        <td><div class="text-center"><input class="btn btn-primary edit-btn" type="button" id="changebtn-2" value="編集" onclick="changeRow(this)"></div></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><div class="text-center"><span class="fieldnumber">3</span></div></th>
-                                        <td><input type="text" id="change3" name="fieldname" class="inputfield form-control" value="test3" readonly></td>
-                                        <td><div class="text-center"><input class="btn btn-primary edit-btn" type="button" id="changebtn-3" value="編集" onclick="changeRow(this)"></div></td>
-                                    </tr>
+                                    <%}%>
                                     </tbody>
                                 </table>
                                 <div class="text-right"><input class="btn btn-success submit-btn" type="submit" value="変　更"></div>
@@ -117,21 +111,13 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <%for(var i=0;i<vote.length;i++){%>
                                     <tr>
-                                        <th scope="row"><div class="text-center"><span class="fieldnumber">1</span></div></th>
-                                        <td>test1</td>
-                                        <td><div class="text-center"><input data-toggle="toggle" data-size="small" type="checkbox"></div></td>
+                                        <th scope="row"><div class="text-center"><span class="fieldnumber"><%=i+1%></span></div></th>
+                                        <td><%=vote[i].Votename%></td>
+                                        <td><div class="text-center"><input data-toggle="toggle" name="voteid" value="<%=vote[i].Voteid%>" data-size="small" type="checkbox"></div></td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row"><div class="text-center"><span class="fieldnumber">2</span></div></th>
-                                        <td>test2</td>
-                                        <td><div class="text-center"><input data-toggle="toggle" data-size="small" type="checkbox"></div></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><div class="text-center"><span class="fieldnumber">3</span></div></th>
-                                        <td>test3</td>
-                                        <td><div class="text-center"><input data-toggle="toggle" data-size="small" type="checkbox"></div></td>
-                                    </tr>
+                                    <%}%>
                                     </tbody>
                                 </table>
                                 <div class="text-right"><input class="btn btn-warning submit-btn" type="submit" value="削　除"></div>
