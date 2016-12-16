@@ -29,43 +29,108 @@
 <body>
 
 <%- include('./header.ejs') %>
-
 <!-- 確認画面 -->
 <section>
     <div class="container">
         <div class="row">
             <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-
                 <div class="field">
-
-                    <div class="text-center">部門設定</div><br>
-                    <form method="POST" action="/eventcontrol/fieldsetting">
-
-                        <div class="form-group">
-                            <select class="form-control input-lg team-select" name="field" onchange="change_field(this)">
-                                <% for(var i = 1 ; i < 6; i++) { %>
-                                    <option value="<%=i%>">チーム<%=i%></option>
-                                <% } %>
-                            </select>
+                    <div class="panel panel-list panel-primary">
+                        <div class="panel-heading">
+                            <div class="filedsetting-title">部門設定</div>
                         </div>
 
-                        <div class="field-form">
-                            <div class="row">
-                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
-                                    <% for( var i = 1 ; i < 4 ; i++) { %>
-                                            部門<%= i %><br>
-                                    <% } %>
-                                </div>
-                                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 text-center">
-                                    <% for( var i = 1 ; i < 4 ; i++) { %>
-                                        <input checked data-toggle="toggle" data-size="small" type="checkbox"><br>
-                                    <% } %>
-
-                                </div>
+                    <!-- チーム部門確認 -->
+                    <div class="panel-group" id="accordion">
+                        <div class="according-width">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title accordion-toggle">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#fieldConfirmation" class="collapsed">参加部門チーム確認</a>
+                              </h4>
                             </div>
+                          </div>
                         </div>
+                    </div>
 
-                    </form>
+                    <div id="fieldConfirmation" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 text-center">
+                              <div class="field-form">
+
+                                <div class="form-group">
+                                  <select class="form-control input-lg team-select" name="field" onchange="change_field(this)">
+                                    <% for(var i = 1 ; i < 6; i++) { %>
+                                      <option value="<%=i%>">部門<%=i%></option>
+                                      <% } %>
+                                  </select>
+                                </div>
+
+                                <div class="filedsetting-font text-right">参加チーム数３</div>
+
+                                <div class="team-line text-left">Aチーム</div>
+                                <div class="team-line text-left">Bチーム</div>
+                                <div class="team-line text-left">Cチーム</div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <!-- チーム部門選択 -->
+                    <div class="panel-group" id="accordion">
+                        <div class="according-width">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title accordion-toggle">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#fieldsetting" class="collapsed">参加部門チーム編集</a>
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="fieldsetting" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form method="POST" action="/eventcontrol/fieldsetting">
+                              <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 text-center">
+
+                                  <div class="field-form">
+
+                                    <div class="form-group">
+
+                                      <select class="form-control input-lg team-select" name="field" onchange="change_field(this)">
+                                        <% for(var i = 1 ; i < 6; i++) { %>
+                                          <option value="<%=i%>">チーム<%=i%></option>
+                                          <% } %>
+                                      </select>
+
+                                    </div>
+
+                                    <% for( var i = 1 ; i < 4 ; i++) { %>
+                                      <div class="panel-forms">
+                                              <div class="panel-fonts">
+                                                <div class="text-left">部門<%= i %></div>
+                                              <input checked data-toggle="toggle" data-size="normal" type="checkbox"><br>
+                                            </div>
+                                      </div>
+                                    <% } %>
+                                    <input type="submit" class="btn btn-success btn-size text-right" value="登録">
+                                  </div>
+                                </div>
+                              </div>
+                          </form>
+                      </div><!-- panel-body -->
+
+                  <!-- </div> -->
+
+              </div>
+
+                  </div><!--panel-list -->
 
                 </div><!-- field -->
 
@@ -74,6 +139,7 @@
 
 
         </div><!-- row -->
+        <div class="footer-bihind"> </div>
     </div><!-- container -->
 </section>
 
