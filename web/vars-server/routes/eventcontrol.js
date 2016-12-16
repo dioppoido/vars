@@ -5,6 +5,7 @@ var deleteEvent = require("../app/js/event/deleteEvent");
 var deleteTeam = require("../app/js/team/deleteTeam");
 var getVote = require("../app/js/votes/getVote");
 var getTeam = require("../app/js/team/getTeam");
+var updateEvent = require("../app/js/event/updateEvent");
 var async = require('async');
 
 router.get('/', function(req, res) {
@@ -146,7 +147,7 @@ router.get('/announcesetting', function(req, res) {
                           }
                           callback();
                       }).catch(function (msg) {
-                          res.render('errorconfirmation.ejs', {msg: msg, url: '/announcesetting?eventid=' + eventid});
+                          res.render('errorconfirmation.ejs', {msg: msg, url: '/eventcontrol/announcesetting?eventid=' + eventid});
                       })
                   }, function (err) {
                       res.render('announcesetting.ejs', {eventdata: eventdata});
@@ -163,12 +164,13 @@ router.get('/announcesetting', function(req, res) {
 });
 
 router.post('/announcesetting', function(req, res) {
-
     var announce = req.body.announce;
+    announce=announce.split(',');
+    var eventid =req.body.eventid;
+    console.log("イベントID" + req.body.eventid);
+    updateEvent.updateEvent({Eventid:eventid},{$set:{Order:announce}});
 
-    console.log(announce);
-
-    res.render('announcesetting.ejs');
+    res.render('confirmation.ejs',{msg: '表示順を変更しました。', url:'/eventcontrol/announcesetting?eventid='+eventid});
 });
 
 
