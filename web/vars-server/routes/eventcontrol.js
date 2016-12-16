@@ -7,6 +7,7 @@ var deleteTeam = require("../app/js/team/deleteTeam");
 var getVote = require("../app/js/votes/getVote");
 var getTeam = require("../app/js/team/getTeam");
 var getField = require("../app/js/field/getField");
+var updateEvent = require("../app/js/event/updateEvent");
 var async = require('async');
 
 router.get('/', function(req, res) {
@@ -186,8 +187,10 @@ router.get('/announcesetting', function(req, res) {
                               teamdata.push(team[0]);
                           }
                           callback();
-                      }).catch(function () {
-                          res.render('errorconfirmation.ejs', {msg: "チームが存在しません", url: '/announcesetting?eventid=' + eventid});
+
+                      }).catch(function (msg) {
+                          res.render('errorconfirmation.ejs', {msg: msg, url: '/eventcontrol/announcesetting?eventid=' + eventid});
+
                       })
                   }, function (err) {
                       res.render('announcesetting.ejs', {eventdata: teamdata});
@@ -205,12 +208,12 @@ router.get('/announcesetting', function(req, res) {
 });
 
 router.post('/announcesetting', function(req, res) {
-
     var announce = req.body.announce;
+    announce=announce.split(',');
+    var eventid =req.body.eventid;
+    updateEvent.updateEvent({Eventid:eventid},{$set:{Order:announce}});
 
-    console.log(announce);
-
-    res.render('announcesetting.ejs');
+    res.render('confirmation.ejs',{msg: '表示順を変更しました。', url:'/eventcontrol/announcesetting?eventid='+eventid});
 });
 
 
