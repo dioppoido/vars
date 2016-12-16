@@ -155,7 +155,8 @@ router.get('/fieldsetting', function (req, res) {
                         })
                     }, function (err) {
                         //処理成功時を記述
-                        res.json(teamdata);
+                        // res.json(teamdata);
+                        res.render('fieldsetting.ejs',{eventdata:teamdata});
                     })
                 }).catch(function (msg) {
                     //投票部門データが検索できなかった時にエラーページを表示
@@ -185,8 +186,8 @@ router.get('/announcesetting', function(req, res) {
                               teamdata.push(team[0]);
                           }
                           callback();
-                      }).catch(function (msg) {
-                          res.render('errorconfirmation.ejs', {msg: msg, url: '/announcesetting?eventid=' + eventid});
+                      }).catch(function () {
+                          res.render('errorconfirmation.ejs', {msg: "チームが存在しません", url: '/announcesetting?eventid=' + eventid});
                       })
                   }, function (err) {
                       res.render('announcesetting.ejs', {eventdata: teamdata});
@@ -198,6 +199,7 @@ router.get('/announcesetting', function(req, res) {
               res.render('errorconfirmation.ejs', {msg: 'イベントIDが存在しません', url: '/eventlist'});
           }
       } else {
+        console.log("1234567");
           res.redirect('/');
       }
 });
