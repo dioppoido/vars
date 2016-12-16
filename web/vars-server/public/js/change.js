@@ -1,23 +1,19 @@
-function change_pass(){
+/* eventcreate eventsetting ejs*/
+function change_pass(obj){
 
-    var button = document.forms.eventcreate.passbutton;
-    var status  = document.forms.eventcreate.passarea;
+    var status = obj.checked;
+    var formname = obj.parentNode.parentNode.parentNode.parentNode.name;
+    var passarea = document.forms[formname].passarea;
 
-    if(status.disabled === true){
-        button.innerHTML = "パスワード設定OFF";
-        button.style.backgroundColor = '#337ab7';
-        button.style.borderColor = '#2e6da4';
-        button.style.color = 'white';
+    if(status === true){
         $("#passarea").prop('disabled', false);
-    }else if(status.disabled === false){
-        button.innerHTML = "パスワード設定ON";
-        button.style.backgroundColor = 'blue';
-        button.style.color = 'white';
-        status.value = "";
+    }else if(status === false){
         $("#passarea").prop('disabled', true);
     }
+
 }
 
+/* fieldsetting.ejs */
 function change_field(obj){
     
     var idx = obj.selectedIndex;

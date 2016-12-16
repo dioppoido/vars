@@ -43,7 +43,7 @@
                     <div class="event-title text-center"><i class="fa fa-plus-circle" aria-hidden="true"></i> イベント情報変更</div>
 
                     <div class="setting-form">
-                        <form method="post" name="eventsetting" action="eventsetting" enctype="multipart/form-data" onsubmit="return date_confirm()">
+                        <form method="post" name="eventsetting" action="/eventcontrol/eventsetting" enctype="multipart/form-data" onsubmit="return date_confirm()">
 
                             <div class="form-group">
                               <label>イベント名 : </label>
@@ -132,14 +132,13 @@
                                 </div>
                             </div>
 
-                                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                                    <div class="form-group">
-                                        <label>パスワード設定: </label>
-                                        <input checked data-toggle="toggle" data-size="small" type="checkbox"  data-toggle="button" name="passtoggle" onclick="change_pass_setting();">
-                                        <input type='password' id="passarea" class='form-control input-lg event-input pass-place-size' name="password" disabled="disabled"  maxlength='12' placeholder="4文字以上12文字以下で入力してください"/>
-                                    </div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                <div class="form-group">
+                                    <label>パスワード設定: </label>
+                                    <input data-toggle="toggle" data-size="small" type="checkbox"  data-toggle="button" id="passtoggle" name="passflag" onchange="change_pass(this);">
+                                    <input type='password' id="passarea" class='form-control input-lg event-input' name="password" disabled="disabled"  maxlength='12' placeholder="4文字以上12文字以下で入力してください"/>
                                 </div>
-
+                            </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <label>サムネイル画像変更( .jpg .png .gifのみ ) : </label>
@@ -173,13 +172,12 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-danger submit-btn" novalidate>イベント削除</button>
+                                        <button type="submit" class="btn btn-danger submit-btn">イベント削除</button>
                                     </div>
                                 </div>
                             </div>
-
-
                         </form>
+
                     </div>
 
                 </div>
@@ -203,7 +201,7 @@
 <script src="../public/js/show.js"></script>
 
 <!-- Form　confirmation -->
-<script src="../public/js/form_confirmation"></script>
+<script src="../public/js/form_confirmation.js"></script>
 
 <!-- Date Picker -->
 <script src="../public/js/datepicker.min.js"></script>
@@ -213,7 +211,7 @@
 <script src="../public/js/footerFixed.js"></script>
 
 <!-- onChange -->
-<script src="../public/js/change_setting.js"></script>
+<script src="../public/js/change.js"></script>
 
 <!-- Toggle -->
 <script src="../public/js/bootstrap-toggle.js"></script>

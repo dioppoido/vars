@@ -88,6 +88,12 @@ input[type=file]{
     font-size: 20px;
     font-weight: bold;
 }
+#passarea{
+    margin-top: 20px;
+}
+input. #passtoggle{
+    margin-left: 20px;
+}
 @media screen and (min-width: 768px) and (max-width: 979px) {
     /* 768px - 979px用（タブレット用）の記述 */
     .event-title{
@@ -125,10 +131,6 @@ input[type=file]{
         border-radius: 10px;
         -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-    }
-
-    .pass-place-size{
-      font-size:14px;
     }
 
 }

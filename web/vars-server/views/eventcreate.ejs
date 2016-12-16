@@ -16,6 +16,9 @@
     <!-- Date Picker -->
     <link href="../public/css/datepicker.min.css" rel="stylesheet">
 
+    <!-- Toggle -->
+    <link href="../public/css/bootstrap-toggle.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="../public/css/eventcreate.css" rel="stylesheet">
     <link href="../public/css/header.css" rel="stylesheet">
@@ -129,17 +132,11 @@
                                 </div>
                             </div>
 
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                <div class="form-group">
-                                    <button type="button" class="btn pass-btn" id="passbutton" onclick="change_pass();">パスワード設定ON</button>
-                                </div>
-                            </div>
-
-
                             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                                 <div class="form-group">
-                                    <input type='password' id="passarea" class='form-control input-lg event-input pass-place-size' name="password" disabled="disabled"  maxlength='12' placeholder="4文字以上12文字以下で入力してください"/>
-
+                                    <label>パスワード設定: </label>
+                                    <input data-toggle="toggle" data-size="small" type="checkbox"  data-toggle="button" id="passtoggle" name="passflag" onchange="change_pass(this);">
+                                    <input type='password' id="passarea" class='form-control input-lg event-input' name="password" disabled="disabled"  maxlength='12' placeholder="4文字以上12文字以下で入力してください"/>
                                 </div>
                             </div>
 
@@ -193,7 +190,7 @@
 <script src="../public/js/show.js"></script>
 
 <!-- Form　confirmation -->
-<script src="../public/js/form_confirmation"></script>
+<script src="../public/js/form_confirmation.js"></script>
 
 <!-- Date Picker -->
 <script src="../public/js/datepicker.min.js"></script>
@@ -204,6 +201,9 @@
 
 <!-- onChange -->
 <script src="../public/js/change.js"></script>
+
+<!-- Toggle -->
+<script src="../public/js/bootstrap-toggle.js"></script>
 
 </body>
 </html>
