@@ -3,6 +3,7 @@ var router = express.Router();
 var getEvent = require("../app/js/event/getEvent");
 var deleteEvent = require("../app/js/event/deleteEvent");
 var updateEvent = require("../app/js/event/updateEvent");
+var updateVote = require("../app/js/votes/updateVote");
 var deleteTeam = require("../app/js/team/deleteTeam");
 var getVote = require("../app/js/votes/getVote");
 var getTeam = require("../app/js/team/getTeam");
@@ -49,7 +50,7 @@ router.get('/eventsetting', function(req, res) {
     if(req.session.user){
           var eventid=req.query.eventid;
           getEvent.getEvent(eventid).then(function (docs){      //イベントが存在しているか確認
-              console.log(docs);
+              console.log("eventdata:"+docs);
               getField.getField().then(function (field) {    //分野取得
                   console.log("分野:" + field);
                   res.render('eventsetting.ejs',{
@@ -122,6 +123,27 @@ router.post('/votesetting', function(req, res) {
     console.log(field);
 
     res.render('votesetting.ejs');
+});
+
+router.post('/votesetting/change', function(req, res) {
+  if(req.session.user){
+    var votename = req.body.fieldname;
+    var voteid = req.body.voteid;
+    var eventid = req.body.eventid;
+    if(typeof(votename)==="object"){
+      for(var i=0; i<votename.length; i++){
+        updateVote.updateVote({Voteid:voteid[i]}, {$set:{Votename:votename[i]}});
+        res.render('confirmation.ejs',{msg: '投票部門名を変更しました。', url:'/eventcontrol/votesetting?eventid='+eventid});
+      }
+    }else{
+      updateVote.updateVote({Voteid:voteid[i]}, {$set:{Votename:votename[i]}});
+      res.render('confirmation.ejs',{msg: '投票部門名を変更しました。', url:'/eventcontrol/votesetting?eventid='+eventid});
+    }
+
+  }else{
+    res.redirect("/");
+  }
+
 });
 
 /**
