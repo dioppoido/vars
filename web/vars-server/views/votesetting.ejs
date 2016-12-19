@@ -75,6 +75,7 @@
                             <br><div class="text-left">< 部門変更 ></div><br>
 
                             <form method="POST" action="/eventcontrol/votesetting/change">
+                              <input type="hidden" name="eventid" value="<%=eventdata[0].Eventid%>">
                                 <table id="field-tbl" class="table alt-table-responsive table-bordered">
                                     <thead>
                                     <tr>
