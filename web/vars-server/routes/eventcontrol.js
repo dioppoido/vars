@@ -126,81 +126,83 @@ router.get('/votesetting', function(req, res) {
     }
 });
 
-router.post('/votesetting', function(req, res) {
-
-    var field = req.body.fieldname;
-
-    console.log(field);
-
-    res.render('votesetting.ejs');
-});
-
-router.post('/votesetting/change', function(req, res) {
-  if(req.session.user){
-    var votename = req.body.fieldname;
-    var voteid = req.body.voteid;
-    var eventid = req.body.eventid;
-    if(typeof(votename)==="object"){
-      for(var i=0; i<votename.length; i++){
-        updateVote.updateVote({Voteid:voteid[i]}, {$set:{Votename:votename[i]}});
-        res.render('confirmation.ejs',{msg: '投票部門名を変更しました。', url:'/eventcontrol/votesetting?eventid='+eventid});
-      }
-    }else{
-      updateVote.updateVote({Voteid:voteid[i]}, {$set:{Votename:votename[i]}});
-      res.render('confirmation.ejs',{msg: '投票部門名を変更しました。', url:'/eventcontrol/votesetting?eventid='+eventid});
-    }
-
-  }else{
-    res.redirect("/");
-  }
-
-});
-
-router.post('/votesetting/append', function(req, res) {
-    if(req.session.user){
-        Votename=req.body.fieldname;
-        Eventid=req.body.eventid;
-        if(typeof(Votename)==="object") {
-            for (var i = 0; i < Votename.length; i++) {
-                var Votedata={
-                    Votename:Votename[i],
-                    Voteid:randomByte.randomByte(),
-                    Eventid:Eventid
-                }; 
+router.post('/votesetting', function (req, res) {
+    if (req.session.user) {
+        var mode = req.query.mode;
+        //追加処理（作成者：土居）
+        if (mode === "append") {
+            Votename = req.body.fieldname;
+            Eventid = req.body.eventid;
+            if (typeof(Votename) === "object") {
+                for (var i = 0; i < Votename.length; i++) {
+                    var Votedata = {
+                        Votename: Votename[i],
+                        Voteid: randomByte.randomByte(),
+                        Eventid: Eventid
+                    };
+                    insertVote.insertVote(Votedata);
+                }
+                res.render('confirmation.ejs', {
+                    msg: '部門データを登録しました。',
+                    url: '/eventcontrol/votesetting?eventid=' + Eventid
+                });
+            } else {
+                var Votedata = {
+                    Votename: Votename,
+                    Voteid: randomByte.randomByte(),
+                    Eventid: Eventid
+                };
                 insertVote.insertVote(Votedata);
-                res.render('confirmation.ejs',{msg:'部門データを登録しました。',url:'/eventcontrol/votesetting?eventid='+Eventid});
+                res.render('confirmation.ejs', {
+                    msg: '部門データを登録しました。',
+                    url: '/eventcontrol/votesetting?eventid=' + Eventid
+                });
             }
-        } else {
-            var Votedata = {
-                Votename: Votename,
-                Voteid: randomByte.randomByte(),
-                Eventid: Eventid
-            };
-            insertVote.insertVote(Votedata);
-            res.render('confirmation.ejs', {msg: '部門データを登録しました。', url: '/eventcontrol/votesetting?eventid=' + Eventid});
+            //変更処理（作成者：川西）
+        } else if (mode === "change") {
+            var votename = req.body.fieldname;
+            var voteid = req.body.voteid;
+            var eventid = req.body.eventid;
+            if (typeof(votename) === "object") {
+                for (var i = 0; i < votename.length; i++) {
+                    updateVote.updateVote({Voteid: voteid[i]}, {$set: {Votename: votename[i]}});
+                    res.render('confirmation.ejs', {
+                        msg: '投票部門名を変更しました。',
+                        url: '/eventcontrol/votesetting?eventid=' + eventid
+                    });
+                }
+            } else {
+                updateVote.updateVote({Voteid: voteid[i]}, {$set: {Votename: votename[i]}});
+                res.render('confirmation.ejs', {
+                    msg: '投票部門名を変更しました。',
+                    url: '/eventcontrol/votesetting?eventid=' + eventid
+                });
+            }
+            //削除処理（作成者：土居）
+        } else if (mode === "delete") {
+            voteid = req.body.voteid;
+            eventid = req.body.eventid;
+            if (typeof(voteid) === "object") {
+                for (var i = 0; i < voteid.length; i++) {
+                    deleteVote.deleteVote({Voteid: voteid[i]});
+                    res.render('confirmation.ejs', {
+                        msg: '部門データを削除しました。',
+                        url: '/eventcontrol/votesetting?eventid=' + eventid
+                    });
+                }
+            } else {
+                deleteVote.deleteVote({Voteid: voteid});
+                res.render('confirmation.ejs', {
+                    msg: '部門データを削除しました。',
+                    url: '/eventcontrol/votesetting?eventid=' + eventid
+                });
+            }
         }
-    }else{
-        res.redirect('/');
+    } else {
+        res.redirect('/')
     }
 });
 
-router.post('/votesetting/delete', function(req, res) {
-    if(req.session.user){
-        voteid=req.body.voteid;
-        eventid=req.body.eventid;
-        if(typeof(voteid)==="object") {
-            for (var i = 0; i < voteid.length; i++) {
-                deleteVote.deleteVote({Voteid:voteid[i]});
-                res.render('confirmation.ejs',{msg:'部門データを削除しました。',url:'/eventcontrol/votesetting?eventid='+eventid});
-            }
-        } else {
-            deleteVote.deleteVote({Voteid:voteid});
-            res.render('confirmation.ejs', {msg: '部門データを削除しました。', url: '/eventcontrol/votesetting?eventid=' + eventid});
-        }
-    }else{
-        res.redirect('/');
-    }
-});
 
 /**
  * チームの部門設定ページ

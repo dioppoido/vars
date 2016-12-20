@@ -47,7 +47,7 @@
                             <div class="top-margin">&nbsp;</div>
                             <div class="text-left">< 部門追加 ></div><br>
 
-                            <form id="field" name="field" method="POST" action="/eventcontrol/votesetting/append">
+                            <form id="field" name="field" method="POST" action="/eventcontrol/votesetting?eventid=<%=eventdata[0].Eventid%>&mode=append">
                                 <input type="hidden" name="eventid" value="<%=eventdata[0].Eventid%>">
                                 <table id="field-tbl" class="table alt-table-responsive table-bordered">
                                     <thead>
@@ -75,7 +75,7 @@
 
                             <br><div class="text-left">< 部門変更 ></div><br>
 
-                            <form method="POST" action="/eventcontrol/votesetting/change">
+                            <form method="POST" action="/eventcontrol/votesetting?eventid=<%=eventdata[0].Eventid%>&mode=change">
                               <input type="hidden" name="eventid" value="<%=eventdata[0].Eventid%>">
                                 <table id="field-tbl" class="table alt-table-responsive table-bordered">
                                     <thead>
@@ -103,7 +103,7 @@
 
                             <br><div class="text-left">< 部門削除 ></div><br>
 
-                            <form method="POST" action="/eventcontrol/votesetting/delete">
+                            <form method="POST" action="/eventcontrol/votesetting?eventid=<%=eventdata[0].Eventid%>&mode=delete">
                                 <input type="hidden" name="eventid" value="<%=eventdata[0].Eventid%>">
                                 <table id="field-tbl" class="table alt-table-responsive table-bordered">
                                     <thead>
