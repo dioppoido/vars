@@ -11,7 +11,7 @@ db.teams.insert({
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1','voteid2',"1","2"],
     Order       :1
 });
@@ -24,7 +24,7 @@ db.teams.insert({
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1','voteid2',"2","3"],
     Order       :2
 });
@@ -37,7 +37,7 @@ db.teams.insert({
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1','voteid2',"1","3"],
     Order       :3
 });
@@ -63,7 +63,7 @@ db.teams.insert({
     displayName :"土井",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1','voteid2',"1"],
     Order       :5
 });
@@ -76,7 +76,7 @@ db.teams.insert({
     Overview   :"概要",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1','voteid2',"4","3"],
     Order       :6
 });
@@ -90,7 +90,7 @@ db.teams.insert({
     Overview   :"概要",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1','voteid2',"5","8"],
     Order       :1
 });
@@ -103,7 +103,7 @@ db.teams.insert({
     Overview   :"概要",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1','voteid2',"5","8"],
     Order       :2
 });
@@ -116,7 +116,7 @@ db.teams.insert({
     Overview   :"概要",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1','voteid2',"6","8"],
     Order       :3
 });
@@ -129,7 +129,7 @@ db.teams.insert({
     Overview   :"概要",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1','voteid2',"6","8"],
     Order       :4
 });
@@ -142,7 +142,7 @@ db.teams.insert({
     Overview   :"概要",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1','voteid2',"6","8"],
     Order       :5
 });
@@ -155,7 +155,7 @@ db.teams.insert({
     Overview   :"概要",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1','voteid2',"7","8"],
     Order       :6
 });
@@ -168,7 +168,7 @@ db.teams.insert({
     Overview   :"概要",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1','voteid2',"7","8"],
     Order       :7
 });
@@ -181,7 +181,7 @@ db.teams.insert({
     Overview   :"概要",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1','voteid2',"7","8"],
     Order       :8
 });
@@ -194,7 +194,7 @@ db.teams.insert({
     Overview   :"概要",
     Address     :"nakatugawa@gmail.com",
     Image       :"public/images/noimage.png",
-    Works       :"publoc/images/noimage.png",
+    Works       :"public/images/noimage.png",
     Department  :['voteid1',"8"],
     Order       :9
 });
