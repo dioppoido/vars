@@ -57,19 +57,24 @@ router.get('/', function(req, res) {
                                     //console.log("分野処理"+ vote);
                                     votedata = [];
                                     async.eachSeries(docs2, function (team, callback2) {
-                                        var filedJson = {
-                                            Teamid: team.Teamid,
-                                            Voteid: vote.Voteid,
-                                            Eventid: docs[0].Eventid
-                                        };
-                                        getAggregate.getAggregate(filedJson).then(function (docs4) {
-                                            //console.log("投票データ取り出し:"+docs4.length);
-                                            votedata.push({
-                                                votecnt: docs4.length,
-                                                Teamname: team.Teamname
-                                            });
+                                        //分野に入っているかの判定
+                                        if((team.Department).indexOf(vote.Voteid)>=0) {
+                                            var filedJson = {
+                                                Teamid: team.Teamid,
+                                                Voteid: vote.Voteid,
+                                                Eventid: docs[0].Eventid
+                                            };
+                                            getAggregate.getAggregate(filedJson).then(function (docs4) {
+                                                //console.log("投票データ取り出し:"+docs4.length);
+                                                votedata.push({
+                                                    votecnt: docs4.length,
+                                                    Teamname: team.Teamname
+                                                });
+                                                callback2();
+                                            })
+                                        }else{
                                             callback2();
-                                        })
+                                        }
                                     }, function (err) {
                                         if (err) {
                                             //console.log("二重ループのテスト中のエラーらしい")

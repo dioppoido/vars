@@ -48,6 +48,7 @@
                             <div class="text-left">< 部門追加 ></div><br>
 
                             <form id="field" name="field" method="POST" action="/eventcontrol/votesetting/append">
+                                <input type="hidden" name="eventid" value="<%=eventdata[0].Eventid%>">
                                 <table id="field-tbl" class="table alt-table-responsive table-bordered">
                                     <thead>
                                     <tr>
@@ -60,7 +61,7 @@
 
                                     <tr>
                                         <th scope="row"><div class="text-center"><span class="fieldnumber">1</span></div></th>
-                                        <td><input type="text" id="field1" name="votename" class="inputfield form-control" value="" readonly></td>
+                                        <td><input type="text" id="field1" name="fieldname" class="inputfield form-control" value="" readonly></td>
                                         <td><div class="text-center"><input class="btn btn-primary edit-btn" type="button" id="editbtn-1" value="編集" onclick="editRow(this)"></div></td>
                                         <td><div class="text-center"><input type="button" class="btn btn-success append-btn" value="追加" onclick="appendRow()"></div></td>
                                         <td><div class="text-center"><input class="btn btn-warning delete-btn" type="button" id="deletebtn-1" value="削除" onclick="deleteRow(this)"></div></td>
@@ -103,6 +104,7 @@
                             <br><div class="text-left">< 部門削除 ></div><br>
 
                             <form method="POST" action="/eventcontrol/votesetting/delete">
+                                <input type="hidden" name="eventid" value="<%=eventdata[0].Eventid%>">
                                 <table id="field-tbl" class="table alt-table-responsive table-bordered">
                                     <thead>
                                     <tr>
