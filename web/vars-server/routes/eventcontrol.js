@@ -5,7 +5,10 @@ var deleteEvent = require("../app/js/event/deleteEvent");
 var updateEvent = require("../app/js/event/updateEvent");
 var deleteTeam = require("../app/js/team/deleteTeam");
 var getVote = require("../app/js/votes/getVote");
+var insertVote = require("../app/js/votes/insertVote");
+var deleteVote = require("../app/js/votes/deleteVote");
 var getTeam = require("../app/js/team/getTeam");
+var randomByte = require("../app/js/db/randomByte");
 var async = require('async');
 
 router.get('/', function(req, res) {
@@ -93,14 +96,22 @@ router.post('/eventsetting', function(req, res) {
 
 router.get('/votesetting', function(req, res) {
     if(req.session.user){
-      var eventid=req.query.eventid;
-      getVote.getVotejson({Eventid:eventid}).then(function (vote){
-        res.render('votesetting.ejs',{vote:vote});
-      }).catch(function(){
+        if(req.query.eventid) {
+            var eventid = req.query.eventid;
+            getEvent.getEvent(eventid).then(function (eventdata) {
+                getVote.getVotejson({Eventid: eventid}).then(function (vote) {
+                    res.render('votesetting.ejs', {vote: vote, eventdata: eventdata});
+                }).catch(function () {
 
-        res.render('confirmation.ejs',{msg:'イベントIDが存在しません',url:'/eventlist'});
+                    res.render('errorconfirmation.ejs', {msg: '投票データがありません。', url: '/eventcontrol?eventid=' + eventid});
 
-    });
+                });
+            }).catch(function () {
+                res.render('errorconfirmation.ejs', {msg: 'イベントIDが存在しません。', url: '/eventlist'});
+            });
+        }else{
+            res.render('errorconfirmation.ejs', {msg: 'イベントIDが存在しません。', url: '/eventlist'});
+        }
     } else{
         res.redirect('/');
     }
@@ -114,6 +125,54 @@ router.post('/votesetting', function(req, res) {
 
     res.render('votesetting.ejs');
 });
+
+router.post('/votesetting/append', function(req, res) {
+    if(req.session.user){
+        Votename=req.body.fieldname;
+        Eventid=req.body.eventid;
+        if(typeof(Votename)==="object") {
+            for (var i = 0; i < Votename.length; i++) {
+                var Votedata={
+                    Votename:Votename[i],
+                    Voteid:randomByte.randomByte(),
+                    Eventid:Eventid
+                }; 
+                insertVote.insertVote(Votedata);
+                res.render('confirmation.ejs',{msg:'部門データを登録しました。',url:'/eventcontrol/votesetting?eventid='+Eventid});
+            }
+        } else {
+            var Votedata = {
+                Votename: Votename,
+                Voteid: randomByte.randomByte(),
+                Eventid: Eventid
+            };
+            insertVote.insertVote(Votedata);
+            res.render('confirmation.ejs', {msg: '部門データを登録しました。', url: '/eventcontrol/votesetting?eventid=' + Eventid});
+        }
+    }else{
+        res.redirect('/');
+    }
+});
+
+router.post('/votesetting/delete', function(req, res) {
+    if(req.session.user){
+        voteid=req.body.voteid;
+        eventid=req.body.eventid;
+        if(typeof(voteid)==="object") {
+            for (var i = 0; i < voteid.length; i++) {
+                deleteVote.deleteVote({Voteid:voteid[i]});
+                res.render('confirmation.ejs',{msg:'部門データを削除しました。',url:'/eventcontrol/votesetting?eventid='+eventid});
+            }
+        } else {
+            deleteVote.deleteVote({Voteid:voteid});
+            res.render('confirmation.ejs', {msg: '部門データを削除しました。', url: '/eventcontrol/votesetting?eventid=' + eventid});
+        }
+    }else{
+        res.redirect('/');
+    }
+});
+
+
 
 /**
  * チームの部門設定ページ

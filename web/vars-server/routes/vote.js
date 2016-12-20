@@ -6,7 +6,7 @@ var getEvent = require('../app/js/event/getEvent');
 var getAggregate = require('../app/js/aggregate/getAggregate');
 var randomByte = require("../app/js/db/randomByte");
 var getVote = require('../app/js/votes/getVote');
-var insertVote = require('../app/js/votes/insertVote');
+var insertAggregate = require('../app/js/aggregate/insertAggregate');
 var todate = require("../app/js/moment/moment.js");
 var async = require('async');
 
@@ -79,7 +79,6 @@ router.get('/', PasswordCheck, function (req, res) {
                                             teams = [];
                                             console.log("order:" + eventdata[0].Order);
                                             async.eachSeries(eventdata[0].Order, function (order, callback2) {
-
                                                 getTeam.getTeamjson({
                                                     Department: vote.Voteid,
                                                     Teamid: order
@@ -185,9 +184,8 @@ router.post('/', function (req, res) {
             console.log(AGGREGATES[i]);
 
 
-        }
-        ;
-        insertVote.insertVote(AGGREGATES);
+        };
+        insertAggregate.insertAggregate(AGGREGATES);
         res.redirect('/voteresult?eventid=' + req.body.eventid[0]);
     } else {
         res.redirect('/');
