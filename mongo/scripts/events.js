@@ -104,25 +104,25 @@ db.events.insert({
     Eventid: "2",
     Eventname: "イベントB",
     Overview: "イベントBの説明です",
-    Password: "password",
+    Password: "",
     Address: "test@example.com",
     displayName: "test",
-    Fieldid: "hard",
-    Venue: "ホワイエ",
+    Fieldid: "it",
+    Venue: "南館1階B教室",
     Holdperiod: {
-        Holdstart: "2016/10/21 9:00",
-        Holdfinish: "2016/10/23 15:00"
+        Holdstart: "2016/4/01 0:00",
+        Holdfinish: "2018/12/31 0:00"
     },
     Createperiod: {
-        Createstart: "2016/10/12 9:00",
-        Createfinish: "2016/10/20 12:00"
+        Createstart: "2016/4/01 0:00",
+        Createfinish: "2018/12/31 0:00"
     },
     Voteperiod: {
-        Votestart: "2016/10/21 9:00",
-        Votefinish: "2016/10/31 12:00"
+        Votestart: "2016/4/01 0:00",
+        Votefinish: "2018/12/31 0:00"
     },
-    Image: "public/images/goripic/drinkgori.png",
-    Order: ['5']
+    Image: "public/images/noimage.png",
+    Order: ['2', '3', '6', '1', '5']
 });
 db.events.insert({
     Eventid: "3",

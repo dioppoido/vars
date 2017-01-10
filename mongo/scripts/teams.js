@@ -56,7 +56,7 @@ db.teams.insert({
 });
 db.teams.insert({
     Teamid:"4",
-    Eventid:"2",
+    Eventid:"3",
     Teamname:"PARM",
     Workname:"Dチームの作品",
     Overview   :"概要",
