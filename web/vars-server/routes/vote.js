@@ -74,6 +74,7 @@ router.get('/', PasswordCheck, function (req, res) {
                                     if (!err) {
                                         var teamdata = new Array();
                                         var teams = [];
+                                        var teamerr=true;
                                         //投票部門に入っているチームの取り出し（async）
                                         async.eachSeries(votedata, function (vote, callback1) {
                                             teams = [];
@@ -96,33 +97,42 @@ router.get('/', PasswordCheck, function (req, res) {
                                                 })
                                             }, function (err) {
                                                 if (!err) {
-                                                    //console.log("teams:"+teams)
-                                                    teamdata[teamdata.length] = new Array();
-                                                    console.log("teamdata.length" + teamdata.length);
-                                                    teamdata[teamdata.length - 1] = teams;
-                                                    //console.log("teamdata.test:"+teamdata[teamdata.length - 1])
-                                                    callback1();
+                                                    if(teams.length>0) {
+                                                        //console.log("teams:"+teams)
+                                                        teamdata[teamdata.length] = new Array();
+                                                        console.log("teamdata.length" + teamdata.length);
+                                                        teamdata[teamdata.length - 1] = teams;
+                                                        //console.log("teamdata.test:"+teamdata[teamdata.length - 1])
+                                                        callback1();
+                                                    }else{
+                                                        teamerr=false;
+                                                        callback1();
+                                                    }
                                                 } else {
                                                     callback1();
                                                 }
                                             });
                                             //ループ終了した後
                                         }, function (err) {
-                                            console.log(typeof(teamdata[0][0]));
-                                            for (var cnt1 in teamdata) {
-                                                console.log(votedata[cnt1].Votename);
-                                                for (var cnt2 in teamdata[cnt1]) {
-                                                    //console.log("teamdata["+cnt1+"]["+cnt2+"]仕上げ:" + teamdata[cnt1][cnt2]);
+                                            if(teamerr) {
+                                                console.log(typeof(teamdata[0][0]));
+                                                for (var cnt1 in teamdata) {
+                                                    console.log(votedata[cnt1].Votename);
+                                                    for (var cnt2 in teamdata[cnt1]) {
+                                                        //console.log("teamdata["+cnt1+"]["+cnt2+"]仕上げ:" + teamdata[cnt1][cnt2]);
 
+                                                    }
                                                 }
+                                                res.render('vote.ejs', {
+                                                    eventdata: eventid,
+                                                    allteamdata: allteamdata,
+                                                    teamdata: teamdata,
+                                                    votedata: votedata,
+                                                    msg: ""
+                                                });
+                                            }else{
+                                                res.render('errorconfirmation.ejs', {msg: "チームが設定されていない部門があります。", url: '/eventtop?eventid=' + eventid});
                                             }
-                                            res.render('vote.ejs', {
-                                                eventdata: eventid,
-                                                allteamdata: allteamdata,
-                                                teamdata: teamdata,
-                                                votedata: votedata,
-                                                msg: ""
-                                            });
                                         });
                                     }
                                 })

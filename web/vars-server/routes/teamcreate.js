@@ -79,7 +79,7 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
               imagepath="public/images/noimage.png"  //NoImageのPathをここに格納
             }
           //発表順はとりあえず連番で取得する
-            getTeam.getTeam(eventid).then(function(docs){
+            getTeam.getTeamjson({Eventid:eventid}).then(function(docs){
                 order = docs.length++;
                 // 送る値をJSON形式で記述
                 const TEAMS = {
@@ -93,7 +93,7 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
                     'Image'       :imagepath,
                     'Works'       :works,
                     'Department' :department,
-                    'Order'         :0
+                    'Order'         :order
                 };
 
                 insertTeam.insertTeam(TEAMS);   //チーム作成
