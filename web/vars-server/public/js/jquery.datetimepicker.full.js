@@ -3193,20 +3193,26 @@ var DateFormatter;
 
 jQuery.datetimepicker.setLocale('ja');
 $("#hold-start").datetimepicker({
-    step: 5
+    step: 5,
+    minDate: new Date()
 });
 $("#hold-end").datetimepicker({
-    step: 5
+    step: 5,
+    minDate: new Date()
 });
 $("#team-start").datetimepicker({
-    step: 5
+    step: 5,
+    minDate: new Date()
 });
 $("#team-end").datetimepicker({
-    step: 5
+    step: 5,
+    minDate: new Date()
 });
 $("#vote-start").datetimepicker({
-    step: 5
+    step: 5,
+    minDate: new Date()
 });
 $("#vote-end").datetimepicker({
-    step: 5
+    step: 5,
+    minDate: new Date()
 });
