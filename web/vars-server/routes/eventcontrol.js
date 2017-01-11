@@ -4,6 +4,7 @@ var getEvent = require("../app/js/event/getEvent");
 var deleteEvent = require("../app/js/event/deleteEvent");
 var updateEvent = require("../app/js/event/updateEvent");
 var updateVote = require("../app/js/votes/updateVote");
+var updateTeam = require("../app/js/team/updateTeam");
 var deleteTeam = require("../app/js/team/deleteTeam");
 var getVote = require("../app/js/votes/getVote");
 var insertVote = require("../app/js/votes/insertVote");
@@ -220,25 +221,30 @@ router.get('/fieldsetting', function (req, res) {
                 //イベントIDで投票部門データを取り出し
                 getVote.getVote(eventid).then(function (votedata) {
                     var teamdata = [];
-                    //発表順番データでループする（発表順番データの配列内のチームIDで検索をかける）
-                    async.eachSeries(eventdata[0].Order, function (order, callback1) {
-                        //イベントデータ.Orderから取得されるチームIDでチームデータを取得
-                        getTeam.getTeamjson({Teamid:order}).then(function (team) {
-                            //チームデータを順番通りに格納する
-                            if(team.length>0) {
-                                teamdata.push(team[0]);
-                            }
+                    async.eachSeries(votedata,function (vote,callback1) {
+                        var teams=[];
+                        //発表順番データでループする（発表順番データの配列内のチームIDで検索をかける）
+                        async.eachSeries(eventdata[0].Order, function (order, callback2) {
+                            console.log("あ");
+                            //イベントデータ.Orderから取得されるチームIDでチームデータを取得
+                            getTeam.getTeamjson({Teamid:order,Department:vote.Voteid}).then(function (team) {
+                                //チームデータを順番通りに格納する
+                                if(team.length>0) {
+                                    teams.push(team[0]);
+                                }
+                                callback2();
+                            }).catch(function (msg) {
+                                //チーム取り出し時のDBエラーを記述
+                                console.log(msg);
+                                res.render('errorconfirmation.ejs', {msg: msg, url: '/eventcontrol?eventid='+eventid});
+                            })
+                        }, function (err) {
+                            teamdata.push(teams);
                             callback1();
-                        }).catch(function (msg) {
-                            //チーム取り出し時のDBエラーを記述
-                            console.log(msg);
-                            res.render('errorconfirmation.ejs', {msg: msg, url: '/eventcontrol?eventid='+eventid});
                         })
-                    }, function (err) {
-                        //処理成功時を記述
-                        // res.json(teamdata);
-                        res.render('fieldsetting.ejs',{eventdata:teamdata});
-                    })
+                    },function (err) {
+                        res.render('fieldsetting.ejs',{teamdata:teamdata,votedata:votedata});
+                    });
                 }).catch(function (msg) {
                     //投票部門データが検索できなかった時にエラーページを表示
                     res.render('errorconfirmation.ejs', {msg: "投票データが存在しません。", url: '/eventcontrol?eventid='+eventid});
@@ -255,6 +261,26 @@ router.get('/fieldsetting', function (req, res) {
     }
 });
 
+router.post('/fieldsetting', function (req, res) {
+    if(req.session.user){
+        var eventid=req.body.eventid;
+        var teamid=req.body.teamid;
+        var voteid=req.body.voteid;
+        var department=voteid.split(',');
+        getTeam.getTeamjson({Teamid:teamid}).then(function (teamdata) {
+            updateTeam.updateTeam({Teamid:teamid},{Department:department});
+            res.render('confirmation.ejs', {
+                msg: 'チーム名：'+teamdata[0].Teamname+'の投票部門を設定しました。',
+                url: '/eventcontrol/votesetting?eventid=' + eventid
+            });
+        }).catch(function (msg) {
+
+        })
+    }else{
+        res.redirect('/');
+    }
+})
+
 router.get('/announcesetting', function(req, res) {
       if(req.session.user){
           if(req.query.eventid) {
@@ -267,7 +293,6 @@ router.get('/announcesetting', function(req, res) {
                               teamdata.push(team[0]);
                           }
                           callback();
-
                       }).catch(function (msg) {
                           res.render('errorconfirmation.ejs', {msg: msg, url: '/eventcontrol/announcesetting?eventid=' + eventid});
 
