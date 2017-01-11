@@ -66,7 +66,9 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <div class="team-form">
                     チーム概要 :<br>
-                    <%=teamdata[0].Overview%>
+                    <% for(var cnt=0;cnt<overview.length;cnt++){%>
+                      <%=overview[cnt]%><br>
+                    <%}%>
                   </div>
                 </div>
 
