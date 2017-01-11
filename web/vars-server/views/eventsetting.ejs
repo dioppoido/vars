@@ -13,11 +13,11 @@
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Date Picker -->
-    <link href="../public/css/datepicker.min.css" rel="stylesheet">
-
     <!-- Toggle -->
     <link href="../public/css/bootstrap-toggle.css" rel="stylesheet">
+
+    <!-- Date Picker -->
+    <link href="../public/css/jquery.datetimepicker.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../public/css/eventsetting.css" rel="stylesheet">
@@ -54,14 +54,14 @@
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label>開催日時 : </label>
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="datesstart" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required/>
+                                    <input type="text" class='form-control input-lg event-input' id="hold-start" value="2017/01/11 10:47" name="datesstart" required/>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label>開催終了日時 : </label>
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="datesfinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required/>
+                                    <input type='text' class='form-control input-lg event-input' id="hold-end" name="datesfinish" required/>
                                 </div>
                             </div>
 
@@ -100,7 +100,7 @@
                                 <div class="form-group">
                                     <label>参加チーム登録受付日時 : </label>
 
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="createstart" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly"  required />
+                                    <input type='text' id="team-start" class='form-control input-lg event-input'  name="createstart" required />
 
                                 </div>
                             </div>
@@ -109,7 +109,7 @@
                                 <div class="form-group">
                                     <label>参加チーム受付終了日時 : </label>
 
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="createfinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required />
+                                    <input type='text' id="team-end" class='form-control input-lg event-input' name="createfinish" required />
 
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
                                 <div class="form-group">
                                     <label>投票開始日時 : </label>
 
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="votestart" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required />
+                                    <input type='text' id="vote-start" class='form-control input-lg event-input' name="votestart" data-timepicker="true" required />
 
                                 </div>
                             </div>
@@ -127,7 +127,7 @@
                                 <div class="form-group">
                                     <label>投票終了日時 : </label>
 
-                                    <input type='text' class='form-control input-lg event-input datepicker-here' data-language='ja' name="votefinish" data-timepicker="true" placeholder="例)20YY/MM/DD HH:MM" readonly="readonly" required />
+                                    <input type='text' id="vote-end" class='form-control input-lg event-input' name="votefinish" required />
 
                                 </div>
                             </div>
@@ -204,8 +204,10 @@
 <script src="../public/js/form_confirmation.js"></script>
 
 <!-- Date Picker -->
-<script src="../public/js/datepicker.min.js"></script>
-<script src="../public/js/datepicker.ja.js"></script>
+<script src="../public/js/jquery.datetimepicker.full.js"></script>
+<script>
+
+</script>
 
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>
