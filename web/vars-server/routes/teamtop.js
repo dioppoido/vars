@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var getTeam = require("../app/js/team/getTeam");
-
+var nl2br = require("../app/js/nl2br/nl2br.js");
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
@@ -15,7 +15,8 @@ router.get('/', function(req, res, next) {
                 if( teamdata.length == 0){
                     res.render('confirmation.ejs',{msg:'チームIDが存在しません',url:'/eventlist'});
                 }else {
-                    res.render('teamtop.ejs',{teamdata: teamdata});
+                    var overview=nl2br.textarea(teamdata[0].Overview);
+                    res.render('teamtop.ejs',{teamdata: teamdata, overview:overview});
                 }
             });
         }else{

@@ -89,7 +89,10 @@
                                   <li>
                                     概要 : <br>
                                     <ul class="list-unstyled overview">
-                                        <li><%=eventdata[0].Overview%></li>
+                                      <% for(var cnt=0;cnt<overview.length;cnt++){%>
+                                        <li><%=overview[cnt]%></li>
+                                      <%}%>
+                                        <!-- <li><%=eventdata[0].Overview%></li> -->
                                     </ul>
                                   </li>
                               </ul>
