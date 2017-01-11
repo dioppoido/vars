@@ -415,5 +415,5 @@ db.events.insert({
         Votefinish:"2017/2/15 15:00"
     },
     Image:"public/images/goripic/dancegori.png",
-    Order: []
+    Order: ['20','21','22','23','24','25','26','27','28']
 });

@@ -220,31 +220,34 @@ router.get('/fieldsetting', function (req, res) {
             getEvent.getEvent(eventid).then(function (eventdata) {
                 //イベントIDで投票部門データを取り出し
                 getVote.getVote(eventid).then(function (votedata) {
-                    var teamdata = [];
-                    async.eachSeries(votedata,function (vote,callback1) {
-                        var teams=[];
-                        //発表順番データでループする（発表順番データの配列内のチームIDで検索をかける）
-                        async.eachSeries(eventdata[0].Order, function (order, callback2) {
-                            console.log("あ");
-                            //イベントデータ.Orderから取得されるチームIDでチームデータを取得
-                            getTeam.getTeamjson({Teamid:order,Department:vote.Voteid}).then(function (team) {
-                                //チームデータを順番通りに格納する
-                                if(team.length>0) {
-                                    teams.push(team[0]);
-                                }
-                                callback2();
-                            }).catch(function (msg) {
-                                //チーム取り出し時のDBエラーを記述
-                                console.log(msg);
-                                res.render('errorconfirmation.ejs', {msg: msg, url: '/eventcontrol?eventid='+eventid});
+                    getTeam.getTeam(eventid).then(function (allteam) {
+                        var teamdata = [];
+                        async.eachSeries(votedata,function (vote,callback1) {
+                            var teams=[];
+                            //発表順番データでループする（発表順番データの配列内のチームIDで検索をかける）
+                            async.eachSeries(eventdata[0].Order, function (order, callback2) {
+                                //イベントデータ.Orderから取得されるチームIDでチームデータを取得
+                                getTeam.getTeamjson({Teamid:order,Department:vote.Voteid}).then(function (team) {
+                                    //チームデータを順番通りに格納する
+                                    if(team.length>0) {
+                                        teams.push(team[0]);
+                                    }
+                                    callback2();
+                                }).catch(function (msg) {
+                                    //チーム取り出し時のDBエラーを記述
+                                    console.log(msg);
+                                    res.render('errorconfirmation.ejs', {msg: msg, url: '/eventcontrol?eventid='+eventid});
+                                })
+                            }, function (err) {
+                                teamdata.push(teams);
+                                callback1();
                             })
-                        }, function (err) {
-                            teamdata.push(teams);
-                            callback1();
-                        })
-                    },function (err) {
-                        res.render('fieldsetting.ejs',{teamdata:teamdata,votedata:votedata});
-                    });
+                        },function (err) {
+                            res.render('fieldsetting.ejs',{teamdata:teamdata,votedata:votedata,allteam:allteam});
+                        });
+                    }).catch(function () {
+                        res.render('errorconfirmation.ejs', {msg: "チームデータが存在しません。", url: '/eventcontrol?eventid='+eventid});
+                    })
                 }).catch(function (msg) {
                     //投票部門データが検索できなかった時にエラーページを表示
                     res.render('errorconfirmation.ejs', {msg: "投票データが存在しません。", url: '/eventcontrol?eventid='+eventid});
