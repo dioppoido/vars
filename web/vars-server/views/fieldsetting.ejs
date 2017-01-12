@@ -59,19 +59,22 @@
                           <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 text-center">
                               <div class="field-form">
 
+                                <% var teams = JSON.stringify(teamdata); %>
                                 <div class="form-group">
-                                  <select class="form-control input-lg team-select" name="field" onchange="change_field(this)">
+                                  <select class="form-control input-lg team-select" name="field" onchange="change_field(this , <%=teams%>)">
                                     <% for(var i = 1 ; i < 6; i++) { %>
                                       <option value="<%=i%>">部門<%=i%></option>
                                       <% } %>
                                   </select>
                                 </div>
 
-                                <div class="filedsetting-font text-right">参加チーム数３</div>
+                                <div id="teamnum" class="filedsetting-font text-right">参加チーム数3</div>
 
-                                <div class="team-line text-left">Aチーム</div>
-                                <div class="team-line text-left">Bチーム</div>
-                                <div class="team-line text-left">Cチーム</div>
+                                <div id="teamname">
+                                    <div class="team-line text-left">Aチーム</div>
+                                    <div class="team-line text-left">Bチーム</div>
+                                    <div class="team-line text-left">Cチーム</div>
+                                </div>
 
                             </div>
                           </div>
@@ -103,7 +106,7 @@
 
                                     <div class="form-group">
 
-                                      <select class="form-control input-lg team-select" name="field" onchange="change_field(this)">
+                                      <select class="form-control input-lg team-select" name="field" onchange="change_field(this,'test2')">
                                         <% for(var i = 1 ; i < 6; i++) { %>
                                           <option value="<%=i%>">チーム<%=i%></option>
                                           <% } %>
