@@ -52,7 +52,7 @@
                       <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                           <ul class="list-unstyled order">
 
-                              <%for(var i=0;i<eventdata.length;i++){%>
+                              <%for(var i=0;i<teamdata.length;i++){%>
                                 <li class="ui-state-default"><%=i+1%></li>
                               <%}%>
 
@@ -63,13 +63,13 @@
                           <form method="POST" action="/eventcontrol/announcesetting" id="announceform">
                               <ul id="jquery-ui-sortable" class="list-unstyled">
 
-                                <%for(var i=0;i<eventdata.length;i++){%>
-                                  <li class="ui-state-default list-width"><%=eventdata[i].Teamname%><span style="display:none;"><%=i+1%></span></li>
+                                <%for(var i=0;i<teamdata.length;i++){%>
+                                  <li class="ui-state-default list-width"><%=teamdata[i].Teamname%><span style="display:none;"><%=i+1%></span></li>
                                   <%}%>
                                   
                               </ul>
                               <input type="hidden" id="announce" name="announce" value="null">
-                              <input type="hidden" id="eventid" name="eventid" value="<%= eventdata[0].Eventid %>">
+                              <input type="hidden" id="eventid" name="eventid" value="<%= teamdata[0].Eventid %>">
                               <div class="text-right list-width"><button id="submitSortable" class="btn btn-primary announce-btn" type="submit">発表順番変更</button></div>
                           </form>
                       </div>
