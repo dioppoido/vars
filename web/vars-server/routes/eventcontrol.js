@@ -17,6 +17,7 @@ var rename = require('../app/js/image/rename');
 var async = require('async');
 var multer  = require('multer');
 var fs = require('fs');
+var moment = require('../app/js/moment/moment');
 
 router.get('/', function(req, res) {
     if(req.session.user){
@@ -58,13 +59,25 @@ router.get('/eventsetting', function(req, res) {
           var eventid=req.query.eventid;
           getEvent.getEvent(eventid).then(function (docs){      //イベントが存在しているか確認
               console.log("eventdata:"+docs);
+              var Holdfinish=moment.parsedate(docs[0].Holdperiod.Holdfinish,"YYYY/M/D HH:mm");
+              var Holdstart=moment.parsedate(docs[0].Holdperiod.Holdstart,"YYYY/M/D HH:mm");
+              var Createstart=moment.parsedate(docs[0].Createperiod.Createstart,"YYYY/M/D HH:mm");
+              var Createfinish=moment.parsedate(docs[0].Createperiod.Createfinish,"YYYY/M/D HH:mm");
+              var Votestart=moment.parsedate(docs[0].Voteperiod.Votestart,"YYYY/M/D HH:mm");
+              var Votefinish=moment.parsedate(docs[0].Voteperiod.Votefinish,"YYYY/M/D HH:mm");
               getField.getField().then(function (field) {    //分野取得
                   console.log("分野:" + field);
                   res.render('eventsetting.ejs',{
                       eventdata:docs,
                       field : field,
                       user: req.session.user.displayName,
-                      adress: req.session.user.address
+                      adress: req.session.user.address,
+                      holdfinish:Holdfinish,
+                      holdstart:Holdstart,
+                      createstart:Createstart,
+                      createfinish:Createfinish,
+                      votestart:Votestart,
+                      votefinish:Votefinish
                   });
               });
           }).catch(function(){
@@ -103,8 +116,8 @@ router.post('/eventsetting',  upload.single('thumbnail'), function (req, res) {
         Fieldid:req.body.field,
         Venue:req.body.venue,
         Holdperiod:{
-          Holdstart:req.body.holdstart,
-          Holdfinish:req.body.holdfinish
+          Holdstart:req.body.datesstart,
+          Holdfinish:req.body.datesfinish
         },
         Createperiod:{
           Createstart:req.body.createstart,
