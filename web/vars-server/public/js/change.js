@@ -14,12 +14,26 @@ function change_pass(obj){
 }
 
 /* fieldsetting.ejs */
-function change_field(obj){
+function change_field(obj,teams){
     
     var idx = obj.selectedIndex;
     var value = obj.options[idx].value; // 値
     var text  = obj.options[idx].text;  // 表示テキスト
     console.log("値:" + value);
     console.log("テキスト:" + text);
+
+
+    //参加チーム表示
+    var teamnum = document.getElementById("teamnum");
+    teamnum.innerHTML = "参加チーム数" + teams[value].length;
+
+    //変更部門表示
+    var teamname = document.getElementById("teamname");
+
+    teamname.innerHTML = "";
+    for(var i = 0; i < teams[value].length; i++){
+        teamname.innerHTML += "<div class='team-line text-left'>"+ teams[value][i].Teamname + "</div>";
+    }
+
 
 }
