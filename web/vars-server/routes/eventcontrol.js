@@ -95,7 +95,7 @@ router.post('/eventsetting',  upload.single('thumbnail'), function (req, res) {
         Password:req.body.password,
         Address:req.body.address,
         displayName:req.body.displayname,
-        Fieldid:req.body.fielid,
+        Fieldid:req.body.field,
         Venue:req.body.venue,
         Holdperiod:{
           Holdstart:req.body.holdstart,
@@ -110,8 +110,9 @@ router.post('/eventsetting',  upload.single('thumbnail'), function (req, res) {
             Votefinish:req.body.votefinish
         },
         Image:imagepath
-            }
-      updateEvent.updateEvent({Eventid:req.body.eventid}, {$set:{eventdata}});
+      };
+      console.log(eventdata.Fieldid);
+      updateEvent.updateEvent({Eventid:req.body.eventid}, {$set:eventdata});
       res.render('confirmation.ejs',{msg: 'イベント情報を変更しました。', url:'/eventcontrol/announcesetting?eventid='+eventid});
     } else {
         res.redirect('/');
