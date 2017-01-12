@@ -85,19 +85,7 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
             'Image':imagepath
         };
 
-        console.log(req.file);
-        console.log(eventid);
-        console.log(eventname);
-        console.log(overview);
-        console.log(address);
-        console.log(displayname);
-        console.log(field);
-        console.log(venue);
-        console.log(createstart);
-        console.log(createfinish);
-        console.log(votestart);
-        console.log(votefinish);
-
+        
         insertEvent.insertEvent(EVENTS);
         //twitter投稿（空白を入れると改行
         execSync('node ./app/js/event/twitterWrite.js イベントが作成されました リンクはこちら↓ http://localhost/eventtop?eventid='+eventid);

@@ -44,10 +44,11 @@
 
                     <div class="setting-form">
                         <form method="post" name="eventsetting" action="/eventcontrol/eventsetting" enctype="multipart/form-data" onsubmit="return date_confirm()">
-
+                            <input type="hidden" id="eventid" name="eventid" value="<%= eventdata[0].Eventid %>">
+                            <input type="hidden" id="imagepath" name="imagepath" value="<%= eventdata[0].Image %>">
                             <div class="form-group">
                               <label>イベント名 : </label>
-                              <input type="text" class="form-control input-lg event-input" name="eventname" placeholder="例)2016年合評会" required>
+                              <input type="text" class="form-control input-lg event-input" name="eventname" value="<%= eventdata[0].Eventname %>" required>
                             </div>
 
 
@@ -67,12 +68,12 @@
 
                             <div class="form-group">
                                 <label>会場 : </label>
-                                <input type="text" class="form-control input-lg event-input" name="venue" placeholder="例）神戸電子専門学校 ソニックホール" required>
+                                <input type="text" class="form-control input-lg event-input" name="venue" value="<%= eventdata[0].Venue %>" required>
                             </div>
 
                             <div class="form-group">
                               <label>イベント概要 : </label>
-                              <textarea class="form-control input-lg event-input" name="overview" placeholder="例)合評会です." required></textarea>
+                              <textarea class="form-control input-lg event-input" name="overview"  required><%= eventdata[0].Overview %></textarea>
                             </div>
 
 
@@ -90,7 +91,7 @@
                               <label>分野 : </label>
                               <select class="form-control input-lg event-input" name="field" required>
                                   <% for(var i = 0 ; i < field.length; i++) { %>
-                                        <option value="<%=field[i].Fieldid%>"><%=field[i].Fieldname%></option>
+                                        <option value="<%=field[i].Fieldid%>" <%if(field[i].Fieldid===eventdata[0].Fieldid){%>selected<%}%>><%=field[i].Fieldname%></option>
                                   <% } %>
                               </select>
                             </div>
@@ -149,6 +150,7 @@
                                     <label class="btn btn-primary file-btn">
                                         ファイルを選択
                                         <input type='file' id="thumbnail_file" name="thumbnail" accept="image/jpeg, image/gif, image/png" onchange="showFilename();">
+                                        <
                                     </label>
                                 </div>
                             </div>

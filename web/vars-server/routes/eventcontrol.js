@@ -12,7 +12,11 @@ var deleteVote = require("../app/js/votes/deleteVote");
 var getTeam = require("../app/js/team/getTeam");
 var getField = require("../app/js/field/getField");
 var randomByte = require("../app/js/db/randomByte");
+var updateEvent = require("../app/js/event/updateEvent");
+var rename = require('../app/js/image/rename');
 var async = require('async');
+var multer  = require('multer');
+var fs = require('fs');
 
 router.get('/', function(req, res) {
     if(req.session.user){
@@ -72,16 +76,31 @@ router.get('/eventsetting', function(req, res) {
         res.redirect('/eventlist');
     }
 });
-
-router.post('/eventsetting', function(req, res) {
+var upload = multer({ dest: 'upfile/image/' });
+router.post('/eventsetting',  upload.single('thumbnail'), function (req, res) {
     if(req.session.user){
+      var eventid =req.body.eventid;
+      var imagepath=req.body.imagepath;
+      if(req.file){
+        if(imagepath != 'public/images/noimage.png'){
+        fs.unlink(imagepath, function (err) {
+        });
+      }
+        var extension = req.file.originalname;   //拡張子を取得したいデータを入れる
+        var imageExtension =rename.rename(extension);　//拡張子
+        imagepath=req.file.path+rename.rename(extension); //データベースに格納用のpath
+        require('fs').rename(req.file.path, 'upfile/image/' + req.file.filename + imageExtension); //ここでファイル名を変更
+      }else{
+        imagepath=req.body.imagepath;
+      }
+
       var eventdata={
         Eventname:req.body.eventname,
         Overview:req.body.overview,
         Password:req.body.password,
         Address:req.body.address,
         displayName:req.body.displayname,
-        Fieldid:req.body.fielid,
+        Fieldid:req.body.field,
         Venue:req.body.venue,
         Holdperiod:{
           Holdstart:req.body.holdstart,
@@ -95,10 +114,11 @@ router.post('/eventsetting', function(req, res) {
             Votestart:req.body.votestart,
             Votefinish:req.body.votefinish
         },
-
-      }
-      updateEvent.updateEvent({Eventid:req.body.eventid}, {$set:{eventdata}})
-
+        Image:imagepath
+      };
+      console.log(eventdata.Fieldid);
+      updateEvent.updateEvent({Eventid:req.body.eventid}, {$set:eventdata});
+      res.render('confirmation.ejs',{msg: 'イベント情報を変更しました。', url:'/eventcontrol/announcesetting?eventid='+eventid});
     } else {
         res.redirect('/');
     }
