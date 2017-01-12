@@ -301,7 +301,7 @@ router.get('/announcesetting', function(req, res) {
 
                       })
                   }, function (err) {
-                      res.render('announcesetting.ejs', {eventdata: teamdata});
+                      res.render('announcesetting.ejs', {teamdata: teamdata});
                   });
               }).catch(function () {
                   res.render('errorconfirmation.ejs', {msg: 'イベントIDが存在しません', url: '/eventlist'});
