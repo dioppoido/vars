@@ -62,8 +62,8 @@
                                 <% var teams = JSON.stringify(teamdata); %>
                                 <div class="form-group">
                                   <select class="form-control input-lg team-select" name="field" onchange="change_field(this , <%=teams%>)">
-                                    <% for(var i = 1 ; i < 6; i++) { %>
-                                      <option value="<%=i%>">部門<%=i%></option>
+                                    <% for(var i = 0 ; i < votedata.length; i++) { %>
+                                      <option value="<%=i%>"><%=votedata[i].Votename%></option>
                                       <% } %>
                                   </select>
                                 </div>
@@ -71,9 +71,9 @@
                                 <div id="teamnum" class="filedsetting-font text-right">参加チーム数3</div>
 
                                 <div id="teamname">
-                                    <div class="team-line text-left">Aチーム</div>
-                                    <div class="team-line text-left">Bチーム</div>
-                                    <div class="team-line text-left">Cチーム</div>
+                                    <%for(var i=0;i<teamdata[0].length;i++){%>
+                                    <div class="team-line text-left"><%=teamdata[0][i].Teamname%></div>
+                                    <%}%>
                                 </div>
 
                             </div>
