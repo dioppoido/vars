@@ -47,7 +47,7 @@
                             <div class="top-margin">&nbsp;</div>
                             <div class="text-left">< 部門追加 ></div><br>
 
-                            <form id="field" name="field" method="POST" action="/eventcontrol/votesetting?eventid=<%=eventdata[0].Eventid%>&mode=append">
+                            <form id="field" name="field" method="POST" action="/eventcontrol/votesetting?eventid=<%=eventdata[0].Eventid%>&mode=append" onsubmit="return spaceCheck()">
                                 <input type="hidden" name="eventid" value="<%=eventdata[0].Eventid%>">
                                 <table id="field-tbl" class="table alt-table-responsive table-bordered">
                                     <thead>
