@@ -1,6 +1,9 @@
 /* tablecontrol.js */
 /* 部門の編集を行う */
 
+//グローバル変数 追加のボタンを押した時の処理と空白チェックで使用
+    fieldcount =1;
+
 /*
  * appendRow: テーブルに行を追加
  */
@@ -11,7 +14,7 @@ function appendRow()
         return false;
     }
 
-
+    fieldcount++;
     var count = objTBL.rows.length;
 
     // 最終行に新しい行を追加
@@ -42,7 +45,7 @@ function appendRow()
     if (objInp){
         objInp.focus();
     }
-    
+
     return false;
 }
 
@@ -141,7 +144,7 @@ function editRow(obj) {
     if (!objInp || !objBtn){
         return;
     }
-    
+
     // モードの切り替えはボタンの値で判定
     if (objBtn.value == "編集")
     {
@@ -153,7 +156,7 @@ function editRow(obj) {
         objInp.readOnly = true;
         objBtn.value = "編集";
     }
-    
+
 }
 
 /*
@@ -161,7 +164,7 @@ function editRow(obj) {
  */
 
 function changeRow(obj) {
-    
+
     var objindex = obj.id.split("-");
     objindex = objindex[1];
     var objInp = document.getElementById("change" + objindex);
@@ -180,5 +183,22 @@ function changeRow(obj) {
     else if(objBtn.value == "確定"){
         objInp.readOnly = true;
         objBtn.value = "編集";
+    }
+}
+
+function spaceCheck(){
+    var flg = 0;
+    for(var i = 1; i <= fieldcount; i++){
+        var num = i;
+        num.toString();
+        if(document.getElementById("field" + num).value ==""){     //空白文字がないかチェック
+            flg =1;
+        }
+    }
+    if(flg){
+        alert("部門追加で未入力項目があります");
+        return false;
+    }else{
+        return true;
     }
 }
