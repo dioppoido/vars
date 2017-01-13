@@ -15,3 +15,6 @@ npm-debug.log
 
 # Backup
 mongo/autobackup
+
+#upfile
+web/vars-server/upfile/
