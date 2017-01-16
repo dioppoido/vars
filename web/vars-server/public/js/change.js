@@ -41,14 +41,15 @@ function show_field(obj,teams){
 function change_field(obj, votes,allteams){
 
     var idx = obj.selectedIndex;
+    console.log(obj.selectedIndex)
     var value = obj.options[idx].value; // 値
     var text  = obj.options[idx].text;  // 表示テキスト
 
     var field = document.getElementById("field-area");
-    var check = document.getElementsByName("check");
+    var check = document.getElementsByName("voteid");
 
     for( var i= 0; i < votes.length ; i++){
-        if( allteams[value].Department.indexOf(votes[i].Voteid) >= 0){ // checkon
+        if( allteams[idx].Department.indexOf(votes[i].Voteid) >= 0){ // checkon
             check[i].checked = true;
             $('#field' + i).bootstrapToggle('on');
         }else {
