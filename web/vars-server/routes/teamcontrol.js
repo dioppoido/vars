@@ -16,6 +16,8 @@ var getField = require("../app/js/field/getField");
 var randomByte = require("../app/js/db/randomByte");
 var updateTeam = require("../app/js/team/updateTeam");
 var async = require('async');
+var fs = require('fs');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -55,6 +57,10 @@ router.post('/teamchange',upload.single('thumbnail'), function(req, res) {
           var imagepath=req.body.imagepath;
           //サムネをDBに入れ込む処理を呼び出す
           if(req.file){
+            if(imagepath != 'public/images/noimage.png'){
+            fs.unlink(imagepath, function (err) {
+            });
+          }
             var extension = req.file.originalname;   //拡張子を取得したいデータを入れる
             var imageExtension =rename.rename(extension);　//拡張子
             imagepath=req.file.path+rename.rename(extension); //データベースに格納用のpath
@@ -81,14 +87,19 @@ router.post('/teamchange',upload.single('thumbnail'), function(req, res) {
       }
 });
 var uploadpdf = multer({ dest: 'upfile/pdf/' });
-router.post('/teampdf', uploadpdf.single('pdf_file'),function(req, res) {
+router.post('/teampdf', uploadpdf.single('pdf_files'),function(req, res) {
       if(req.session.user){
           //PDF追加
           var pdf=req.body.work;
           var teamid=req.body.teamid;
+          console.log(req.body.work+"だよ");
 
           //サムネをDBに入れ込む処理を呼び出す
           if(req.file){
+            if(pdf != 'public/images/noimage.png'){
+            fs.unlink(pdf, function (err) {
+            });
+          }
             var extension = req.file.originalname;   //拡張子を取得したいデータを入れる
             var imageExtension =rename.rename(extension);　//拡張子
             pdf=req.file.path+rename.rename(extension); //データベースに格納用のpath

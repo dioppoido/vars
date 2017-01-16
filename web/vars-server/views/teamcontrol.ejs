@@ -109,7 +109,7 @@
 
 <!-- ---------------------------------------------------------------- -->
                     <!-- pdf処理 -->
-                    <form method="post" name="teampdf" action="teamcontrol/teampdf" enctype="multipart/form-data" onsubmit="return date_confirm()">
+                    <form method="post" name="teampdf" action="teamcontrol/teampdf" enctype="multipart/form-data" onsubmit="return data_check()">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                           <hr class="hr-field"><br>
                             <div class="panel-form">
@@ -125,7 +125,7 @@
                             <div class="panel-file">
                               <label class="btn btn-primary">
                               PDFを選択
-                              <input type='file' id="pdf_file" name="pdf_file" accept="application/pdf" onchange="showPDFname();"  value="" required>
+                              <input type='file' id="pdf_file" name="pdf_files" accept="application/pdf" onchange="showPDFname();"  value="" required>
                              </label>
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                           <div class="text-center">
                             <input type="hidden" name="teamid" value="<%=teamdata[0].Teamid%>">
-                            <input type="hidden" name="work" value="<%=teamdata[0].Work%>">
+                            <input type="hidden" name="work" value="<%=teamdata[0].Works%>">
                             <button type="submit" class="btn btn-success submit-btn"><div class="upload-size">アップロード</div></button>
                           </div>
                         </div>

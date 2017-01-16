@@ -250,3 +250,13 @@ function date_confirm(){
     return false;
 }
 }
+function data_check(){
+    var pdf = document.forms.teampdf.pdf_file;
+    console.log(pdf);
+    console.log("pdf");
+
+    if(pdf == ""){
+      alert("pdfを選択してください");
+      return false;
+    }
+}
