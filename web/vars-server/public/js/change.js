@@ -32,7 +32,7 @@ function show_field(obj,teams){
 
     teamname.innerHTML = "";
     for(var i = 0; i < teams[value].length; i++){
-        teamname.innerHTML += "<div class='team-line text-left'>"+ teams[value][i].Teamname + "</div>";
+        teamname.innerHTML += "<div class='team-line text-left'>"+ teams[value][i].Teamname + "  -  " + teams[value][i].Workname + "</div>";
     }
 
 
