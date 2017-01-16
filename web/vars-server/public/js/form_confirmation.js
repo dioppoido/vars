@@ -208,7 +208,7 @@ function date_confirm(){
         alert("開催日エラー : イベント前に投票期間が終了しています");
         return false;
     }
-  
+
 
     //開催日 - チーム作成期間
     if(hold_start < team_start){
@@ -248,4 +248,5 @@ function date_confirm(){
     }
 
     return false;
+}
 }

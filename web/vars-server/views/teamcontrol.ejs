@@ -86,14 +86,14 @@
                             <div class="panel-file">
                               <label class="btn btn-primary">
                               画像を選択
-                              <input type='file' id="thumbnail_file" name="thumbnail" accept="image/jpeg, image/gif, image/png" onchange="showFilename();">
+                              <input type='file' id="thumbnail_file" name="thumbnail" accept="image/jpeg, image/gif, image/png" value="" onchange="showFilename();">
                             </div>
                         </div>
 
                         <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                         </label>
                             <div class="panel-file">
-                              <body onload="showFilename();"></body>
+                              <body onload="showFilename(),showPDFname();"></body>
                               <div id="file_name" class="name smart"></div>
                             </div>
                         </div>
@@ -125,14 +125,14 @@
                             <div class="panel-file">
                               <label class="btn btn-primary">
                               PDFを選択
-                              <input type='file' id="pdf_file" name="pdf_file" accept="application/pdf" onchange="showPDFname();">
+                              <input type='file' id="pdf_file" name="pdf_file" accept="application/pdf" onchange="showPDFname();"  value="" required>
                              </label>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                             <div class="panel-file">
 
-                              <body onload="showPDFname();"></body>
+                              <!-- <body onload="showPDFname();"></body> -->
                               <div id="pdf_name" class="name smart"></div>
                             </div>
                         </div><br>
