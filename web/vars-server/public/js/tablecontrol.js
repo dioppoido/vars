@@ -186,7 +186,8 @@ function changeRow(obj) {
     }
 }
 
-function spaceCheck(){
+//部門追加時に使用　空白チェック
+function insertspaceCheck(){
     var flg = 0;
     for(var i = 1; i <= fieldcount; i++){
         var num = i;
@@ -197,6 +198,24 @@ function spaceCheck(){
     }
     if(flg){
         alert("部門追加で未入力項目があります");
+        return false;
+    }else{
+        return true;
+    }
+}
+//部門変更時に使用　空白チェック
+function fixspaceCheck(votenum){
+    console.log(votenum);
+    var flg = 0;
+    for(var i = 1; i <= votenum; i++){
+        var num = i;
+        num.toString();
+        if(document.getElementById("change" + num).value ==""){     //空白文字がないかチェック
+            flg =1;
+        }
+    }
+    if(flg){
+        alert("部門変更で未入力項目があります");
         return false;
     }else{
         return true;

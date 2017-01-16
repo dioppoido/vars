@@ -47,7 +47,7 @@
                             <div class="top-margin">&nbsp;</div>
                             <div class="text-left">< 部門追加 ></div><br>
 
-                            <form id="field" name="field" method="POST" action="/eventcontrol/votesetting?eventid=<%=eventdata[0].Eventid%>&mode=append" onsubmit="return spaceCheck()">
+                            <form id="field" name="field" method="POST" action="/eventcontrol/votesetting?eventid=<%=eventdata[0].Eventid%>&mode=append" onsubmit="return insertspaceCheck()">
                                 <input type="hidden" name="eventid" value="<%=eventdata[0].Eventid%>">
                                 <table id="field-tbl" class="table alt-table-responsive table-bordered">
                                     <thead>
@@ -74,8 +74,7 @@
                             <hr class="hr-field">
 
                             <br><div class="text-left">< 部門変更 ></div><br>
-
-                            <form method="POST" action="/eventcontrol/votesetting?eventid=<%=eventdata[0].Eventid%>&mode=change">
+                            <form method="POST" action="/eventcontrol/votesetting?eventid=<%=eventdata[0].Eventid%>&mode=change" onsubmit="return fixspaceCheck(<%=vote.length %>)">
                               <input type="hidden" name="eventid" value="<%=eventdata[0].Eventid%>">
                                 <table id="field-tbl" class="table alt-table-responsive table-bordered">
                                     <thead>
