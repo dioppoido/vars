@@ -33,6 +33,11 @@ body{
     margin-top:20px;
     font-weight: bolder;
 }
+.hr-field{
+  width: 98%;
+    background-color: #fff;
+    border-top: 2px dashed #8c8b8b;
+}
 .sample-btn{
     font-size: 24px;
     margin: 0 auto;
@@ -84,6 +89,7 @@ button.btn{
   margin:0 auto;
   margin-top: 30px;
   margin-bottom: 30px;
+  margin-left:450px;
 }
 button.change-btn{
   font-size: 28px;
@@ -137,4 +143,309 @@ input[type=file]{
 }
 .footer-bihind{
   margin-bottom: 50px;
+}
+@media screen and (min-width: 768px) and (max-width: 979px) {
+  .teamcontrols{
+      margin-top: 60px;
+      font-size: 24px;
+  }
+  .panel-titles{
+      font-size: 28px;
+      width: 100%;
+      margin: 0 auto;
+      margin-left: 20px;
+      margin-top:20px;
+      font-weight: bolder;
+  }
+
+  .panel-list{
+      width: 95%;
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      margin-left: 10px;
+      font-size: 18px;
+      border-color: #62c2e4;
+      -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  }
+  .panel-file{
+    width: 100%;
+    margin: 0 auto;
+    /*margin-left: 20px;*/
+    margin-top:20px;
+    font-size: 18px;
+    font-weight: bolder;
+  }
+
+  .controls-title{
+    font-size:30px;
+    font-weight: bolder;
+  }
+  .panel-form{
+      width: 95%;
+      margin: 0 auto;
+      margin-left: 20px;
+      margin-top:20px;
+      font-size: 18px;
+      font-weight: bolder;
+  }
+  button.btn{
+    font-size: 15px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  button.change-btn{
+    font-size: 28px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /*margin-left: 450px;*/
+  }
+  button.upload-btn{
+    font-size: 15px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /*margin-left: 450px;*/
+  }
+  button.delete-btn{
+    font-size: 15px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /*margin-left: 430px;*/
+  }
+  .delete-size{
+    font-size: 18px;
+    margin: 0 auto;
+    /*margin-right: 15px;*/
+    /*width: 95%;*/
+    font-weight: bolder;
+  }
+  .upload-size{
+    font-size: 18px;
+    margin: 0 auto;
+    margin-right: 5px;
+    width: 95%;
+    font-weight: bolder;
+  }
+  .change-size{
+    font-size: 18px;
+    margin: 0 auto;
+    font-weight: bolder;
+  }
+  .hr-field{
+    width: 95%;
+      background-color: #fff;
+      border-top: 2px dashed #8c8b8b;
+  }
+ .smart{
+   margin-left: 20px;
+ }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .teamcontrols{
+      margin-top: 60px;
+      font-size: 24px;
+  }
+  .panel-titles{
+      font-size: 28px;
+      width: 100%;
+      margin: 0 auto;
+      margin-left: 20px;
+      margin-top:20px;
+      font-weight: bolder;
+  }
+
+  .panel-list{
+      width: 95%;
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      margin-left: 10px;
+      font-size: 18px;
+      border-color: #62c2e4;
+      -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  }
+  .panel-file{
+    width: 100%;
+    margin: 0 auto;
+    /*margin-left: 20px;*/
+    margin-top:20px;
+    font-size: 18px;
+    font-weight: bolder;
+  }
+
+  .controls-title{
+    font-size:30px;
+    font-weight: bolder;
+  }
+  .panel-form{
+      width: 95%;
+      margin: 0 auto;
+      margin-left: 20px;
+      margin-top:20px;
+      font-size: 18px;
+      font-weight: bolder;
+  }
+  button.btn{
+    font-size: 15px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  button.change-btn{
+    font-size: 28px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /*margin-left: 450px;*/
+  }
+  button.upload-btn{
+    font-size: 15px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /*margin-left: 450px;*/
+  }
+  button.delete-btn{
+    font-size: 15px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /*margin-left: 430px;*/
+  }
+  .delete-size{
+    font-size: 18px;
+    margin: 0 auto;
+    /*margin-right: 15px;*/
+    /*width: 95%;*/
+    font-weight: bolder;
+  }
+  .upload-size{
+    font-size: 18px;
+    margin: 0 auto;
+    margin-right: 5px;
+    width: 95%;
+    font-weight: bolder;
+  }
+  .change-size{
+    font-size: 18px;
+    margin: 0 auto;
+    font-weight: bolder;
+  }
+  .hr-field{
+    width: 95%;
+      background-color: #fff;
+      border-top: 2px dashed #8c8b8b;
+  }
+ .smart{
+   margin-left: 20px;
+ }
+
+}
+
+@media screen and (max-width: 479px) {
+  .teamcontrols{
+      margin-top: 60px;
+      font-size: 24px;
+  }
+  .panel-titles{
+      font-size: 28px;
+      width: 100%;
+      margin: 0 auto;
+      margin-left: 20px;
+      margin-top:20px;
+      font-weight: bolder;
+  }
+
+  .panel-list{
+      width: 95%;
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      margin-left: 10px;
+      font-size: 18px;
+      border-color: #62c2e4;
+      -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  }
+  .panel-file{
+    width: 100%;
+    margin: 0 auto;
+    /*margin-left: 20px;*/
+    margin-top:20px;
+    font-size: 18px;
+    font-weight: bolder;
+  }
+
+  .controls-title{
+    font-size:30px;
+    font-weight: bolder;
+  }
+  .panel-form{
+      width: 95%;
+      margin: 0 auto;
+      margin-left: 20px;
+      margin-top:20px;
+      font-size: 18px;
+      font-weight: bolder;
+  }
+  button.btn{
+    font-size: 15px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  button.change-btn{
+    font-size: 28px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /*margin-left: 450px;*/
+  }
+  button.upload-btn{
+    font-size: 15px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /*margin-left: 450px;*/
+  }
+  button.delete-btn{
+    font-size: 15px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /*margin-left: 430px;*/
+  }
+  .delete-size{
+    font-size: 18px;
+    margin: 0 auto;
+    /*margin-right: 15px;*/
+    /*width: 95%;*/
+    font-weight: bolder;
+  }
+  .upload-size{
+    font-size: 18px;
+    margin: 0 auto;
+    margin-right: 5px;
+    width: 95%;
+    font-weight: bolder;
+  }
+  .change-size{
+    font-size: 18px;
+    margin: 0 auto;
+    font-weight: bolder;
+  }
+  .hr-field{
+    width: 95%;
+      background-color: #fff;
+      border-top: 2px dashed #8c8b8b;
+  }
+ .smart{
+   margin-left: 20px;
+ }
 }

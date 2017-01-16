@@ -94,7 +94,7 @@
                         </label>
                             <div class="panel-file">
                               <body onload="showFilename();"></body>
-                              <div id="file_name" class="name"></div>
+                              <div id="file_name" class="name smart"></div>
                             </div>
                         </div>
 
@@ -111,8 +111,13 @@
                     <!-- pdf処理 -->
                     <form method="post" name="teampdf" action="teamcontrol/teampdf" enctype="multipart/form-data" onsubmit="return date_confirm()">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <hr class="hr-field"><br>
                             <div class="panel-form">
-                              <label>PDF資料アップロード : </label>
+                              <label>PDF資料アップロード :
+                                <%if(teamdata[0].Works!=="public/images/noimage.png"){%>
+                                    <a href="<%=teamdata[0].Works%>">プレビュー表示</a>
+                                    <%}%>
+                              </label>
                             </div>
                         </div>
 
@@ -124,21 +129,22 @@
                              </label>
                             </div>
                         </div>
-
                         <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                             <div class="panel-file">
-                              <body onload="showPDFname();"></body>
-                              <div id="pdf_name" class="name"></div>
-                            </div>
-                        </div>
 
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="panel-file">
-                              <%if(teamdata[0].Works!=="public/images/noimage.png"){%>
-                              <a href="<%=teamdata[0].Works%>">プレビュー表示リンク</a>
-                              <%}%>
+                              <body onload="showPDFname();"></body>
+                              <div id="pdf_name" class="name smart"></div>
                             </div>
-                        </div>
+                        </div><br>
+                        <!-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                          <%if(teamdata[0].Works!=="public/images/noimage.png"){%>
+                            <div class="panel-file">
+                                <div class="text-center">
+                              <a href="<%=teamdata[0].Works%>">プレビュー表示リンク</a>
+                            </div>
+                          </div>
+                              <%}%>
+                        </div> -->
 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                           <div class="text-center">
@@ -149,10 +155,12 @@
                         </div>
                     </form><!--pdf処理form -->
 
+
 <!-- ---------------------------------------------------------------- -->
                     <!-- 削除処理-->
                     <form method="post" name="teamdelete" action="teamcontrol/teamdelete" onsubmit="return date_confirm()">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <hr class="hr-field"><br>
                             <div class="panel-form">
                               <label>チーム削除 : </label>
                             </div>
@@ -163,6 +171,7 @@
                               <input type="hidden" name="teamid" value="<%=teamdata[0].Teamid%>">
                             <button type="submit" class="btn btn-danger"><div class="delete-size">削除</div></button>
                           </div>
+                          <br>
                         </div>
                     </form><!--削除処理form -->
 
