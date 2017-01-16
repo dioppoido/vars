@@ -13,3 +13,14 @@ function showFilename(){
 
     view.innerHTML = filename;
 }
+function showPDFname(){
+
+    var filenames = document.getElementById("pdf_file").value;
+    var views = document.getElementById("pdf_name");
+
+    if(filenames == ""){
+        filenames = "ファイルが選択されていません。";
+    }
+
+    views.innerHTML = filenames;
+}

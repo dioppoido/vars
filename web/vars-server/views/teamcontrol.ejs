@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title-->
-    <title>EventControl - VARS -</title>
+    <title>TeamControl - VARS -</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
@@ -33,18 +33,144 @@
         <div class="row">
             <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
               <div class="teamcontrols">
+                <div class="panel panel-list panel-primary">
 
-                <form method="post" name="teamcontrol" action="teamcontrol"  onsubmit="return date_confirm()" novalidate>
-                    <div class="row">
+                    <div class="panel-heading controls-title">チーム管理ページ</div>
+
+                      <div class="panel-titles">
+                          <label>チーム情報変更</label>
+                        </div>
+
+
+                        <form method="post" name="teamchange" action="teamcontrol/teamchange" enctype="multipart/form-data" onsubmit="return date_confirm()">
+
+                        <input type="hidden" name="eventid" value="<%=teamdata[0].Eventid %>">
+                        <input type="hidden" name="imagepath" value="<%=teamdata[0].Image %>">
+
+                        <div class="panel-form">
+                          <label>チーム名： </label>
+                          <input type="text" class="form-control input-lg team-input" name="teamname" value="<%=teamdata[0].Teamname%>" required>
+                        </div>
+
+                        <div class="panel-form">
+                          <label>システム名： </label>
+                          <input type="text" class="form-control input-lg team-input" name="workname" value="<%=teamdata[0].Workname%>">
+                        </div>
+
+                        <div class="panel-form">
+                          <label>概要： </label>
+                          <textarea class="form-control input-lg team-input" name="overview" placeholder="例)メンバー名、チーム紹介">
+<%=teamdata[0].Overview%>
+                          </textarea>
+                        </div>
+
+                        <div class="panel-form">
+                          <label>代表者名： </label>
+                          <input type="text" class="form-control input-lg team-input" name="displayname" value="<%=teamdata[0].displayName%>" required>
+                        </div>
+
+                        <div class="panel-form">
+                          <label>メールアドレス： </label>
+                          <input type="text" class="form-control input-lg team-input" name="address" value="<%=teamdata[0].Address%>" required>
+                        </div>
+
+<!-- ---------------------------------------------------------------- -->
+                        <!-- サムネ処理 -->
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="text-center">
-                              <input type="hidden" name="Teamid" value="<%=teamdata[0].Teamid%>">
-                              <button type="submit" class="sample-btn btn-danger btn">チーム削除</button>
+                            <div class="panel-form">
+                              <label>サムネイル画像( .jpg .png .gifのみ ) : </label>
                             </div>
                         </div>
-                    </div>
-                </form>
 
+                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+                            <div class="panel-file">
+                              <label class="btn btn-primary">
+                              画像を選択
+                              <input type='file' id="thumbnail_file" name="thumbnail" accept="image/jpeg, image/gif, image/png" onchange="showFilename();">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                        </label>
+                            <div class="panel-file">
+                              <body onload="showFilename();"></body>
+                              <div id="file_name" class="name"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <div class="text-center">
+                            <input type="hidden" name="teamid" value="<%=teamdata[0].Teamid%>">
+                            <button type="submit" class="btn btn-success submit-btn"><div class="change-size">変更</div></button>
+                          </div>
+                        </div>
+
+                    </form><!--チーム変更form -->
+
+<!-- ---------------------------------------------------------------- -->
+                    <!-- pdf処理 -->
+                    <form method="post" name="teampdf" action="teamcontrol/teampdf" enctype="multipart/form-data" onsubmit="return date_confirm()">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="panel-form">
+                              <label>PDF資料アップロード : </label>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+                            <div class="panel-file">
+                              <label class="btn btn-primary">
+                              PDFを選択
+                              <input type='file' id="pdf_file" name="pdf_file" accept="application/pdf" onchange="showPDFname();">
+                             </label>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <div class="panel-file">
+                              <body onload="showPDFname();"></body>
+                              <div id="pdf_name" class="name"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="panel-file">
+                              <%if(teamdata[0].Works!=="public/images/noimage.png"){%>
+                              <a href="<%=teamdata[0].Works%>">プレビュー表示リンク</a>
+                              <%}%>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <div class="text-center">
+                            <input type="hidden" name="teamid" value="<%=teamdata[0].Teamid%>">
+                            <input type="hidden" name="work" value="<%=teamdata[0].Work%>">
+                            <button type="submit" class="btn btn-success submit-btn"><div class="upload-size">アップロード</div></button>
+                          </div>
+                        </div>
+                    </form><!--pdf処理form -->
+
+<!-- ---------------------------------------------------------------- -->
+                    <!-- 削除処理-->
+                    <form method="post" name="teamdelete" action="teamcontrol/teamdelete" onsubmit="return date_confirm()">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="panel-form">
+                              <label>チーム削除 : </label>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="text-center">
+                              <input type="hidden" name="teamid" value="<%=teamdata[0].Teamid%>">
+                            <button type="submit" class="btn btn-danger"><div class="delete-size">削除</div></button>
+                          </div>
+                        </div>
+                    </form><!--削除処理form -->
+
+
+
+
+                    <div class="row"></div>
+              </div><!-- panel -->
               </div><!-- eventcontrols -->
             </div><!-- col -->
         </div><!-- row -->
@@ -57,11 +183,26 @@
 <!-- jQuery -->
 <script src="../public/js/jquery.js"></script>
 
+<!-- jQuery Ui -->
+<script src="../public/js/jquery-ui.min.js"></script>
+
+<!-- multiselect -->
+<script src="../public/js/jquery.multiselect.js"></script>
+
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
 
+<!-- Show File Name -->
+<script src="../public/js/show.js"></script>
+
+<!-- Form　confirmation -->
+<script src="../public/js/form_confirmation"></script>
+
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>
+
+<!-- onChange -->
+<script src="../public/js/change.js"></script>
 
 </body>
 </html>
