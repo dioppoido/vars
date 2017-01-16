@@ -98,7 +98,8 @@
 
                       <div id="fieldsetting" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <form method="POST" action="/eventcontrol/fieldsetting">
+                            <form method="POST" action="/eventcontrol/fieldsetting?eventid=<%=eventid%>">
+                                <input type="hidden" name="eventid" value="<%=eventid%>">
                               <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 text-center">
 
@@ -111,9 +112,9 @@
                                         var allteams = JSON.stringify(allteam);
                                       %>
 
-                                      <select class="form-control input-lg team-select" name="field" onchange="change_field(this , <%=votes%>,<%=allteams%>)">
+                                      <select class="form-control input-lg team-select" name="teamid" onchange="change_field(this , <%=votes%>,<%=allteams%>)">
                                         <% for(var i = 0 ; i < allteam.length ; i++) { %>
-                                          <option value="<%=i %>"><%= allteam[i].Teamname %></option>
+                                          <option value="<%=allteam[i].Teamid %>"><%= allteam[i].Teamname %></option>
                                           <% } %>
                                       </select>
 
@@ -123,7 +124,11 @@
                                           <div class="panel-forms">
                                                   <div class="panel-fonts">
                                                     <div class="text-left"><%=votedata[i].Votename%></div>
-                                                  <input checked data-toggle="toggle" data-size="normal" type="checkbox" id="field<%=i %>" name="check"><br>
+                                                  <input value="<%=votedata[i].Voteid%>" data-toggle="toggle" data-size="normal" type="checkbox" id="field<%=i %>" name="voteid"
+                                                         <%if(allteam[0].Department.indexOf(votedata[i].Voteid)>=0){%>
+                                                         checked
+                                                          <%}%>
+                                                  ><br>
                                                 </div>
                                           </div>
                                         <% } %>

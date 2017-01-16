@@ -276,7 +276,7 @@ router.get('/fieldsetting', function (req, res) {
                                 callback1();
                             })
                         },function (err) {
-                            res.render('fieldsetting.ejs',{teamdata:teamdata,votedata:votedata,allteam:allteam});
+                            res.render('fieldsetting.ejs',{teamdata:teamdata,votedata:votedata,allteam:allteam,eventid:eventdata[0].Eventid});
                         });
                     }).catch(function () {
                         res.render('errorconfirmation.ejs', {msg: "チームデータが存在しません。", url: '/eventcontrol?eventid='+eventid});
@@ -302,12 +302,14 @@ router.post('/fieldsetting', function (req, res) {
         var eventid=req.body.eventid;
         var teamid=req.body.teamid;
         var voteid=req.body.voteid;
-        var department=voteid.split(',');
+        console.log("voteid:"+voteid);
+        console.log("teamid:"+teamid)
+
         getTeam.getTeamjson({Teamid:teamid}).then(function (teamdata) {
-            updateTeam.updateTeam({Teamid:teamid},{Department:department});
+            updateTeam.updateTeam({Teamid:teamid},{$set:{Department:voteid}});
             res.render('confirmation.ejs', {
                 msg: 'チーム名：'+teamdata[0].Teamname+'の投票部門を設定しました。',
-                url: '/eventcontrol/votesetting?eventid=' + eventid
+                url: '/eventcontrol/fieldsetting?eventid=' + eventid
             });
         }).catch(function (msg) {
 
