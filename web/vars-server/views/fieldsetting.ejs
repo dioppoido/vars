@@ -61,7 +61,7 @@
 
                                 <% var teams = JSON.stringify(teamdata); %>
                                 <div class="form-group">
-                                  <select class="form-control input-lg team-select" name="field" onchange="change_field(this , <%=teams%>)">
+                                  <select class="form-control input-lg team-select" name="field" onchange="show_field(this , <%=teams%>)">
                                     <% for(var i = 0 ; i < votedata.length; i++) { %>
                                       <option value="<%=i%>"><%=votedata[i].Votename%></option>
                                       <% } %>
@@ -106,22 +106,28 @@
 
                                     <div class="form-group">
 
-                                      <select class="form-control input-lg team-select" name="field" onchange="change_field(this,'test2')">
-                                        <% for(var i = 1 ; i < 6; i++) { %>
-                                          <option value="<%=i%>">チーム<%=i%></option>
+                                      <%
+                                        var votes = JSON.stringify(votedata);
+                                        var allteams = JSON.stringify(allteam);
+                                      %>
+
+                                      <select class="form-control input-lg team-select" name="field" onchange="change_field(this , <%=votes%>,<%=allteams%>)">
+                                        <% for(var i = 0 ; i < allteam.length ; i++) { %>
+                                          <option value="<%=i %>"><%= allteam[i].Teamname %></option>
                                           <% } %>
                                       </select>
 
                                     </div>
-
-                                    <% for( var i = 1 ; i < 4 ; i++) { %>
-                                      <div class="panel-forms">
-                                              <div class="panel-fonts">
-                                                <div class="text-left">部門<%= i %></div>
-                                              <input checked data-toggle="toggle" data-size="normal" type="checkbox"><br>
-                                            </div>
-                                      </div>
-                                    <% } %>
+                                    <div id="field-area">
+                                        <% for( var i = 0 ; i < votedata.length ; i++) { %>
+                                          <div class="panel-forms">
+                                                  <div class="panel-fonts">
+                                                    <div class="text-left"><%=votedata[i].Votename%></div>
+                                                  <input checked data-toggle="toggle" data-size="normal" type="checkbox" id="field<%=i %>" name="check"><br>
+                                                </div>
+                                          </div>
+                                        <% } %>
+                                     </div>
                                     <input type="submit" class="btn btn-success btn-size text-right" value="登録">
                                   </div>
                                 </div>
