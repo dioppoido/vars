@@ -81,7 +81,7 @@ router.post('/teamchange',upload.single('thumbnail'), function(req, res) {
       }
 });
 var uploadpdf = multer({ dest: 'upfile/pdf/' });
-router.post('/teampdf', uploadpdf.single('teampdf'),function(req, res) {
+router.post('/teampdf', uploadpdf.single('pdf_file'),function(req, res) {
       if(req.session.user){
           //PDF追加
           var pdf=req.body.work;
@@ -98,7 +98,7 @@ router.post('/teampdf', uploadpdf.single('teampdf'),function(req, res) {
           }
 
           const FIND = {'Teamid':teamid};
-          const TEAMS={'Work':pdf};
+          const TEAMS={'Works':pdf};
           updateTeam.updateTeam(FIND,TEAMS);
 
           res.render('confirmation.ejs',{msg:'PDFを追加しました',url:'/teamcontrol?teamid='+teamid});

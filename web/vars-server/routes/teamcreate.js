@@ -60,7 +60,7 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
           var displayname=req.session.user.displayName;
           var address=req.session.user.address;
           var imagepath="";
-          var works = "";
+          var works = "public/images/noimage.png";
           var department =req.body.department;// req.body.department;
           var order;
           var teamdata="";
