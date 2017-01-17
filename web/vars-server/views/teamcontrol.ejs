@@ -36,6 +36,7 @@
                 <div class="panel panel-list panel-primary">
 
                     <div class="panel-heading controls-title">チーム管理ページ</div>
+                    <body onload="showFilename(),showPDFname(),fileview(),pdfview();"></body>
 
                       <div class="panel-titles">
                           <label>チーム情報変更</label>
@@ -60,8 +61,7 @@
                         <div class="panel-form">
                           <label>概要： </label>
                           <textarea class="form-control input-lg team-input" name="overview" placeholder="例)メンバー名、チーム紹介">
-<%=teamdata[0].Overview%>
-                          </textarea>
+<%=teamdata[0].Overview%></textarea>
                         </div>
 
                         <div class="panel-form">
@@ -92,10 +92,9 @@
                         </div>
 
                         <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                        </label>
                             <div class="panel-file">
-                              <body onload="showFilename(),showPDFname();"></body>
-                              <div id="file_name" class="name smart"></div>
+                              <div id="file_name" class="name smart" value=""></div>
+                              <div id="file_view" class="name smart"></div>
                             </div>
                         </div>
 
@@ -116,7 +115,7 @@
                             <div class="panel-form">
                               <label>PDF資料アップロード :
                                 <%if(teamdata[0].Works!=="public/images/noimage.png"){%>
-                                    <a href="<%=teamdata[0].Works%>">プレビュー表示</a>
+                                    <a href="<%=teamdata[0].Works%>">既存資料の確認</a>
                                     <%}%>
                               </label>
                             </div>
@@ -135,17 +134,9 @@
 
                               <!-- <body onload="showPDFname();"></body> -->
                               <div id="pdf_name" class="name smart"></div>
+                              <div id="pdf_view" class="name smart"></div>
                             </div>
                         </div><br>
-                        <!-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                          <%if(teamdata[0].Works!=="public/images/noimage.png"){%>
-                            <div class="panel-file">
-                                <div class="text-center">
-                              <a href="<%=teamdata[0].Works%>">プレビュー表示リンク</a>
-                            </div>
-                          </div>
-                              <%}%>
-                        </div> -->
 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                           <div class="text-center">
