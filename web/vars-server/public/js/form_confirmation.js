@@ -216,7 +216,7 @@ function eventcreate_confirm(){
         alert("チーム受付終了エラー : イベント開催前にチーム作成期間を終了してください");
         return false;
     }
-    if(hold_finish < team_start){
+    if(hold_end < team_start){
         alert("チーム受付終了エラー : イベント終了前にチーム作成期間を終了してください");
         return false;
     }
@@ -226,11 +226,11 @@ function eventcreate_confirm(){
         alert("投票開始日時エラー : チーム作成前に投票が可能です。");
         return false;
     }
-    if(team_start > vote_finish){
+    if(team_start > vote_end){
         alert("投票終了日時エラー : チーム作成前に投票期限が終了しています");
         return false;
     }
-    if(team_finish > vote_start){
+    if(team_end > vote_start){
         alert("投票開始日時エラー : 投票期間中はチーム受付を終了してください。");
         return false;
     }
@@ -446,7 +446,7 @@ function eventsetting_confirm(){
         alert("チーム受付終了エラー : イベント開催前にチーム作成期間を終了してください");
         return false;
     }
-    if(hold_finish < team_start){
+    if(hold_end < team_start){
         alert("チーム受付終了エラー : イベント終了前にチーム作成期間を終了してください");
         return false;
     }
@@ -456,11 +456,11 @@ function eventsetting_confirm(){
         alert("投票開始日時エラー : チーム作成前に投票が可能です。");
         return false;
     }
-    if(team_start > vote_finish){
+    if(team_start > vote_end){
         alert("投票終了日時エラー : チーム作成前に投票期限が終了しています");
         return false;
     }
-    if(team_finish > vote_start){
+    if(team_end > vote_start){
         alert("投票開始日時エラー : 投票期間中はチーム受付を終了してください。");
         return false;
     }
