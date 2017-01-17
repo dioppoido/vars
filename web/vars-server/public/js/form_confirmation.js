@@ -252,10 +252,10 @@ function eventcreate_confirm(){
     extension = extension[extension.length - 1];
 
     if( extension != ""){
-        if( extension != "jpg" && extension != "png" && extension != "gif"){
-            alert("jpgまたはpngまたはgifを選択してください。");
-            return false;
-        }
+      if( extension != "jpg" && extension != "png" && extension != "gif" && extension != "jpeg"){
+          alert("jpg・jpegまたはpngまたはgifを選択してください。");
+          return false;
+      }
     }
 
 
@@ -482,10 +482,10 @@ function eventsetting_confirm(){
     extension = extension[extension.length - 1];
 
     if( extension != ""){
-        if( extension != "jpg" && extension != "png" && extension != "gif"){
-            alert("jpgまたはpngまたはgifを選択してください。");
-            return false;
-        }
+      if( extension != "jpg" && extension != "png" && extension != "gif" && extension != "jpeg"){
+          alert("jpg・jpegまたはpngまたはgifを選択してください。");
+          return false;
+      }
     }
 
 
@@ -503,10 +503,10 @@ function teamcreate_confirm(){
     extension = extension[extension.length - 1];
 
     if( extension != ""){
-        if( extension != "jpg" && extension != "png" && extension != "gif"){
-            alert("jpgまたはpngまたはgifを選択してください。");
-            return false;
-        }
+      if( extension != "jpg" && extension != "png" && extension != "gif" && extension != "jpeg"){
+          alert("jpg・jpegまたはpngまたはgifを選択してください。");
+          return false;
+      }
     }
 
 
@@ -526,10 +526,10 @@ function teamcontrol_confirm(){
     extension = extension[extension.length - 1];
 
     if( extension != ""){
-        if( extension != "jpg" && extension != "png" && extension != "gif"){
-            alert("jpgまたはpngまたはgifを選択してください。");
-            return false;
-        }
+      if( extension != "jpg" && extension != "png" && extension != "gif" && extension != "jpeg"){
+          alert("jpg・jpegまたはpngまたはgifを選択してください。");
+          return false;
+      }
     }
 
 
