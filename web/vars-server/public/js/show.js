@@ -17,7 +17,7 @@ function showPDFname(){
 
     var filenames = document.getElementById("pdf_file").value;
     var views = document.getElementById("pdf_name");
-    console.log(views);
+
     if(filenames == ""){
         filenames = "ファイルが選択されていません。";
     }
