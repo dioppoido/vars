@@ -510,7 +510,7 @@ function teamcreate_confirm(){
     }
 
 
-    return false;
+    return true;
 
 }
 
@@ -533,13 +533,13 @@ function teamcontrol_confirm(){
     }
 
 
-    return false;
+    return true;
 
 }
 
 
 function pdf_check(){
-    
+
     var pdf = document.forms.teampdf.pdf_files.value;
 
     var extension = pdf.split(".");
