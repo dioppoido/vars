@@ -130,6 +130,10 @@ app.use('/teamtop',require('./routes/teamtop'));
 //チーム管理
 app.use('/teamcontrol',require('./routes/teamcontrol'));
 
+//admin・外部ユーザー管理
+app.use('/admin',require('./routes/admin'));
+app.use('/adminlogin',require('./routes/adminlogin'));
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
