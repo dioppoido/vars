@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title-->
+    <title>AdminLogin - VARS -</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../public/css/adminlogin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/earlyaccess/notosansjapanese.css' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+
+
+                <div class="admin-login">
+                    <div class="text-center visible-xs visible-sm">Admin Login Form</div>
+                    <div class="login-form">
+                        <div class="login-topcolor"></div>
+                        <div class="login-title">V A R S</div>
+                        <div class="login-contents">
+
+                            <div class="contents-title">- 管理者ページログイン -</div>
+
+
+                            <div class="text-center login-error">
+                                <%= error %>
+                            </div>
+
+
+                            <!-- Login Form -->
+                            <form method="POST" action="/adminlogin">
+
+                                <!-- ユーザーID -->
+                                <div class="form-group">
+                                    <input type="text" name="userid" class="form-control input-lg" placeholder="アドレス">
+                                </div>
+
+                                <!-- パスワード -->
+                                <div class="form-group">
+                                    <input type="password" name="password" class="form-control input-lg" placeholder="パスワード">
+                                </div>
+
+
+                                <!-- 変更ボタン -->
+                                <div class="text-right">
+                                    <button type="submit" class="btn btn-primary login-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                                </div>
+
+                            </form>
+
+
+                        </div><!-- login contents -->
+                    </div><!-- login form -->
+                </div><!-- login -->
+
+                <div class="other">
+                    <div class="other-form">
+                        <div class="other-contents">
+                            <a href="#">パスワードを忘れた方はこちら</a>
+                            <div class="">Copyright (C) 2016 AEC.Inc All Rights Reserved.</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div><!-- col -->
+
+
+
+        </div><!-- row -->
+    </div><!-- container -->
+</section>
+
+<!-- jQuery -->
+<script src="../public/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../public/js/bootstrap.min.js"></script>
+
+<!-- Form Confirmation -->
+<script src="../public/js/form_confirmation"></script>
+
+
+</body>
+</html>
