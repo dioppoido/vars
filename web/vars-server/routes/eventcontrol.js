@@ -131,7 +131,7 @@ router.post('/eventsetting',  upload.single('thumbnail'), function (req, res) {
       };
       console.log(eventdata.Fieldid);
       updateEvent.updateEvent({Eventid:req.body.eventid}, {$set:eventdata});
-      res.render('confirmation.ejs',{msg: 'イベント情報を変更しました。', url:'/eventcontrol/announcesetting?eventid='+eventid});
+      res.render('confirmation.ejs',{msg: 'イベント情報を変更しました。', url:'/eventcontrol/eventsetting?eventid='+eventid});
     } else {
         res.redirect('/');
     }
@@ -336,7 +336,11 @@ router.get('/announcesetting', function(req, res) {
 
                       })
                   }, function (err) {
-                      res.render('announcesetting.ejs', {teamdata: teamdata});
+                      if(teamdata.length>0) {
+                          res.render('announcesetting.ejs', {teamdata: teamdata});
+                      }else{
+                          res.render('errorconfirmation.ejs', {msg: 'チームが存在しません。', url: '/eventcontrol?eventid='+eventid});
+                      }
                   });
               }).catch(function () {
                   res.render('errorconfirmation.ejs', {msg: 'イベントIDが存在しません', url: '/eventlist'});
