@@ -14,6 +14,8 @@ const mongoose = require('mongoose');
 exports.users = new mongoose.Schema({
     Address: String,          //E-Mailアドレス
     Admin_flag: Boolean,         //管理者フラグ
+    Name: String,
+    Password: String
 });
 
 /**

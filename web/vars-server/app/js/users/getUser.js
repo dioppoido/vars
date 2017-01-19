@@ -6,7 +6,7 @@
  * @returns {Promise}
  */
 
-exports.getUser = function(Address){
+exports.getUser = function(){
     return new Promise(function (resolve, reject) {
         const mongoose = require('mongoose');
         const db = mongoose.createConnection('mongodb://mongo/vars');
@@ -15,7 +15,6 @@ exports.getUser = function(Address){
 
         //admin_flagがtrue
         users.find({Admin_flag:true}, {'_id':0 },function(err, docs) {
-            console.log("getuserなう");
             if (!err) {
                 if (docs.length === 1) {
                     resolve(docs);
