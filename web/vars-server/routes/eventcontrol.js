@@ -107,6 +107,8 @@ router.post('/eventsetting',  upload.single('thumbnail'), function (req, res) {
         imagepath=req.body.imagepath;
       }
 
+
+
       var eventdata={
         Eventname:req.body.eventname,
         Overview:req.body.overview,
@@ -127,11 +129,12 @@ router.post('/eventsetting',  upload.single('thumbnail'), function (req, res) {
             Votestart:req.body.votestart,
             Votefinish:req.body.votefinish
         },
-        Image:imagepath
+        Image:imagepath,
+        Release_flag:req.body.release
       };
       console.log(eventdata.Fieldid);
       updateEvent.updateEvent({Eventid:req.body.eventid}, {$set:eventdata});
-      res.render('confirmation.ejs',{msg: 'イベント情報を変更しました。', url:'/eventcontrol/announcesetting?eventid='+eventid});
+      res.render('confirmation.ejs',{msg: 'イベント情報を変更しました。', url:'/eventcontrol/eventsetting?eventid='+eventid});
     } else {
         res.redirect('/');
     }
@@ -345,7 +348,6 @@ router.get('/announcesetting', function(req, res) {
               res.render('errorconfirmation.ejs', {msg: 'イベントIDが存在しません', url: '/eventlist'});
           }
       } else {
-        console.log("1234567");
           res.redirect('/');
       }
 });
@@ -357,6 +359,24 @@ router.post('/announcesetting', function(req, res) {
     updateEvent.updateEvent({Eventid:eventid},{$set:{Order:announce}});
 
     res.render('confirmation.ejs',{msg: '表示順を変更しました。', url:'/eventcontrol/announcesetting?eventid='+eventid});
+});
+
+/* 作成者 長谷川  投票結果公開非公開の処理 */
+router.get('/releasesetting', function(req, res) {
+    if(req.session.user){
+        if(req.query.eventid) {
+            var eventid = req.query.eventid;
+            getEvent.getEvent(eventid).then(function (eventdata) {
+                res.render('releasesetting.ejs');
+            }).catch(function () {
+                res.render('errorconfirmation.ejs', {msg: 'イベントIDが存在しません。', url: '/eventlist'});
+            });
+        }else{
+            res.render('errorconfirmation.ejs', {msg: 'イベントIDが存在しません。', url: '/eventlist'});
+        }
+    } else{
+        res.redirect('/');
+    }
 });
 
 
