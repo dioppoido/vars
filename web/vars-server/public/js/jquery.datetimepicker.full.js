@@ -3216,3 +3216,22 @@ $("#vote-end").datetimepicker({
     step: 5,
     minDate: new Date()
 });
+//eventsetting
+$("#shold-start").datetimepicker({
+    step: 5
+});
+$("#shold-end").datetimepicker({
+    step: 5
+});
+$("#steam-start").datetimepicker({
+    step: 5
+});
+$("#steam-end").datetimepicker({
+    step: 5
+});
+$("#svote-start").datetimepicker({
+    step: 5
+});
+$("#svote-end").datetimepicker({
+    step: 5
+});

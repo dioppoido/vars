@@ -122,7 +122,8 @@ db.events.insert({
         Votefinish: "2018/12/31 0:00"
     },
     Image: "public/images/noimage.png",
-    Order: ['2', '3', '6', '1', '5']
+    Order: ['2', '3', '6', '1', '5'],
+    Release_flg:true
 });
 db.events.insert({
     Eventid: "3",
@@ -415,5 +416,6 @@ db.events.insert({
         Votefinish:"2017/2/15 15:00"
     },
     Image:"public/images/goripic/dancegori.png",
-    Order: ['20','21','22','23','24','25','26','27','28']
+    Order: ['20','21','22','23','24','25','26','27','28'],
+    Release_flag:false
 });
