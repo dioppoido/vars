@@ -14,6 +14,8 @@ const mongoose = require('mongoose');
 exports.users = new mongoose.Schema({
     Address: String,          //E-Mailアドレス
     Admin_flag: Boolean,         //管理者フラグ
+    Name: String,               //名前
+    Password : String           //パスワード
 });
 
 /**
@@ -52,7 +54,8 @@ exports.events = new mongoose.Schema({
         Votefinish: Date
     },
     Image: String,
-    Order: Array
+    Order: Array,
+    Release_flag: Boolean        //集計結果公開するかどうかのフラグ
 
 });
 /**
