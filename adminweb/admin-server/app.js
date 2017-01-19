@@ -52,6 +52,12 @@ app.use(session({
 }));
 
 app.use('/test', require('./routes/test'));
+app.use('/admin',require('./routes/admin'));
+app.use('/adminlogin',require('./routes/adminlogin'));
+app.use('/adminlist',require('./routes/adminlist'));
+app.use('/externaledit',require('./routes/externaledit'));
+app.use('/adminedit',require('./routes/adminedit'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
