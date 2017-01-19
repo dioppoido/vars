@@ -14,6 +14,10 @@ router.get('/', function(req, res) {
         if(req.query.eventid) {
             var eventid=req.query.eventid;
             getEvent.getEvent(eventid).then(function (docs) {
+                if(docs[0].Release_flag === false){         //管理者によって集計画面を閲覧OKの処理をしないと表示しないように
+                    msg = "現在集計中です、もうしばらくお待ちください。";
+                    res.render('errorconfirmation.ejs', {msg:msg,url:'/eventtop?eventid='+eventid});
+                }
                 getTeam.getTeam(docs[0].Eventid).then(function (docs2) {
                     getVote.getVote(docs[0].Eventid).then(function (docs3) {
 
