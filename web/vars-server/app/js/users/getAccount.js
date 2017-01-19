@@ -14,7 +14,7 @@ exports.getAccount = function(userid, passwd){
         const Account = db.model('users', schema.users);
 
         //ログイン照合
-        Account.find({Userid:userid, Passwd:passwd}, {'_id':0 },function(err, docs) {
+        Account.find({Address:userid, Password:passwd}, {'_id':0 },function(err, docs) {
             if (!err) {
                 if (docs.length === 1) {
                     resolve(docs);
