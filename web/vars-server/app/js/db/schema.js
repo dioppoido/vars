@@ -16,6 +16,7 @@ exports.users = new mongoose.Schema({
     Admin_flag: Boolean,         //管理者フラグ
     Name: String,               //名前
     Password : String           //パスワード
+
 });
 
 /**

@@ -36,13 +36,14 @@
                 <div class="panel panel-list panel-primary">
 
                     <div class="panel-heading controls-title">チーム管理ページ</div>
+                    <body onload="showFilename(),showPDFname(),fileview(),pdfview();"></body>
 
                       <div class="panel-titles">
                           <label>チーム情報変更</label>
                         </div>
 
 
-                        <form method="post" name="teamchange" action="teamcontrol/teamchange" enctype="multipart/form-data" onsubmit="return date_confirm()">
+                        <form method="post" name="teamchange" action="teamcontrol/teamchange" enctype="multipart/form-data" onsubmit="return teamcontrol_confirm();">
 
                         <input type="hidden" name="eventid" value="<%=teamdata[0].Eventid %>">
                         <input type="hidden" name="imagepath" value="<%=teamdata[0].Image %>">
@@ -60,8 +61,7 @@
                         <div class="panel-form">
                           <label>概要： </label>
                           <textarea class="form-control input-lg team-input" name="overview" placeholder="例)メンバー名、チーム紹介">
-<%=teamdata[0].Overview%>
-                          </textarea>
+<%=teamdata[0].Overview%></textarea>
                         </div>
 
                         <div class="panel-form">
@@ -87,14 +87,14 @@
                               <label class="btn btn-primary">
                               画像を選択
                               <input type='file' id="thumbnail_file" name="thumbnail" accept="image/jpeg, image/gif, image/png" value="" onchange="showFilename();">
+                              </label>
                             </div>
                         </div>
 
                         <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                        </label>
                             <div class="panel-file">
-                              <body onload="showFilename(),showPDFname();"></body>
-                              <div id="file_name" class="name smart"></div>
+                              <div id="file_name" class="name smart" value=""></div>
+                              <div id="file_view" class="name smart"></div>
                             </div>
                         </div>
 
@@ -109,13 +109,13 @@
 
 <!-- ---------------------------------------------------------------- -->
                     <!-- pdf処理 -->
-                    <form method="post" name="teampdf" action="teamcontrol/teampdf" enctype="multipart/form-data" onsubmit="return data_check()">
+                    <form method="post" name="teampdf" action="teamcontrol/teampdf" enctype="multipart/form-data" onsubmit="return pdf_check();">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                           <hr class="hr-field"><br>
                             <div class="panel-form">
                               <label>PDF資料アップロード :
                                 <%if(teamdata[0].Works!=="public/images/noimage.png"){%>
-                                    <a href="<%=teamdata[0].Works%>">プレビュー表示</a>
+                                    <a href="<%=teamdata[0].Works%>">既存資料の確認</a>
                                     <%}%>
                               </label>
                             </div>
@@ -134,17 +134,9 @@
 
                               <!-- <body onload="showPDFname();"></body> -->
                               <div id="pdf_name" class="name smart"></div>
+                              <div id="pdf_view" class="name smart"></div>
                             </div>
                         </div><br>
-                        <!-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                          <%if(teamdata[0].Works!=="public/images/noimage.png"){%>
-                            <div class="panel-file">
-                                <div class="text-center">
-                              <a href="<%=teamdata[0].Works%>">プレビュー表示リンク</a>
-                            </div>
-                          </div>
-                              <%}%>
-                        </div> -->
 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                           <div class="text-center">
@@ -158,7 +150,7 @@
 
 <!-- ---------------------------------------------------------------- -->
                     <!-- 削除処理-->
-                    <form method="post" name="teamdelete" action="teamcontrol/teamdelete" onsubmit="return date_confirm()">
+                    <form method="post" name="teamdelete" action="teamcontrol/teamdelete">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                           <hr class="hr-field"><br>
                             <div class="panel-form">
@@ -205,7 +197,7 @@
 <script src="../public/js/show.js"></script>
 
 <!-- Form　confirmation -->
-<script src="../public/js/form_confirmation"></script>
+<script src="../public/js/form_confirmation.js"></script>
 
 <!-- Footer Fixed -->
 <script src="../public/js/footerFixed.js"></script>

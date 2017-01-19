@@ -339,7 +339,11 @@ router.get('/announcesetting', function(req, res) {
 
                       })
                   }, function (err) {
-                      res.render('announcesetting.ejs', {teamdata: teamdata});
+                      if(teamdata.length>0) {
+                          res.render('announcesetting.ejs', {teamdata: teamdata});
+                      }else{
+                          res.render('errorconfirmation.ejs', {msg: 'チームが存在しません。', url: '/eventcontrol?eventid='+eventid});
+                      }
                   });
               }).catch(function () {
                   res.render('errorconfirmation.ejs', {msg: 'イベントIDが存在しません', url: '/eventlist'});

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title-->
+    <title>AdminList - VARS -</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../public/css/adminlist.css" rel="stylesheet">
+    <link href="../public/css/tablesort.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/earlyaccess/notosansjapanese.css' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+
+                <div class="adminlist">
+
+                    <div class="text-center"> ユーザーリスト</div>
+
+
+                    <div class="list-contents">
+                        <!-- List Tab -->
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1" data-toggle="tab">admin</a></li>
+                            <li><a href="#tab2" data-toggle="tab">外部ユーザー</a></li>
+                        </ul>
+                        <!-- Contents -->
+                        <div class="tab-content text-center">
+                            <div class="tab-pane fade in active" id="tab1">
+                                <table id="admin-table" class="table table-bordered list-table tablesorter">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-md-2 text-center">No.</th>
+                                            <th class="col-md-6 text-center">Eメールアドレス</th>
+                                            <th class="col-md-4 text-center">名前</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i = 0 ; i < adminuser.length; i++) { %>
+                                            <tr>
+                                                <td><%=i + 1%></td>
+                                                <td><%=adminuser[i].Address%></td>
+                                                <td><%=adminuser[i].Name %></td>
+                                            </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="tab2">
+                                <table id="external-table" class="table table-bordered list-table tablesorter">
+                                    <thead>
+                                    <tr>
+                                        <th class="col-md-2 text-center">No.</th>
+                                        <th class="col-md-6 text-center">Eメールアドレス</th>
+                                        <th class="col-md-4 text-center">名前</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <% for(var i = 0 ; i < externaluser.length; i++) { %>
+                                    <tr>
+                                        <td><%=i + 1%></td>
+                                        <td><%=externaluser[i].Address%></td>
+                                        <td><%=externaluser[i].Name %></td>
+                                    </tr>
+                                    <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div><!-- col -->
+
+
+
+        </div><!-- row -->
+    </div><!-- container -->
+</section>
+
+<!-- jQuery -->
+<script src="../public/js/jquery.js"></script>
+
+<!-- Table sort -->
+<script src="../public/js/jquery.tablesorter.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../public/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
