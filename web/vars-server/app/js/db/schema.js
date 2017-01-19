@@ -12,8 +12,10 @@ const mongoose = require('mongoose');
  * ユーザーテーブル
  */
 exports.users = new mongoose.Schema({
+    Name : String,            // 名前
     Address: String,          //E-Mailアドレス
     Admin_flag: Boolean,         //管理者フラグ
+    Password: String          //パスワード
 });
 
 /**
