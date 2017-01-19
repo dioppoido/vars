@@ -60,6 +60,7 @@ textarea.event-input {
 .submit-btn{
     font-size:24px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 input[type=file]{
     display: none;
