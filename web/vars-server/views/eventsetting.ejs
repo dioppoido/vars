@@ -49,7 +49,7 @@
                             <div class="form-group">
                               <label>イベント名 : </label>
                               <input type="text" class="form-control input-lg event-input" name="eventname" value="<%= eventdata[0].Eventname %>" required>
-                            </div>
+                          </div>
 
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -150,14 +150,24 @@
                                     <label class="btn btn-primary file-btn">
                                         ファイルを選択
                                         <input type='file' id="thumbnail_file" name="thumbnail" accept="image/jpeg, image/gif, image/png" onchange="showFilename();">
-                                        
+
                                     </label>
                                 </div>
                             </div>
 
+
                             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                                 <body onload="showFilename();"></body>
                                 <div id="file_name" class="name"></div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <label>集計画面公開:</label>
+                                    <input data-toggle="toggle" name="release" data-size="normal" data-on="公開" data-off="非公開" type="checkbox"
+                                    <%if(eventdata[0].Release_flag == true){%>
+                                    checked
+                                     <%}%>
+                                 >
                             </div>
 
                             <div class="row">
