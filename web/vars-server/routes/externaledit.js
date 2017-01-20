@@ -24,11 +24,9 @@ router.get('/', loginCheck, function(req, res) {
     var sort = {sort:{Address:1}};
 
     getExternal.getExternal(json,sort).then(function(userdata){
-      if( userdata.length == 0){
         res.render('externaledit.ejs',{userdata:userdata});
-      }else{
-          res.render('externaledit.ejs',{userdata:userdata});
-      }
+
+
   });
 });
 
