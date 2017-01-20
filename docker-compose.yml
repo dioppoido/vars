@@ -9,6 +9,17 @@ web:
   links:
     - mongo
 
+adminweb:
+  build: adminweb
+  container_name: admin_web
+  volumes:
+    - ./adminweb/admin-server:/docker/adminweb
+  working_dir: /docker/adminweb
+  ports:
+    - "40125:40125"
+  links:
+    - mongo
+
 mongo:
   build: mongo
   container_name: vars_mongo
