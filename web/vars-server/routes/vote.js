@@ -128,6 +128,7 @@ router.get('/', PasswordCheck, function (req, res) {
                                                     allteamdata: allteamdata,
                                                     teamdata: teamdata,
                                                     votedata: votedata,
+                                                    memodata: eventdata,
                                                     msg: ""
                                                 });
                                             }else{
