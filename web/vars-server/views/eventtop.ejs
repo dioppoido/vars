@@ -95,7 +95,17 @@
                                         <!-- <li><%=eventdata[0].Overview%></li> -->
                                     </ul>
                                   </li>
-                              </ul>
+
+                                  <li>
+                                    評価部門 : <br>
+                                    <ul class="list-unstyled date">
+                                      <%for(var cnt=0;cnt<votedata.length;cnt++){%>
+                                        <li>
+                                          <%=votedata[cnt].Votename%>
+                                        </li>
+                                      <%}%>
+                                    </ul>
+                                  </li>
                           </div>
                       </div>
                   </div>
