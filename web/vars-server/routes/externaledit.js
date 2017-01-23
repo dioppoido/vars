@@ -41,13 +41,13 @@ router.post('/', loginCheck, function(req, res) {
             if(mode=="insert"){
               var username = req.body.username;
               var admin_flag = false;
-              var password = req.body.password;
+              // var password = req.body.password;
               var address = req.body.address;
               var insertjson= {
                                   "Name":username,
                                   "Address":address,
                                   "Admin_flag":admin_flag,
-                                  "Password":password
+                                  // "Password":password
                                 };
                 if(userdata==""){
                   insertUser.insertUser(insertjson);
