@@ -25,7 +25,7 @@ function show_field(obj,teams){
 
     //参加チーム表示
     var teamnum = document.getElementById("teamnum");
-    teamnum.innerHTML = "参加チーム数" + teams[value].length;
+    teamnum.innerHTML = "参加チーム数 : " + teams[value].length;
 
     //変更部門表示
     var teamname = document.getElementById("teamname");
