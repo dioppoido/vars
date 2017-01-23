@@ -26,7 +26,7 @@
     <link href='http://fonts.googleapis.com/earlyaccess/notosansjapanese.css' rel='stylesheet' type='text/css'>
 
 </head>
-<body>
+<body onload="show_field(this , <%=teams%>)">
 
 <%- include('./header.ejs') %>
 <!-- 確認画面 -->
@@ -68,7 +68,7 @@
                                   </select>
                                 </div>
 
-                                <div id="teamnum" class="filedsetting-font text-right">参加チーム数3</div>
+                                <div id="teamnum" class="filedsetting-font text-right">参加チーム数 : <%=teamdata[0].length%></div>
 
                                 <div id="teamname">
                                     <%for(var i=0;i<teamdata[0].length;i++){%>
@@ -114,7 +114,7 @@
 
                                       <select class="form-control input-lg team-select" name="teamid" onchange="change_field(this , <%=votes%>,<%=allteams%>)">
                                         <% for(var i = 0 ; i < allteam.length ; i++) { %>
-                                          <option value="<%=allteam[i].Teamid %>"><%= allteam[i].Teamname %></option>
+                                          <option value="<%=allteam[i].Teamid %>"><%= allteam[i].Teamname %>  -  <%=allteam[i].Workname%></option>
                                           <% } %>
                                       </select>
 
