@@ -39,19 +39,21 @@
 
                 <div class="announce">
 
-                    <ol class="breadcrumb small">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">イベント管理</a></li>
-                        <li class="breadcrumb-item active">発表順番変更</li>
+                    <!-- パンくずリスト -->
+                    <ol class="breadcrumb">
+                        <li><a href="/eventtop?eventid=<%=teamdata[0].Eventid%>" class="bread-list">イベントトップ</a></li>
+                        <li><a href="/eventcontrol?eventid=<%=teamdata[0].Eventid%>" class="bread-list">イベント管理</a></li>
+                        <li class="active bread-list">ユーザーリスト</li>
                     </ol>
 
                     <div class="panel panel-list panel-primary">
                       <div class="panel-heading announce-title">発表順番変更</div>
                       <div class="panel-body">
                         <div class="announce-denger">ドラッグ＆ドロップで順番を入れ替えてください。</div>
-                      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                      <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
                           <ul class="list-unstyled order">
 
+                              <li class="ui-state-default">発表順番</li>
                               <%for(var i=0;i<teamdata.length;i++){%>
                                 <li class="ui-state-default"><%=i+1%></li>
                               <%}%>
@@ -59,10 +61,12 @@
                           </ul>
                           </div>
 
-                      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                      <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
                           <form method="POST" action="/eventcontrol/announcesetting" id="announceform">
+                              <ul class="order-title">
+                                <li class="ui-state-default">チーム名　-　作品名</li>
+                              </ul>
                               <ul id="jquery-ui-sortable" class="list-unstyled">
-
                                 <%for(var i=0;i<teamdata.length;i++){%>
                                   <li class="ui-state-default list-width"><%=teamdata[i].Teamname%>  -  <%=teamdata[i].Workname%><span style="display:none;"><%=teamdata[i].Teamid%></span></li>
                                   <%}%>
@@ -70,7 +74,7 @@
                               </ul>
                               <input type="hidden" id="announce" name="announce" value="null">
                               <input type="hidden" id="eventid" name="eventid" value="<%= teamdata[0].Eventid %>">
-                              <div class="text-right list-width"><button id="submitSortable" class="btn btn-primary announce-btn" type="submit">発表順番変更</button></div>
+                              <div class="text-right list-width"><button id="submitSortable" class="btn btn-primary announce-btn" type="submit">送　信</button></div>
                           </form>
                       </div>
 
