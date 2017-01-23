@@ -17,3 +17,29 @@ function switch_memo(teamnumber){
     $("#teamname" + teamnumber).toggleClass("active").next().slideToggle("normal");
     return false;
 }
+
+
+var localStorage = sessionStorage;
+
+function getMemo(teams){
+
+    var contents = JSON.parse(localStorage.getItem("memolist"));
+    for(var i = 0; i < teams.length; i++){
+        var text = document.getElementById("memo" + (i + 1));
+        text.value = contents[i];
+    }
+}
+
+function setMemo(teams){
+
+    console.log(teams);
+    var memolist = {};
+    for(var i = 0; i < teams.length; i++){
+        var text = document.getElementById("memo" + (i + 1)).value;
+        memolist[i] = text;
+        localStorage.setItem("memolist", JSON.stringify(memolist));
+    }
+
+    alert("メモの内容を保存しました。");
+
+}
