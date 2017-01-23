@@ -92,6 +92,11 @@
                                             <div class="memo_active">
                                                 <form>
                                                     <div class="form-group">
+                                                        <%if(allteamdata[i].Works!=="public/images/noimage.png" && allteamdata[i].Works!==""){%>
+                                                          <div class="pdf-link">
+                                                            <a href="<%=allteamdata[i].Works%>" target=”_blank”>チーム参考資料の確認</a>
+                                                          </div>
+                                                            <%}%>
                                                         <textarea id="memo<%=i+1%>"cols="20" placeholder="気になった点やメモしたいことを書いてください。" class="form-control memoarea" maxlength="500"></textarea>
                                                         <!-- 注意書きは以下 -->
                                                         <p class="help-block">※500文字以内で書いてください。</p>
@@ -104,6 +109,13 @@
                                             <div class="toggle_faq">
                                                 <form>
                                                     <div class="form-group">
+
+                                                        <%if(allteamdata[i].Works!=="public/images/noimage.png" && allteamdata[i].Works!==""){%>
+                                                          <div class="pdf-link">
+                                                            <a href="<%=allteamdata[i].Works%>" target=”_blank”>チーム参考資料の確認</a>
+                                                          </div>
+                                                            <%}%>
+
                                                         <textarea id="memo<%=i+1%>"cols="45" placeholder="気になった点やメモしたいことを書いてください。" class="form-control memoarea" maxlength="500"></textarea>
                                                         <!-- 注意書きは以下 -->
                                                         <p class="help-block">※500文字以内で書いてください。</p>

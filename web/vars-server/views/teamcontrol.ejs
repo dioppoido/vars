@@ -121,8 +121,8 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="panel-form">
                               <label>PDF資料アップロード :
-                                <%if(teamdata[0].Works!=="public/images/noimage.png"){%>
-                                    <a href="<%=teamdata[0].Works%>">既存資料の確認</a>
+                                <%if(teamdata[0].Works!=="public/images/noimage.png" && teamdata[0].Works!==""){%>
+                                    <a href="<%=teamdata[0].Works%>" target=”_blank”>既存資料の確認</a>
                                     <%}%>
                               </label>
                             </div>
