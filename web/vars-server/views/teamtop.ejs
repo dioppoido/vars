@@ -56,9 +56,17 @@
                     <div class="team-contents">
                       <ul class="list-unstyled">
                         <li>チーム名 : <%=teamdata[0].Teamname%></li>
-                        <li>作&nbsp;品&nbsp;名&nbsp;&nbsp; : &nbsp;<%=teamdata[0].Workname%></li>
-                        <li>代&nbsp;表&nbsp;者&nbsp;&nbsp; : <%=teamdata[0].displayName%></li>
-                      </ul>
+                        <li>作&nbsp;&nbsp;品&nbsp;&nbsp;名 : &nbsp;<%=teamdata[0].Workname%></li>
+                        <li>代&nbsp;&nbsp;表&nbsp;&nbsp;者 : <%=teamdata[0].displayName%></li>
+                        <li>参加部門 :
+                          <% for(var cnt=0;cnt<votename.length;cnt++){%>
+                            <%=votename[cnt]%>
+                            <%if (cnt+1!=votename.length){%>、
+                            <%}%>
+                        <%}%>
+                      </li>
+　　　　<!-- &nbsp;&nbsp;&nbsp; -->
+                        </ul>
                     </div>
                   </div>
 
