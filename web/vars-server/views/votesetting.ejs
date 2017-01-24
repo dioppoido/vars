@@ -37,10 +37,17 @@
             <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 
                 <div class="vote">
+                  <!-- パンくずリスト -->
+                  <ol class="breadcrumb">
+                      <li><a href="/eventtop?eventid=<%=eventdata[0].Eventid%>" class="bread-list">イベントトップ</a></li>
+                      <li><a href="/eventcontrol?eventid=<%=eventdata[0].Eventid%>" class="bread-list">イベント管理</a></li>
+                      <li class="active"><span class="bread-list">投票設定</span></li>
+                  </ol>
+
 
                     <div class="panel panel-list panel-primary">
 
-                        <div class="panel-heading controls-title">部門設定</div>
+                        <div class="panel-heading controls-title">投票設定</div>
 
                         <div class="panel-body">
 
@@ -102,7 +109,7 @@
 
                             <br><div class="text-left">< 部門削除 ></div><br>
 
-                            <form method="POST" action="/eventcontrol/votesetting?eventid=<%=eventdata[0].Eventid%>&mode=delete">
+                            <form method="POST" name="delete" action="/eventcontrol/votesetting?eventid=<%=eventdata[0].Eventid%>&mode=delete" onsubmit="return deletecheck();">
                                 <input type="hidden" name="eventid" value="<%=eventdata[0].Eventid%>">
                                 <table id="field-tbl" class="table alt-table-responsive table-bordered">
                                     <thead>

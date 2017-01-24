@@ -25,12 +25,19 @@ body{
 
 /* Eventsetting */
 .eventsetting{
-    margin-top: 30px;
-    font-size: 30px;
-    font-weight:bold;
+  margin-top: 60px;
+  font-size: 30px;
+  font-weight:bold;
 }
 .event-title{
 }
+
+.hr-field{
+  width: 97%;
+    background-color: #fff;
+    border-top: 2px dashed #8c8b8b;
+}
+
 .setting-form{
     margin: 0 auto;
     margin-top: 30px;
@@ -61,6 +68,7 @@ textarea.event-input {
     font-size:24px;
     margin-bottom: 20px;
     margin-top: 20px;
+    font-weight: bolder;
 }
 input[type=file]{
     display: none;
@@ -95,6 +103,17 @@ input[type=file]{
 input. #passtoggle{
     margin-left: 20px;
 }
+
+.bread-list{
+  font-size: 57%;
+}
+.breadcrumb>li+li:before {
+    padding: 0 5px;
+    font-size: 65%;
+    color: #ccc;
+    content: "/\00a0";
+}
+
 @media screen and (min-width: 768px) and (max-width: 979px) {
     /* 768px - 979px用（タブレット用）の記述 */
     .event-title{

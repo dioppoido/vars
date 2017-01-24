@@ -42,6 +42,10 @@ body{
     width: 50%;
     font-size: 26px;
 }
+.pdf-link{
+  margin:0 auto;
+  margin-bottom:10px;
+}
 .vote-contents{
     background: white;
     font-size: 18px;

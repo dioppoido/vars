@@ -14,10 +14,6 @@ router.get('/', function(req, res) {
         if(req.query.eventid) {
             var eventid=req.query.eventid;
             getEvent.getEvent(eventid).then(function (docs) {
-                if(docs[0].Release_flag === false){         //管理者によって集計画面を閲覧OKの処理をしないと表示しないように
-                    msg = "現在集計中です、もうしばらくお待ちください。";
-                    res.render('errorconfirmation.ejs', {msg:msg,url:'/eventtop?eventid='+eventid});
-                }
                 getTeam.getTeam(docs[0].Eventid).then(function (docs2) {
                     getVote.getVote(docs[0].Eventid).then(function (docs3) {
 
@@ -101,20 +97,22 @@ router.get('/', function(req, res) {
                                         }
                                     });
                                 }, function (err) {
-                                    console.log("二重ループ成功");
-                                    console.log(vote_aggregate);
-                                    for (var cnt1 in vote_aggregate) {
-                                        console.log(docs3[cnt1].Votename);
-                                        for (cnt2 in vote_aggregate[cnt1]) {
-                                            console.log("votedata仕上げ:" + vote_aggregate[cnt1][cnt2].votecnt + ":" + vote_aggregate[cnt1][cnt2].Teamname);
+                                    if(docs[0].Release_flag === false&&(!req.session.user.admin)){         //管理者によって集計画面を閲覧OKの処理をしないと表示しないように
+                                        var msg = "現在集計中です、もうしばらくお待ちください。";
+                                        res.render('errorconfirmation.ejs', {msg:msg,url:'/eventtop?eventid='+eventid});
+                                    }else {
+                                        var ejs = "voteresult.ejs";
+                                        //管理者ユーザーの場合
+                                        if (req.session.user.admin) {
+                                            ejs = 'adminvoteresult.ejs';
                                         }
+                                        res.render(ejs, {
+                                            error: "",
+                                            full_aggregate: full_aggregate,
+                                            vote_aggregate: vote_aggregate,
+                                            votedata: docs3
+                                        });
                                     }
-                                    res.render('voteresult.ejs', {
-                                        error: "",
-                                        full_aggregate: full_aggregate,
-                                        vote_aggregate: vote_aggregate,
-                                        votedata: docs3
-                                    });
                                 })
 
                             }

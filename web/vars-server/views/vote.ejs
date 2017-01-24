@@ -78,8 +78,13 @@
 
                                 <div class="tab-pane tab-memo" id="memo">
 
+                                    <%
+                                        var memo = JSON.stringify(memodata[0].Order);
+                                        var memoid = JSON.stringify(memodata[0].Eventid);
+                                    %>
+                                    <body onload="getMemo(<%=memo%>, <%=memoid%>)"></body>
                                     <div class="text-left small">
-                                        ※メモは、投票ボタンを押すと消えてしまいますので予めご了承ください。
+                                        <button class="btn btn-success" onclick="setMemo(<%=memo%>, <%=memoid%>)">メモを保存</button>
                                     </div>
 
                                     <% for(var i = 0 ; i < allteamdata.length; i++){ %>
@@ -88,7 +93,12 @@
                                             <div class="memo_active">
                                                 <form>
                                                     <div class="form-group">
-                                                        <textarea cols="20" placeholder="気になった点やメモしたいことを書いてください。" class="form-control memoarea" maxlength="500"></textarea>
+                                                        <%if(allteamdata[i].Works!=="public/images/noimage.png" && allteamdata[i].Works!==""){%>
+                                                          <div class="pdf-link">
+                                                            <a href="<%=allteamdata[i].Works%>" target=”_blank”>チーム参考資料の確認</a>
+                                                          </div>
+                                                            <%}%>
+                                                        <textarea id="memo<%=i+1%>"cols="20" placeholder="気になった点やメモしたいことを書いてください。" class="form-control memoarea" maxlength="500"></textarea>
                                                         <!-- 注意書きは以下 -->
                                                         <p class="help-block">※500文字以内で書いてください。</p>
                                                     </div>
@@ -100,7 +110,14 @@
                                             <div class="toggle_faq">
                                                 <form>
                                                     <div class="form-group">
-                                                        <textarea cols="45" placeholder="気になった点やメモしたいことを書いてください。" class="form-control memoarea" maxlength="500"></textarea>
+
+                                                        <%if(allteamdata[i].Works!=="public/images/noimage.png" && allteamdata[i].Works!==""){%>
+                                                          <div class="pdf-link">
+                                                            <a href="<%=allteamdata[i].Works%>" target=”_blank”>チーム参考資料の確認</a>
+                                                          </div>
+                                                            <%}%>
+
+                                                        <textarea id="memo<%=i+1%>"cols="45" placeholder="気になった点やメモしたいことを書いてください。" class="form-control memoarea" maxlength="500"></textarea>
                                                         <!-- 注意書きは以下 -->
                                                         <p class="help-block">※500文字以内で書いてください。</p>
                                                     </div>
@@ -108,6 +125,8 @@
                                             </div>
 
                                     <% } %>
+
+
 
                                 </div><!-- memo tab -->
 
