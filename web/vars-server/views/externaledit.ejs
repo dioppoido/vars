@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Title-->
-  <title>Adminedit - VARS -</title>
+  <title>Extenaledit - VARS -</title>
 
   <!-- Bootstrap Core CSS -->
   <link href="../public/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
       <div class="container">
           <div class="row">
               <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-                  <form method="post" name="insert" action="externaledit/insert">
+                  <form method="post" name="insert" action="externaledit/insert" onsubmit="return external_check();">
                   <div class="edit">
                       <div class="text-center"> 〜　　外部ユーザー編集　　〜 </div>
                   </div>
@@ -50,7 +50,9 @@
 
                     <button type="submit" class="btn btn-primary lag-btn">追加</button>
                   </form>
-                  <form method="post" name="delete" action="externaledit/delete">
+
+
+                  <form method="post" name="delete" action="externaledit/delete"  onsubmit="return external_confirm();">
                     <div class="padding-bottom">
                       <h3>外部ユーザー削除</h3>
                     </div>
@@ -65,9 +67,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                         <% for(var i = 0 ; i < userdata.length; i++) { %>
                                             <tr>
-                                                <td><input type="checkbox" value=""></td>
+                                                <td><input type="checkbox" name="address" value="<%=userdata[i].Address%>"></td>
                                                 <td><%=i + 1%></td>
                                                 <td><%=userdata[i].Address%></td>
                                                 <td><%=userdata[i].Name %></td>
