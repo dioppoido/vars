@@ -24,53 +24,42 @@ router.get('/', loginCheck, function(req, res) {
     var sort = {sort:{Address:1}};
 
     getExternal.getExternal(json,sort).then(function(userdata){
-      if( userdata.length == 0){
         res.render('externaledit.ejs',{userdata:userdata});
-      }else{
-          res.render('externaledit.ejs',{userdata:userdata});
-      }
+
+
   });
 });
 
-router.post('/', loginCheck, function(req, res) {
+router.post('/insert', function(req, res) {
+      if(req.session.admin){
+        var address = req.body.address;
+        var admin_flag = false;
+        var name = req.body.name;
+        const USERS={'Address':address,
+                      'Admin_flag':admin_flag,
+                      'Name'  :name};
+        insertUser.insertUser(USERS);
+        res.render('confirmation.ejs',{msg:'外部ユーザーを追加しました',url:'/externaledit'});
+      }else{
+        res.redirect('/');
+      }
+});
 
-    getExternal.getExternal({"Address":req.body.address},{}).then(function(userdata){
-            // console.log(userdata);
-            var mode="";
-            mode=req.body.mode;
-            if(mode=="insert"){
-              var username = req.body.username;
-              var admin_flag = false;
-              var password = req.body.password;
-              var address = req.body.address;
-              var insertjson= {
-                                  "Name":username,
-                                  "Address":address,
-                                  "Admin_flag":admin_flag,
-                                  "Password":password
-                                };
-                if(userdata==""){
-                  insertUser.insertUser(insertjson);
-                  res.render('confirmation.ejs',{msg:'ユーザーを追加しました',url:'/externaledit'});
-                }else{
-                  res.render('confirmation.ejs',{msg:'そのユーザーはすでに追加されています',url:'/externaledit'});
-                }
-            }
-            else if(mode=="delete"){
-                  var address = [];
-                  address =req.body.address;
-                  // 選択が複数の場合
-                  if(address instanceof Array){
-                    for(var i=0;i<address.length;i++){
-                        deleteExternal.deleteExternal({"Address":address[i]});
-                      }
-                        res.render('confirmation.ejs',{msg:'ユーザーを削除しました',url:'/externaledit'});
-                    // 選択肢一つ
-                  }else{
-                    deleteExternal.deleteExternal({"Address":address});
-                    res.render('confirmation.ejs',{msg:'ユーザーを削除しました',url:'/externaledit'});                  }
-                  }
-          });
-        });
+router.post('/delete', function(req,res){
+    if(req.session.admin){
+      var address = [];
+      address =req.body.address;
+      // 選択が複数の場合
+      if(address instanceof Array){
+        for(var i=0;i<address.length;i++){
+            deleteExternal.deleteExternal({"Address":address[i]});
+          }
+            res.render('confirmation.ejs',{msg:'ユーザーを削除しました',url:'/externaledit'});
+        // 選択肢一つ
+      }else{
+        deleteExternal.deleteExternal({"Address":address});
+        res.render('confirmation.ejs',{msg:'ユーザーを削除しました',url:'/externaledit'});                  }
+      }
+});
 
 module.exports = router;

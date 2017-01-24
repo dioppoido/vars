@@ -31,7 +31,7 @@
       <div class="container">
           <div class="row">
               <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-
+                  <form method="post" name="insert" action="adminedit/insert">
                   <div class="edit">
                       <div class="text-center"> 〜　　adminユーザー編集　　〜 </div>
                   </div>
@@ -41,20 +41,21 @@
                     </div>
                         <dl>
                           <dt>名前</dt>
-                          <dd><input type="text" class="text" placeholder="name"></dd><br>
+                          <dd><input type="text" class="text" name="name" placeholder="name"></dd><br>
                         </dl>
 
                         <dl>
                           <dt>メールアドレス</dt>
-                          <dd><input type="text" class="text" placeholder="address"></dd><br>
+                          <dd><input type="text" class="text" name="address" placeholder="address"></dd><br>
                         </dl>
                         <dl>
                           <dt>パスワード</dt>
-                          <dd><input type="password" class="text" placeholder="password"></dd><br>
+                          <dd><input type="password" class="text" name="password" placeholder="password"></dd><br>
                         </dl>
 
-                    <button type="button" class="btn btn-primary lag-btn">追加</button>
-
+                    <button type="submit" class="btn btn-primary lag-btn">追加</button>
+                  </form>
+                  <form method="post" name="delete" action="adminedit/delete" onsubmit="return external_confirm();">
                     <div class="padding-bottom">
                       <h3>adminユーザー削除</h3>
                     </div>
@@ -69,27 +70,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <% for(var i = 0 ; i < adminuser.length; i++) { %>
+                                        <% for(var i = 0 ; i < userdata.length; i++) { %>
                                             <tr>
-                                                <td><input type="checkbox" value=""></td>
+                                                <td><input type="checkbox" name"deleteaddress" value="<%= userdata[i].Address %>"></td>
                                                 <td><%=i + 1%></td>
-                                                <td><%=adminuser[i].Address%></td>
-                                                <td><%=adminuser[i].Name %></td>
+                                                <td><%=userdata[i].Address%></td>
+                                                <td><%=userdata[i].Name %></td>
                                             </tr>
                                         <% } %>
                                     </tbody>
                                 </table>
                       </div>
                     <div class="text-center">
-                    <button type="button" class="btn btn-danger lag-btn">削除</button>
+                    <button type="submit" class="btn btn-danger lag-btn">削除</button>
                     </div>
+                  </form>
                 </div>
               </div><!-- col -->
 
           </div><!-- row -->
       </div><!-- container -->
 
-
+<script src="../public/js/external_conf.js"></script>
 <!-- jQuery -->
 <script src="../public/js/jquery.js"></script>
 
