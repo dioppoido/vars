@@ -1068,6 +1068,12 @@ $(document).ready(function()
 
         });
 
+        $("#result-table").tablesorter({
+            headers: {
+                1: {sorter:false}
+            }
+
+        });
 
     }
 );
