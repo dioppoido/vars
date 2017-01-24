@@ -222,11 +222,11 @@ router.post('/votesetting', function (req, res) {
             if (typeof(voteid) === "object") {
                 for (var i = 0; i < voteid.length; i++) {
                     deleteVote.deleteVote({Voteid: voteid[i]});
+                  }
                     res.render('confirmation.ejs', {
                         msg: '部門データを削除しました。',
                         url: '/eventcontrol/votesetting?eventid=' + eventid
                     });
-                }
             } else {
                 deleteVote.deleteVote({Voteid: voteid});
                 res.render('confirmation.ejs', {

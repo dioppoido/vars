@@ -63,6 +63,9 @@ body{
 .footer-bihind{
   margin-bottom: 55px;
 }
+.bread-list{
+    font-size: 80%;
+}
 
 @media screen and (min-width: 768px) and (max-width: 979px) {
     /* 480px - 767px用（タブレット／スマートフォン用）の記述 */

@@ -221,3 +221,29 @@ function fixspaceCheck(votenum){
         return true;
     }
 }
+function deletecheck(){
+  var i = document.delete.voteid.length;
+  var checked=0;
+  if(i===undefined){
+    if(document.delete.voteid.checked==false){
+      alert("削除する部門を選択してください");
+      return false;
+    }else{
+      return true;
+    }
+
+  }else{
+    var count=document.delete.voteid.length;
+    for(var cnt=0;cnt<count;cnt++){
+      if(document.delete.voteid[cnt].checked==true){
+        checked++;
+      }
+    }
+    if(checked===0){
+        alert("削除する部門を選択してください");
+        return false;
+    }else{
+        return true;
+    }
+  }
+}

@@ -43,7 +43,7 @@
                     <ol class="breadcrumb">
                         <li><a href="/eventtop?eventid=<%=teamdata[0].Eventid%>" class="bread-list">イベントトップ</a></li>
                         <li><a href="/eventcontrol?eventid=<%=teamdata[0].Eventid%>" class="bread-list">イベント管理</a></li>
-                        <li class="active bread-list">ユーザーリスト</li>
+                        <li class="active"><span class="bread-list">発表順番変更</span></li>
                     </ol>
 
                     <div class="panel panel-list panel-primary">
@@ -70,7 +70,7 @@
                                 <%for(var i=0;i<teamdata.length;i++){%>
                                   <li class="ui-state-default list-width"><%=teamdata[i].Teamname%>  -  <%=teamdata[i].Workname%><span style="display:none;"><%=teamdata[i].Teamid%></span></li>
                                   <%}%>
-                                  
+
                               </ul>
                               <input type="hidden" id="announce" name="announce" value="null">
                               <input type="hidden" id="eventid" name="eventid" value="<%= teamdata[0].Eventid %>">
