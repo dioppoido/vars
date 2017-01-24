@@ -35,6 +35,15 @@
         <div class="row">
             <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
                 <div class="field">
+
+                  <!-- パンくずリスト -->
+                  <ol class="breadcrumb">
+                      <li><a href="/eventtop?eventid=<%=eventid%>" class="bread-list">イベントトップ</a></li>
+                      <li><a href="/eventcontrol?eventid=<%=eventid%>" class="bread-list">イベント管理</a></li>
+                      <li class="active"><span class="bread-list">部門設定</span></li>
+                  </ol>
+
+
                     <div class="panel panel-list panel-primary">
                         <div class="panel-heading">
                             <div class="filedsetting-title">部門設定</div>

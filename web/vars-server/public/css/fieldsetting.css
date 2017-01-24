@@ -28,6 +28,10 @@ body{
 .filedsetting-title{
     font-size: 30px;
 }
+.bread-list{
+    font-size: 80%;
+}
+
 .filedsetting-font{
   font-size:18px;
 }
@@ -62,9 +66,9 @@ body{
 
 /* Field */
 .field{
-    margin-top: 60px;
-    font-size: 30px;
-    font-weight:bold;
+  margin-top: 60px;
+  font-size: 20px;
+  font-weight:bold;
 }
 .field-form{
     margin: 0 auto;

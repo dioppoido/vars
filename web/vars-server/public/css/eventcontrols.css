@@ -82,13 +82,25 @@ body{
     margin-bottom: 55px;
   }
 
-.eventcontrols a{
+.ahref{
   color:black;
   text-decoration: none;
 }
 
 .panel-events:hover{
   background-color: #DDDDDD;
+  }
+  .bread-list{
+      font-size: 55%;
+      /*color: #337ab7;*/
+      font-weight: bolder;
+  }
+  .breadcrumb>li+li:before {
+      /*padding: 0 5px;*/
+      font-size: 70%;
+      color: #ccc;
+      content: "/\00a0";
+      font-weight: bolder;
   }
 
 @media screen and (min-width: 768px) and (max-width: 979px) {

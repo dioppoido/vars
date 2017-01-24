@@ -147,6 +147,7 @@ input[type=file]{
 
 .bread-list{
     font-size: 60%;
+    font-weight: bolder;
 }
 @media screen and (min-width: 768px) and (max-width: 979px) {
   .teamcontrols{
