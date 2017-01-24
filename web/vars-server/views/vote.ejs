@@ -80,10 +80,11 @@
 
                                     <%
                                         var memo = JSON.stringify(memodata[0].Order);
+                                        var memoid = JSON.stringify(memodata[0].Eventid);
                                     %>
-                                    <body onload="getMemo(<%=memo%>)"></body>
+                                    <body onload="getMemo(<%=memo%>, <%=memoid%>)"></body>
                                     <div class="text-left small">
-                                        <button class="btn btn-success" onclick="setMemo(<%=memo%>)">メモを保存</button>
+                                        <button class="btn btn-success" onclick="setMemo(<%=memo%>, <%=memoid%>)">メモを保存</button>
                                     </div>
 
                                     <% for(var i = 0 ; i < allteamdata.length; i++){ %>

@@ -21,23 +21,26 @@ function switch_memo(teamnumber){
 
 var localStorage = sessionStorage;
 
-function getMemo(teams){
+function getMemo(teams, id){
 
-    var contents = JSON.parse(localStorage.getItem("memolist"));
-    for(var i = 0; i < teams.length; i++){
-        var text = document.getElementById("memo" + (i + 1));
-        text.value = contents[i];
+    var listname = "memolist" + id;
+    var contents = JSON.parse(localStorage.getItem(listname));
+    if( contents != null){
+        for(var i = 0; i < teams.length; i++){
+            var text = document.getElementById("memo" + (i + 1));
+            text.value = contents[i];
+        }
     }
 }
 
-function setMemo(teams){
-
-    console.log(teams);
+function setMemo(teams, id){
+    
     var memolist = {};
     for(var i = 0; i < teams.length; i++){
         var text = document.getElementById("memo" + (i + 1)).value;
         memolist[i] = text;
-        localStorage.setItem("memolist", JSON.stringify(memolist));
+        var listname = "memolist" + id;
+        localStorage.setItem(listname, JSON.stringify(memolist));
     }
 
     alert("メモの内容を保存しました。");
