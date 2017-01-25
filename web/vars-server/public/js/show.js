@@ -11,7 +11,7 @@ function showFilename(){
         filename = "ファイルが選択されていません。";
     }
     else{
-      if(document.teamcreate || document.eventsetting){
+      if(document.teamcreate || document.eventsetting || document.eventcreate){
         filename =  $("#thumbnail_file")[0].files[0].name;
       }else{
         filename="";
