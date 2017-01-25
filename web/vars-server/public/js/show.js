@@ -11,7 +11,11 @@ function showFilename(){
         filename = "ファイルが選択されていません。";
     }
     else{
-        filename = "";
+      if(document.teamcreate || document.eventsetting){
+        filename =  $("#thumbnail_file")[0].files[0].name;
+      }else{
+        filename="";
+      }
     }
     view.innerHTML = filename;
 }

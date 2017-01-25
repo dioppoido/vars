@@ -1,11 +1,11 @@
 //外部ユーザーチェックボックスのチェック数確認
 function external_confirm(){
 
-  var total = document.externaldelete.address.length;
-  var address = document.externaldelete.address[0].checked;
+  var total = document.delete.address.length;
+  var address = document.delete.address[0].checked;
   var cnt=0;
     for(var i=0;i<total;i++){
-        if(document.externaldelete.address[i].checked){
+        if(document.delete.address[i].checked){
             cnt++;
         }
     }
@@ -18,18 +18,24 @@ function external_confirm(){
 }
 // 外部ユーザーインサートチェック
 function external_check(){
-  var username =document.externalinsert.username.value;
-  var address =document.externalinsert.address.value;
-  if(username == ""){
+  var username =document.insert.name.value;
+  var address =document.insert.address.value;
+
+  if(username.trim()==""){
     alert("登録したいユーザー名を入力してください");
     return false;
   }
-  if(address == ""){
+
+  if(address.trim() == ""){
       alert("登録したいアドレスを入力してください");
       return false;
   }
+
+  document.insert.name.value=username.trim();
+  document.insert.address.value=address.trim();
   return true;
 }
+
 //adminユーザーチェックボックスのチェック数確認
 function admin_confirm(){
 
@@ -54,18 +60,21 @@ function admin_check(){
   var address =document.insert.address.value;
   var password =document.insert.password.value;
 
-  if(username == ""){
+  if(username.trim()==""){
     alert("登録したいユーザー名を入力してください");
     return false;
   }
-  if(address == ""){
+  if(address.trim() == ""){
       alert("登録したいアドレスを入力してください");
       return false;
   }
-  if(password == ""){
+  if(password.trim() == ""){
       alert("登録したいパスワードを入力してください");
       return false;
   }
 
+  document.insert.name.value=username.trim();
+  document.insert.address.value=address.trim();
+  document.insert.password.value=password.trim();
   return true;
 }

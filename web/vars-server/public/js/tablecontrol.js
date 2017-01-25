@@ -192,7 +192,7 @@ function insertspaceCheck(){
     for(var i = 1; i <= fieldcount; i++){
         var num = i;
         num.toString();
-        if(document.getElementById("field" + num).value ==""){     //空白文字がないかチェック
+        if(document.getElementById("field" + num).value.trim() ==""){     //空白文字がないかチェック
             flg =1;
         }
     }
@@ -210,7 +210,7 @@ function fixspaceCheck(votenum){
     for(var i = 1; i <= votenum; i++){
         var num = i;
         num.toString();
-        if(document.getElementById("change" + num).value ==""){     //空白文字がないかチェック
+        if(document.getElementById("change" + num).value.trim() ==""){     //空白文字がないかチェック
             flg =1;
         }
     }

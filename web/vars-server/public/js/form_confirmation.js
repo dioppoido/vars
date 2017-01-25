@@ -258,6 +258,24 @@ function eventcreate_confirm(){
       }
     }
 
+    //先頭空白判別
+    // console.log(document.forms.eventsetting.eventname.value.trim());
+    var eventname=document.forms.eventcreate.eventname.value.trim();
+    var venue=document.forms.eventcreate.venue.value.trim();
+
+    if(eventname==""){
+      alert("イベント名を入力してください");
+      return false;
+    }else{
+      document.forms.eventcreate.eventname.value=eventname.trim();
+    };
+
+    if(venue==""){
+      alert("会場名を入力してください");
+      return false;
+    }else{
+      document.forms.eventcreate.venue.value=venue.trim();
+    };
 
     return true;
 }
@@ -488,6 +506,38 @@ function eventsetting_confirm(){
       }
     }
 
+    //先頭空白判別
+    // console.log(document.forms.eventsetting.eventname.value.trim());
+    var eventname=document.forms.eventsetting.eventname.value.trim();
+    var venue=document.forms.eventsetting.venue.value.trim();
+    var displayname=document.forms.eventsetting.displayname.value.trim();
+    var address=document.forms.eventsetting.address.value.trim();
+
+
+    if(eventname==""){
+      alert("イベント名を入力してください");
+      return false;
+    }else{
+      document.forms.eventsetting.eventname.value=eventname.trim();
+    };
+    if(venue==""){
+      alert("会場を入力してください");
+      return false;
+    }else{
+      document.forms.eventsetting.venue.value=venue.trim();
+    };
+    if(displayname==""){
+      alert("代表者名（作成者）を入力してください");
+      return false;
+    }else{
+      document.forms.eventsetting.displayname.value=displayname.trim();
+    };
+    if(address==""){
+      alert("メールアドレスを入力してください");
+      return false;
+    }else{
+      document.forms.eventsetting.address.value=address.trim();
+    };
 
     return true;
 
@@ -507,6 +557,14 @@ function teamcreate_confirm(){
           alert("jpg・jpegまたはpngまたはgifを選択してください。");
           return false;
       }
+    }
+    var teamname=document.teamcreate.teamname.value;
+    if(teamname.trim()==""){
+          alert("チーム名を入力してください");
+          return false;
+    }else{
+        document.teamcreate.teamname.value=teamname.trim();
+
     }
 
 
@@ -530,6 +588,15 @@ function teamcontrol_confirm(){
           alert("jpg・jpegまたはpngまたはgifを選択してください。");
           return false;
       }
+    }
+
+    var teamname=document.teamchange.teamname.value;
+    if(teamname.trim()==""){
+          alert("チーム名を入力してください");
+          return false;
+    }else{
+        document.teamchange.teamname.value=teamname.trim();
+
     }
 
 

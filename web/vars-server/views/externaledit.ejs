@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="ja">
@@ -9,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Title-->
-  <title>Adminedit - VARS -</title>
+  <title>Extenaledit - VARS -</title>
 
   <!-- Bootstrap Core CSS -->
   <link href="../public/css/bootstrap.min.css" rel="stylesheet">
@@ -31,38 +30,38 @@
       <div class="container">
           <div class="row">
               <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-
+                  <form method="post" name="insert" action="externaledit/insert" onsubmit="return external_check();">
                   <div class="edit">
                       <div class="text-center"> 〜　　外部ユーザー編集　　〜 </div>
-                  </div>
+
+                  <ol class="breadcrumb">
+                      <li><a href="/admin" class="bread-list">管理者メニュー</a></li>
+                      <li class="active bread-list">外部ユーザー編集</li>
+                  </ol>
+                </div>
+
                   <div class="edit-contents text-center">
                     <div class="padding-bottom">
                       <h3>外部ユーザー追加</h3>
                     </div>
-                    <form method="post" name="externalinsert" action="externaledit" onsubmit="return external_check();">
                         <dl>
                           <dt>名前</dt>
-                          <dd><input type="text" class="text" placeholder="name" name="username"></dd><br>
+                          <dd><input type="text" class="text" name="name" placeholder="name"></dd><br>
                         </dl>
 
                         <dl>
                           <dt>メールアドレス</dt>
-                          <dd><input type="text" class="text" placeholder="address" name="address"></dd><br>
+                          <dd><input type="text" class="text" name="address" placeholder="address"></dd><br>
                         </dl>
-                        <!-- <dl> -->
-                          <!-- <dt>パスワード</dt> -->
-                          <!-- <dd><input type="password" class="text" placeholder="password" name="password"></dd><br> -->
-                        <!-- </dl> -->
 
-                        <input type="hidden" name="mode" value="insert">
                     <button type="submit" class="btn btn-primary lag-btn">追加</button>
                   </form>
 
 
+                  <form method="post" name="delete" action="externaledit/delete"  onsubmit="return external_confirm();">
                     <div class="padding-bottom">
                       <h3>外部ユーザー削除</h3>
                     </div>
-                    <%if(userdata!=""){%>
                        <div class="tab-content text-center">
                               <table id="adminedit-table" class="table table-bordered list-table tablesorter">
                                     <thead>
@@ -73,14 +72,11 @@
                                             <th class="col-md-4 text-center">名前</th>
                                         </tr>
                                     </thead>
-                                    <%}%>
                                     <tbody>
-                                      <form method="post" name="externaldelete" action="externaledit" onsubmit="return external_confirm();">
-                                        <input type="hidden" name="mode" value="delete">
 
                                         <% for(var i = 0 ; i < userdata.length; i++) { %>
                                             <tr>
-                                                <td><input type="checkbox" id="address" name="address" value="<%=userdata[i].Address%>"></td>
+                                                <td><input type="checkbox" name="address" value="<%=userdata[i].Address%>"></td>
                                                 <td><%=i + 1%></td>
                                                 <td><%=userdata[i].Address%></td>
                                                 <td><%=userdata[i].Name %></td>
@@ -90,7 +86,7 @@
                                 </table>
                       </div>
                     <div class="text-center">
-                    <button type="submit" class="btn btn-danger lag-btn">削除</button>
+                    <button type="submit" class="btn btn-primary lag-btn" onsubmit="return external_confirm()";>削除</button>
                     </div>
                   </form>
                 </div>
@@ -99,6 +95,7 @@
           </div><!-- row -->
       </div><!-- container -->
 
+      <script src="../public/js/external_conf.js"></script>
 
 <!-- jQuery -->
 <script src="../public/js/jquery.js"></script>
@@ -110,9 +107,8 @@
 <script src="../public/js/bootstrap.min.js"></script>
 
 <!-- Form Confirmation -->
-<!-- <script src="../public/js/form_confirmation"></script> -->
-<!-- admin exterrnal confirmation -->
-<script src="../public/js/external_conf.js"></script>
+<script src="../public/js/form_confirmation"></script>
+
 
 </body>
 </html>

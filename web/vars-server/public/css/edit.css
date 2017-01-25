@@ -67,3 +67,8 @@ float: center;
 margin: -26px;
 padding: 0;
 }
+
+.bread-list{
+    margin-top: 20px;
+    font-size: 60%;
+}

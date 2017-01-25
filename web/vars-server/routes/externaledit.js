@@ -32,21 +32,16 @@ router.get('/', loginCheck, function(req, res) {
   });
 });
 
-router.post('/', loginCheck, function(req, res) {
-
-    getExternal.getExternal({"Address":req.body.address},{}).then(function(userdata){
-            // console.log(userdata);
-            var mode="";
-            mode=req.body.mode;
-            if(mode=="insert"){
-              var username = req.body.username;
+router.post('/insert',  loginCheck, function(req, res) {
+        getExternal.getExternal({"Address":req.body.address},{}).then(function(userdata){
+              var name = req.body.name;
               var admin_flag = false;
               // var password = req.body.password;
               var address = req.body.address;
               var insertjson= {
-                                  "Name":username,
+                                  "Name":name,
                                   "Address":address,
-                                  "Admin_flag":admin_flag,
+                                  "Admin_flag":admin_flag
                                   // "Password":password
                                 };
                 if(userdata==""){
@@ -55,22 +50,25 @@ router.post('/', loginCheck, function(req, res) {
                 }else{
                   res.render('confirmation.ejs',{msg:'そのユーザーはすでに追加されています',url:'/externaledit'});
                 }
-            }
-            else if(mode=="delete"){
-                  var address = [];
-                  address =req.body.address;
-                  // 選択が複数の場合
-                  if(address instanceof Array){
-                    for(var i=0;i<address.length;i++){
-                        deleteExternal.deleteExternal({"Address":address[i]});
-                      }
-                        res.render('confirmation.ejs',{msg:'ユーザーを削除しました',url:'/externaledit'});
-                    // 選択肢一つ
-                  }else{
-                    deleteExternal.deleteExternal({"Address":address});
-                    res.render('confirmation.ejs',{msg:'ユーザーを削除しました',url:'/externaledit'});                  }
-                  }
-          });
-        });
+      });
+});
+
+router.post('/delete',  loginCheck, function(req,res){
+    // if(req.session.admin){
+      var address = [];
+      address =req.body.address;
+      // 選択が複数の場合
+      if(address instanceof Array){
+        for(var i=0;i<address.length;i++){
+            deleteExternal.deleteExternal({"Address":address[i]});
+          }
+            res.render('confirmation.ejs',{msg:'ユーザーを削除しました',url:'/externaledit'});
+        // 選択肢一つ
+      }else{
+        deleteExternal.deleteExternal({"Address":address});
+        res.render('confirmation.ejs',{msg:'ユーザーを削除しました',url:'/externaledit'});
+       }
+      // }
+});
 
 module.exports = router;

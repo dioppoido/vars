@@ -203,11 +203,11 @@ router.post('/votesetting', function (req, res) {
             if (typeof(votename) === "object") {
                 for (var i = 0; i < votename.length; i++) {
                     updateVote.updateVote({Voteid: voteid[i]}, {$set: {Votename: votename[i]}});
+                  }
                     res.render('confirmation.ejs', {
                         msg: '投票部門名を変更しました。',
                         url: '/eventcontrol/votesetting?eventid=' + eventid
                     });
-                }
             } else {
                 updateVote.updateVote({Voteid: voteid[i]}, {$set: {Votename: votename[i]}});
                 res.render('confirmation.ejs', {
