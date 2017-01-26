@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Title-->
+  <title>Adminedit - VARS -</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="../public/css/edit.css" rel="stylesheet">
+  <link href="../public/css/tablesort.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="../public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/earlyaccess/notosansjapanese.css' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+
+  <section>
+      <div class="container">
+          <div class="row">
+              <div class="col-xs-12  col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                  <form method="post" name="insert" action="/adminedit/insert" onsubmit="return admin_check();">
+
+                  <div class="edit">
+                      <div class="text-center"> 〜　　adminユーザー編集　　〜 </div>
+                  <ol class="breadcrumb">
+                      <li><a href="/" class="bread-list">管理者メニュー</a></li>
+                      <li class="active bread-list">adminユーザー編集</li>
+                  </ol>
+                </div>
+
+                  <div class="edit-contents text-center">
+                    <div class="padding-bottom">
+                      <h3>adminユーザー追加</h3>
+                    </div>
+                        <dl>
+                          <dt>名前</dt>
+                          <dd><input type="text" class="text" name="name" placeholder="name" required></dd><br>
+                        </dl>
+
+                        <dl>
+                          <dt>メールアドレス</dt>
+                          <dd><input type="text" class="text" name="address" placeholder="address" required=></dd><br>
+                        </dl>
+
+                        <dl>
+                          <dt>パスワード</dt>
+                          <dd><input type="password" class="text" name="password" placeholder="password" required></dd><br>
+                        </dl>
+
+                    <button type="submit" class="btn btn-primary lag-btn">追加</button>
+                  </form>
+
+
+                  <form method="post" name="delete" action="adminedit/delete" onsubmit="return admin_confirm();">
+                    <div class="padding-bottom">
+                      <h3>adminユーザー削除</h3>
+                    </div>
+                       <div class="tab-content text-center">
+                              <table id="adminedit-table" class="table table-bordered list-table tablesorter">
+                                    <thead>
+                                        <tr>
+                                            <th>　　</th>
+                                            <th class="col-md-2 text-center">No.</th>
+                                            <th class="col-md-6 text-center">Eメールアドレス</th>
+                                            <th class="col-md-4 text-center">名前</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i = 0 ; i < userdata.length; i++) { %>
+                                            <tr>
+                                                <td><input type="checkbox" name="address" value="<%=userdata[i].Address%>"></td>
+                                                <td><%=i + 1%></td>
+                                                <td><%=userdata[i].Address%></td>
+                                                <td><%=userdata[i].Name %></td>
+                                            </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                      </div>
+                    <div class="text-center">
+                    <button type="submit" class="btn btn-primary lag-btn">削除</button>
+                    <!-- <button type="submit" class="btn btn-primary lag-btn">削除</button> -->
+
+                    </div>
+                  </form>
+                </div>
+              </div><!-- col -->
+
+          </div><!-- row -->
+      </div><!-- container -->
+
+      <script src="../public/js/external_conf.js"></script>
+
+<!-- jQuery -->
+<script src="../public/js/jquery.js"></script>
+
+<!-- Table sort -->
+<script src="../public/js/jquery.tablesorter.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../public/js/bootstrap.min.js"></script>
+
+<!-- Form Confirmation -->
+<script src="../public/js/form_confirmation"></script>
+
+
+</body>
+</html>

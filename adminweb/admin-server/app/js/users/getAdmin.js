@@ -1,20 +1,21 @@
 /**
- * admingetクラス
- * @author 多田
+ * admin判別クラス
+ * @author 長谷川
  * @param Address : メールアドレス
  * @param Admin_flag : Adminフラグ
  * @returns {Promise}
  */
 
-exports.getUser = function(){
+exports.getAdmin = function(Address){
     return new Promise(function (resolve, reject) {
         const mongoose = require('mongoose');
         const db = mongoose.createConnection('mongodb://mongo/vars');
         const schema = require('../db/schema');
-        const users = db.model('users', schema.users);
+        const Admin = db.model('users', schema.users);
 
-        //admin_flagがtrue
-        users.find({Admin_flag:true}, {'_id':0 },function(err, docs) {
+        //ログイン照合
+        Admin.find({Address:Address}, {'_id':0 },function(err, docs) {
+            console.log("getAdminに遷移");
             if (!err) {
                 if (docs.length === 1) {
                     resolve(docs);

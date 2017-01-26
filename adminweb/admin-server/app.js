@@ -5,8 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -51,13 +49,18 @@ app.use(session({
   }
 }));
 
-app.use('/test', require('./routes/test'));
-// app.use('/admin',require('./routes/admin'));
-// app.use('/adminlogin',require('./routes/adminlogin'));
-// app.use('/adminlist',require('./routes/adminlist'));
-// app.use('/externaledit',require('./routes/externaledit'));
-// app.use('/adminedit',require('./routes/adminedit'));
+// htmlからフォルダを参照
+app.use('/app', express.static(__dirname + '/app'));
+app.use('/public', express.static(__dirname + '/public'));
+app.use('/views', express.static(__dirname + '/views'));
+app.use('/upfile', express.static(__dirname + '/upfile'));
 
+app.use('/',require('./routes/admin'));
+app.use('/adminlogin',require('./routes/adminlogin'));
+app.use('/adminlist',require('./routes/adminlist'));
+app.use('/externaledit',require('./routes/externaledit'));
+app.use('/adminedit',require('./routes/adminedit'));
+app.use('/logout',require('./routes/logout'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -75,7 +78,8 @@ if (app.get('env') === 'development') {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
-      error: err
+      error: err,
+      status: err.status
     });
   });
 }
@@ -86,7 +90,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
-    error: {}
+    error: {},
+    status: err.status
   });
 });
 

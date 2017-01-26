@@ -1,0 +1,43 @@
+/* footer.css */
+
+/* Footer */
+.copy{
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 3px 5px 5px 5px;
+    height: 30px;
+    background: white;
+    border-top: 2px solid gray;
+}
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    /* 768px - 979px用（タブレット用）の記述 */
+}
+@media screen and (min-width: 480px) and (max-width: 767px)  {
+    /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .copy{
+        color: #333;
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 7px 5px 5px 5px;
+        height: 30px;
+        background: white;
+        border-top: 2px solid gray;
+    }
+}
+@media screen and (max-width: 479px) {
+    /* 479px以下用（スマートフォン用）の記述 */
+    .copy{
+        color: #333;
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 7px 5px 5px 5px;
+        height: 30px;
+        background: white;
+        border-top: 2px solid gray;
+    }
+}
+/* !Footer */
