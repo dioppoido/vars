@@ -420,7 +420,7 @@ function eventsetting_confirm(){
     }
 
     //参加チーム
-    if(team_start < team_end){
+    if(team_start > team_end){
         alert("参加チーム登録受付日時エラー : 参加チーム終了受付日時のほうが早いです。");
         return false;
     }
@@ -456,7 +456,7 @@ function eventsetting_confirm(){
 
 
     //開催日 - チーム作成期間
-    if(hold_start > team_start){
+    if(hold_start < team_start){
         alert("参加チーム登録受付エラー : 開催前にチーム作成が出来ません。");
         return false;
     }
@@ -470,7 +470,7 @@ function eventsetting_confirm(){
     }
 
     //チーム受付期間 - 投票日
-    if(team_start < vote_start){
+    if(team_start > vote_start){
         alert("投票開始日時エラー : チーム作成前に投票が可能です。");
         return false;
     }
