@@ -16,6 +16,8 @@
     <!-- Custom CSS -->
     <link href="../public/css/adminlist.css" rel="stylesheet">
     <link href="../public/css/tablesort.css" rel="stylesheet">
+    <link href="../public/css/header.css" rel="stylesheet">
+    <link href="../public/css/footer.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -23,6 +25,8 @@
 
 </head>
 <body>
+
+<%- include('./header.ejs') %>
 
 <section>
     <div class="container">
@@ -100,6 +104,8 @@
     </div><!-- container -->
 </section>
 
+<%- include('./footer.ejs') %>
+
 <!-- jQuery -->
 <script src="../public/js/jquery.js"></script>
 
@@ -108,6 +114,9 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../public/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../public/js/footerFixed.js"></script>
 
 
 </body>

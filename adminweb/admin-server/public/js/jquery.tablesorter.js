@@ -1063,7 +1063,8 @@ $(document).ready(function()
 
         $("#adminedit-table").tablesorter({
             headers: {
-                0: {sorter:false}
+                0: {sorter:false},
+                3: {sorter:false}
             }
 
         });
