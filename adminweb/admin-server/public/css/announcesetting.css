@@ -1,0 +1,220 @@
+/* announcesetting.css */
+
+/* All */
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background: #F5F5F5;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: 'Noto Sans Japanese', sans-serif;
+}
+.container {
+    width: auto;
+}
+.col-xs-2,.colxs-10,.col-xs-12, .col-sm-2,.col-sm-10,.col-sm-12, .col-md-2,.col-md-10,.col-md-12, .col-lg-2,.col-lg-10,.col-lg-12{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.clear{
+    clear: both;
+}
+/* !All */
+
+/* Announce */
+.announce{
+    margin-top: 60px;
+    font-size: 20px;
+    font-weight:bold;
+}
+.order{
+    margin-top: 29px;
+}
+.order li{
+    text-align: center;
+    background: white;
+    margin-left: 40px;
+    padding: 10px;
+    font-size: 15px;
+}
+.order-title{
+    width: 95%;
+    margin-top: 29px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+.order-title li{
+    list-style: none;
+    text-align: center;
+    background: white;
+    padding: 10px;
+    font-size: 15px;
+}
+#jquery-ui-sortable {
+    padding: 0;
+    width: 100%;
+}
+#jquery-ui-sortable li {
+    background: white;
+    padding: 10px;
+    margin-left: 0px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: move;
+}
+#submitSortable{
+    margin-top: 30px;
+    font-size: 20px;
+}
+.setting-table{
+    border: 1px solid #c5c5c5;
+    background: #f6f6f6;
+    font-weight: normal;
+    color: #454545;
+}
+.list-width{
+  width:95%;
+}
+.announce-title{
+  font-size: 30px;
+}
+.announce-denger{
+  margin-left:20px;
+  margin-top:20px;
+  font-size: 16px;
+  font-weight: normal;
+  /*padding:10px;*/
+}
+.announce-btn{
+  padding:10px;
+  margin-bottom: 20px;
+}
+.panel-list{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    border-color: #62c2e4;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.footer-bihind{
+  margin-bottom: 40px;
+}
+.bread-list{
+    font-size: 80%;
+}
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .panel-list{
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        margin-left:10px;
+        font-size: 18px;
+        border-color: #62c2e4;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    /* 480px - 767px用（タブレット／スマートフォン用）の記述 */
+    .panel-list{
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-bottom: 30px;
+        font-size: 18px;
+        border-color: #62c2e4;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+}
+
+@media screen and (max-width: 479px) {
+  /* Announce */
+  .announce{
+      margin-top: 60px;
+      font-size: 20px;
+      font-weight:bold;
+  }
+  .order{
+      margin-top: 29px;
+  }
+  .order li{
+      text-align: center;
+      background: white;
+      margin-left: 0px;
+      padding: 10px;
+      font-size: 11px;
+  }
+  .order-title{
+      width: 100%;
+      margin-top: 29px;
+  }
+  .order-title li{
+      font-size: 11px;
+  }
+  #jquery-ui-sortable {
+      padding: 0;
+      width: 100%;
+  }
+  #jquery-ui-sortable li {
+      background: white;
+      width: 100%;
+      padding: 10px;
+      margin-left: 0px;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: move;
+  }
+  #submitSortable{
+      margin-top: 30px;
+      font-size: 20px;
+  }
+  .list-width{
+    width:95%;
+  }
+  .announce-title{
+    font-size: 24px;
+  }
+  .announce-denger{
+    /*margin-left:20px;*/
+    /*margin-top:20px;*/
+    font-size: 11px;
+    font-weight: normal;
+    /*padding:10px;*/
+  }
+  .announce-btn{
+    padding:10px;
+    margin-bottom: 20px;
+  }
+  .panel-list{
+      width: 95%;
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-left: 10px;
+      margin-bottom: 30px;
+      font-size: 15px;
+      border-color: #62c2e4;
+      -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  }
+
+  .footer-bihind{
+    margin-bottom: 55px;
+  }
+
+}
+
+/* !Announce */
