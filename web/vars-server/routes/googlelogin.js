@@ -31,9 +31,12 @@ router.get('/return',passport.authenticate('google', {failureRedirect: '/login' 
     var success=false;
     //ドメインがst.kobedenshi.ac.jpか確認
     getAdmin.getAdmin(address).then(function (docs){
-        if(docs.length>0&&docs[0].Admin_flag){              //データーベースから取得できているかつその行のDB内のAdmin_flagがTrueになっている時に限る
-            console.log("管理者ユーザーログイン成功")
-            req.session.user.admin=true;
+        if(docs.length>0){//データーベースから取得できている
+            if(docs[0].Admin_flag) {
+                console.log("管理者ユーザーログイン成功")
+                req.session.user.admin = true;
+            }
+            req.session.user.displayName=docs[0].Name;
             success=true;
         }else if(req.session.user.domain ==="st.kobedenshi.ac.jp"){
             console.log("一般ユーザーログイン成功");

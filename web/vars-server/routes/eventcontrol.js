@@ -59,12 +59,12 @@ router.get('/eventsetting', function(req, res) {
           var eventid=req.query.eventid;
           getEvent.getEvent(eventid).then(function (docs){      //イベントが存在しているか確認
               console.log("eventdata:"+docs);
-              var Holdfinish=moment.parsedate(docs[0].Holdperiod.Holdfinish,"YYYY/M/D HH:mm");
-              var Holdstart=moment.parsedate(docs[0].Holdperiod.Holdstart,"YYYY/M/D HH:mm");
-              var Createstart=moment.parsedate(docs[0].Createperiod.Createstart,"YYYY/M/D HH:mm");
-              var Createfinish=moment.parsedate(docs[0].Createperiod.Createfinish,"YYYY/M/D HH:mm");
-              var Votestart=moment.parsedate(docs[0].Voteperiod.Votestart,"YYYY/M/D HH:mm");
-              var Votefinish=moment.parsedate(docs[0].Voteperiod.Votefinish,"YYYY/M/D HH:mm");
+              var Holdfinish=moment.parsedate(docs[0].Holdperiod.Holdfinish,"YYYY/MM/DD HH:mm");
+              var Holdstart=moment.parsedate(docs[0].Holdperiod.Holdstart,"YYYY/MM/DD HH:mm");
+              var Createstart=moment.parsedate(docs[0].Createperiod.Createstart,"YYYY/MM/DD HH:mm");
+              var Createfinish=moment.parsedate(docs[0].Createperiod.Createfinish,"YYYY/MM/DD HH:mm");
+              var Votestart=moment.parsedate(docs[0].Voteperiod.Votestart,"YYYY/MM/DD HH:mm");
+              var Votefinish=moment.parsedate(docs[0].Voteperiod.Votefinish,"YYYY/MM/DD HH:mm");
               getField.getField().then(function (field) {    //分野取得
                   console.log("分野:" + field);
                   res.render('eventsetting.ejs',{
