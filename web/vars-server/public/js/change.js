@@ -12,6 +12,19 @@ function change_pass(obj){
     }
 
 }
+function loadPass(){
+
+    var passarea = document.forms.eventsetting.passarea;
+    var val = passarea.value;
+
+    if(val){
+        $("#passarea").prop('disabled', false);
+        $('#passtoggle').bootstrapToggle('on');
+    }else{
+        $("#passarea").prop('disabled', true);
+        $('#passtoggle').bootstrapToggle('off');
+    }
+}
 
 /* fieldsetting.ejs */
 function show_field(obj,teams){
