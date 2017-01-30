@@ -145,7 +145,11 @@
                                 <div class="form-group">
                                     <label>パスワード設定: </label>
                                     <input data-toggle="toggle" data-size="small" type="checkbox"  data-toggle="button" id="passtoggle" name="passflag" onchange="change_pass(this);">
-                                    <input type='password' id="passarea" class='form-control input-lg event-input' name="password" disabled="disabled"  maxlength='12' placeholder="4文字以上12文字以下で入力してください"/>
+                                    <input type='password' id="passarea" class='form-control input-lg event-input' name="password" disabled="disabled"  maxlength='12' <% if(eventdata[0].password !=""){ %>
+                                      value="<%= eventdata[0].Password %>"
+                                  <% }else{ %>  placeholder="4文字以上12文字以下で入力してください"
+                                <% } %>
+                                />
                                 </div>
                             </div>
 
