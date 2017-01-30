@@ -419,3 +419,54 @@ db.events.insert({
     Order: ['20','21','22','23','24','25','26','27','28'],
     Release_flag:false
 });
+
+db.events.insert({
+    Eventid:"17",
+    Eventname:"ソフトⅣコース 合評会 アナログver",
+    Overview:"2/2に行われるソフトⅣコースの合評会 現状の紙媒体での動作",
+    Password:"",
+    Address:"test@example.com",
+    displayName:"岡先生",
+    Fieldid:"it",
+    Venue:"ソニックホール",
+    Holdperiod:{
+        Holdstart :"2017/2/2 9:00",
+        Holdfinish : "2017/2/2 16:00"
+    },
+    Createperiod:{
+        Createstart:"2016/9/10 12:00",
+        Createfinish:"2016/10/10 15:00"
+    },
+    Voteperiod:{
+        Votestart:"2016/2/2 9:00",
+        Votefinish:"2017/2/3 15:00"
+    },
+    Image:"public/images/noimage.png",
+    Order: ['29','30','31','32','33'],
+    Release_flag:true
+});
+db.events.insert({
+    Eventid:"18",
+    Eventname:"ソフトⅣコース 合評会 デジタルver",
+    Overview:"2/2に行われるソフトⅣコースの合評会 システム完成後予想動作",
+    Password:"",
+    Address:"test@example.com",
+    displayName:"岡先生",
+    Fieldid:"it",
+    Venue:"ソニックホール",
+    Holdperiod:{
+        Holdstart :"2017/2/2 9:00",
+        Holdfinish : "2017/2/2 16:00"
+    },
+    Createperiod:{
+        Createstart:"2016/9/10 12:00",
+        Createfinish:"2016/10/10 15:00"
+    },
+    Voteperiod:{
+        Votestart:"2016/2/2 9:00",
+        Votefinish:"2017/2/3 15:00"
+    },
+    Image:"public/images/noimage.png",
+    Order: ['34','35','36','37','38'],
+    Release_flag:true
+});
