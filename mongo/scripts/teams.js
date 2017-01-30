@@ -198,3 +198,136 @@ db.teams.insert({
     Department  :['voteid1',"8"],
     Order       :9
 });
+//以下合評会用テストデータ
+//eventid 17    アナログ用テストデータ
+db.teams.insert({
+    Teamid:"29",
+    Eventid:"17",
+    Teamname:"秋月コーポレーション",
+    Workname:"君の就活は。",
+    Overview   :"概要",
+    displayName :"社長",
+    Address     :"nakatugawa@gmail.com",
+    Image       :"public/images/noimage.png",
+    Works       :"public/images/noimage.png",
+    Department  :['voteid1',"9"],
+    Order       :1
+});
+db.teams.insert({
+    Teamid:"30",
+    Eventid:"17",
+    Teamname:"PriMus",
+    Workname:"e-Tactix",
+    Overview   :"概要",
+    displayName :"土肥君",
+    Address     :"nakatugawa@gmail.com",
+    Image       :"public/images/noimage.png",
+    Works       :"public/images/noimage.png",
+    Department  :['voteid1',"9"],
+    Order       :2
+});
+db.teams.insert({
+    Teamid:"31",
+    Eventid:"17",
+    Teamname:"アナログ撲滅委員会",
+    Workname:"VARS",
+    Overview   :"概要",
+    displayName :"長谷川",
+    Address     :"nakatugawa@gmail.com",
+    Image       :"public/images/noimage.png",
+    Works       :"public/images/noimage.png",
+    Department  :['voteid1',"9"],
+    Order       :3
+});
+db.teams.insert({
+    Teamid:"32",
+    Eventid:"17",
+    Teamname:"PARM",
+    Workname:"I'Mee",
+    Overview   :"概要",
+    displayName :"山中君",
+    Address     :"nakatugawa@gmail.com",
+    Image       :"public/images/noimage.png",
+    Works       :"public/images/noimage.png",
+    Department  :['voteid1',"9"],
+    Order       :4
+});
+db.teams.insert({
+    Teamid:"33",
+    Eventid:"17",
+    Teamname:"E班",
+    Workname:"入力補助ツール",
+    Overview   :"概要",
+    displayName :"松本君",
+    Address     :"nakatugawa@gmail.com",
+    Image       :"public/images/noimage.png",
+    Works       :"public/images/noimage.png",
+    Department  :['voteid1',"9"],
+    Order       :5
+});
+//eventid 18 デジタル用のテストデータ
+db.teams.insert({
+    Teamid:"34",
+    Eventid:"18",
+    Teamname:"秋月コーポレーション",
+    Workname:"君の就活は。",
+    Overview   :"概要",
+    displayName :"社長",
+    Address     :"nakatugawa@gmail.com",
+    Image       :"public/images/noimage.png",
+    Works       :"public/images/noimage.png",
+    Department  :['voteid1','voteid2','voteid3','voteid4',"10","11","12","13"],
+    Order       :1
+});
+db.teams.insert({
+    Teamid:"35",
+    Eventid:"18",
+    Teamname:"PriMus",
+    Workname:"e-Tactix",
+    Overview   :"概要",
+    displayName :"土肥",
+    Address     :"nakatugawa@gmail.com",
+    Image       :"public/images/noimage.png",
+    Works       :"public/images/noimage.png",
+    Department  :['voteid1','voteid2','voteid3','voteid4',"10","11","12","13"],
+    Order       :2
+});
+db.teams.insert({
+    Teamid:"36",
+    Eventid:"18",
+    Teamname:"アナログ撲滅委員会",
+    Workname:"VARS",
+    Overview   :"概要",
+    displayName :"長谷川",
+    Address     :"nakatugawa@gmail.com",
+    Image       :"public/images/noimage.png",
+    Works       :"public/images/noimage.png",
+    Department  :['voteid1','voteid2','voteid3','voteid4',"10","11","12","13"],
+    Order       :3
+});
+db.teams.insert({
+    Teamid:"37",
+    Eventid:"18",
+    Teamname:"PARM",
+    Workname:"I'Mee",
+    Overview   :"概要",
+    displayName :"山中君",
+    Address     :"nakatugawa@gmail.com",
+    Image       :"public/images/noimage.png",
+    Works       :"public/images/imee.pdf",
+    Department  :['voteid1','voteid2','voteid3','voteid4',"10","11","12","13"],
+    Order       :4
+});
+db.teams.insert({
+    Teamid:"38",
+    Eventid:"18",
+    Teamname:"E班",
+    Workname:"入力補助ツール",
+    Overview   :"概要",
+    displayName :"松本君",
+    Address     :"nakatugawa@gmail.com",
+    Image       :"public/images/noimage.png",
+    Works       :"public/images/noimage.png",
+    Department  :['voteid1','voteid2','voteid3','voteid4',"10","11","12","13"],
+    Order       :5
+});

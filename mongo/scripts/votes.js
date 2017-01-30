@@ -43,3 +43,31 @@ db.votes.insert({
     Eventid:"15",
     Votename:"総合"
 });
+//以下合評会用
+//アナログ用データ
+db.votes.insert({
+    Voteid:"9",
+    Eventid:"17",
+    Votename:"総合"
+});
+//デジタル用データ
+db.votes.insert({
+    Voteid:"10",
+    Eventid:"18",
+    Votename:"システム"
+});
+db.votes.insert({
+    Voteid:"11",
+    Eventid:"18",
+    Votename:"デザイン"
+});
+db.votes.insert({
+    Voteid:"12",
+    Eventid:"18",
+    Votename:"プレゼン"
+});
+db.votes.insert({
+    Voteid:"13",
+    Eventid:"18",
+    Votename:"総合"
+});
