@@ -186,7 +186,7 @@ router.post('/', function (req, res) {
             };
             WORK_JSON.aggregateid = randomByte.randomByte();
             WORK_JSON.voteid = req.body.voteid[i];
-            WORK_JSON.eventid = req.body.eventid[i];
+            WORK_JSON.eventid = req.body.eventid;
             WORK_JSON.address = req.session.user.address;
             WORK_JSON.teamid = req.body.teamid[i];
 
@@ -197,7 +197,7 @@ router.post('/', function (req, res) {
 
         };
         insertAggregate.insertAggregate(AGGREGATES);
-        res.redirect('/voteresult?eventid=' + req.body.eventid[0]);
+        res.redirect('/voteresult?eventid=' + req.body.eventid);
     } else {
         res.redirect('/');
     }
