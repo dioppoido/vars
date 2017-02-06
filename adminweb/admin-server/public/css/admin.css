@@ -33,6 +33,7 @@ body{
 }
 .menu-btn{
     font-size: 30px;
+    width: 300px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 979px) {

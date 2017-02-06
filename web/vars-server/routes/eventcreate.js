@@ -19,6 +19,8 @@ router.get('/', function(req, res) {
                     adress: req.session.user.address,
                     field: docs
                 });
+            }).catch(function(){
+              res.render('eventcreate.ejs',{user: req.session.user});
             });
         }else{
             res.render('confirmation.ejs',{msg:"一般ユーザはこの機能を利用できません。",url:''});
@@ -85,7 +87,7 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
             'Image':imagepath
         };
 
-        
+
         insertEvent.insertEvent(EVENTS);
         //twitter投稿（空白を入れると改行
         execSync('node ./app/js/event/twitterWrite.js イベントが作成されました リンクはこちら↓ http://localhost/eventtop?eventid='+eventid);
@@ -96,5 +98,4 @@ router.post('/', upload.single('thumbnail'), function (req, res) {
     }
 
 });
-
 module.exports = router;
