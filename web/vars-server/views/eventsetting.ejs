@@ -194,13 +194,15 @@
 
                         <br>
 
-                        <form method="post" name="eventsetting" action="eventsetting">
+                        <form method="post" name="eventdelete" action="/eventcontrol/eventdelete?eventid=<%= eventdata[0].Eventid %>">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                   <hr class="hr-field"><br>
                                   <div class="form-group">
                                     <label>&nbsp; &nbsp;イベント削除 : </label>
                                     <div class="text-center">
+                                      <input type="hidden" id="eventid" name="eventid" value="<%= eventdata[0].Eventid %>">
+                                      <input type="hidden" id="delete" name="delete" value="delete">
                                         <button type="submit" class="btn btn-danger submit-btn" onclick="return delete_confirm('イベント');">イベント削除</button>
                                     </div>
                                   </div>

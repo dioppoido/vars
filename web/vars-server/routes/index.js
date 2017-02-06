@@ -22,6 +22,7 @@ const loginCheck = function(req, res, next) {
 router.get('/', loginCheck, function(req, res) {
   getEventList.getEventList().then(function (docs){
     //一つでもイベントがある場合
+    console.log(docs);
     if(docs!=null){
       var fieldlist = [];
       var inSessionEvent=inSessionEventList.inSessionEventList(todate.todate("YYYY-MM-DD HH:mm:ss"),docs,2);
@@ -33,13 +34,19 @@ router.get('/', loginCheck, function(req, res) {
         });
       }, function complete(err) {
         if(!err){
+          if(inSessionEvent.length===0){
+            res.render('index.ejs',{user: req.session.user,notFound:null});
+          }else{
           res.render('index.ejs',{user: req.session.user,inSessionEventList:inSessionEvent,notFound:docs,fieldlist:fieldlist});
+        }
         }
       });
       //一つもイベントがない場合
     }else{
       res.render('index.ejs',{user: req.session.user,notFound:null});
     }
+  }).catch(function(){
+    res.render('index.ejs',{user: req.session.user,notFound:null});    
   });
 
 });

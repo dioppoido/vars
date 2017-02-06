@@ -45,6 +45,8 @@ router.get('/', function(req, res) {
                 }else{
                     res.render('eventlist.ejs',{field:docs,notFound:null});
                 }
+            }).catch(function(){
+              res.render('eventlist.ejs',{field:docs,notFound:null});
             });
         });
     } else{
