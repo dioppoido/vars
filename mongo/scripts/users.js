@@ -20,3 +20,5 @@ db.users.insert({Address:"test2",Admin_flag:false,Name:"TEST2",Password:"passwor
 db.users.insert({Address:"test3",Admin_flag:false,Name:"TEST3",Password:"password"});
 db.users.insert({Address:"test4",Admin_flag:false,Name:"TEST4",Password:"password"});
 db.users.insert({Address:"test5",Admin_flag:false,Name:"TEST5",Password:"password"});
+//デモで使う
+db.users.insert({Address:"hasse12317961@gmail.com",Admin_flag:false,Name:"長谷川遼",Password:"password"});
