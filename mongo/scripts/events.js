@@ -456,7 +456,7 @@ db.events.insert({
     Venue:"ソニックホール",
     Holdperiod:{
         Holdstart :"2017/2/2 9:00",
-        Holdfinish : "2017/2/2 16:00"
+        Holdfinish : "2017/2/10 16:00"
     },
     Createperiod:{
         Createstart:"2016/9/10 12:00",
@@ -464,7 +464,7 @@ db.events.insert({
     },
     Voteperiod:{
         Votestart:"2016/2/2 9:00",
-        Votefinish:"2017/2/3 15:00"
+        Votefinish:"2017/2/10 15:00"
     },
     Image:"public/images/noimage.png",
     Order: ['34','35','36','37','38'],

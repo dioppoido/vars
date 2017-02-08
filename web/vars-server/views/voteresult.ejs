@@ -38,7 +38,7 @@
                         <img class="voteresult-img" src="../public/images/voteranking/votingresultsicon.png"> 投票結果画面
                     </div>
 
-                    <div class="voteresult text-center">- ソフト４コース合評会結果発表 -</div>
+                    <div class="voteresult text-center">- ソフトⅣコース合評会結果発表 -</div>
 
                   <!-- PC用画面 -->
                     <div class="vote-list visible-md visible-lg">
@@ -134,16 +134,18 @@
                     <div id="tabs" class="plusTabs ui-tabs ui-widget ui-widget-content ui-corner-all">
                         <!-- タブリンク -->
                         <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                            <%if(false){%>
                             <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active active-tab" tabindex="0" aria-controls="tabs-all" aria-labelledby="ui-id-all" aria-selected="true" >
-                                <a href="#tabs-all" class="ui-tabs-anchor"  tabindex="-1" id="ui-id-all">総合結果</a>
+                                <a href="#tabs-all" class="ui-tabs-anchor"  tabindex="-1" id="ui-id-all"><%=votedata[0].Votename%>部門</a>
                             </li>
+                            <%}%>
                             <%for(var i=0;i<vote_aggregate.length;i++){%>
                             <li class="ui-state-default ui-corner-top active-tab" role="tab" tabindex="-1" aria-controls="tabs-<%=i%>" aria-labelledby="ui-id-<%=i%>" aria-selected="false">
                                 <a href="#tabs-<%=i%>" class="ui-tabs-anchor" tabindex="-1" id="ui-id-<%=i%>"><%=votedata[i].Votename%>部門</a>
                             </li>
                             <%}%>
                         </ul>
-
+                        <%if(false){%>
                         <div id="tabs-all" aria-labelledby="ui-id-all" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-expanded="true" aria-hidden="false" style="display: block;">
                               <table class="alt-table-responsive table-size">
                                   <%for(var i=0;i<full_aggregate.length;i++){%>
@@ -159,12 +161,13 @@
                                         <%=full_aggregate[i].Teamname%>
                                       </th>
                                       <th class="col-xs-2 col-sm-2 ranking-contents">
-                                        <%=full_aggregate[i].votecnt%>&nbsp票  <!-- 総合の投票数-->
+                                        <%=vote_aggregate[i][j].votecnt%>&nbsp票  <!-- 総合の投票数-->
                                       </th>
                                     </tr>
                                   <%}%>
                               </table>
                         </div>
+                        <%}%>
                         <%for(var i=0;i<vote_aggregate.length;i++){%>
                         <div id="tabs-<%=i%>" aria-labelledby="ui-id-<%=i%>" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="display: none;" aria-expanded="false" aria-hidden="true">
                           <table class=" table-size">
@@ -239,7 +242,6 @@
                             <a href="#tabs-2" class="ui-tabs-anchor" tabindex="-1" id="ui-id-2">デザイン部門</a>
                             <a href="#tabs-3" class="ui-tabs-anchor" tabindex="-1" id="ui-id-3">システム部門</a>
                             <a href="#tabs-4" class="ui-tabs-anchor" tabindex="-1" id="ui-id-4">利便部門</a>
-                            <a href="#tabs-5" class="ui-tabs-anchor" tabindex="-1" id="ui-id-5">使ってみたい部門</a>
                         </div>
                     </div>
                 </div>
