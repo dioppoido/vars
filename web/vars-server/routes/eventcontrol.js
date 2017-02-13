@@ -170,7 +170,7 @@ router.get('/votesetting', function(req, res) {
 
 router.post('/votesetting', function (req, res) {
     if (req.session.user) {
-        if(req.sesion.user.admin) {
+        if(req.session.user.admin) {
             var mode = req.query.mode;
             //追加処理（作成者：土居）
             if (mode === "append") {
