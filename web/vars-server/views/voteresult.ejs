@@ -40,12 +40,13 @@
 
                     <div class="voteresult text-center">- ソフト４コース合評会結果発表 -</div>
 
-                    <!-- PC用画面 -->
+                  <!-- PC用画面 -->
                     <div class="vote-list visible-md visible-lg">
                         <!-- 総合部門 -->
+                        <%if(false){%>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="panel panel-list panel-primary">
-                                <div class="panel-heading panel-font text-center ">総合部門</div>
+                                <div class="panel-heading panel-font text-center ">総合</div>
                                 <ul class="list-group">
                                     <div class="row">
                                         <table class="alt-table-responsive table-size">
@@ -82,7 +83,7 @@
                                 </ul>
                             </div>
                         </div>
-
+                    <%}%>
                         <!-- その他の部門 -->
                         <%var category=["デザイン部門","システム部門","利便部門","使ってみたい部門"];%> <!-- 部門のテストデータ-->
                         <%for(var i=0;i<vote_aggregate.length;i++){%>

@@ -622,3 +622,15 @@ function pdf_check(){
 
     return true;
 }
+
+function delete_confirm(type){
+
+    var console = confirm("本当に" + type + "を削除してもよろしいですか？");
+
+    if( console === true){
+        return true;
+    }else{
+        alert("キャンセルされました。");
+        return false;
+    }
+}

@@ -137,7 +137,21 @@ router.post('/eventsetting',  upload.single('thumbnail'), function (req, res) {
         res.redirect('/');
     }
 });
-
+router.post("/eventdelete",function(req,res){
+  if(req.session.user){
+      if(req.query.eventid) {
+    deleteEvent.deleteEvent({"Eventid":req.query.eventid});
+    res.render('confirmation.ejs', {
+        msg: 'イベント情報を削除しました。',
+        url: '/'
+    });
+  }else{
+      res.render('errorconfirmation.ejs', {msg: 'イベントIDが存在しません。', url: '/eventlist'});
+  }
+} else{
+  res.redirect('/');
+}
+});
 router.get('/votesetting', function(req, res) {
     if(req.session.user){
         if(req.query.eventid) {

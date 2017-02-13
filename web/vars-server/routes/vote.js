@@ -197,7 +197,8 @@ router.post('/', function (req, res) {
 
         };
         insertAggregate.insertAggregate(AGGREGATES);
-        res.redirect('/voteresult?eventid=' + req.body.eventid);
+        //res.redirect('/voteresult?eventid=' + req.body.eventid);
+        res.render('confirmation.ejs',{msg:'投票が完了しました。',url:'/eventtop?eventid='+req.body.eventid});
     } else {
         res.redirect('/');
     }

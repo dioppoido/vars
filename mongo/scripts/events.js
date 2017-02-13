@@ -448,7 +448,7 @@ db.events.insert({
 db.events.insert({
     Eventid:"18",
     Eventname:"ソフトⅣコース 合評会",
-    Overview:"2/2に行われるソフトⅣコースの合評会 システム完成後予想動作",
+    Overview:"2/2に行われるソフトⅣコースの合評会",
     Password:"",
     Address:"test@example.com",
     displayName:"岡先生",
